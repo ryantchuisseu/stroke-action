@@ -143,10 +143,14 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
             {a.diff.items.map((d, i) => (
               <li
                 key={i}
-                className="grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-rule py-[clamp(1rem,2.6vw,1.5rem)] text-[clamp(1.02rem,1.9vw,1.25rem)] font-medium tracking-[-0.01em]"
+                className="group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-rule py-[clamp(1rem,2.6vw,1.5rem)] text-[clamp(1.02rem,1.9vw,1.25rem)] font-medium tracking-[-0.01em] transition-[padding] duration-200 ease-[var(--ease-out)] hover:ps-2"
               >
-                <span className="text-[0.8rem] font-semibold tabular-nums text-grey">0{i + 1}</span>
-                <span>{d}</span>
+                <span className="text-[0.8rem] font-semibold tabular-nums text-grey transition-colors duration-200 group-hover:text-red-ink">
+                  0{i + 1}
+                </span>
+                <span className="origin-left transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
+                  {d}
+                </span>
               </li>
             ))}
           </ul>
