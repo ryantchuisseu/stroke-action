@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
+import { BrainMark } from "@/components/brain-mark";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -11,6 +12,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
   const { lang } = await params;
   const t = getDictionary(lang as Locale);
   const g = t.governance;
+  const founderName = g.board[0].name;
 
   return (
     <>
@@ -18,14 +20,53 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[0].label }, { label: g.crumb }]}
         eyebrow={g.eyebrow}
         title={g.title}
-        intro={g.intro}
       />
-      <section className="py-[clamp(3rem,7vw,5.5rem)]">
+
+      {/* Déclaration — texte / portrait du fondateur / texte */}
+      <section className="py-[clamp(3rem,9vw,7.5rem)]">
+        <Container>
+          <div className="grid items-center gap-x-[clamp(2rem,5vw,4.5rem)] gap-y-10 md:grid-cols-[1fr_auto_1fr]">
+            <p className="text-[clamp(1.15rem,2vw,1.5rem)] font-medium leading-[1.4] tracking-[-0.015em] text-balance md:text-right">
+              {g.introLeft}
+            </p>
+
+            <figure className="mx-auto w-[min(68vw,320px)] shrink-0">
+              <BrainMark className="mx-auto mb-5 h-7 w-7 text-ink" />
+              <div className="aspect-[3/4] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/dr-kamtchum.jpg"
+                  alt={`${founderName} — ${g.founderCaptionRole}`}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <figcaption className="mt-4 text-center text-[0.74rem] uppercase tracking-[0.14em] text-grey">
+                {founderName}
+                <span className="mt-1 block text-blue-ink">{g.founderCaptionRole}</span>
+              </figcaption>
+            </figure>
+
+            <p className="text-[clamp(1.15rem,2vw,1.5rem)] font-medium leading-[1.4] tracking-[-0.015em] text-balance md:text-left">
+              {g.introRight}
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Bureau exécutif */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
           <div className="grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
-            {g.board.map((m) => (
+            {g.board.map((m, i) => (
               <article key={m.role} className="bg-paper p-6">
-                <div className="aspect-square bg-paper-deep" aria-hidden="true" />
+                {i === 0 ? (
+                  <div className="aspect-square overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/dr-kamtchum.jpg" alt={m.name} className="h-full w-full object-cover" />
+                  </div>
+                ) : (
+                  <div className="aspect-square bg-paper-deep" aria-hidden="true" />
+                )}
                 <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{m.role}</p>
                 <h2 className="mt-1 text-[1.1rem] font-semibold tracking-[-0.01em]">{m.name}</h2>
                 <p className="mt-2 text-[0.9rem] text-ink-soft">{m.bio}</p>

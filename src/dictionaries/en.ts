@@ -496,7 +496,9 @@ export const en = {
     crumb: "Governance",
     eyebrow: "Governance",
     title: "A dedicated Executive Board.",
-    intro: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeating stroke. Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
+    introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeating stroke.",
+    introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
+    founderCaptionRole: "President & Founder",
     board: [
       { role: "President", name: "Dr. KAMTCHUM TATUENE Joseph", bio: "Neurologist and researcher, founder of Stroke Action." },
       { role: "Secretary General", name: "To be provided", bio: "Profile to be published soon." },

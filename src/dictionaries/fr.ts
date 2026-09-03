@@ -495,7 +495,9 @@ export const fr = {
     crumb: "Gouvernance",
     eyebrow: "Gouvernance",
     title: "Un bureau exécutif engagé.",
-    intro: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC. Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
+    introLeft: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC.",
+    introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
+    founderCaptionRole: "Président & fondateur",
     board: [
       { role: "Président", name: "Dr KAMTCHUM TATUENE Joseph", bio: "Neurologue et chercheur, fondateur de Stroke Action." },
       { role: "Secrétaire général", name: "À communiquer", bio: "Profil à publier prochainement." },
