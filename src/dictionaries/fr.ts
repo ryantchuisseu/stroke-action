@@ -476,11 +476,11 @@ export const fr = {
     statusAvailable: "Disponible au téléchargement",
     statusSoon: "Bientôt",
     items: [
-      { title: "Statuts / Bylaws", lang: "FR / EN", ready: true },
-      { title: "Règlement intérieur / Internal Regulations", lang: "FR", ready: true },
-      { title: "Plan stratégique 2026–2030", lang: "FR", ready: true },
-      { title: "Rapport annuel", lang: "—", ready: false },
-      { title: "Brochure de présentation", lang: "—", ready: false },
+      { title: "Statuts / Bylaws", lang: "FR / EN", ready: true, href: "/documents/statuts-bylaws.pdf" },
+      { title: "Règlement intérieur / Internal Regulations", lang: "FR", ready: true, href: "/documents/reglement-interieur.pdf" },
+      { title: "Plan stratégique 2026–2030", lang: "FR", ready: true, href: "/documents/plan-strategique-2026-2030.pdf" },
+      { title: "Rapport annuel", lang: "—", ready: false, href: "" },
+      { title: "Brochure de présentation", lang: "—", ready: false, href: "" },
     ],
   },
 
