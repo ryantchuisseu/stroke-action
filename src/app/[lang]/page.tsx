@@ -1,24 +1,15 @@
-import Link from "next/link";
 import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
+import { getDictionary, type Locale } from "@/dictionaries";
 
-const PILLARS = [
-  { t: "Éducation", d: "Sensibiliser le public aux facteurs de risque de l'AVC, aux signes d'alerte et aux premiers gestes." },
-  { t: "Recherche", d: "Mener et soutenir des travaux scientifiques de qualité pour éclairer les politiques de santé." },
-  { t: "Formation", d: "Former en continu les professionnels de santé à la prise en charge de l'AVC." },
-  { t: "Soutien", d: "Apporter un appui technique, financier et humain aux personnes touchées et à leurs familles." },
-];
+export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params;
+  const t = getDictionary(lang as Locale);
+  const h = t.home;
+  const p = (href: string) => `/${lang}${href}`;
 
-const FAST = [
-  { l: "F", t: "Face — le visage", d: "Affaissement ou engourdissement soudain d'un côté du visage." },
-  { l: "A", t: "Arms — les bras", d: "Faiblesse d'un bras — demandez de lever les deux bras." },
-  { l: "S", t: "Speech — la parole", d: "Parole troublée, confuse ou impossible." },
-  { l: "T", t: "Time — le temps", d: "Appelez immédiatement les secours.", em: true },
-];
-
-export default function Home() {
   return (
     <>
       {/* HERO */}
@@ -26,14 +17,11 @@ export default function Home() {
         <Container className="grid items-center gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[1.05fr_0.95fr]">
           <div>
             <span className="hero-stg hero-d1 inline-block text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue-ink">
-              Stroke Action · Action AVC
+              {h.hero.eyebrow}
             </span>
-            <h1 className="mt-4 text-[clamp(2.5rem,6.6vw,5rem)] leading-none tracking-[-0.035em]">
-              <span className="hero-stg hero-d2 block">Ensemble</span>
-              <span className="hero-stg hero-d2 block">pour vaincre</span>
-              <span className="hero-stg hero-d3 block">
-                l&rsquo;AVC<span className="hero-end-dot" aria-hidden="true" />
-              </span>
+            <h1 className="hero-stg hero-d2 mt-4 text-[clamp(2.5rem,6.6vw,5rem)] leading-[1.02] tracking-[-0.035em]">
+              {h.hero.headline}
+              <span className="hero-end-dot" aria-hidden="true" />
             </h1>
             <p className="hero-stg hero-d4 mt-6 flex max-w-[34ch] items-start gap-[0.7rem] text-[clamp(0.95rem,1.4vw,1.12rem)] font-semibold text-red-ink">
               <svg viewBox="0 0 40 40" className="mt-0.5 h-[22px] w-[22px] flex-none text-red-ink" aria-hidden="true">
@@ -47,18 +35,15 @@ export default function Home() {
                 />
                 <circle className="hero-mark-dot" cx="24" cy="20" r="3.6" fill="currentColor" />
               </svg>
-              <span>
-                Pendant un AVC, le cerveau perd <b className="tabular-nums">1,9&nbsp;million</b> de neurones par minute.
-              </span>
+              <span>{h.hero.brainline}</span>
             </p>
             <p className="hero-stg hero-d5 mt-[1.1rem] max-w-[48ch] text-[clamp(1rem,1.4vw,1.15rem)] text-ink-soft">
-              Stroke Action est une organisation à but non lucratif qui agit pour réduire le fardeau de l&rsquo;AVC par
-              l&rsquo;éducation, la recherche, la formation professionnelle et le soutien aux patients et à leurs familles.
+              {h.hero.sub}
             </p>
             <div className="hero-stg hero-d6 mt-8 flex flex-wrap gap-3">
-              <Btn href="/a-propos">Découvrir l&rsquo;association</Btn>
-              <Btn href="/nous-soutenir#devenir-membre" variant="ghost">
-                Nous rejoindre
+              <Btn href={p("/a-propos")}>{h.hero.ctaPrimary}</Btn>
+              <Btn href={p("/nous-soutenir#devenir-membre")} variant="ghost">
+                {h.hero.ctaSecondary}
               </Btn>
             </div>
           </div>
@@ -67,13 +52,12 @@ export default function Home() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/photos/portrait-femme.jpg"
-                alt="Portrait d'une femme dans une salle de soins."
+                alt=""
                 className="hero-img-in h-full w-full object-cover"
               />
             </div>
             <figcaption className="mt-[0.55rem] text-[0.74rem] tracking-[0.03em] text-grey">
-              Photographie documentaire, traitement N&amp;B — à remplacer par des images de terrain de Stroke Action
-              (Yaoundé).
+              {h.hero.caption}
             </figcaption>
           </figure>
         </Container>
@@ -84,22 +68,16 @@ export default function Home() {
         <Container className="grid items-center gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[0.85fr_1.15fr]">
           <figure className="m-0 aspect-[16/10] overflow-hidden md:order-none">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/photos/soignante.jpg" alt="Une soignante dans un dispensaire." className="h-full w-full object-cover" />
+            <img src="/photos/soignante.jpg" alt="" className="h-full w-full object-cover" />
           </figure>
           <div>
-            <Eyebrow>Qui sommes-nous</Eyebrow>
-            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">Une communauté unie contre l&rsquo;AVC.</h2>
+            <Eyebrow>{h.who.eyebrow}</Eyebrow>
+            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">{h.who.title}</h2>
             <div className="mt-[1.1rem] max-w-[52ch] space-y-4 text-ink-soft">
-              <p>
-                Née au Cameroun, Stroke Action rassemble patients, familles, professionnels de santé et chercheurs
-                autour d&rsquo;un même objectif&nbsp;: vaincre l&rsquo;AVC.
-              </p>
-              <p>
-                Nous croyons que par l&rsquo;éducation, la science et la solidarité, nous pouvons sauver des vies et
-                transformer la réalité de l&rsquo;AVC en Afrique et au-delà.
-              </p>
+              <p>{h.who.p1}</p>
+              <p>{h.who.p2}</p>
             </div>
-            <ArrowLink href="/a-propos">À propos de Stroke Action →</ArrowLink>
+            <ArrowLink href={p("/a-propos")}>{h.who.link}</ArrowLink>
           </div>
         </Container>
       </section>
@@ -107,36 +85,31 @@ export default function Home() {
       {/* 4 PILIERS */}
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow="Nos piliers" title="Quatre piliers, une conviction." />
+          <SectionHead eyebrow={h.pillars.eyebrow} title={h.pillars.title} />
           <div className="mt-[clamp(2rem,5vw,3rem)] border-t border-rule">
-            {PILLARS.map((p) => (
+            {h.pillars.items.map((it) => (
               <div
-                key={p.t}
+                key={it.t}
                 className="grid grid-cols-[22px_1fr] items-baseline gap-x-6 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] sm:grid-cols-[26px_12rem_1fr] sm:hover:ps-3"
               >
                 <BrainMark className="mt-[3px] h-[22px] w-[22px] self-start text-ink" />
-                <h3 className="text-[clamp(1.1rem,2vw,1.45rem)] tracking-[-0.015em]">{p.t}</h3>
-                <p className="col-start-2 max-w-[52ch] text-[0.96rem] text-ink-soft sm:col-start-3">{p.d}</p>
+                <h3 className="text-[clamp(1.1rem,2vw,1.45rem)] tracking-[-0.015em]">{it.t}</h3>
+                <p className="col-start-2 max-w-[52ch] text-[0.96rem] text-ink-soft sm:col-start-3">{it.d}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* CHAQUE SECONDE COMPTE — explicatif animé */}
-      <SecondsBand />
+      {/* CHAQUE SECONDE COMPTE */}
+      <SecondsBand d={h.seconds} donateHref={p("/nous-soutenir#don")} />
 
       {/* APERÇU FAST */}
       <section id="fast" className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead
-            eyebrow="Éducation AVC"
-            alert
-            title="Reconnaître un AVC : la méthode FAST."
-            intro="Quatre vérifications, quelques secondes. Un seul signe suffit à appeler les secours."
-          />
+          <SectionHead eyebrow={h.fast.eyebrow} alert title={h.fast.title} intro={h.fast.intro} />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
-            {FAST.map((f) => (
+            {h.fast.items.map((f: { l: string; t: string; d: string; em?: boolean }) => (
               <div
                 key={f.l}
                 className={`p-[clamp(1.1rem,2.5vw,1.7rem)] ${
@@ -156,30 +129,24 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-[1.3rem] flex flex-wrap items-baseline gap-x-6 gap-y-[0.55rem] text-[0.9rem] text-ink-soft">
-            <b className="font-semibold text-ink">Urgences (Cameroun) :</b>
-            <span>
-              SAMU <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">119</span>
-            </span>
-            <span>
-              Pompiers <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">118</span>
-            </span>
-            <span>
-              Police <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">117</span>
-            </span>
+            <b className="font-semibold text-ink">{t.common.urgencyLabel}</b>
+            <span>{t.common.samu} <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">119</span></span>
+            <span>{t.common.fire} <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">118</span></span>
+            <span>{t.common.police} <span className="font-bold tabular-nums tracking-[0.02em] text-red-ink">117</span></span>
           </p>
-          <ArrowLink href="/education-avc">Tout savoir sur l&rsquo;AVC →</ArrowLink>
+          <ArrowLink href={p("/education-avc")}>{h.fast.link}</ArrowLink>
         </Container>
       </section>
 
       {/* CHIFFRES */}
       <section className="bg-paper-deep py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow="L'AVC en chiffres" title="Pourquoi le temps compte." />
+          <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-16 gap-y-10">
-            <Stat n={<><CountUp to={15} /><U>&nbsp;M / an</U></>} k="de personnes victimes d'un AVC dans le monde." />
-            <Stat n={<>1<U>&nbsp;sur&nbsp;</U><CountUp to={4} /></>} k="adultes fera un AVC au cours de sa vie." />
-            <Stat n={<><CountUp to={80} /><U>&nbsp;%</U></>} k="des AVC sont évitables." accent />
-            <Stat n={<><CountUp to={2} /><U>e</U></>} k="cause de mortalité dans le monde." />
+            <Stat n={<><CountUp to={15} /><U>{h.stats.items[0].unit}</U></>} k={h.stats.items[0].k} />
+            <Stat n={<>1<U>{lang === "fr" ? " sur " : " in "}</U><CountUp to={4} /></>} k={h.stats.items[1].k} />
+            <Stat n={<><CountUp to={80} /><U>{h.stats.items[2].unit}</U></>} k={h.stats.items[2].k} accent />
+            <Stat n={<><CountUp to={2} /><U>{h.stats.items[3].unit}</U></>} k={h.stats.items[3].k} />
           </div>
         </Container>
       </section>
@@ -188,17 +155,14 @@ export default function Home() {
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <div className="relative left-1/2 aspect-[21/9] w-screen -translate-x-1/2 overflow-hidden max-sm:aspect-[4/3]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/photos/homme-espoir.jpg" alt="Un homme sourit dans une salle de soins." className="h-full w-full object-cover" />
+          <img src="/photos/homme-espoir.jpg" alt="" className="h-full w-full object-cover" />
         </div>
         <Container>
           <div className="mt-[clamp(2rem,5vw,3rem)] max-w-[46ch]">
-            <Eyebrow>Ils en parlent</Eyebrow>
-            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">Derrière chaque AVC, une histoire.</h2>
-            <p className="mt-[0.9rem] text-ink-soft">
-              Nous recueillons les premiers témoignages des personnes et des familles accompagnées par Stroke Action. À
-              découvrir bientôt.
-            </p>
-            <ArrowLink href="/galerie">Voir la galerie →</ArrowLink>
+            <Eyebrow>{h.voices.eyebrow}</Eyebrow>
+            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">{h.voices.title}</h2>
+            <p className="mt-[0.9rem] text-ink-soft">{h.voices.text}</p>
+            <ArrowLink href={p("/galerie")}>{h.voices.link}</ArrowLink>
           </div>
         </Container>
       </section>
@@ -207,15 +171,16 @@ export default function Home() {
       <CtaBand
         title={
           <>
-            Rejoignez le combat contre <span className="text-blue">l&rsquo;AVC</span>.
+            {h.finalCta.titlePre}
+            <span className="text-blue">{h.finalCta.titleAccent}</span>.
           </>
         }
-        text="Adhérer, donner, devenir bénévole ou partenaire : chaque geste étend la prévention et l'accompagnement, une personne de plus à la fois."
+        text={h.finalCta.text}
         actions={
           <>
-            <Btn href="/nous-soutenir#don" onDark>Faire un don</Btn>
-            <Btn href="/nous-soutenir#devenir-membre" variant="ghost" onDark>Devenir membre</Btn>
-            <Btn href="/contact" variant="ghost" onDark>Nous contacter</Btn>
+            <Btn href={p("/nous-soutenir#don")} onDark>{h.finalCta.donate}</Btn>
+            <Btn href={p("/nous-soutenir#devenir-membre")} variant="ghost" onDark>{h.finalCta.member}</Btn>
+            <Btn href={p("/contact")} variant="ghost" onDark>{h.finalCta.contact}</Btn>
           </>
         }
       />

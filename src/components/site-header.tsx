@@ -1,9 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { NAV } from "@/lib/nav";
 import { BrainMark } from "./brain-mark";
+
+type NavItem = { label: string; href: string; desc?: string; soon?: boolean };
+type NavDict = {
+  home: string;
+  donate: string;
+  openMenu: string;
+  groups: readonly { label: string; items: readonly NavItem[] }[];
+};
 
 function Chevron({ open }: { open: boolean }) {
   return (
@@ -15,11 +23,17 @@ function Chevron({ open }: { open: boolean }) {
   );
 }
 
-export function SiteHeader() {
+export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+
+  const p = (href: string) => `/${lang}${href}`;
+  const other = lang === "fr" ? "en" : "fr";
+  const rest = pathname.replace(/^\/(fr|en)(?=\/|$)/, "");
+  const switchHref = `/${other}${rest || ""}`;
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
@@ -48,9 +62,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-[100] border-b border-rule bg-[color-mix(in_srgb,var(--color-paper)_97%,transparent)] backdrop-blur-[10px]">
-      <div className="mx-auto flex h-[66px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:px-16 lg:gap-7">
+      <div className="mx-auto flex h-[66px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:gap-6 lg:px-16">
         {/* Lockup */}
-        <Link href="/" className="mr-auto flex flex-none items-center gap-[0.6rem]" aria-label="Stroke Action AVC — accueil">
+        <Link href={`/${lang}`} className="mr-auto flex flex-none items-center gap-[0.6rem]" aria-label="Stroke Action AVC">
           <BrainMark className="h-[30px] w-[30px] text-ink" />
           <span>
             <span className="flex gap-[0.4ch] text-[clamp(0.8rem,1.05vw,0.92rem)] font-bold leading-none tracking-[0.08em]">
@@ -62,8 +76,8 @@ export function SiteHeader() {
         </Link>
 
         {/* Nav desktop */}
-        <nav ref={navRef} aria-label="Navigation principale" className="hidden items-center gap-[0.35rem] lg:flex">
-          {NAV.map((group) => {
+        <nav ref={navRef} aria-label={nav.home} className="hidden items-center gap-[0.2rem] lg:flex">
+          {nav.groups.map((group) => {
             const open = openGroup === group.label;
             return (
               <div key={group.label} className="relative">
@@ -75,7 +89,7 @@ export function SiteHeader() {
                     e.stopPropagation();
                     setOpenGroup(open ? null : group.label);
                   }}
-                  className={`inline-flex items-center gap-[0.4rem] whitespace-nowrap rounded-[2px] px-[0.7rem] py-[0.55rem] text-[0.9rem] font-medium transition-colors duration-150 ${
+                  className={`inline-flex items-center gap-[0.4rem] whitespace-nowrap rounded-[2px] px-[0.65rem] py-[0.55rem] text-[0.9rem] font-medium transition-colors duration-150 ${
                     open ? "bg-paper-deep text-ink" : "text-ink-soft hover:text-ink"
                   }`}
                 >
@@ -89,7 +103,7 @@ export function SiteHeader() {
                     {group.items.map((it) => (
                       <Link
                         key={it.href}
-                        href={it.href}
+                        href={p(it.href)}
                         role="menuitem"
                         onClick={() => setOpenGroup(null)}
                         className="block rounded-[2px] px-[0.8rem] py-[0.7rem] transition-colors hover:bg-paper-deep"
@@ -97,7 +111,9 @@ export function SiteHeader() {
                         <span className="block text-[0.92rem] font-semibold tracking-[-0.01em]">{it.label}</span>
                         <span className="mt-px block text-[0.8rem] text-grey">
                           {it.soon ? (
-                            <span className="font-semibold tracking-[0.04em] text-blue-ink">BIENTÔT</span>
+                            <span className="font-semibold uppercase tracking-[0.04em] text-blue-ink">
+                              {lang === "fr" ? "Bientôt" : "Coming soon"}
+                            </span>
                           ) : (
                             it.desc
                           )}
@@ -111,19 +127,28 @@ export function SiteHeader() {
           })}
         </nav>
 
+        {/* Sélecteur de langue */}
+        <Link
+          href={switchHref}
+          className="hidden flex-none rounded-[2px] px-2 py-1 text-[0.8rem] font-semibold tracking-[0.06em] text-ink-soft transition-colors hover:text-ink lg:inline-block"
+          aria-label={other === "en" ? "Switch to English" : "Passer en français"}
+        >
+          {other.toUpperCase()}
+        </Link>
+
         {/* CTA don */}
         <Link
-          href="/nous-soutenir#don"
-          className="hidden flex-none items-center gap-2 bg-ink px-[1.1rem] py-[0.62rem] text-[0.88rem] font-semibold text-paper transition-colors duration-150 hover:bg-red hover:text-white lg:inline-flex"
+          href={p("/nous-soutenir#don")}
+          className="hidden flex-none items-center gap-2 bg-ink px-[1.05rem] py-[0.62rem] text-[0.88rem] font-semibold text-paper transition-colors duration-150 hover:bg-red hover:text-white lg:inline-flex"
         >
-          Faire un don
+          {nav.donate}
         </Link>
 
         {/* Burger */}
         <button
           type="button"
           aria-expanded={mobileOpen}
-          aria-label="Ouvrir le menu"
+          aria-label={nav.openMenu}
           onClick={() => setMobileOpen((v) => !v)}
           className="ml-auto p-2 lg:hidden"
         >
@@ -136,7 +161,7 @@ export function SiteHeader() {
       {/* Menu mobile */}
       {mobileOpen && (
         <div className="fixed inset-x-0 bottom-0 top-[66px] z-[95] overflow-y-auto bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
-          {NAV.map((group) => {
+          {nav.groups.map((group) => {
             const open = mobileGroup === group.label;
             return (
               <div key={group.label} className="border-b border-rule">
@@ -153,12 +178,12 @@ export function SiteHeader() {
                     {group.items.map((it) => (
                       <Link
                         key={it.href}
-                        href={it.href}
+                        href={p(it.href)}
                         onClick={() => setMobileOpen(false)}
                         className="py-[0.6rem] text-[0.98rem] text-ink-soft hover:text-ink"
                       >
                         {it.label}
-                        {it.soon && " — bientôt"}
+                        {it.soon && (lang === "fr" ? " — bientôt" : " — coming soon")}
                       </Link>
                     ))}
                   </div>
@@ -166,13 +191,22 @@ export function SiteHeader() {
               </div>
             );
           })}
-          <Link
-            href="/nous-soutenir#don"
-            onClick={() => setMobileOpen(false)}
-            className="mt-6 flex w-full justify-center bg-ink px-[1.1rem] py-[0.75rem] text-[0.9rem] font-semibold text-paper"
-          >
-            Faire un don
-          </Link>
+          <div className="mt-6 flex items-center gap-3">
+            <Link
+              href={p("/nous-soutenir#don")}
+              onClick={() => setMobileOpen(false)}
+              className="flex flex-1 justify-center bg-ink px-[1.1rem] py-[0.75rem] text-[0.9rem] font-semibold text-paper"
+            >
+              {nav.donate}
+            </Link>
+            <Link
+              href={switchHref}
+              onClick={() => setMobileOpen(false)}
+              className="flex-none border border-rule px-4 py-[0.75rem] text-[0.85rem] font-semibold tracking-[0.06em] text-ink-soft"
+            >
+              {other.toUpperCase()}
+            </Link>
+          </div>
         </div>
       )}
     </header>
