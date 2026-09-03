@@ -163,11 +163,16 @@ export const en = {
     title: "Our Story.",
     intro: "Born in Cameroon, united by one goal: defeating stroke.", // design
     story: {
-      lead: "Stroke Action — known in French as Action AVC — was founded in Cameroon under Law No. 90-53 of December 19, 1990, on freedom of association.",
+      lead: "Stroke Action — known in French as Action AVC — was founded in Cameroon in 2026, under the framework of Law No. 90-53 of December 19, 1990, on freedom of association.",
       p2: "Born from the conviction that stroke is both preventable and treatable, we exist to bridge the gap between medical knowledge and the communities most affected by this devastating condition.",
       p3: "We are a secular, apolitical, non-profit organization serving the public interest — bringing together patients, families, healthcare professionals, and researchers.",
-      factYear: "1990",
-      fact: "Law No. 90-53 of December 19 on freedom of association — the legal framework of Stroke Action.",
+      factYear: "2026",
+      fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, on freedom of association.",
+    },
+    quote: {
+      text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
+      author: "Dr Kamtchum Tatuene Joseph",
+      role: "President and Founder",
     },
     vision: { k: "Our Vision", q: "To be an indispensable support for patients, families, health professionals and researchers who strive every day to defeat stroke." },
     mission: { k: "Our Mission", q: "To significantly reduce the burden of stroke worldwide through education, research, advocacy, and support for patients and their families." },

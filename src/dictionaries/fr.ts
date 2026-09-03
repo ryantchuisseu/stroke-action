@@ -162,11 +162,16 @@ export const fr = {
     title: "Notre histoire.",
     intro: "Née au Cameroun, unie par un seul objectif : vaincre l'AVC.", // design
     story: {
-      lead: "Stroke Action — connue en français sous le nom d'Action AVC — a été fondée au Cameroun sous le régime de la loi n° 90-53 du 19 décembre 1990 sur la liberté d'association.",
+      lead: "Stroke Action — connue en français sous le nom d'Action AVC — a été fondée au Cameroun en 2026, sous le régime de la loi n° 90-53 du 19 décembre 1990 sur la liberté d'association.",
       p2: "Née de la conviction que l'AVC est à la fois évitable et traitable, l'association existe pour combler le fossé entre le savoir médical et les communautés les plus touchées par cette maladie dévastatrice.",
       p3: "Nous sommes une organisation à but non lucratif, laïque et apolitique, d'intérêt général — rassemblant patients, familles, professionnels de santé et chercheurs.",
-      factYear: "1990",
-      fact: "Loi n° 90-53 du 19 décembre sur la liberté d'association — le cadre légal de Stroke Action.",
+      factYear: "2026",
+      fact: "Année de fondation de Stroke Action. L'association est régie par la loi n° 90-53 du 19 décembre 1990 sur la liberté d'association.",
+    },
+    quote: {
+      text: "Chaque AVC qui survient dans la vie d'un être humain est un AVC de trop, quelle qu'en soit la gravité.",
+      author: "Dr Kamtchum Tatuene Joseph",
+      role: "Président et fondateur",
     },
     vision: { k: "Notre vision", q: "Être un soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour vaincre l'AVC." },
     mission: { k: "Notre mission", q: "Réduire significativement le fardeau de l'AVC dans le monde par l'éducation, la recherche, le plaidoyer et le soutien aux patients et à leurs familles." },

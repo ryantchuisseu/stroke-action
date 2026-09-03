@@ -51,6 +51,35 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
         </Container>
       </section>
 
+      {/* Citation du fondateur */}
+      <section className="bg-ink py-[clamp(4rem,10vw,8rem)] text-paper">
+        <Container className="grid gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <figure className="m-0">
+            <div className="aspect-[4/5] max-w-[380px] overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dr-kamtchum.jpg"
+                alt={`${a.quote.author} — ${a.quote.role}`}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </figure>
+          <blockquote className="m-0">
+            <BrainMark className="mb-7 h-9 w-9 text-paper" dot="var(--color-red)" stroke="rgba(252,250,246,0.9)" />
+            <p className="max-w-[24ch] text-[clamp(1.5rem,3.6vw,2.65rem)] font-semibold leading-[1.28] tracking-[-0.02em] text-balance">
+              {a.quote.text}
+            </p>
+            <footer className="mt-9 flex items-center gap-4 text-[0.95rem]">
+              <span aria-hidden="true" className="h-px w-9 flex-none bg-[rgba(252,250,246,0.4)]" />
+              <span>
+                <span className="block font-semibold text-paper">{a.quote.author}</span>
+                <span className="block text-[rgba(252,250,246,0.6)]">{a.quote.role}</span>
+              </span>
+            </footer>
+          </blockquote>
+        </Container>
+      </section>
+
       {/* Vision / Mission */}
       <section className="bg-paper-deep py-[clamp(3.5rem,8vw,6.5rem)]">
         <Container>
@@ -79,10 +108,12 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
             {a.values.items.map((v) => (
               <div
                 key={v.t}
-                className="grid grid-cols-[20px_1fr] items-baseline gap-x-6 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] sm:grid-cols-[20px_12rem_1fr]"
+                className="group grid grid-cols-[24px_1fr] items-baseline gap-x-7 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] hover:ps-2 sm:grid-cols-[24px_12rem_1fr]"
               >
-                <BrainMark className="mt-1 h-5 w-5 self-start text-ink" />
-                <h3 className="text-[clamp(1.1rem,2vw,1.4rem)] tracking-[-0.015em]">{v.t}</h3>
+                <BrainMark className="mt-1 h-5 w-5 origin-center self-start text-ink transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.4] motion-reduce:group-hover:scale-100" />
+                <h3 className="origin-left text-[clamp(1.1rem,2vw,1.4rem)] tracking-[-0.015em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100">
+                  {v.t}
+                </h3>
                 <p className="col-start-2 max-w-[50ch] text-[0.96rem] text-ink-soft sm:col-start-3">{v.d}</p>
               </div>
             ))}
