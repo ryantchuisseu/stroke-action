@@ -212,6 +212,19 @@ export const en = {
     title: "Turning commitment into action.",
     intro:
       "Our work is structured around four core areas of action, supported by a fifth objective focused on organizational development — guided by our bylaws and our 2026–2030 Strategic Plan.",
+    carousel: {
+      region: "Field images",
+      prev: "Previous image",
+      next: "Next image",
+      goto: "Go to image",
+    },
+    alts: [
+      "An older woman looks out through blue-shuttered windows.",
+      "A caregiver visits a couple at home; the man leans on crutches.",
+      "A home rehabilitation session with hand weights, guided by a caregiver.",
+      "A woman helps someone up a set of steps; a wheelchair stands in the foreground.",
+      "A man in a wheelchair surrounded by his family in front of their home.",
+    ],
     programs: [
       {
         n: "01",

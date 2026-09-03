@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, CtaBand, Btn } from "@/components/ui";
+import { Carousel } from "@/components/carousel";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -22,7 +23,17 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
         intro={w.intro}
       />
 
-      <section className="py-[clamp(3rem,7vw,5.5rem)]">
+      {/* Carrousel — images de terrain */}
+      <section className="py-[clamp(2.5rem,6vw,4.5rem)]">
+        <Container>
+          <Carousel
+            slides={w.alts.map((alt, i) => ({ src: `/carousel/${i + 1}.jpg`, alt }))}
+            labels={w.carousel}
+          />
+        </Container>
+      </section>
+
+      <section className="pb-[clamp(3rem,7vw,5.5rem)]">
         <Container>
           <div className="border-t border-rule">
             {w.programs.map((prog) => (

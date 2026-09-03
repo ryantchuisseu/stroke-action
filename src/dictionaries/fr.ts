@@ -211,6 +211,19 @@ export const fr = {
     title: "Transformer l'engagement en action.",
     intro:
       "Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif de développement de l'organisation — guidés par nos statuts et notre Plan stratégique 2026-2030.",
+    carousel: {
+      region: "Images de terrain",
+      prev: "Image précédente",
+      next: "Image suivante",
+      goto: "Aller à l'image",
+    },
+    alts: [
+      "Une femme âgée regarde par une fenêtre à volets bleus.",
+      "Une soignante rend visite à un couple à domicile ; l'homme s'appuie sur des béquilles.",
+      "Séance de rééducation à domicile avec des haltères, accompagnée par un soignant.",
+      "Une femme aide une personne à monter des marches ; un fauteuil roulant est au premier plan.",
+      "Un homme en fauteuil roulant entouré de sa famille devant leur maison.",
+    ],
     programs: [
       {
         n: "01",
