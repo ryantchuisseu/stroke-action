@@ -16,13 +16,15 @@ type SecondsDict = {
 const MAX_NEURONS = 8_000_000;
 
 /** « Chaque seconde compte » — le point rouge parcourt la chronologie d'un AVC.
- *  Rendu par défaut = état complet (lisible sans JS). Rejoué depuis 0 à l'arrivée. */
+ *  Jalons en grille (jamais de chevauchement). Rendu par défaut = état complet
+ *  (lisible sans JS) ; rejoué depuis 0 quand la section devient visible. */
 export function SecondsBand({ d, donateHref }: { d: SecondsDict; donateHref: string }) {
   const secRef = useRef<HTMLElement>(null);
   const [p, setP] = useState(1);
   const [neurons, setNeurons] = useState(MAX_NEURONS);
   const played = useRef(false);
   const fmt = (n: number) => Math.round(n).toLocaleString("fr-FR");
+  const n = d.stops.length;
 
   useEffect(() => {
     const el = secRef.current;
@@ -59,7 +61,7 @@ export function SecondsBand({ d, donateHref }: { d: SecondsDict; donateHref: str
     <section ref={secRef} className="overflow-hidden bg-ink py-[clamp(3.5rem,8vw,6.5rem)] text-paper">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-6">
-          <h2 className="max-w-[14ch] text-[clamp(1.9rem,4.6vw,3.4rem)] tracking-[-0.03em]">{d.title}</h2>
+          <h2 className="max-w-[16ch] text-[clamp(1.9rem,4.6vw,3.4rem)] tracking-[-0.03em]">{d.title}</h2>
           <p className="text-right">
             <b className="block text-[clamp(1.8rem,4.5vw,3rem)] font-bold tabular-nums tracking-[-0.03em] text-white">
               {fmt(neurons)}
@@ -70,56 +72,54 @@ export function SecondsBand({ d, donateHref }: { d: SecondsDict; donateHref: str
           </p>
         </div>
 
-        <div className="mt-[clamp(2.5rem,6vw,4rem)]" style={{ "--p": p } as React.CSSProperties}>
-          <div className="relative h-0.5 bg-[rgba(252,250,246,0.22)]">
-            <div
-              className="absolute left-0 top-0 h-full bg-[rgba(252,250,246,0.6)]"
-              style={{ width: "calc(var(--p) * 100%)" }}
-            />
-            <div
-              className="pointer-events-none absolute -mt-3 -ml-3 h-6 w-6"
-              style={{ left: "calc(var(--p) * 100%)", top: "50%" }}
+        {/* ligne + point rouge qui la parcourt */}
+        <div
+          className="relative mt-[clamp(2.5rem,6vw,4rem)] h-0.5 bg-[rgba(252,250,246,0.22)]"
+          style={{ "--p": p } as React.CSSProperties}
+        >
+          <div
+            className="absolute left-0 top-0 h-full bg-[rgba(252,250,246,0.6)]"
+            style={{ width: "calc(var(--p) * 100%)" }}
+          />
+          {d.stops.map((s, i) => (
+            <span
+              key={`tick-${i}`}
+              className="absolute top-1/2 h-2.5 w-px -translate-y-1/2 bg-[rgba(252,250,246,0.35)]"
+              style={{ left: `${(i / (n - 1)) * 100}%` }}
               aria-hidden="true"
-            >
-              <BrainMark className="h-6 w-6 text-white" />
-            </div>
+            />
+          ))}
+          <div
+            className="pointer-events-none absolute -mt-3 h-6 w-6 -translate-x-1/2"
+            style={{ left: "calc(var(--p) * 100%)", top: "50%" }}
+            aria-hidden="true"
+          >
+            <BrainMark className="h-6 w-6 text-white" />
           </div>
+        </div>
 
-          <div className="relative mt-6 hidden h-px sm:block">
-            {d.stops.map((s) => (
-              <div
-                key={s.label}
-                className="absolute top-0 w-[min(20ch,42vw)] -translate-x-3 transition-opacity duration-300"
-                style={{ left: `${s.at * 100}%`, opacity: p >= s.at - 0.001 ? 1 : 0.28 }}
-              >
-                <span className="absolute -top-6 left-3 h-4 w-px bg-[rgba(252,250,246,0.4)]" />
+        {/* jalons — grille, aucun chevauchement */}
+        <ol className="mt-8 grid grid-cols-2 gap-x-8 gap-y-7 sm:grid-cols-3 lg:grid-cols-5">
+          {d.stops.map((s, i) => {
+            const reached = p >= i / (n - 1) - 0.001;
+            return (
+              <li key={s.label} className="transition-opacity duration-300" style={{ opacity: reached ? 1 : 0.3 }}>
                 <span
-                  className={`text-[0.8rem] font-bold tracking-[0.08em] tabular-nums ${
-                    s.at === 0 ? "text-white" : "text-red"
+                  className={`block text-[0.82rem] font-bold tracking-[0.08em] tabular-nums ${
+                    i === 0 ? "text-white" : "text-red"
                   }`}
                 >
                   {s.label}
                 </span>
-                <span className="mt-[0.35rem] block text-[0.86rem] leading-[1.45] text-[rgba(252,250,246,0.78)]">
+                <span className="mt-1.5 block text-[0.88rem] leading-[1.5] text-[rgba(252,250,246,0.78)]">
                   {s.text}
                 </span>
-              </div>
-            ))}
-          </div>
-
-          <ul className="mt-6 grid gap-4 sm:hidden">
-            {d.stops.map((s) => (
-              <li key={s.label} className="border-l border-[rgba(252,250,246,0.3)] pl-4">
-                <span className={`text-[0.8rem] font-bold tracking-[0.08em] ${s.at === 0 ? "text-white" : "text-red"}`}>
-                  {s.label}
-                </span>
-                <span className="mt-1 block text-[0.9rem] text-[rgba(252,250,246,0.78)]">{s.text}</span>
               </li>
-            ))}
-          </ul>
-        </div>
+            );
+          })}
+        </ol>
 
-        <p className="mt-[clamp(3rem,8vw,5rem)] max-w-[44ch] text-[rgba(252,250,246,0.72)]">{d.text}</p>
+        <p className="mt-[clamp(3rem,7vw,4.5rem)] max-w-[46ch] text-[rgba(252,250,246,0.72)]">{d.text}</p>
         <div className="mt-8">
           <Btn href={donateHref} onDark>
             {d.cta}

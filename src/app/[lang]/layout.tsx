@@ -43,8 +43,8 @@ export default async function LangLayout({
   const d = getDictionary(lang as Locale);
 
   return (
-    <html lang={lang} className={`${poppins.variable} h-full`}>
-      <body className="flex min-h-full flex-col">
+    <html lang={lang} className={poppins.variable}>
+      <body className="flex min-h-screen flex-col">
         <SiteHeader lang={lang} nav={d.nav} />
         <main className="flex-1">{children}</main>
         <SiteFooter lang={lang} footer={d.footer} />
