@@ -133,6 +133,7 @@ export const en = {
     stats: {
       eyebrow: "Stroke in Figures",
       title: "Why time matters.",
+      source: "Sources: World Health Organization, World Stroke Organization.",
       items: [
         { unit: " M / year", k: "people worldwide suffer a stroke." },
         { k: "adults will have a stroke in their lifetime." },

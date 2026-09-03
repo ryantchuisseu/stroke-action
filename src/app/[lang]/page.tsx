@@ -47,19 +47,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               </Btn>
             </div>
           </div>
-          <figure className="hero-stg hero-d3 m-0">
-            <div className="aspect-[3/4] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/photos/portrait-femme.jpg"
-                alt=""
-                className="hero-img-in h-full w-full object-cover"
-              />
-            </div>
-            <figcaption className="mt-[0.55rem] text-[0.74rem] tracking-[0.03em] text-grey">
-              {h.hero.caption}
-            </figcaption>
-          </figure>
+          <div className="hero-stg hero-d3 aspect-[3/4] overflow-hidden">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/photos/portrait-femme.jpg"
+              alt=""
+              className="hero-img-in h-full w-full object-cover"
+            />
+          </div>
         </Container>
       </section>
 
@@ -90,9 +85,9 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {h.pillars.items.map((it) => (
               <div
                 key={it.t}
-                className="grid grid-cols-[22px_1fr] items-baseline gap-x-6 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] sm:grid-cols-[26px_12rem_1fr] sm:hover:ps-3"
+                className="grid grid-cols-[26px_1fr] items-baseline gap-x-7 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] sm:grid-cols-[26px_12rem_1fr] sm:hover:ps-3"
               >
-                <BrainMark className="mt-[3px] h-[22px] w-[22px] self-start text-ink" />
+                <BrainMark className="mt-[2px] h-6 w-6 self-start text-ink" />
                 <h3 className="text-[clamp(1.1rem,2vw,1.45rem)] tracking-[-0.015em]">{it.t}</h3>
                 <p className="col-start-2 max-w-[52ch] text-[0.96rem] text-ink-soft sm:col-start-3">{it.d}</p>
               </div>
@@ -148,6 +143,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <Stat n={<><CountUp to={80} /><U>{h.stats.items[2].unit}</U></>} k={h.stats.items[2].k} accent />
             <Stat n={<><CountUp to={2} /><U>{h.stats.items[3].unit}</U></>} k={h.stats.items[3].k} />
           </div>
+          <p className="mt-10 text-[0.8rem] text-grey">{h.stats.source}</p>
         </Container>
       </section>
 

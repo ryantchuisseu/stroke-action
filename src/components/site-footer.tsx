@@ -59,6 +59,8 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
   return (
     <footer className="mt-auto border-t border-[rgba(252,250,246,0.14)] bg-ink py-[clamp(3rem,7vw,5rem)] text-paper">
       <Container>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/logo-white.png" alt="Stroke Action · Action AVC" className="mb-8 h-14 w-auto" />
         <p className="max-w-[24ch] text-[clamp(1.2rem,2.8vw,1.8rem)] font-bold tracking-[-0.02em] text-balance">
           {footer.motto}
           <span className="mt-[0.3rem] block text-[0.8em] font-medium text-[rgba(252,250,246,0.55)]">

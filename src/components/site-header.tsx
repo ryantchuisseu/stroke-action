@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { BrainMark } from "./brain-mark";
 
 type NavItem = { label: string; href: string; desc?: string; soon?: boolean };
 type NavDict = {
@@ -64,15 +63,9 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
     <header className="sticky top-0 z-[100] border-b border-rule bg-[color-mix(in_srgb,var(--color-paper)_97%,transparent)] backdrop-blur-[10px]">
       <div className="mx-auto flex h-[66px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:gap-6 lg:px-16">
         {/* Lockup */}
-        <Link href={`/${lang}`} className="mr-auto flex flex-none items-center gap-[0.6rem]" aria-label="Stroke Action AVC">
-          <BrainMark className="h-[30px] w-[30px] text-ink" />
-          <span>
-            <span className="flex gap-[0.4ch] text-[clamp(0.8rem,1.05vw,0.92rem)] font-bold leading-none tracking-[0.08em]">
-              <span className="text-blue-ink">STROKE</span>
-              <span className="text-red-ink">ACTION</span>
-            </span>
-            <span className="mt-[3px] block text-[0.6rem] font-semibold tracking-[0.22em] text-grey">AVC</span>
-          </span>
+        <Link href={`/${lang}`} className="mr-auto flex flex-none items-center" aria-label="Stroke Action · Action AVC">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Stroke Action · Action AVC" className="h-[46px] w-auto" />
         </Link>
 
         {/* Nav desktop */}

@@ -132,6 +132,7 @@ export const fr = {
     stats: {
       eyebrow: "L'AVC en chiffres",
       title: "Pourquoi le temps compte.",
+      source: "Sources : Organisation mondiale de la Santé, World Stroke Organization.",
       items: [
         { unit: " M / an", k: "de personnes victimes d'un AVC dans le monde." },
         { k: "adultes fera un AVC au cours de sa vie." },
