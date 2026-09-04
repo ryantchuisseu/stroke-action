@@ -20,6 +20,28 @@ export const fr = {
     switchTo: "EN",
   },
 
+  drawer: {
+    close: "Fermer",
+    donate: {
+      title: "Faire un don",
+      soon: "Bientôt disponible",
+      text: "Le paiement en ligne (Mobile Money + carte bancaire) sera activé prochainement. En attendant, écrivez-nous pour faire un don — nous vous accompagnerons.",
+      contact: "Nous contacter",
+    },
+    membership: {
+      title: "Demander l'adhésion",
+      text: "Le formulaire en ligne arrive bientôt. En attendant, la démarche est simple :",
+      steps: [
+        "Téléchargez le formulaire ci-dessous.",
+        "Remplissez-le : nom complet, date de naissance, e-mail, téléphone, profession, ville / pays, motivation, et une copie d'une pièce d'identité avec photo.",
+        "Renvoyez-le à contact@strokeaction.org, ou par WhatsApp au +237 652 14 81 47.",
+      ],
+      downloadFr: "Formulaire — français (.docx)",
+      downloadEn: "Formulaire — anglais (.docx)",
+      reviewNote: "Votre candidature sera examinée et approuvée par le bureau exécutif. L'adhésion est ouverte à toute personne partageant nos valeurs.",
+    },
+  },
+
   nav: {
     home: "Accueil",
     donate: "Faire un don",
@@ -441,8 +463,8 @@ export const fr = {
         id: "don",
         t: "Faire un don",
         d: "Votre don finance l'imagerie cérébrale des patients en difficulté financière, les campagnes de sensibilisation, l'organisation des formations et le renforcement de l'association. Chaque contribution compte.",
-        cta: "Faire un don (inactif — bientôt)",
-        disabled: true,
+        cta: "Faire un don",
+        drawer: "donate",
         strong: true,
       },
       {
@@ -450,6 +472,7 @@ export const fr = {
         t: "Devenir membre",
         d: "Devenez membre officiel de Stroke Action et rejoignez une communauté grandissante de personnes engagées contre l'AVC au Cameroun, en Afrique et dans le monde. Formulaire : nom complet, date de naissance, e-mail, téléphone, profession, ville / pays, motivation*, copie d'une pièce d'identité avec photo (carte nationale d'identité ou passeport)*.",
         cta: "Demander l'adhésion",
+        drawer: "membership",
       },
       {
         id: "boutique",
@@ -463,6 +486,7 @@ export const fr = {
         t: "Devenir bénévole",
         d: "Vous êtes motivé·e par la lutte contre l'AVC ? Nous accueillons les bénévoles de toutes compétences, quel que soit leur parcours ou leur profession.",
         cta: "S'impliquer",
+        drawer: "membership",
       },
     ],
     note: "Le paiement en ligne (Mobile Money + carte bancaire) sera activé ultérieurement.",

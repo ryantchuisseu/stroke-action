@@ -20,6 +20,28 @@ export const en = {
     switchTo: "FR",
   },
 
+  drawer: {
+    close: "Close",
+    donate: {
+      title: "Make a donation",
+      soon: "Coming soon",
+      text: "Online payment (Mobile Money + bank card) will be activated soon. In the meantime, write to us to make a donation — we will guide you.",
+      contact: "Contact us",
+    },
+    membership: {
+      title: "Apply for membership",
+      text: "The online form is coming soon. In the meantime, the process is simple:",
+      steps: [
+        "Download the form below.",
+        "Fill it in: full name, date of birth, email, phone, profession, city / country, motivation statement, and a copy of a valid ID with photo.",
+        "Send it back to contact@strokeaction.org, or by WhatsApp at +237 652 14 81 47.",
+      ],
+      downloadFr: "Form — French (.docx)",
+      downloadEn: "Form — English (.docx)",
+      reviewNote: "Your application will be reviewed and approved by the Executive Board. Membership is open to all who share our values.",
+    },
+  },
+
   nav: {
     home: "Home",
     donate: "Donate",
@@ -442,8 +464,8 @@ export const en = {
         id: "don",
         t: "Donate",
         d: "Your donation helps us fund brain imaging for patients in financial need, run awareness campaigns, organize training sessions, and build a stronger association. Every contribution counts.",
-        cta: "Donate Now (currently inactive — coming soon)",
-        disabled: true,
+        cta: "Donate",
+        drawer: "donate",
         strong: true,
       },
       {
@@ -451,6 +473,7 @@ export const en = {
         t: "Become a Member",
         d: "Become an official member of Stroke Action and be part of a growing community of passionate individuals committed to fighting stroke in Cameroon, Africa, and worldwide. Form: Full Name, Date of Birth, Email, Phone, Profession, City/Country, Motivation Statement*, copy of a valid identification document with a photograph (national ID card or passport)*.",
         cta: "Apply for Membership",
+        drawer: "membership",
       },
       {
         id: "boutique",
@@ -464,6 +487,7 @@ export const en = {
         t: "Volunteer",
         d: "Are you passionate about the fight against stroke? We welcome volunteers with all kinds of skills, irrespective of their background or profession.",
         cta: "Get Involved",
+        drawer: "membership",
       },
     ],
     note: "Online payment (Mobile Money + bank card) will be activated at a later stage.",

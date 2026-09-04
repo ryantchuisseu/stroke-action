@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { SideDrawer } from "@/components/side-drawer";
 import { getDictionary, isLocale, locales, type Locale } from "@/dictionaries";
 
 const poppins = Poppins({
@@ -48,6 +49,7 @@ export default async function LangLayout({
         <SiteHeader lang={lang} nav={d.nav} />
         <main className="flex-1">{children}</main>
         <SiteFooter lang={lang} footer={d.footer} />
+        <SideDrawer lang={lang} d={d.drawer} />
       </body>
     </html>
   );
