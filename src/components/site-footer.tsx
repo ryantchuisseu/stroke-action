@@ -63,6 +63,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
         <img src="/logo-white.png" alt="Stroke Action · Action AVC" className="mb-8 h-14 w-auto" />
         <p className="max-w-[24ch] text-[clamp(1.2rem,2.8vw,1.8rem)] font-bold tracking-[-0.02em] text-balance">
           {footer.motto}
+          <span className="ml-[0.15em] inline-block h-[0.22em] w-[0.22em] rounded-full bg-red align-middle" aria-hidden="true" />
           <span className="mt-[0.3rem] block text-[0.8em] font-medium text-[rgba(252,250,246,0.55)]">
             {footer.mottoSub}
           </span>
@@ -77,7 +78,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
               <ul className="grid gap-[0.55rem]">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={p(l.href)} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] hover:text-white">
+                    <Link href={p(l.href)} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
                       {l.label}
                     </Link>
                   </li>
@@ -91,12 +92,12 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
             </h3>
             <ul className="grid gap-[0.55rem]">
               <li>
-                <a href={`mailto:${CONTACT.email}`} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] hover:text-white">
+                <a href={`mailto:${CONTACT.email}`} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
                   {CONTACT.email}
                 </a>
               </li>
               <li>
-                <a href={CONTACT.phoneHref} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] hover:text-white">
+                <a href={CONTACT.phoneHref} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
                   {CONTACT.phone}
                 </a>
               </li>

@@ -87,7 +87,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
                 key={it.t}
                 className="grid grid-cols-[26px_1fr] items-baseline gap-x-7 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] sm:grid-cols-[26px_12rem_1fr] sm:hover:ps-3"
               >
-                <BrainMark className="mt-[2px] h-6 w-6 self-start text-ink" />
+                <BrainMark className="mt-[2px] h-6 w-6 self-start text-blue-ink" />
                 <h3 className="text-[clamp(1.1rem,2vw,1.45rem)] tracking-[-0.015em]">{it.t}</h3>
                 <p className="col-start-2 max-w-[52ch] text-[0.96rem] text-ink-soft sm:col-start-3">{it.d}</p>
               </div>

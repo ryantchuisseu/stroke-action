@@ -83,7 +83,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
                     setOpenGroup(open ? null : group.label);
                   }}
                   className={`inline-flex items-center gap-[0.4rem] whitespace-nowrap rounded-[2px] px-[0.65rem] py-[0.55rem] text-[0.9rem] font-medium transition-colors duration-150 ${
-                    open ? "bg-paper-deep text-ink" : "text-ink-soft hover:text-ink"
+                    open ? "bg-paper-deep text-blue-ink" : "text-ink-soft hover:text-blue-ink"
                   }`}
                 >
                   {group.label} <Chevron open={open} />
@@ -99,9 +99,9 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
                         href={p(it.href)}
                         role="menuitem"
                         onClick={() => setOpenGroup(null)}
-                        className="block rounded-[2px] px-[0.8rem] py-[0.7rem] transition-colors hover:bg-paper-deep"
+                        className="group block rounded-[2px] border-l-2 border-transparent px-[0.8rem] py-[0.7rem] transition-colors hover:border-blue hover:bg-paper-deep"
                       >
-                        <span className="block text-[0.92rem] font-semibold tracking-[-0.01em]">{it.label}</span>
+                        <span className="block text-[0.92rem] font-semibold tracking-[-0.01em] transition-colors group-hover:text-blue-ink">{it.label}</span>
                         <span className="mt-px block text-[0.8rem] text-grey">
                           {it.soon ? (
                             <span className="font-semibold uppercase tracking-[0.04em] text-blue-ink">

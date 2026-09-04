@@ -1,0 +1,3 @@
+V5-TOTAL-Prime-Prime
+Créé le 2026-09-04, dupliqué depuis V5-TOTAL-Prime.
+Objectif : pousser un peu plus loin les touches de couleur charte (bleu #2A9DF4 / rouge #F42A2A) que V5-TOTAL-Prime — header, footer et home en plus des pages déjà faites (nous-soutenir, gouvernance).
