@@ -114,7 +114,14 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
           <h2 className="mt-[0.9rem] max-w-[30ch] text-[clamp(1.6rem,3.4vw,2.4rem)]">{e.knowTitle}</h2>
           <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2">
             {e.know.map((k, i) => (
-              <p key={i} className="bg-paper p-5 text-[0.95rem] text-ink-soft">{k}</p>
+              <p
+                key={i}
+                className={`bg-paper p-5 text-[0.95rem] text-ink-soft ${
+                  i === e.know.length - 1 ? "sm:col-span-2" : ""
+                }`}
+              >
+                {k}
+              </p>
             ))}
           </div>
         </Container>

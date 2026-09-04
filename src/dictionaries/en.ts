@@ -521,6 +521,14 @@ export const en = {
     ],
     postSoon: "Article coming soon",
     note: "Full articles will be published at the site launch. Indicative content.",
+    newsletter: {
+      eyebrow: "Newsletter",
+      title: "Stay informed.",
+      text: "Get our news, campaigns, and events straight to your inbox. No spam.",
+      placeholder: "you@example.com",
+      cta: "Subscribe",
+      note: "Unsubscribe at any time.",
+    },
   },
 
   members: {

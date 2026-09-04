@@ -520,6 +520,14 @@ export const fr = {
     ],
     postSoon: "Article à venir",
     note: "Les articles complets seront publiés au lancement du site. Contenus indicatifs.",
+    newsletter: {
+      eyebrow: "Newsletter",
+      title: "Restez informé.",
+      text: "Recevez nos actualités, nos campagnes et nos événements dans votre boîte mail. Pas de spam.",
+      placeholder: "vous@exemple.com",
+      cta: "S'abonner",
+      note: "Désabonnement à tout moment.",
+    },
   },
 
   members: {

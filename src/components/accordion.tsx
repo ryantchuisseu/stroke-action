@@ -17,12 +17,14 @@ export function Accordion({ items }: { items: QA[] }) {
                 type="button"
                 aria-expanded={isOpen}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-6 py-[clamp(1rem,2.6vw,1.5rem)] text-left"
+                className="group flex w-full items-center justify-between gap-6 py-[clamp(1rem,2.6vw,1.5rem)] text-left transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3"
               >
-                <span className="text-[clamp(1rem,1.9vw,1.2rem)] font-semibold tracking-[-0.01em]">{it.q}</span>
+                <span className="origin-left text-[clamp(1rem,1.9vw,1.2rem)] font-semibold tracking-[-0.01em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100">
+                  {it.q}
+                </span>
                 <span
                   aria-hidden="true"
-                  className="relative mt-1 h-4 w-4 flex-none text-red-ink"
+                  className="relative mt-1 h-4 w-4 flex-none text-red-ink transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-125 motion-reduce:group-hover:scale-100"
                 >
                   <span className="absolute left-0 top-1/2 h-[2px] w-4 -translate-y-1/2 bg-current" />
                   <span

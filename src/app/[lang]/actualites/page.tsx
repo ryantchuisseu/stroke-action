@@ -39,6 +39,43 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
           <p className="mt-8 text-[0.85rem] text-grey">{n.note}</p>
         </Container>
       </section>
+
+      {/* Newsletter */}
+      <section className="bg-ink py-[clamp(3rem,8vw,6rem)] text-paper">
+        <Container>
+          <div className="grid gap-[clamp(1.5rem,5vw,4rem)] md:grid-cols-[1fr_1.1fr] md:items-end">
+            <div>
+              <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue">
+                {n.newsletter.eyebrow}
+              </span>
+              <h2 className="mt-3 text-[clamp(1.6rem,3.6vw,2.6rem)] tracking-[-0.025em]">{n.newsletter.title}</h2>
+              <p className="mt-3 max-w-[42ch] text-[rgba(252,250,246,0.7)]">{n.newsletter.text}</p>
+            </div>
+            <form className="w-full" aria-label={n.newsletter.title}>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <label className="sr-only" htmlFor="nl-email">
+                  {n.newsletter.placeholder}
+                </label>
+                <input
+                  id="nl-email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder={n.newsletter.placeholder}
+                  className="min-w-0 flex-1 border border-[rgba(252,250,246,0.28)] bg-transparent px-4 py-3 text-[0.95rem] text-paper placeholder:text-[rgba(252,250,246,0.4)] outline-none focus:border-paper"
+                />
+                <button
+                  type="submit"
+                  className="flex-none bg-paper px-6 py-3 text-[0.88rem] font-semibold text-ink transition-colors duration-150 hover:bg-red hover:text-white active:scale-[0.97]"
+                >
+                  {n.newsletter.cta}
+                </button>
+              </div>
+              <p className="mt-3 text-[0.78rem] text-[rgba(252,250,246,0.45)]">{n.newsletter.note}</p>
+            </form>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
