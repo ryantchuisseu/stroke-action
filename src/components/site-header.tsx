@@ -132,7 +132,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
         {/* CTA don */}
         <Link
           href={p("/nous-soutenir#don")}
-          className="hidden flex-none items-center gap-2 bg-ink px-[1.05rem] py-[0.62rem] text-[0.88rem] font-semibold text-paper transition-colors duration-150 hover:bg-red hover:text-white lg:inline-flex"
+          className="hidden flex-none items-center gap-2 bg-blue-ink px-[1.05rem] py-[0.62rem] text-[0.88rem] font-semibold text-paper transition-colors duration-150 hover:bg-red hover:text-white lg:inline-flex"
         >
           {nav.donate}
         </Link>
@@ -145,9 +145,9 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
           onClick={() => setMobileOpen((v) => !v)}
           className="ml-auto p-2 lg:hidden"
         >
-          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-ink transition-transform" style={{ transform: mobileOpen ? "translateY(6px) rotate(45deg)" : "" }} />
-          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-ink transition-opacity" style={{ opacity: mobileOpen ? 0 : 1 }} />
-          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-ink transition-transform" style={{ transform: mobileOpen ? "translateY(-6px) rotate(-45deg)" : "" }} />
+          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-blue-ink transition-transform" style={{ transform: mobileOpen ? "translateY(6px) rotate(45deg)" : "" }} />
+          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-blue-ink transition-opacity" style={{ opacity: mobileOpen ? 0 : 1 }} />
+          <span className="mx-0 my-1 block h-[2px] w-[22px] bg-blue-ink transition-transform" style={{ transform: mobileOpen ? "translateY(-6px) rotate(-45deg)" : "" }} />
         </button>
       </div>
 
@@ -188,7 +188,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
             <Link
               href={p("/nous-soutenir#don")}
               onClick={() => setMobileOpen(false)}
-              className="flex flex-1 justify-center bg-ink px-[1.1rem] py-[0.75rem] text-[0.9rem] font-semibold text-paper"
+              className="flex flex-1 justify-center bg-blue-ink px-[1.1rem] py-[0.75rem] text-[0.9rem] font-semibold text-paper"
             >
               {nav.donate}
             </Link>

@@ -57,7 +57,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
   ];
 
   return (
-    <footer className="mt-auto border-t border-[rgba(252,250,246,0.14)] bg-ink py-[clamp(3rem,7vw,5rem)] text-paper">
+    <footer className="mt-auto border-t border-[rgba(252,250,246,0.14)] bg-blue-ink py-[clamp(3rem,7vw,5rem)] text-paper">
       <Container>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/logo-white.png" alt="Stroke Action · Action AVC" className="mb-8 h-14 w-auto" />
@@ -78,7 +78,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
               <ul className="grid gap-[0.55rem]">
                 {col.links.map((l) => (
                   <li key={l.href}>
-                    <Link href={p(l.href)} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
+                    <Link href={p(l.href)} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-white">
                       {l.label}
                     </Link>
                   </li>
@@ -92,12 +92,12 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
             </h3>
             <ul className="grid gap-[0.55rem]">
               <li>
-                <a href={`mailto:${CONTACT.email}`} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
+                <a href={`mailto:${CONTACT.email}`} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-white">
                   {CONTACT.email}
                 </a>
               </li>
               <li>
-                <a href={CONTACT.phoneHref} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-blue">
+                <a href={CONTACT.phoneHref} className="text-[0.9rem] text-[rgba(252,250,246,0.82)] transition-colors hover:text-white">
                   {CONTACT.phone}
                 </a>
               </li>

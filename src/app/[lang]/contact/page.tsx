@@ -86,7 +86,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             </label>
             <button
               type="submit"
-              className="mt-2 justify-self-start bg-ink px-[1.1rem] py-[0.7rem] text-[0.88rem] font-semibold text-paper transition-colors hover:bg-red hover:text-white active:scale-[0.97]"
+              className="mt-2 justify-self-start bg-blue-ink px-[1.1rem] py-[0.7rem] text-[0.88rem] font-semibold text-paper transition-colors hover:bg-red hover:text-white active:scale-[0.97]"
             >
               {c.submit}
             </button>

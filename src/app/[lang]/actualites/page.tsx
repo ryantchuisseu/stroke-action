@@ -41,7 +41,7 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
       </section>
 
       {/* Newsletter */}
-      <section className="bg-ink py-[clamp(3rem,8vw,6rem)] text-paper">
+      <section className="bg-blue-ink py-[clamp(3rem,8vw,6rem)] text-paper">
         <Container>
           <div className="grid gap-[clamp(1.5rem,5vw,4rem)] md:grid-cols-[1fr_1.1fr] md:items-end">
             <div>

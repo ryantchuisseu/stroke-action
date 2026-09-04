@@ -58,7 +58,7 @@ export function SecondsBand({ d, donateHref }: { d: SecondsDict; donateHref: str
   }, []);
 
   return (
-    <section ref={secRef} className="overflow-hidden bg-ink py-[clamp(3.5rem,8vw,6.5rem)] text-paper">
+    <section ref={secRef} className="overflow-hidden bg-blue-ink py-[clamp(3.5rem,8vw,6.5rem)] text-paper">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-x-8 gap-y-6">
           <h2 className="max-w-[16ch] text-[clamp(1.9rem,4.6vw,3.4rem)] tracking-[-0.03em]">{d.title}</h2>

@@ -40,7 +40,7 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
                   <button
                     type="button"
                     data-drawer={way.drawer}
-                    className="mt-5 inline-flex w-fit items-center px-[1.1rem] py-[0.62rem] text-[0.88rem] font-semibold bg-ink text-paper transition-[background-color,color,transform] duration-150 hover:bg-red hover:text-white active:scale-[0.97]"
+                    className="mt-5 inline-flex w-fit items-center px-[1.1rem] py-[0.62rem] text-[0.88rem] font-semibold bg-blue-ink text-paper transition-[background-color,color,transform] duration-150 hover:bg-red hover:text-white active:scale-[0.97]"
                   >
                     {way.cta}
                   </button>

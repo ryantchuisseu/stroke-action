@@ -52,7 +52,7 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* Citation du fondateur */}
-      <section className="bg-ink py-[clamp(4rem,10vw,8rem)] text-paper">
+      <section className="bg-blue-ink py-[clamp(4rem,10vw,8rem)] text-paper">
         <Container className="grid gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[0.8fr_1.2fr] md:items-center">
           <figure className="m-0">
             <div className="aspect-[4/5] max-w-[380px] overflow-hidden">
@@ -122,7 +122,7 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
       </section>
 
       {/* Bande devise */}
-      <section className="bg-ink py-[clamp(3.5rem,9vw,6.5rem)] text-center text-paper">
+      <section className="bg-blue-ink py-[clamp(3.5rem,9vw,6.5rem)] text-center text-paper">
         <Container>
           <BrainMark className="mx-auto mb-[1.4rem] h-[30px] w-[30px] text-paper" />
           <p className="text-[clamp(1.8rem,4.6vw,3.3rem)] font-bold tracking-[-0.03em]">

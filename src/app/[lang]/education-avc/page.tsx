@@ -96,12 +96,12 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
       </section>
 
       {/* Chiffres clés */}
-      <section className="bg-ink py-[clamp(3rem,7vw,5.5rem)] text-paper">
+      <section className="bg-blue-ink py-[clamp(3rem,7vw,5.5rem)] text-paper">
         <Container>
           <Eyebrow>{e.statsEyebrow}</Eyebrow>
           <ul className="mt-6 grid gap-px border border-[rgba(252,250,246,0.14)] bg-[rgba(252,250,246,0.14)] sm:grid-cols-2">
             {e.stats.map((s) => (
-              <li key={s} className="bg-ink p-5 text-[0.98rem] text-[rgba(252,250,246,0.85)]">{s}</li>
+              <li key={s} className="bg-blue-ink p-5 text-[0.98rem] text-[rgba(252,250,246,0.85)]">{s}</li>
             ))}
           </ul>
         </Container>

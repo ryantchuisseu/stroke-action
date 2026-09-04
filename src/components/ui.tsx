@@ -31,10 +31,10 @@ export function Btn({ href, children, variant = "solid", onDark = false, classNa
     variant === "solid"
       ? onDark
         ? "bg-paper text-ink hover:bg-red hover:text-white"
-        : "bg-ink text-paper hover:bg-red hover:text-white"
+        : "bg-blue-ink text-paper hover:bg-red hover:text-white"
       : onDark
         ? "text-paper shadow-[inset_0_0_0_1.5px_rgba(252,250,246,0.55)] hover:shadow-[inset_0_0_0_1.5px_var(--color-red)]"
-        : "text-ink shadow-[inset_0_0_0_1.5px_var(--color-ink)] hover:shadow-[inset_0_0_0_1.5px_var(--color-red)]";
+        : "text-blue-ink shadow-[inset_0_0_0_1.5px_var(--color-blue-ink)] hover:shadow-[inset_0_0_0_1.5px_var(--color-red)]";
   return (
     <Link href={href} className={`${base} ${styles} ${className}`}>
       {children}
@@ -157,7 +157,7 @@ export function CtaBand({
   actions: ReactNode;
 }) {
   return (
-    <section className="bg-ink py-[clamp(3.75rem,9vw,6.5rem)] text-paper">
+    <section className="bg-blue-ink py-[clamp(3.75rem,9vw,6.5rem)] text-paper">
       <Container>
         <h2 className="max-w-[18ch] text-[clamp(1.8rem,4.2vw,3rem)] tracking-[-0.025em]">{title}</h2>
         <p className="mt-[1.1rem] max-w-[46ch] text-[rgba(252,250,246,0.7)]">{text}</p>

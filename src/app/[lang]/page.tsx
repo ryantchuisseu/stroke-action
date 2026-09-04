@@ -168,7 +168,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         title={
           <>
             {h.finalCta.titlePre}
-            <span className="text-blue">{h.finalCta.titleAccent}</span>.
+            <span className="underline decoration-red decoration-[3px] underline-offset-[6px]">
+              {h.finalCta.titleAccent}
+            </span>
+            .
           </>
         }
         text={h.finalCta.text}

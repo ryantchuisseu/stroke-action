@@ -136,7 +136,7 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
                   </div>
                   <div className="mt-3 h-11 border border-rule" />
                   <div className="mt-2 h-11 border border-rule" />
-                  <div className="mt-4 h-11 bg-ink" />
+                  <div className="mt-4 h-11 bg-blue-ink" />
                 </div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                   <span className="rounded-none bg-paper px-3 py-1 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-red-ink shadow-[0_0_0_1px_var(--color-rule)]">
@@ -148,7 +148,7 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
               <Link
                 href={p("/contact")}
                 onClick={close}
-                className="mt-6 inline-flex items-center bg-ink px-[1.1rem] py-[0.65rem] text-[0.88rem] font-semibold text-paper transition-colors hover:bg-red hover:text-white"
+                className="mt-6 inline-flex items-center bg-blue-ink px-[1.1rem] py-[0.65rem] text-[0.88rem] font-semibold text-paper transition-colors hover:bg-red hover:text-white"
               >
                 {d.donate.contact}
               </Link>
