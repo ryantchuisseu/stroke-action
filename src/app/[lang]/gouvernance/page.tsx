@@ -65,7 +65,9 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                     <img src="/dr-kamtchum.jpg" alt={m.name} className="h-full w-full object-cover" />
                   </div>
                 ) : (
-                  <div className="aspect-square bg-paper-deep" aria-hidden="true" />
+                  <div className="flex aspect-square items-center justify-center bg-paper-deep" aria-hidden="true">
+                    <BrainMark className="h-9 w-9 text-blue-ink/25" dot="color-mix(in srgb, var(--color-red) 35%, transparent)" />
+                  </div>
                 )}
                 <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{m.role}</p>
                 <h2 className="mt-1 text-[1.1rem] font-semibold tracking-[-0.01em]">{m.name}</h2>

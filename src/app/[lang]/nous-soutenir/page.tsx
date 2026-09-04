@@ -27,10 +27,10 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
               <div
                 key={way.id}
                 id={way.id}
-                className={`flex flex-col p-[clamp(1.5rem,3.5vw,2.5rem)] ${
+                className={`relative flex flex-col p-[clamp(1.5rem,3.5vw,2.5rem)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
                   "strong" in way && way.strong
-                    ? "bg-[color-mix(in_srgb,var(--color-red)_6%,var(--color-paper))]"
-                    : "bg-paper"
+                    ? "bg-[color-mix(in_srgb,var(--color-red)_6%,var(--color-paper))] before:bg-red"
+                    : "bg-paper before:bg-blue"
                 }`}
               >
                 <Eyebrow alert={"strong" in way && way.strong}>{`0${i + 1}`}</Eyebrow>
