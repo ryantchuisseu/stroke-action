@@ -506,8 +506,11 @@ export const en = {
     crumb: "Governance",
     eyebrow: "Governance",
     title: "A dedicated Executive Board.",
+    intro:
+      "Stroke Action is governed by a dedicated Executive Board committed to transparency, integrity, and impact. The Board is composed of five elected members, each contributing their expertise to advance the association's mission.",
     introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeating stroke.",
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
+    boardTitle: "Executive Board — 5 Positions",
     founderCaptionRole: "President & Founder",
     board: [
       { role: "President", name: "Dr. KAMTCHUM TATUENE Joseph", bio: "Neurologist and researcher, founder of Stroke Action." },
