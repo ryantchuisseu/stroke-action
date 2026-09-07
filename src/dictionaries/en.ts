@@ -525,7 +525,11 @@ export const en = {
       { role: "Secretary General", name: "To be provided", bio: "Profile to be published soon." },
       { role: "Treasurer", name: "To be provided", bio: "Profile to be published soon." },
       { role: "Auditor", name: "To be provided", bio: "Profile to be published soon." },
-      { role: "Advisor", name: "To be provided", bio: "Profile to be published soon." },
+      {
+        role: "Advisor",
+        name: "Dr. NOUBIAP Jean Jacques",
+        bio: "Specialist physician and scientist in global health and cardiovascular diseases; co-author of 300+ scientific publications.",
+      },
     ],
     note: "Member names and photos to be provided by the client before publication.",
   },

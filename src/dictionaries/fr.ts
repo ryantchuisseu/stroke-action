@@ -524,7 +524,11 @@ export const fr = {
       { role: "Secrétaire général", name: "À communiquer", bio: "Profil à publier prochainement." },
       { role: "Trésorier", name: "À communiquer", bio: "Profil à publier prochainement." },
       { role: "Contrôleur de gestion", name: "À communiquer", bio: "Profil à publier prochainement." },
-      { role: "Conseiller", name: "À communiquer", bio: "Profil à publier prochainement." },
+      {
+        role: "Conseiller",
+        name: "Dr. NOUBIAP Jean Jacques",
+        bio: "Médecin spécialiste et chercheur en santé mondiale et maladies cardiovasculaires ; co-auteur de plus de 300 publications scientifiques.",
+      },
     ],
     note: "Les noms et photographies des membres seront fournis par le client avant publication.",
   },
