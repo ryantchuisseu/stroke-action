@@ -252,11 +252,10 @@ export const fr = {
         t: "Éducation du public",
         s: "Informez-vous. Protégez votre cerveau.",
         b: [
-          "Matériel éducatif mensuel sur l'AVC diffusé sur YouTube et les réseaux sociaux",
+          "Matériel éducatif sur l'AVC",
           "Campagnes de sensibilisation et dépistage gratuit des facteurs de risque cardiovasculaire",
           "Célébration annuelle de la Journée mondiale de l'AVC (29 octobre)",
-          "Publication d'un ouvrage éducatif sur l'AVC",
-          "Campagne « Did You Know? / Le Saviez-Vous? » — Slogan : « Informez-vous, prenez soin de votre santé, protégez votre cerveau ! »",
+          "Publication d'un support éducatif",
         ],
       },
       {
@@ -274,9 +273,9 @@ export const fr = {
         t: "Formation professionnelle",
         s: "Renforcer les professionnels de santé.",
         b: [
-          "Séminaires sur le diagnostic et la prise en charge de l'AVC",
+          "Séminaires sur l'AVC et la médecine cardiovasculaire",
           "Ateliers sur la neuro-imagerie, l'exploration cardiaque et la neurosonologie",
-          "Forum annuel Stroke Action (ASAC) — rencontres et consultations pluridisciplinaires",
+          "Rencontres et consultations pluridisciplinaires",
         ],
       },
       {

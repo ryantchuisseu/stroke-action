@@ -253,11 +253,10 @@ export const en = {
         t: "Public Education",
         s: "Get Informed. Protect Your Brain.",
         b: [
-          "Monthly educational material on stroke published on YouTube and social media",
+          "Educational material on stroke",
           "Public awareness campaigns and free screening for cardiovascular risk factors",
-          "Annual celebration of World Stroke Day (October 29)",
-          "Publication of an educational book on stroke",
-          "Campaign: “Did You Know? / Le Saviez-Vous?” — Slogan: “Get informed, Take care of your health, Protect your brain!”",
+          "Annual celebration of the World Stroke Day (October 29)",
+          "Publication of an educational material",
         ],
       },
       {
@@ -275,9 +274,9 @@ export const en = {
         t: "Professional Training",
         s: "Empowering Healthcare Providers.",
         b: [
-          "Seminars on stroke diagnosis and management",
+          "Seminars on stroke and cardiovascular medicine",
           "Workshops on neuroimaging, cardiac exploration, and neurosonology",
-          "Annual Stroke Action Forum (ASAC) — multidisciplinary meetings and consultations",
+          "Multidisciplinary meetings and consultations",
         ],
       },
       {
