@@ -209,16 +209,6 @@ export const fr = {
     },
     mottoLine: "Ensemble pour vaincre l'AVC.",
     mottoSub: "Together to Defeat Stroke",
-    diff: {
-      eyebrow: "Ce qui nous distingue", // design
-      title: "La seule association camerounaise entièrement dédiée à l'AVC.",
-      items: [
-        "Ancrée au Cameroun, tournée vers l'Afrique, avec une vision mondiale.",
-        "Portée par des professionnels de santé et des chercheurs.",
-        "Ouverte à tous, sans condition de qualification ni de profession.",
-        "Fait le lien entre science, éducation et action communautaire.",
-      ],
-    },
     cta: {
       title: "Vous partagez ces convictions ?",
       text: "Devenez membre, donnez de votre temps ou soutenez la mission — chaque geste compte.",

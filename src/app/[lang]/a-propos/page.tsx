@@ -134,29 +134,6 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
         </Container>
       </section>
 
-      {/* Ce qui nous distingue */}
-      <section className="py-[clamp(3.5rem,8vw,6.5rem)]">
-        <Container>
-          <Eyebrow>{a.diff.eyebrow}</Eyebrow>
-          <h2 className="mt-[0.9rem] max-w-[40ch] text-[clamp(1.55rem,3.4vw,2.4rem)]">{a.diff.title}</h2>
-          <ul className="mt-[clamp(2rem,5vw,3rem)] border-t border-rule">
-            {a.diff.items.map((d, i) => (
-              <li
-                key={i}
-                className="group grid grid-cols-[3rem_1fr] items-baseline gap-4 border-b border-rule py-[clamp(1rem,2.6vw,1.5rem)] text-[clamp(1.02rem,1.9vw,1.25rem)] font-medium tracking-[-0.01em] transition-[padding] duration-200 ease-[var(--ease-out)] hover:ps-2"
-              >
-                <span className="text-[0.8rem] font-semibold tabular-nums text-grey transition-colors duration-200 group-hover:text-red-ink">
-                  0{i + 1}
-                </span>
-                <span className="origin-left transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
-                  {d}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
       <CtaBand
         title={a.cta.title}
         text={a.cta.text}

@@ -210,16 +210,6 @@ export const en = {
     },
     mottoLine: "Together to Defeat Stroke.",
     mottoSub: "Ensemble pour Vaincre l'AVC",
-    diff: {
-      eyebrow: "What Sets Us Apart", // design
-      title: "The only Cameroonian association entirely dedicated to stroke.",
-      items: [
-        "Rooted in Cameroon, focused on Africa, with a global vision.",
-        "Led by healthcare professionals and researchers.",
-        "Open to all, with no condition of qualification or profession.",
-        "Bridging science, education, and community action.",
-      ],
-    },
     cta: {
       title: "Do you share these convictions?",
       text: "Become a member, give your time, or support the mission — every gesture counts.",
