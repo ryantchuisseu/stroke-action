@@ -36,6 +36,7 @@ function YoutubeIcon({ className = "" }: { className?: string }) {
 type FooterDict = {
   motto: string;
   mottoSub: string;
+  colHome: string;
   colAssoc: string;
   colUnderstand: string;
   colNews: string;
@@ -51,6 +52,10 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
   const p = (href: string) => `/${lang}${href}`;
 
   const cols: { title: string; links: { label: string; href: string }[] }[] = [
+    {
+      title: footer.colHome,
+      links: [{ label: footer.colHome, href: "/" }],
+    },
     {
       title: footer.colAssoc,
       links: [
@@ -141,6 +146,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
           <div className="flex flex-wrap gap-x-5 gap-y-[0.4rem] text-[0.78rem] text-[rgba(252,250,246,0.5)]">
             <span>{footer.rights}</span>
             <span>{footer.city}</span>
+            <span>{CONTACT.email}</span>
             <span>{footer.credit}</span>
           </div>
           <div className="flex items-center gap-4">

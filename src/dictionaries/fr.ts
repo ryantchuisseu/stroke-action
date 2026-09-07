@@ -87,6 +87,7 @@ export const fr = {
   footer: {
     motto: "Ensemble pour vaincre l'AVC",
     mottoSub: "Together to Defeat Stroke",
+    colHome: "Accueil",
     colAssoc: "L'association",
     colUnderstand: "Comprendre l'AVC",
     colNews: "Actualités",

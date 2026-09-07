@@ -87,6 +87,7 @@ export const en = {
   footer: {
     motto: "Together to Defeat Stroke",
     mottoSub: "Ensemble pour Vaincre l'AVC",
+    colHome: "Home",
     colAssoc: "The Association",
     colUnderstand: "Understand Stroke",
     colNews: "News",
