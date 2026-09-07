@@ -138,7 +138,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <Container>
           <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-16 gap-y-10">
-            <Stat n={<><CountUp to={15} /><U>{h.stats.items[0].unit}</U></>} k={h.stats.items[0].k} />
+            <Stat n={<><CountUp to={12} /><U>{h.stats.items[0].unit}</U></>} k={h.stats.items[0].k} />
             <Stat n={<>1<U>{lang === "fr" ? " sur " : " in "}</U><CountUp to={4} /></>} k={h.stats.items[1].k} />
             <Stat n={<><CountUp to={80} /><U>{h.stats.items[2].unit}</U></>} k={h.stats.items[2].k} accent />
             <Stat n={<><CountUp to={2} /><U>{h.stats.items[3].unit}</U></>} k={h.stats.items[3].k} />

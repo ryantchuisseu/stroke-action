@@ -2,6 +2,37 @@ import Link from "next/link";
 import { Container } from "./ui";
 import { CONTACT } from "@/lib/nav";
 
+function FacebookIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        d="M15.5 8.5h-2a1 1 0 0 0-1 1V12h3l-.4 3h-2.6v7h-3v-7H7.5v-3H9.5V9a3.5 3.5 0 0 1 3.5-3.5h2.5v3Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+function LinkedinIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="2.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="7.6" cy="8" r="1.15" fill="currentColor" />
+      <path d="M7.6 11v6.2M11.6 17.2V13c0-1.4.9-2.3 2.1-2.3 1.1 0 1.9.8 1.9 2.3v4.2" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+function YoutubeIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="2.5" y="6" width="19" height="12" rx="3.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M10.5 9.5v5l4.3-2.5-4.3-2.5Z" fill="currentColor" />
+    </svg>
+  );
+}
+
 type FooterDict = {
   motto: string;
   mottoSub: string;
@@ -106,11 +137,20 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
           </div>
         </div>
 
-        <div className="mt-[clamp(2.25rem,5vw,3.5rem)] flex flex-wrap gap-x-5 gap-y-[0.4rem] border-t border-[rgba(252,250,246,0.14)] pt-[1.4rem] text-[0.78rem] text-[rgba(252,250,246,0.5)]">
-          <span>{footer.rights}</span>
-          <span>{footer.city}</span>
-          <span>{footer.credit}</span>
-          <span>{footer.social}</span>
+        <div className="mt-[clamp(2.25rem,5vw,3.5rem)] flex flex-wrap items-center justify-between gap-x-5 gap-y-3 border-t border-[rgba(252,250,246,0.14)] pt-[1.4rem]">
+          <div className="flex flex-wrap gap-x-5 gap-y-[0.4rem] text-[0.78rem] text-[rgba(252,250,246,0.5)]">
+            <span>{footer.rights}</span>
+            <span>{footer.city}</span>
+            <span>{footer.credit}</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-[0.72rem] text-[rgba(252,250,246,0.4)]">{footer.social}</span>
+            <span className="flex items-center gap-3 text-[rgba(252,250,246,0.45)]" aria-hidden="true">
+              <FacebookIcon className="h-[18px] w-[18px]" />
+              <LinkedinIcon className="h-[18px] w-[18px]" />
+              <YoutubeIcon className="h-[18px] w-[18px]" />
+            </span>
+          </div>
         </div>
       </Container>
     </footer>
