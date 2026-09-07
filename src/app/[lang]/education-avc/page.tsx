@@ -134,7 +134,7 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
         text={e.cta.text}
         actions={
           <>
-            <Btn href={p("/nous-soutenir#benevolat")} onDark>{e.cta.volunteer}</Btn>
+            <Btn href={p("/contact")} onDark>{e.cta.volunteer}</Btn>
             <Btn href={p("/actualites")} variant="ghost" onDark>{e.cta.campaigns}</Btn>
           </>
         }

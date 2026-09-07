@@ -21,7 +21,7 @@ type DrawerDict = {
 };
 
 /** Tiroir latéral (glisse depuis la gauche, courbe iOS). Ouvert par tout
- *  lien/bouton se terminant par #don, #devenir-membre, #benevolat, ou portant
+ *  lien/bouton se terminant par #don, #devenir-membre, ou portant
  *  data-drawer. « Faire un don » = maquette floutée (bientôt). « Adhésion » =
  *  démarche + téléchargement du formulaire. */
 export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
@@ -45,7 +45,7 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
       const href = el.getAttribute("href") ?? "";
       let m: Mode = null;
       if (dd === "donate" || href.endsWith("#don")) m = "donate";
-      else if (dd === "membership" || href.endsWith("#devenir-membre") || href.endsWith("#benevolat")) m = "membership";
+      else if (dd === "membership" || href.endsWith("#devenir-membre")) m = "membership";
       if (!m) return;
       e.preventDefault();
       e.stopPropagation();

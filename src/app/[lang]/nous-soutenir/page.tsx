@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container, PageHeader, Eyebrow } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 
@@ -11,6 +12,7 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
   const { lang } = await params;
   const t = getDictionary(lang as Locale);
   const s = t.support;
+  const p = (href: string) => `/${lang}${href}`;
 
   return (
     <>
@@ -36,7 +38,14 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
                 <Eyebrow alert={"strong" in way && way.strong}>{`0${i + 1}`}</Eyebrow>
                 <h2 className="mt-2 text-[clamp(1.3rem,2.6vw,1.8rem)] tracking-[-0.02em]">{way.t}</h2>
                 <p className="mt-3 flex-1 text-[0.95rem] text-ink-soft">{way.d}</p>
-                {"drawer" in way && way.drawer ? (
+                {"href" in way && way.href ? (
+                  <Link
+                    href={p(way.href)}
+                    className="mt-5 inline-flex w-fit items-center px-[1.1rem] py-[0.62rem] text-[0.88rem] font-semibold bg-blue-ink text-paper transition-[background-color,color,transform] duration-150 hover:bg-red hover:text-white active:scale-[0.97]"
+                  >
+                    {way.cta}
+                  </Link>
+                ) : "drawer" in way && way.drawer ? (
                   <button
                     type="button"
                     data-drawer={way.drawer}
