@@ -322,7 +322,7 @@ export const fr = {
       { l: "F", t: "Face — le visage", d: "Affaissement ou engourdissement soudain d'un côté du visage." },
       { l: "A", t: "Arms — les bras", d: "Faiblesse ou engourdissement d'un bras — demandez de lever les deux bras." },
       { l: "S", t: "Speech — la parole", d: "Parole troublée, confusion, incapacité à parler ou à comprendre." },
-      { l: "T", t: "Time — le temps", d: "Appelez immédiatement les secours. Notez l'heure d'apparition des signes.", em: true },
+      { l: "T", t: "Time — le temps", d: "Appelez immédiatement les secours ! Au Cameroun : SAMU 119 (mobile) | Pompiers 118 | Police 117", em: true },
     ],
     modifTitle: "Facteurs de risque modifiables",
     modifSub: "Sur lesquels vous pouvez agir.",

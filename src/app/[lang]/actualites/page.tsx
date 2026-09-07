@@ -45,7 +45,7 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
         <Container>
           <div className="grid gap-[clamp(1.5rem,5vw,4rem)] md:grid-cols-[1fr_1.1fr] md:items-end">
             <div>
-              <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue">
+              <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-[rgba(252,250,246,0.65)]">
                 {n.newsletter.eyebrow}
               </span>
               <h2 className="mt-3 text-[clamp(1.6rem,3.6vw,2.6rem)] tracking-[-0.025em]">{n.newsletter.title}</h2>

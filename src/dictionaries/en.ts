@@ -323,7 +323,7 @@ export const en = {
       { l: "F", t: "Face", d: "Sudden facial drooping or numbness on one side." },
       { l: "A", t: "Arms", d: "Weakness or numbness in one arm — ask the person to raise both arms." },
       { l: "S", t: "Speech", d: "Slurred speech, confusion, or inability to speak or understand." },
-      { l: "T", t: "Time", d: "Call emergency services immediately. Note the time the signs appeared.", em: true },
+      { l: "T", t: "Time", d: "Call emergency services immediately! In Cameroon: SAMU 119 (mobile) | Fire 118 | Police 117", em: true },
     ],
     modifTitle: "Modifiable Risk Factors",
     modifSub: "You can act on these.",
