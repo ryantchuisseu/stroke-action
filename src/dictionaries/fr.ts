@@ -273,7 +273,7 @@ export const fr = {
         t: "Soutien aux patients",
         s: "Aucun patient laissé de côté.",
         b: [
-          "Fonds de solidarité AVC (FSA) : prise en charge de l'imagerie cérébrale pour les patients en difficulté financière, avec l'objectif à long terme « Un AVC, un scanner »",
+          "Fonds de solidarité AVC, avec l'objectif à long terme « Un AVC, un scanner »",
           "Plaidoyer pour les droits des patients victimes d'AVC et l'accès aux soins",
           "Engagement auprès de la communauté, en ligne et sur le terrain",
         ],
@@ -448,7 +448,7 @@ export const fr = {
       {
         id: "don",
         t: "Faire un don",
-        d: "Votre don finance l'imagerie cérébrale des patients en difficulté financière, les campagnes de sensibilisation, l'organisation des formations et le renforcement de l'association. Chaque contribution compte.",
+        d: "Votre don finance l'imagerie cérébrale des patients dans le besoin, les campagnes de sensibilisation, l'organisation des formations et le renforcement de l'association. Chaque contribution compte.",
         cta: "Faire un don",
         drawer: "donate",
         strong: true,

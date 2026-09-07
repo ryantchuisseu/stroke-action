@@ -274,7 +274,7 @@ export const en = {
         t: "Patient Support",
         s: "No Patient Left Behind.",
         b: [
-          "Stroke Solidarity Fund (SSF): covering brain imaging costs for patients in financial need, aiming to achieve the “One Stroke, One Scanner” goal in the long term",
+          "Stroke Solidarity Fund aiming to achieve the “One Stroke, One Scanner” goal in the long term",
           "Advocacy for stroke patients’ rights and access to care",
           "Engaging with the community online and in real life",
         ],
@@ -449,7 +449,7 @@ export const en = {
       {
         id: "don",
         t: "Donate",
-        d: "Your donation helps us fund brain imaging for patients in financial need, run awareness campaigns, organize training sessions, and build a stronger association. Every contribution counts.",
+        d: "Your donation helps us fund brain imaging for patients in need, run awareness campaigns, organize training sessions, and build a stronger association. Every contribution counts.",
         cta: "Donate",
         drawer: "donate",
         strong: true,
