@@ -78,6 +78,11 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                 <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{m.role}</p>
                 <h2 className="mt-1 text-[1.1rem] font-semibold tracking-[-0.01em]">{m.name}</h2>
                 <p className="mt-2 text-[0.9rem] text-ink-soft">{m.bio}</p>
+                {"email" in m && m.email && (
+                  <a href={`mailto:${m.email}`} className="mt-2 inline-block text-[0.85rem] text-blue-ink hover:text-red-ink">
+                    {m.email}
+                  </a>
+                )}
               </article>
             ))}
           </div>

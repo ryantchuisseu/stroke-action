@@ -409,7 +409,7 @@ export const fr = {
       },
       {
         q: "Comment les professionnels de santé peuvent-ils collaborer avec Stroke Action ?",
-        a: "Nous accueillons les collaborations avec médecins, infirmiers, chercheurs et autres professionnels. Contactez-nous à info@strokeaction.org pour discuter des opportunités de partenariat.",
+        a: "Nous accueillons les collaborations avec médecins, infirmiers, chercheurs et autres professionnels. Contactez-nous à contact@strokeaction.org pour discuter des opportunités de partenariat.",
       },
       {
         q: "Où trouver les documents officiels de Stroke Action ?",
@@ -513,7 +513,12 @@ export const fr = {
     boardTitle: "Bureau exécutif — 5 postes",
     founderCaptionRole: "Président & fondateur",
     board: [
-      { role: "Président", name: "Dr KAMTCHUM TATUENE Joseph", bio: "Neurologue et chercheur, fondateur de Stroke Action." },
+      {
+        role: "Président",
+        name: "Dr KAMTCHUM TATUENE Joseph",
+        bio: "Neurologue et chercheur, fondateur de Stroke Action.",
+        email: "jkamtchum@strokeaction.org",
+      },
       { role: "Secrétaire général", name: "À communiquer", bio: "Profil à publier prochainement." },
       { role: "Trésorier", name: "À communiquer", bio: "Profil à publier prochainement." },
       { role: "Contrôleur de gestion", name: "À communiquer", bio: "Profil à publier prochainement." },
@@ -521,6 +526,7 @@ export const fr = {
         role: "Conseiller",
         name: "Dr. NOUBIAP Jean Jacques",
         bio: "Médecin spécialiste et chercheur en santé mondiale et maladies cardiovasculaires ; co-auteur de plus de 300 publications scientifiques.",
+        email: "jjnoubiap@strokeaction.org",
       },
     ],
     note: "Les noms et photographies des membres seront fournis par le client avant publication.",
