@@ -24,7 +24,7 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang } = await params;
-  const d = getDictionary(isLocale(lang) ? lang : "fr");
+  const d = getDictionary(isLocale(lang) ? lang : "en");
   return {
     metadataBase: new URL("https://strokeaction.org"),
     title: { default: d.meta.homeTitle, template: d.meta.titleTemplate },

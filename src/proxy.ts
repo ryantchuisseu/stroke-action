@@ -2,9 +2,11 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const locales = ["fr", "en"] as const;
-const defaultLocale = "fr";
+const defaultLocale = "en";
 
-/** Préfixe chaque URL par la locale (/fr/... ou /en/...). Défaut : FR. */
+/** Préfixe chaque URL par la locale (/en/... ou /fr/...).
+ *  Défaut : EN — demande du Dr Kamtchum, le site s'ouvre en anglais.
+ *  Le visiteur bascule ensuite en FR via le sélecteur de l'en-tête. */
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -13,10 +15,7 @@ export function proxy(request: NextRequest) {
   );
   if (hasLocale) return;
 
-  const accept = (request.headers.get("accept-language") ?? "").toLowerCase();
-  const locale = accept.startsWith("en") ? "en" : defaultLocale;
-
-  request.nextUrl.pathname = `/${locale}${pathname === "/" ? "" : pathname}`;
+  request.nextUrl.pathname = `/${defaultLocale}${pathname === "/" ? "" : pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 
