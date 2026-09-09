@@ -224,7 +224,7 @@ export const en = {
     eyebrow: "What We Do",
     title: "Turning commitment into action.",
     intro:
-      "Our work is structured around four core areas of action, supported by a fifth objective focused on organizational development — guided by our bylaws and our 2026–2030 Strategic Plan.",
+      "At Stroke Action, we turn commitment into concrete action. Our work is structured around four core areas of action, supported by a fifth objective focused on organizational development, guided by our bylaws and our 2026–2030 Strategic Plan.",
     carousel: {
       region: "Field images",
       prev: "Previous image",

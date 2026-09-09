@@ -223,7 +223,7 @@ export const fr = {
     eyebrow: "Nos actions",
     title: "Transformer l'engagement en action.",
     intro:
-      "Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif de développement de l'organisation — guidés par nos statuts et notre Plan stratégique 2026-2030.",
+      "À Stroke Action, nous transformons l'engagement en action concrète. Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif de développement de l'organisation, guidés par nos statuts et notre Plan stratégique 2026-2030.",
     carousel: {
       region: "Images de terrain",
       prev: "Image précédente",
