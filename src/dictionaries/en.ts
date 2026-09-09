@@ -188,7 +188,7 @@ export const en = {
     story: {
       lead: "Stroke Action — known in French as Action AVC — was founded in Cameroon under Law No. 90-53 of December 19, 1990, on freedom of association.",
       p2: "Born from the conviction that stroke is both preventable and treatable, we exist to bridge the gap between medical knowledge and the communities most affected by this devastating condition.",
-      p3: "We are a secular, apolitical, non-profit organization serving the public interest — bringing together patients, families, healthcare professionals, and researchers.",
+      p3: "We are a secular, apolitical, non-profit organization serving the public interest.",
       factYear: "2026",
       fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, on freedom of association.",
     },
