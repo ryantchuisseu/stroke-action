@@ -318,7 +318,7 @@ export const fr = {
       emergencyLabel: "Urgences — Cameroun",
       emergencyNote: "Au moindre signe d'AVC, appelez immédiatement — n'attendez pas.",
     },
-    fastTitle: "La méthode FAST",
+    fastTitle: "Reconnaître un AVC — La méthode FAST",
     fast: [
       { l: "F", t: "Face — le visage", d: "Affaissement ou engourdissement soudain d'un côté du visage." },
       { l: "A", t: "Arms — les bras", d: "Faiblesse ou engourdissement d'un bras — demandez de lever les deux bras." },

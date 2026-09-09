@@ -319,7 +319,7 @@ export const en = {
       emergencyLabel: "Emergency — Cameroon",
       emergencyNote: "At any sign of stroke, call immediately — do not wait.",
     },
-    fastTitle: "The FAST Method",
+    fastTitle: "Recognize a Stroke — The FAST Method",
     fast: [
       { l: "F", t: "Face", d: "Sudden facial drooping or numbness on one side." },
       { l: "A", t: "Arms", d: "Weakness or numbness in one arm — ask the person to raise both arms." },
