@@ -59,13 +59,13 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
         <Container>
           <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.boardTitle}</h2>
           <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
-            {g.board.map((m, i) => (
+            {g.board.map((m) => (
               <article key={m.role} className="bg-paper p-6">
-                {i === 0 || i === 4 ? (
+                {"photo" in m && m.photo ? (
                   <div className="aspect-square overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={i === 0 ? "/dr-kamtchum.jpg" : "/noubiap.jpg"}
+                      src={m.photo}
                       alt={m.name}
                       className="h-full w-full object-cover"
                     />
