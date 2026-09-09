@@ -60,6 +60,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
   }, [mobileOpen]);
 
   return (
+    <>
     <header className="sticky top-0 z-[100] border-b border-rule bg-[color-mix(in_srgb,var(--color-paper)_97%,transparent)] backdrop-blur-[10px]">
       <div className="mx-auto flex h-[66px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:gap-6 lg:px-16">
         {/* Lockup */}
@@ -150,10 +151,13 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
           <span className="mx-0 my-1 block h-[2px] w-[22px] bg-blue-ink transition-transform" style={{ transform: mobileOpen ? "translateY(-6px) rotate(-45deg)" : "" }} />
         </button>
       </div>
+      </header>
 
-      {/* Menu mobile */}
+      {/* Menu mobile — rendu HORS du <header> : le backdrop-filter de
+          l'en-tête en ferait le bloc conteneur du position:fixed, ce qui
+          écrasait le panneau en une bande de ~1px. */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[66px] z-[95] overflow-y-auto bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[66px] z-[95] overflow-y-auto overscroll-contain bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
           {nav.groups.map((group) => {
             const open = mobileGroup === group.label;
             return (
@@ -202,6 +206,6 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
           </div>
         </div>
       )}
-    </header>
+    </>
   );
 }

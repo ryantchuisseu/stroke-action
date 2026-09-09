@@ -149,7 +149,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
       {/* ILS EN PARLENT */}
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
-        <div className="relative left-1/2 aspect-[21/9] w-screen -translate-x-1/2 overflow-hidden max-sm:aspect-[4/3]">
+        <div className="relative aspect-[21/9] w-full overflow-hidden max-sm:aspect-[4/3]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/photos/homme-espoir.jpg" alt="" className="h-full w-full object-cover" />
         </div>
