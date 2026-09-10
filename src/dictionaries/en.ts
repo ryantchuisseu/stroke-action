@@ -375,6 +375,8 @@ export const en = {
     crumb: "FAQ",
     eyebrow: "FAQ",
     title: "Frequently Asked Questions.",
+    metaDesc:
+      "Answers to common questions about Stroke Action, stroke prevention and warning signs, our programs, membership, and how to get involved.",
     items: [
       {
         q: "What is Stroke Action?",
@@ -500,6 +502,8 @@ export const en = {
     crumb: "Gallery",
     eyebrow: "Gallery",
     title: "Our activities in pictures.",
+    metaDesc:
+      "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
     placeholder: "We are just getting started — check back soon for photos from our upcoming events and activities!",
   },
 

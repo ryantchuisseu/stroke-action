@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { Accordion } from "@/components/accordion";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").faq.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/faq", title: d.faq.crumb, description: d.faq.metaDesc });
 }
 
 export default async function FaqPage({ params }: { params: Promise<{ lang: string }> }) {

@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import { Container, Eyebrow, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const d = getDictionary(isLocale(lang) ? lang : "fr");
-  return { title: d.about.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/a-propos", title: d.about.crumb, description: d.about.story.lead });
 }
 
 export default async function AProposPage({ params }: { params: Promise<{ lang: string }> }) {

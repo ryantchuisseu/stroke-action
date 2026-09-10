@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").gallery.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/galerie", title: d.gallery.crumb, description: d.gallery.metaDesc });
 }
 
 export default async function GaleriePage({ params }: { params: Promise<{ lang: string }> }) {

@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { CONTACT } from "@/lib/nav";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").contact.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/contact", title: d.contact.crumb, description: d.contact.intro });
 }
 
 const field = "w-full border border-rule bg-paper px-3 py-2.5 text-[0.95rem] outline-none focus:border-blue";

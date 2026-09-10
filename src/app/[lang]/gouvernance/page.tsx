@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").governance.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/gouvernance", title: d.governance.crumb, description: d.governance.intro });
 }
 
 export default async function GouvernancePage({ params }: { params: Promise<{ lang: string }> }) {

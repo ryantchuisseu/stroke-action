@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").education.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/education-avc", title: d.education.crumb, description: d.education.whatIs.p });
 }
 
 export default async function EducationPage({ params }: { params: Promise<{ lang: string }> }) {

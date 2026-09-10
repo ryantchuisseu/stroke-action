@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import { Container, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { Carousel } from "@/components/carousel";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").whatWeDo.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/nos-actions", title: d.whatWeDo.crumb, description: d.whatWeDo.intro });
 }
 
 export default async function NosActionsPage({ params }: { params: Promise<{ lang: string }> }) {

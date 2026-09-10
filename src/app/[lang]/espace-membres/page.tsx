@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, Btn } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
+import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  return { title: getDictionary(isLocale(lang) ? lang : "fr").members.crumb };
+  const d = getDictionary(isLocale(lang) ? lang : "en");
+  return pageMeta({ lang, route: "/espace-membres", title: d.members.crumb, description: d.members.intro });
 }
 
 export default async function EspaceMembresPage({ params }: { params: Promise<{ lang: string }> }) {

@@ -374,6 +374,8 @@ export const fr = {
     crumb: "FAQ",
     eyebrow: "FAQ",
     title: "Questions fréquentes.",
+    metaDesc:
+      "Réponses aux questions fréquentes sur Stroke Action, la prévention et les signes de l'AVC, nos programmes, l'adhésion et comment s'engager.",
     items: [
       {
         q: "Qu'est-ce que Stroke Action ?",
@@ -499,6 +501,8 @@ export const fr = {
     crumb: "Galerie",
     eyebrow: "Galerie",
     title: "Nos activités en images.",
+    metaDesc:
+      "Photos des activités de Stroke Action sur le terrain au Cameroun — campagnes de sensibilisation, formations et événements communautaires.",
     placeholder: "Nous débutons — revenez bientôt pour les photos de nos prochains événements et activités !",
   },
 
