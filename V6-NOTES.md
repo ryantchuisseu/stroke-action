@@ -1,7 +1,132 @@
-# Branche V6 — chantier
+# V6 — cahier de style (chantier `v6-risque`)
 
-Branche de travail pour les changements plus profonds (refonte) demandés par Ryan.
-`main` reste la version stable en production tant que cette branche n'est pas fusionnée.
+Journal des motifs visuels testés sur cette branche. Objectif : que chaque
+touche « personnalité » validée par Ryan / Dr Kamtchum soit **documentée
+une fois** ici, pour pouvoir être **répétée à l'identique** sur d'autres
+pages sans repartir de zéro — plutôt que de rester enfouie dans un commit.
 
-Ce fichier sert aussi de premier commit pour permettre l'ouverture d'une Pull Request
-(GitHub refuse une PR entre deux branches strictement identiques).
+`main` (production) reste inchangée tant qu'un motif n'est pas fusionné.
+Preview de cette branche : voir le lien donné par Ryan / Vercel → Deployments.
+
+Statut : 🟡 à valider · 🟢 validé, réutilisable · 🔴 rejeté (gardé en note pour mémoire)
+
+---
+
+## 🟡 1. État actif du menu
+
+**Où** : `src/components/site-header.tsx` (desktop + mobile)
+**Quoi** : le groupe de nav correspondant à la page en cours passe en texte
+rouge + soulignement (`underline decoration-red decoration-2 underline-offset-4`).
+**Comment réutiliser** : rien à faire, c'est déjà site-wide (pas propre à une page).
+**Portée** : appliqué à tout le site dès ce commit.
+
+---
+
+## 🟡 2. Slots personnalisables sur `PageHeader`
+
+**Où** : `src/components/ui.tsx`, composant `PageHeader`
+**Quoi** : `PageHeader` accepte maintenant, en plus de `title`/`intro` (texte
+simple, comportement inchangé pour toutes les pages qui ne les utilisent pas) :
+- `titleNode?: ReactNode` — remplace `title` si fourni (pour un titre avec
+  accent, mot surligné, fioriture…)
+- `introNode?: ReactNode` — idem pour `intro`
+- `decor?: ReactNode` — élément libre positionné dans l'en-tête (le
+  `Container` de `PageHeader` est `relative`), pour un motif décoratif
+  (ex. nuage de points).
+
+**Comment réutiliser** : sur une nouvelle page, passer `titleNode`/`introNode`/
+`decor` à `<PageHeader>` en gardant `title`/`intro` en version texte simple
+(fallback + accessibilité). Voir `actualites/page.tsx` comme exemple.
+
+---
+
+## 🟡 3. Fioriture bleue (3 tirets)
+
+**Où** : `actualites/page.tsx`, composant `Flourish`
+**Quoi** : 3 traits diagonaux bleus, opacité dégressive, à côté d'un mot du titre.
+**Comment réutiliser** : copier le composant `Flourish` dans `ui.tsx` (ou
+`brain-mark.tsx`) s'il est validé sur plusieurs pages, pour ne pas le dupliquer.
+
+---
+
+## 🟡 4. Mot surligné (fond translucide, coins arrondis)
+
+**Où** : `actualites/page.tsx`, dans `titleNode` — span avec
+`bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] rounded-[10px] px-2`.
+**Quoi** : met en avant un mot/groupe de mots dans un titre (ici « Stroke Action »).
+**Comment réutiliser** : même recette, changer la couleur (`--color-blue` ou
+`--color-red`) et le mot ciblé selon la page.
+**Note** : le mot souligné en rouge dans l'intro (« monthly ») réutilise une
+recette déjà existante ailleurs sur le site (accent du CTA de l'accueil,
+`underline decoration-red decoration-[3px]`) — rien de nouveau à documenter.
+
+---
+
+## 🟡 5. Nuage de points rouges
+
+**Où** : `actualites/page.tsx`, composant `DotCluster`
+**Quoi** : 7 points rouges dispersés en haut à droite de l'en-tête, écho du
+point rouge du logo / du motif "neurones".
+**Comment réutiliser** : copier le composant, ajuster les coordonnées SVG
+selon l'espace disponible sur la nouvelle page.
+
+---
+
+## 🟡 6. Icônes de catégorie (au lieu d'émojis)
+
+**Où** : `actualites/page.tsx`, `CalendarIcon` / `LightbulbIcon` / `PeopleIcon`
++ table `CAT_STYLES`
+**Quoi** : Ryan voulait des émojis devant les titres d'articles (effet
+« vivant »). Remplacés par des icônes SVG maison dans le même esprit que
+`PdfIcon` (documents-cles) et `BrainMark` — même effet, rendu identique sur
+tous les appareils (contrairement aux émojis système).
+**⚠️ En attente de confirmation de Ryan** : garder les icônes SVG, ou revenir
+aux vrais émojis ?
+**Comment réutiliser** : ajouter une entrée dans une table `CAT_STYLES`
+(icône + couleur de fond + couleur de texte) par nouveau type de contenu.
+
+---
+
+## 🔴 7. Palette de couleurs par catégorie (vert / violet / rose)
+
+**Où** : `actualites/page.tsx`, `CAT_STYLES` (`bg`, `iconBg`, `text`)
+**Quoi** : 3 teintes douces (vert `#EAF2EA`/`#3F6B48`, violet `#EDEAF6`/`#5B4E96`,
+rose `#F8EAEE`/`#A84360`) pour distinguer Campagne / Éducation / Association.
+**⚠️ IMPORTANT** : la charte graphique officielle (`Charte_graphique.pdf`,
+validée par le Dr Kamtchum) ne définit que **bleu `#2A9DF4` + rouge `#F42A2A`**.
+Ces 3 teintes sont une extension **non validée**, posée uniquement sur cette
+page pour l'instant.
+**Avant d'étendre à d'autres pages** : faire valider explicitement par le
+Dr Kamtchum. Si refusé, remplacer par des teintes de bleu/rouge/neutre
+(ex. bleu clair, rouge clair, gris chaud) pour rester dans la charte.
+
+---
+
+## 🟡 8. Gouttes qui tombent le long du bord droit
+
+**Où** :
+- `src/app/globals.css` → `@keyframes sa-drip` + classe `.sa-drip`
+  (respecte `prefers-reduced-motion` : animation coupée, goutte figée visible)
+- `actualites/page.tsx` → composants `BloodDrop` (forme SVG) et `BloodDrips`
+  (rail de 9 gouttes, tailles/délais/durées variés pour un effet naturel)
+
+**Quoi** : dessiné par Ryan sur Figma. Rail vertical fixé au bord droit de la
+page (`absolute inset-y-0 right-0`, sur toute la hauteur de la page, pas
+seulement l'en-tête), 9 gouttes rouges en forme de larme qui tombent et
+s'effacent en boucle, décalées pour ne pas être synchronisées. Masqué sous
+`sm` (mobile) pour ne pas empiéter sur le contenu à cause de la marge réduite.
+
+**Portée actuelle** : Blog/News uniquement, comme demandé.
+**Comment réutiliser** : importer/copier `BloodDrop` + `BloodDrips` (+ garder
+`sa-drip` dans globals.css, déjà partagé) sur une autre page ; ajuster
+`w-9 lg:w-12` et le nombre de gouttes selon la hauteur de la page cible.
+
+---
+
+## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
+1. Icônes SVG (point 6) vs émojis réels — confirmer.
+2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à
+   ramener dans bleu/rouge.
+3. Une fois ces deux points tranchés, choisir la/les prochaine(s) page(s) à
+   traiter avec les mêmes motifs (menu actif = déjà site-wide ; le reste au cas
+   par cas).
