@@ -4,19 +4,19 @@ import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { getDictionary, type Locale } from "@/dictionaries";
 
-/* -------- Formes qui dérivent très lentement en fond de hero --------
- * Motif "V6" (cf. V6-NOTES.md) : profondeur discrète, jamais de la
- * décoration gratuite -- ce sont des points rouges, écho du point du logo
- * et du "neurone" évoqué par les chiffres (2M neurones/minute). Opacité
- * très faible (4-7%), flou, mouvement lent en va-et-vient : ça se sent
- * plus que ça ne se voit. -z-10 pour rester derrière le texte et la photo. */
+/* -------- Formes qui dérivent en fond de hero --------
+ * Motif "V6" (cf. V6-NOTES.md) : ce sont des points rouges, écho du point
+ * du logo et du "neurone" évoqué par les chiffres (2M neurones/minute).
+ * Ryan : le 1er réglage (opacité 4-7%) était "trop discret" -> remonté à
+ * 16-26%, tailles et amplitude de mouvement augmentées, plus rapide.
+ * -z-10 pour rester derrière le texte et la photo. */
 type Drift = { top: string; left: string; size: number; dx: number; dy: number; dur: number; delay: number; opacity: number };
 const HERO_DRIFTS: Drift[] = [
-  { top: "8%", left: "2%", size: 150, dx: 26, dy: -18, dur: 24, delay: 0, opacity: 0.07 },
-  { top: "58%", left: "8%", size: 90, dx: -20, dy: 22, dur: 19, delay: 3, opacity: 0.06 },
-  { top: "14%", left: "82%", size: 170, dx: -26, dy: 20, dur: 27, delay: 1.5, opacity: 0.06 },
-  { top: "70%", left: "74%", size: 110, dx: 18, dy: -24, dur: 21, delay: 5, opacity: 0.07 },
-  { top: "40%", left: "44%", size: 200, dx: 22, dy: 22, dur: 30, delay: 2, opacity: 0.045 },
+  { top: "6%", left: "0%", size: 220, dx: 46, dy: -34, dur: 15, delay: 0, opacity: 0.22 },
+  { top: "56%", left: "4%", size: 140, dx: -38, dy: 40, dur: 12, delay: 1.5, opacity: 0.19 },
+  { top: "10%", left: "80%", size: 250, dx: -48, dy: 36, dur: 17, delay: 0.8, opacity: 0.2 },
+  { top: "68%", left: "72%", size: 170, dx: 34, dy: -42, dur: 13, delay: 3, opacity: 0.22 },
+  { top: "36%", left: "42%", size: 300, dx: 40, dy: 38, dur: 19, delay: 1, opacity: 0.16 },
 ];
 function HeroDrift() {
   return (
@@ -24,7 +24,7 @@ function HeroDrift() {
       {HERO_DRIFTS.map((d, i) => (
         <span
           key={i}
-          className="sa-float absolute rounded-full bg-red blur-2xl"
+          className="sa-float absolute rounded-full bg-red blur-xl"
           style={
             {
               top: d.top,
