@@ -150,6 +150,38 @@ derrière le texte.
 
 ---
 
+## 🟡 10. Cartes teintées pour « Nos piliers » (accueil) + icônes fournies par Ryan
+
+**Où** : `src/app/[lang]/page.tsx`, `PILLAR_STYLES` ; icônes dans `public/icons/`
+(`pillar-education.png`, `pillar-research.png`, `pillar-training.png`,
+`pillar-support.png` — fournies par Ryan, à l'origine téléchargées dans
+`Downloads/`, probablement Flaticon).
+
+**Quoi** : remplace la liste à puces (petit BrainMark + lignes séparées par
+des filets) par une **grille de 4 cartes teintées** (1 col mobile, 2 sm,
+4 lg), chacune avec l'icône fournie + titre en gras + description —
+d'après une référence apportée par Ryan (cartes colorées "Our Impact").
+
+**Palette** : réutilise 2 teintes déjà posées sur Blog/News (violet
+Éducation, rose Soutien) + le **bleu de charte existant** pour Recherche
+(`#E6F1FB`, pas une couleur nouvelle) + un pêche nouveau pour Formation
+(`#FBEEE0`). Devient la **palette de catégories partagée du site** — à
+réutiliser telle quelle plutôt que d'inventer une nouvelle teinte à chaque
+section (cf. point 7, toujours en attente de validation charte).
+
+**⚠️ Licence des icônes à vérifier** : les fichiers viennent du dossier
+Downloads de Ryan, noms de fichiers en français façon Flaticon
+(ex. "chapeau-de-remise-de-diplome.png"). Si elles viennent de Flaticon en
+compte gratuit, une **attribution est requise** (lien vers flaticon.com en
+pied de page ou mentions légales) sauf licence Pro. À confirmer par Ryan
+avant lancement public.
+
+**Comment réutiliser** : ajouter une entrée dans `PILLAR_STYLES` (ou une
+table équivalente) avec `bg` + chemin d'icône ; garder les 4 teintes déjà
+choisies pour toute nouvelle section de ce type plutôt que d'en inventer.
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

@@ -133,10 +133,10 @@ export const en = {
       eyebrow: "Our Pillars",
       title: "Four pillars, one conviction.",
       items: [
-        { t: "Education", d: "Raising public awareness about stroke risk factors, warning signs, and first-aid response." },
-        { t: "Research", d: "Conducting and supporting quality scientific research to inform healthcare policies." },
-        { t: "Training", d: "Continuous professional training for healthcare providers." },
-        { t: "Support", d: "Technical, financial, and emotional support for stroke patients and their families." },
+        { id: "education", t: "Education", d: "Raising public awareness about stroke risk factors, warning signs, and first-aid response." },
+        { id: "research", t: "Research", d: "Conducting and supporting quality scientific research to inform healthcare policies." },
+        { id: "training", t: "Training", d: "Continuous professional training for healthcare providers." },
+        { id: "support", t: "Support", d: "Technical, financial, and emotional support for stroke patients and their families." },
       ],
     },
     seconds: {

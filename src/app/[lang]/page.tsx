@@ -1,5 +1,4 @@
 import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/components/ui";
-import { BrainMark } from "@/components/brain-mark";
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { getDictionary, type Locale } from "@/dictionaries";
@@ -43,6 +42,16 @@ function HeroDrift() {
     </div>
   );
 }
+
+/* -------- 4 piliers : cartes teintées + icônes fournies par Ryan --------
+ * Palette partagée avec Blog/News (violet éducation, rose soutien) +
+ * bleu de charte pour Recherche + un pêche pour Formation. Voir V6-NOTES.md. */
+const PILLAR_STYLES: Record<string, { bg: string; icon: string }> = {
+  education: { bg: "bg-[#EDEAF6]", icon: "/icons/pillar-education.png" },
+  research: { bg: "bg-[#E6F1FB]", icon: "/icons/pillar-research.png" },
+  training: { bg: "bg-[#FBEEE0]", icon: "/icons/pillar-training.png" },
+  support: { bg: "bg-[#F8EAEE]", icon: "/icons/pillar-support.png" },
+};
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -122,17 +131,18 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
           <SectionHead eyebrow={h.pillars.eyebrow} title={h.pillars.title} />
-          <div className="mt-[clamp(2rem,5vw,3rem)] border-t border-rule">
-            {h.pillars.items.map((it) => (
-              <div
-                key={it.t}
-                className="grid grid-cols-[26px_1fr] items-baseline gap-x-7 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] sm:grid-cols-[26px_12rem_1fr] sm:hover:ps-3"
-              >
-                <BrainMark className="mt-[2px] h-6 w-6 self-start text-blue-ink" />
-                <h3 className="text-[clamp(1.1rem,2vw,1.45rem)] tracking-[-0.015em]">{it.t}</h3>
-                <p className="col-start-2 max-w-[52ch] text-[0.96rem] text-ink-soft sm:col-start-3">{it.d}</p>
-              </div>
-            ))}
+          <div className="mt-[clamp(2rem,5vw,3rem)] grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {h.pillars.items.map((it) => {
+              const cat = PILLAR_STYLES[it.id] ?? PILLAR_STYLES.education;
+              return (
+                <div key={it.id} className={`flex flex-col gap-3 rounded-[14px] p-[clamp(1.3rem,3vw,1.7rem)] ${cat.bg}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={cat.icon} alt="" className="h-11 w-11" />
+                  <h3 className="mt-1 text-[1.05rem] font-bold tracking-[-0.01em]">{it.t}</h3>
+                  <p className="text-[0.92rem] leading-[1.5] text-ink-soft">{it.d}</p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

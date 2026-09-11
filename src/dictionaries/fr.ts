@@ -133,10 +133,10 @@ export const fr = {
       eyebrow: "Nos piliers",
       title: "Quatre piliers, une conviction.",
       items: [
-        { t: "Éducation", d: "Sensibiliser le public aux facteurs de risque de l'AVC, aux signes d'alerte et aux premiers gestes." },
-        { t: "Recherche", d: "Mener et soutenir des travaux scientifiques de qualité pour éclairer les politiques de santé." },
-        { t: "Formation", d: "Former en continu les professionnels de santé." },
-        { t: "Soutien", d: "Apporter un soutien technique, financier et humain aux personnes touchées et à leurs familles." },
+        { id: "education", t: "Éducation", d: "Sensibiliser le public aux facteurs de risque de l'AVC, aux signes d'alerte et aux premiers gestes." },
+        { id: "research", t: "Recherche", d: "Mener et soutenir des travaux scientifiques de qualité pour éclairer les politiques de santé." },
+        { id: "training", t: "Formation", d: "Former en continu les professionnels de santé." },
+        { id: "support", t: "Soutien", d: "Apporter un soutien technique, financier et humain aux personnes touchées et à leurs familles." },
       ],
     },
     seconds: {
