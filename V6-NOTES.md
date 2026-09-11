@@ -102,24 +102,12 @@ Dr Kamtchum. Si refusé, remplacer par des teintes de bleu/rouge/neutre
 
 ---
 
-## 🟡 8. Gouttes qui tombent le long du bord droit
+## 🔴 8. Gouttes qui tombent le long du bord droit — REJETÉ
 
-**Où** :
-- `src/app/globals.css` → `@keyframes sa-drip` + classe `.sa-drip`
-  (respecte `prefers-reduced-motion` : animation coupée, goutte figée visible)
-- `actualites/page.tsx` → composants `BloodDrop` (forme SVG) et `BloodDrips`
-  (rail de 9 gouttes, tailles/délais/durées variés pour un effet naturel)
-
-**Quoi** : dessiné par Ryan sur Figma. Rail vertical fixé au bord droit de la
-page (`absolute inset-y-0 right-0`, sur toute la hauteur de la page, pas
-seulement l'en-tête), 9 gouttes rouges en forme de larme qui tombent et
-s'effacent en boucle, décalées pour ne pas être synchronisées. Masqué sous
-`sm` (mobile) pour ne pas empiéter sur le contenu à cause de la marge réduite.
-
-**Portée actuelle** : Blog/News uniquement, comme demandé.
-**Comment réutiliser** : importer/copier `BloodDrop` + `BloodDrips` (+ garder
-`sa-drip` dans globals.css, déjà partagé) sur une autre page ; ajuster
-`w-9 lg:w-12` et le nombre de gouttes selon la hauteur de la page cible.
+Dessiné par Ryan sur Figma, implémenté (rail de 9 gouttes SVG en forme de
+larme, `absolute inset-y-0 right-0`, animation `sa-drip` en boucle), puis
+**retiré à la demande de Ryan** ("pas beau"). Code + animation CSS enlevés
+de `actualites/page.tsx` et `globals.css`. Ne pas reproduire ailleurs.
 
 ---
 

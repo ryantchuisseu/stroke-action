@@ -83,54 +83,6 @@ function DotCluster() {
   );
 }
 
-/* -------- Goutte : forme + rail animé le long du bord droit --------
- * Motif "goutte qui tombe" dessiné par Ryan sur Figma. Bloqué à cette page
- * pour l'instant (cf. V6-NOTES.md) ; à généraliser si le rendu plaît. */
-function BloodDrop({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 14 18" className={className} fill="var(--color-red)" aria-hidden="true">
-      <path d="M7 0C7 0 0 9.6 0 12.9A7 6.1 0 0 0 14 12.9C14 9.6 7 0 7 0Z" />
-    </svg>
-  );
-}
-
-const DRIPS = [
-  { top: "4%", x: 2, size: 10, delay: 0, dur: 3.4 },
-  { top: "15%", x: 9, size: 8, delay: 1.1, dur: 2.8 },
-  { top: "26%", x: 0, size: 12, delay: 0.4, dur: 3.9 },
-  { top: "37%", x: 6, size: 9, delay: 2, dur: 3.1 },
-  { top: "48%", x: 3, size: 11, delay: 0.8, dur: 3.6 },
-  { top: "59%", x: 10, size: 8, delay: 1.6, dur: 2.9 },
-  { top: "70%", x: 1, size: 13, delay: 0.2, dur: 4.1 },
-  { top: "81%", x: 7, size: 9, delay: 2.4, dur: 3.3 },
-  { top: "92%", x: 4, size: 10, delay: 1.2, dur: 3.7 },
-] as const;
-
-function BloodDrips() {
-  return (
-    <div
-      className="pointer-events-none absolute inset-y-0 right-0 z-[5] hidden w-9 overflow-hidden sm:block lg:w-12"
-      aria-hidden="true"
-    >
-      {DRIPS.map((d, i) => (
-        <span
-          key={i}
-          className="sa-drip absolute"
-          style={{
-            top: d.top,
-            right: `${d.x}px`,
-            width: d.size,
-            animationDelay: `${d.delay}s`,
-            animationDuration: `${d.dur}s`,
-          }}
-        >
-          <BloodDrop className="h-auto w-full" />
-        </span>
-      ))}
-    </div>
-  );
-}
-
 /* -------- Catégories : une teinte douce par sujet, dans l'esprit du papier ivoire -------- */
 const CAT_STYLES: Record<
   string,
@@ -165,8 +117,7 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
   );
 
   return (
-    <div className="relative">
-      <BloodDrips />
+    <>
       <PageHeader
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[2].label }, { label: n.crumb }]}
         eyebrow={n.eyebrow}
@@ -245,6 +196,6 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
           </div>
         </Container>
       </section>
-    </div>
+    </>
   );
 }
