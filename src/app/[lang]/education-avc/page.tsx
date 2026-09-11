@@ -103,9 +103,24 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
           <span className="inline-block text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-[rgba(252,250,246,0.65)]">
             {e.statsEyebrow}
           </span>
-          <ul className="mt-6 grid gap-px border border-[rgba(252,250,246,0.14)] bg-[rgba(252,250,246,0.14)] sm:grid-cols-2">
-            {e.stats.map((s) => (
-              <li key={s} className="bg-blue-ink p-5 text-[0.98rem] text-[rgba(252,250,246,0.85)]">{s}</li>
+          <ul className="mt-6 grid gap-px border border-[rgba(252,250,246,0.14)] bg-[rgba(252,250,246,0.14)] sm:grid-cols-2 lg:grid-cols-3">
+            {e.stats.map((s, i) => (
+              <li
+                key={s.t}
+                className={`relative p-[clamp(1.3rem,2.8vw,1.8rem)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
+                  s.em
+                    ? "bg-[color-mix(in_srgb,var(--color-red)_16%,var(--color-blue-ink))] before:bg-red"
+                    : "bg-blue-ink before:bg-[rgba(252,250,246,0.3)]"
+                }`}
+              >
+                <span className="text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] text-[rgba(252,250,246,0.45)]">
+                  {`0${i + 1}`}
+                </span>
+                <div className="mt-2 text-[clamp(1.7rem,3.4vw,2.3rem)] font-bold leading-[1] tracking-[-0.03em] text-white">
+                  {s.n}
+                </div>
+                <p className="mt-2 text-[0.92rem] leading-[1.5] text-[rgba(252,250,246,0.8)]">{s.t}</p>
+              </li>
             ))}
           </ul>
         </Container>
@@ -118,14 +133,21 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
           <h2 className="mt-[0.9rem] max-w-[30ch] text-[clamp(1.6rem,3.4vw,2.4rem)]">{e.knowTitle}</h2>
           <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2">
             {e.know.map((k, i) => (
-              <p
+              <div
                 key={i}
-                className={`bg-paper p-5 text-[0.95rem] text-ink-soft ${
-                  i === e.know.length - 1 ? "sm:col-span-2" : ""
-                }`}
+                className={`relative bg-paper p-[clamp(1.3rem,2.8vw,1.8rem)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
+                  i % 2 === 0 ? "before:bg-blue" : "before:bg-red"
+                } ${i === e.know.length - 1 ? "sm:col-span-2" : ""}`}
               >
-                {k}
-              </p>
+                <span
+                  className={`text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] ${
+                    i % 2 === 0 ? "text-blue-ink" : "text-red-ink"
+                  }`}
+                >
+                  {`0${i + 1}`}
+                </span>
+                <p className="mt-2 text-[0.95rem] leading-[1.6] text-ink-soft">{k}</p>
+              </div>
             ))}
           </div>
         </Container>
