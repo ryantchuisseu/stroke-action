@@ -62,11 +62,11 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
   return (
     <>
     <header className="sticky top-0 z-[100] border-b border-rule bg-[color-mix(in_srgb,var(--color-paper)_97%,transparent)] backdrop-blur-[10px]">
-      <div className="mx-auto flex h-[66px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:gap-6 lg:px-16">
+      <div className="mx-auto flex h-[84px] max-w-[1240px] items-center gap-4 px-5 sm:px-8 lg:gap-6 lg:px-16">
         {/* Lockup */}
         <Link href={`/${lang}`} className="mr-auto flex flex-none items-center" aria-label="Stroke Action · Action AVC">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Stroke Action · Action AVC" className="h-[56px] w-auto" />
+          <img src="/logo.png" alt="Stroke Action · Action AVC" className="h-[68px] w-auto" />
         </Link>
 
         {/* Nav desktop */}
@@ -157,7 +157,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
           l'en-tête en ferait le bloc conteneur du position:fixed, ce qui
           écrasait le panneau en une bande de ~1px. */}
       {mobileOpen && (
-        <div className="fixed inset-x-0 bottom-0 top-[66px] z-[95] overflow-y-auto overscroll-contain bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
+        <div className="fixed inset-x-0 bottom-0 top-[84px] z-[95] overflow-y-auto overscroll-contain bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
           {nav.groups.map((group) => {
             const open = mobileGroup === group.label;
             return (
