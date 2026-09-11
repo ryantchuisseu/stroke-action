@@ -12,11 +12,11 @@ import { getDictionary, type Locale } from "@/dictionaries";
  * -z-10 pour rester derrière le texte et la photo. */
 type Drift = { top: string; left: string; size: number; dx: number; dy: number; dur: number; delay: number; opacity: number };
 const HERO_DRIFTS: Drift[] = [
-  { top: "6%", left: "0%", size: 220, dx: 46, dy: -34, dur: 15, delay: 0, opacity: 0.22 },
-  { top: "56%", left: "4%", size: 140, dx: -38, dy: 40, dur: 12, delay: 1.5, opacity: 0.19 },
-  { top: "10%", left: "80%", size: 250, dx: -48, dy: 36, dur: 17, delay: 0.8, opacity: 0.2 },
-  { top: "68%", left: "72%", size: 170, dx: 34, dy: -42, dur: 13, delay: 3, opacity: 0.22 },
-  { top: "36%", left: "42%", size: 300, dx: 40, dy: 38, dur: 19, delay: 1, opacity: 0.16 },
+  { top: "6%", left: "0%", size: 220, dx: 68, dy: -52, dur: 15, delay: 0, opacity: 0.14 },
+  { top: "56%", left: "4%", size: 140, dx: -58, dy: 60, dur: 12, delay: 1.5, opacity: 0.11 },
+  { top: "10%", left: "80%", size: 250, dx: -72, dy: 54, dur: 17, delay: 0.8, opacity: 0.13 },
+  { top: "68%", left: "72%", size: 170, dx: 52, dy: -64, dur: 13, delay: 3, opacity: 0.14 },
+  { top: "36%", left: "42%", size: 300, dx: 60, dy: 58, dur: 19, delay: 1, opacity: 0.11 },
 ];
 function HeroDrift() {
   return (
@@ -24,7 +24,7 @@ function HeroDrift() {
       {HERO_DRIFTS.map((d, i) => (
         <span
           key={i}
-          className="sa-float absolute rounded-full bg-red blur-xl"
+          className="sa-float absolute rounded-full bg-red blur-md"
           style={
             {
               top: d.top,
