@@ -77,7 +77,7 @@ export const en = {
           { label: "Support Us", href: "/nous-soutenir", desc: "Donate, join, shop, volunteer" },
           { label: "Become a Member", href: "/nous-soutenir#devenir-membre", desc: "Membership form" },
           { label: "Volunteer", href: "/contact", desc: "Give your time" },
-          { label: "Contact Us", href: "/contact", desc: "Write to us" },
+          { label: "Contact Us", href: "/contact", desc: "Send us a message" },
           { label: "Members", href: "/espace-membres", desc: "Members only", soon: true },
         ],
       },
@@ -186,11 +186,11 @@ export const en = {
     title: "Our Story.",
     intro: "Born in Cameroon, united by one goal: defeating stroke.", // design
     story: {
-      lead: "Stroke Action — known in French as Action AVC — was founded in Cameroon under Law No. 90-53 of December 19, 1990, on freedom of association.",
+      lead: "Stroke Action — known in French as Action AVC — was founded in Cameroon under Law No. 90-53 of December 19, 1990, relating to freedom of association.",
       p2: "Born from the conviction that stroke is both preventable and treatable, we exist to bridge the gap between medical knowledge and the communities most affected by this devastating condition.",
       p3: "We are a secular, apolitical, non-profit organization serving the public interest.",
       factYear: "2026",
-      fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, on freedom of association.",
+      fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, relating to freedom of association.",
     },
     quote: {
       text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
@@ -424,7 +424,7 @@ export const en = {
   contact: {
     crumb: "Contact Us",
     eyebrow: "Contact Us",
-    title: "Write to us.",
+    title: "Send us a message.",
     intro: "Have a question, a suggestion, or want to get involved? We'd love to hear from you. Fill in the form below or reach us directly.",
     detailsTitle: "Contact Details",
     labelEmail: "Email",
