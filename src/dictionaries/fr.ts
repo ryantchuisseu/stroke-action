@@ -76,7 +76,7 @@ export const fr = {
         items: [
           { label: "Nous soutenir", href: "/nous-soutenir", desc: "Don, adhésion, boutique, bénévolat" },
           { label: "Devenir membre", href: "/nous-soutenir#devenir-membre", desc: "Formulaire d'adhésion" },
-          { label: "Bénévolat", href: "/contact", desc: "Donner de son temps" },
+          { label: "Bénévolat", href: "/nous-soutenir#devenir-membre", desc: "Donner de son temps" },
           { label: "Contact", href: "/contact", desc: "Nous écrire" },
           { label: "Espace membres", href: "/espace-membres", desc: "Réservé aux membres", soon: true },
         ],
@@ -223,7 +223,7 @@ export const fr = {
     eyebrow: "Nos actions",
     title: "Transformer l'engagement en action.",
     intro:
-      "À Stroke Action, nous transformons l'engagement en action concrète. Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif de développement de l'organisation, guidés par nos statuts et notre Plan stratégique 2026-2030.",
+      "À Stroke Action, nous transformons l'engagement en action concrète. Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif axé sur l'engagement du public, guidés par nos statuts et notre Plan stratégique 2026-2030.",
     carousel: {
       region: "Images de terrain",
       prev: "Image précédente",
@@ -281,7 +281,7 @@ export const fr = {
       },
       {
         n: "05",
-        t: "Programme 5 — Implication des patients et du public",
+        t: "Implication des patients et du public",
         s: "Grandir, Combattre, Vaincre, Servir et Célébrer, Ensemble.",
         b: [
           "S'engager auprès de la communauté, en ligne et sur le terrain",
@@ -475,7 +475,7 @@ export const fr = {
         t: "Devenir bénévole",
         d: "Vous êtes motivé·e par la lutte contre l'AVC ? Nous accueillons les bénévoles de toutes compétences, quel que soit leur parcours ou leur profession.",
         cta: "S'impliquer",
-        href: "/contact",
+        drawer: "membership",
       },
     ],
     note: "Le paiement en ligne (Mobile Money + carte bancaire) sera activé ultérieurement.",

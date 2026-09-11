@@ -85,7 +85,7 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
       links: [
         { label: lang === "fr" ? "Nous soutenir" : "Support Us", href: "/nous-soutenir" },
         { label: lang === "fr" ? "Devenir membre" : "Become a Member", href: "/nous-soutenir#devenir-membre" },
-        { label: lang === "fr" ? "Bénévolat" : "Volunteer", href: "/contact" },
+        { label: lang === "fr" ? "Bénévolat" : "Volunteer", href: "/nous-soutenir#devenir-membre" },
         { label: lang === "fr" ? "Contact" : "Contact Us", href: "/contact" },
         { label: lang === "fr" ? "Espace membres — bientôt" : "Members — coming soon", href: "/espace-membres" },
       ],

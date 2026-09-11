@@ -76,7 +76,7 @@ export const en = {
         items: [
           { label: "Support Us", href: "/nous-soutenir", desc: "Donate, join, shop, volunteer" },
           { label: "Become a Member", href: "/nous-soutenir#devenir-membre", desc: "Membership form" },
-          { label: "Volunteer", href: "/contact", desc: "Give your time" },
+          { label: "Volunteer", href: "/nous-soutenir#devenir-membre", desc: "Give your time" },
           { label: "Contact Us", href: "/contact", desc: "Send us a message" },
           { label: "Members", href: "/espace-membres", desc: "Members only", soon: true },
         ],
@@ -224,7 +224,7 @@ export const en = {
     eyebrow: "What We Do",
     title: "Turning commitment into action.",
     intro:
-      "At Stroke Action, we turn commitment into concrete action. Our work is structured around four core areas of action, supported by a fifth objective focused on organizational development, guided by our bylaws and our 2026–2030 Strategic Plan.",
+      "At Stroke Action, we turn commitment into concrete action. Our work is structured around four core areas of action, supported by a fifth objective focused on public engagement, guided by our bylaws and our 2026–2030 Strategic Plan.",
     carousel: {
       region: "Field images",
       prev: "Previous image",
@@ -282,7 +282,7 @@ export const en = {
       },
       {
         n: "05",
-        t: "Program 5 — Patient and public engagement and involvement",
+        t: "Patient and public engagement and involvement",
         s: "Growing, Fighting, Winning, Serving, and Celebrating Together.",
         b: [
           "Engaging with the community online and in real life",
@@ -476,7 +476,7 @@ export const en = {
         t: "Volunteer",
         d: "Are you passionate about the fight against stroke? We welcome volunteers with all kinds of skills, irrespective of their background or profession.",
         cta: "Get Involved",
-        href: "/contact",
+        drawer: "membership",
       },
     ],
     note: "Online payment (Mobile Money + bank card) will be activated at a later stage.",
