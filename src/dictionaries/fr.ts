@@ -40,6 +40,18 @@ export const fr = {
       downloadEn: "Formulaire — anglais (.docx)",
       reviewNote: "Votre candidature sera examinée et approuvée par le bureau exécutif. L'adhésion est ouverte à toute personne partageant nos valeurs.",
     },
+    volunteer: {
+      title: "Devenir bénévole",
+      text: "Le formulaire en ligne arrive bientôt. En attendant, la démarche est simple :",
+      steps: [
+        "Téléchargez le formulaire ci-dessous.",
+        "Remplissez-le : nom complet, date de naissance, e-mail, téléphone, profession, ville / pays, motivation, et une copie d'une pièce d'identité avec photo.",
+        "Renvoyez-le à contact@strokeaction.org, ou par WhatsApp au +237 652 14 81 47.",
+      ],
+      downloadFr: "Formulaire — français (.docx)",
+      downloadEn: "Formulaire — anglais (.docx)",
+      reviewNote: "Votre candidature sera examinée par le bureau exécutif. Nous accueillons les bénévoles de toutes compétences et de tous horizons qui partagent nos valeurs.",
+    },
   },
 
   nav: {
@@ -76,7 +88,7 @@ export const fr = {
         items: [
           { label: "Nous soutenir", href: "/nous-soutenir", desc: "Don, adhésion, boutique, bénévolat" },
           { label: "Devenir membre", href: "/nous-soutenir#devenir-membre", desc: "Formulaire d'adhésion" },
-          { label: "Bénévolat", href: "/nous-soutenir#devenir-membre", desc: "Donner de son temps" },
+          { label: "Bénévolat", href: "/nous-soutenir#benevolat", desc: "Donner de son temps" },
           { label: "Contact", href: "/contact", desc: "Nous écrire" },
           { label: "Espace membres", href: "/espace-membres", desc: "Réservé aux membres", soon: true },
         ],
@@ -276,7 +288,7 @@ export const fr = {
         b: [
           "Fonds de solidarité AVC, avec l'objectif à long terme « Un AVC, un scanner »",
           "Plaidoyer pour les droits des patients victimes d'AVC et l'accès aux soins",
-          "Engagement auprès de la communauté, en ligne et sur le terrain",
+          "Ligne d'écoute AVC — une assistance téléphonique dédiée aux patients et à leurs familles",
         ],
       },
       {
@@ -475,7 +487,7 @@ export const fr = {
         t: "Devenir bénévole",
         d: "Vous êtes motivé·e par la lutte contre l'AVC ? Nous accueillons les bénévoles de toutes compétences, quel que soit leur parcours ou leur profession.",
         cta: "S'impliquer",
-        drawer: "membership",
+        drawer: "volunteer",
       },
     ],
     note: "Le paiement en ligne (Mobile Money + carte bancaire) sera activé ultérieurement.",

@@ -40,6 +40,18 @@ export const en = {
       downloadEn: "Form — English (.docx)",
       reviewNote: "Your application will be reviewed and approved by the Executive Board. Membership is open to all who share our values.",
     },
+    volunteer: {
+      title: "Volunteer With Us",
+      text: "The online form is coming soon. In the meantime, the process is simple:",
+      steps: [
+        "Download the form below.",
+        "Fill it in: full name, date of birth, email, phone, profession, city / country, motivation statement, and a copy of a valid ID with photo.",
+        "Send it back to contact@strokeaction.org, or by WhatsApp at +237 652 14 81 47.",
+      ],
+      downloadFr: "Form — French (.docx)",
+      downloadEn: "Form — English (.docx)",
+      reviewNote: "Your application will be reviewed by the Executive Board. We welcome volunteers of all backgrounds and professions who share our values.",
+    },
   },
 
   nav: {
@@ -76,7 +88,7 @@ export const en = {
         items: [
           { label: "Support Us", href: "/nous-soutenir", desc: "Donate, join, shop, volunteer" },
           { label: "Become a Member", href: "/nous-soutenir#devenir-membre", desc: "Membership form" },
-          { label: "Volunteer", href: "/nous-soutenir#devenir-membre", desc: "Give your time" },
+          { label: "Volunteer", href: "/nous-soutenir#benevolat", desc: "Give your time" },
           { label: "Contact Us", href: "/contact", desc: "Send us a message" },
           { label: "Members", href: "/espace-membres", desc: "Members only", soon: true },
         ],
@@ -277,7 +289,7 @@ export const en = {
         b: [
           "Stroke Solidarity Fund aiming to achieve the “One Stroke, One Scanner” goal in the long term",
           "Advocacy for stroke patients’ rights and access to care",
-          "Engaging with the community online and in real life",
+          "Stroke Support Line — a dedicated helpline for patients and families",
         ],
       },
       {
@@ -314,7 +326,7 @@ export const en = {
     title: "Know Stroke. Act Fast. Save Lives.",
     whatIs: {
       eyebrow: "What is a Stroke?",
-      p: "A stroke occurs when blood flow to part of the brain is suddenly interrupted — either by a blocked artery (ischemic stroke) or a ruptured blood vessel (hemorrhagic stroke). Without blood, brain cells begin to die within minutes.",
+      p: "A stroke occurs when blood flow to part of the brain is suddenly interrupted — either due to a blocked artery (ischemic stroke) or a ruptured blood vessel (hemorrhagic stroke). Without blood, brain cells begin to die within minutes.",
       emphasis: "Stroke is a medical emergency. Every minute counts.",
       emergencyLabel: "Emergency — Cameroon",
       emergencyNote: "At any sign of stroke, call immediately — do not wait.",
@@ -476,7 +488,7 @@ export const en = {
         t: "Volunteer",
         d: "Are you passionate about the fight against stroke? We welcome volunteers with all kinds of skills, irrespective of their background or profession.",
         cta: "Get Involved",
-        drawer: "membership",
+        drawer: "volunteer",
       },
     ],
     note: "Online payment (Mobile Money + bank card) will be activated at a later stage.",

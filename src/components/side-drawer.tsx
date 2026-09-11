@@ -5,19 +5,22 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { BrainMark } from "./brain-mark";
 
-type Mode = "donate" | "membership" | null;
+type Mode = "donate" | "membership" | "volunteer" | null;
+
+type DrawerForm = {
+  title: string;
+  text: string;
+  steps: readonly string[];
+  downloadFr: string;
+  downloadEn: string;
+  reviewNote: string;
+};
 
 type DrawerDict = {
   close: string;
   donate: { title: string; soon: string; text: string; contact: string };
-  membership: {
-    title: string;
-    text: string;
-    steps: readonly string[];
-    downloadFr: string;
-    downloadEn: string;
-    reviewNote: string;
-  };
+  membership: DrawerForm;
+  volunteer: DrawerForm;
 };
 
 /** Tiroir latéral (glisse depuis la gauche, courbe iOS). Ouvert par tout
@@ -45,6 +48,7 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
       const href = el.getAttribute("href") ?? "";
       let m: Mode = null;
       if (dd === "donate" || href.endsWith("#don")) m = "donate";
+      else if (dd === "volunteer" || href.endsWith("#benevolat")) m = "volunteer";
       else if (dd === "membership" || href.endsWith("#devenir-membre")) m = "membership";
       if (!m) return;
       e.preventDefault();
@@ -84,7 +88,8 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
   }, [pathname]);
 
   const m = mode ?? "donate";
-  const title = m === "donate" ? d.donate.title : d.membership.title;
+  const form = m === "volunteer" ? d.volunteer : d.membership;
+  const title = m === "donate" ? d.donate.title : form.title;
 
   return (
     <div className={`fixed inset-0 z-[200] ${open ? "" : "pointer-events-none"}`} aria-hidden={!open}>
@@ -155,9 +160,9 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
             </>
           ) : (
             <>
-              <p className="text-[0.92rem] leading-[1.6] text-ink-soft">{d.membership.text}</p>
+              <p className="text-[0.92rem] leading-[1.6] text-ink-soft">{form.text}</p>
               <ol className="mt-5 space-y-4">
-                {d.membership.steps.map((s, i) => (
+                {form.steps.map((s, i) => (
                   <li key={i} className="grid grid-cols-[1.6rem_1fr] gap-3 text-[0.9rem] leading-[1.5]">
                     <span className="font-bold tabular-nums text-blue-ink">{i + 1}</span>
                     <span>{s}</span>
@@ -166,8 +171,8 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
               </ol>
               <div className="mt-7 grid gap-2">
                 {[
-                  { href: "/documents/formulaire-adhesion-benevolat-FR.docx", label: d.membership.downloadFr },
-                  { href: "/documents/membership-volunteer-form-EN.docx", label: d.membership.downloadEn },
+                  { href: "/documents/formulaire-adhesion-benevolat-FR.docx", label: form.downloadFr },
+                  { href: "/documents/membership-volunteer-form-EN.docx", label: form.downloadEn },
                 ].map((f) => (
                   <a
                     key={f.href}
@@ -183,7 +188,7 @@ export function SideDrawer({ lang, d }: { lang: string; d: DrawerDict }) {
                   </a>
                 ))}
               </div>
-              <p className="mt-5 text-[0.78rem] leading-[1.5] text-grey">{d.membership.reviewNote}</p>
+              <p className="mt-5 text-[0.78rem] leading-[1.5] text-grey">{form.reviewNote}</p>
             </>
           )}
         </div>
