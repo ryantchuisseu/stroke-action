@@ -5,11 +5,12 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type NavItem = { label: string; href: string; desc?: string; soon?: boolean };
+type NavGroup = { label: string; items: readonly NavItem[] };
 type NavDict = {
   home: string;
   donate: string;
   openMenu: string;
-  groups: readonly { label: string; items: readonly NavItem[] }[];
+  groups: readonly NavGroup[];
 };
 
 function Chevron({ open }: { open: boolean }) {
@@ -33,6 +34,14 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
   const other = lang === "fr" ? "en" : "fr";
   const rest = pathname.replace(/^\/(fr|en)(?=\/|$)/, "");
   const switchHref = `/${other}${rest || ""}`;
+  const currentPath = rest || "/";
+  /** Le groupe est "actif" si la page en cours correspond à l'un de ses liens
+   *  (on compare sans l'ancre #... , pour que /nous-soutenir#don compte). */
+  const isGroupActive = (group: NavGroup) =>
+    group.items.some((it) => {
+      const base = it.href.split("#")[0];
+      return base !== "" && currentPath === base;
+    });
 
   useEffect(() => {
     function onDocClick(e: MouseEvent) {
@@ -73,21 +82,26 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
         <nav ref={navRef} aria-label={nav.home} className="hidden items-center gap-[0.2rem] lg:flex">
           {nav.groups.map((group) => {
             const open = openGroup === group.label;
+            const active = isGroupActive(group);
             return (
               <div key={group.label} className="relative">
                 <button
                   type="button"
                   aria-expanded={open}
                   aria-haspopup="true"
+                  aria-current={active ? "page" : undefined}
                   onClick={(e) => {
                     e.stopPropagation();
                     setOpenGroup(open ? null : group.label);
                   }}
                   className={`inline-flex items-center gap-[0.4rem] whitespace-nowrap rounded-[2px] px-[0.65rem] py-[0.55rem] text-[0.9rem] font-medium transition-colors duration-150 ${
-                    open ? "bg-paper-deep text-blue-ink" : "text-ink-soft hover:text-blue-ink"
+                    open ? "bg-paper-deep text-blue-ink" : active ? "text-red-ink" : "text-ink-soft hover:text-blue-ink"
                   }`}
                 >
-                  {group.label} <Chevron open={open} />
+                  <span className={active ? "underline decoration-red decoration-2 underline-offset-4" : ""}>
+                    {group.label}
+                  </span>
+                  <Chevron open={open} />
                 </button>
                 {open && (
                   <div
@@ -160,15 +174,22 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
         <div className="fixed inset-x-0 bottom-0 top-[116px] z-[95] overflow-y-auto overscroll-contain bg-paper px-5 pb-8 pt-5 sm:px-8 lg:hidden">
           {nav.groups.map((group) => {
             const open = mobileGroup === group.label;
+            const active = isGroupActive(group);
             return (
               <div key={group.label} className="border-b border-rule">
                 <button
                   type="button"
                   aria-expanded={open}
+                  aria-current={active ? "page" : undefined}
                   onClick={() => setMobileGroup(open ? null : group.label)}
-                  className="flex w-full items-center justify-between px-1 py-[1.1rem] text-[1.05rem] font-semibold tracking-[-0.01em]"
+                  className={`flex w-full items-center justify-between px-1 py-[1.1rem] text-[1.05rem] font-semibold tracking-[-0.01em] ${
+                    active ? "text-red-ink" : ""
+                  }`}
                 >
-                  {group.label} <Chevron open={open} />
+                  <span className={active ? "underline decoration-red decoration-2 underline-offset-4" : ""}>
+                    {group.label}
+                  </span>
+                  <Chevron open={open} />
                 </button>
                 {open && (
                   <div className="grid gap-1 px-1 pb-4">

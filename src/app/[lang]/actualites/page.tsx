@@ -1,42 +1,160 @@
 import type { Metadata } from "next";
-import { Container, PageHeader, Eyebrow } from "@/components/ui";
+import { Container, PageHeader } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const d = getDictionary(isLocale(lang) ? lang : "en");
-  return pageMeta({ lang, route: "/actualites", title: d.news.crumb, description: d.news.intro });
+  return pageMeta({
+    lang,
+    route: "/actualites",
+    title: d.news.crumb,
+    description: `${d.news.introPre}${d.news.introAccent}.`,
+  });
 }
+
+/* -------- Icônes de catégorie (même esprit que PdfIcon sur Documents clés) -------- */
+function CalendarIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.7" />
+      <path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+function LightbulbIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
+      <path
+        d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.45 1 1.15 1 1.9V16h5.2v-.3c0-.75.4-1.45 1-1.9A6 6 0 0 0 12 3Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+function PeopleIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
+      <circle cx="9" cy="8" r="2.6" stroke="currentColor" strokeWidth="1.7" />
+      <circle cx="17" cy="9.5" r="2.1" stroke="currentColor" strokeWidth="1.7" />
+      <path
+        d="M3.5 19c.5-3 2.7-4.6 5.5-4.6s5 1.6 5.5 4.6M14.8 19c.4-2.3 1.9-3.6 4-3.9"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+/* -------- Fioriture bleue à côté du titre : trois tirets, notre patte -------- */
+function Flourish({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" className={className} fill="none" aria-hidden="true">
+      <path d="M15 3 9 9" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M18 8 12 14" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.6" />
+      <path d="M11 1 5 7" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.35" />
+    </svg>
+  );
+}
+
+/* -------- Nuage de points rouges : même motif que le point du logo, en écho -------- */
+function DotCluster() {
+  const dots: [number, number, number][] = [
+    [10, 12, 7],
+    [27, 6, 6],
+    [42, 15, 8],
+    [16, 29, 5],
+    [35, 31, 6.5],
+    [52, 23, 5],
+    [45, 43, 7],
+  ];
+  return (
+    <div className="pointer-events-none absolute right-5 top-7 hidden sm:block lg:right-16" aria-hidden="true">
+      <svg width="64" height="56" viewBox="0 0 64 56" fill="none">
+        {dots.map(([cx, cy, r], i) => (
+          <circle key={i} cx={cx} cy={cy} r={r} fill="var(--color-red)" opacity={0.5 + (i % 3) * 0.18} />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+/* -------- Catégories : une teinte douce par sujet, dans l'esprit du papier ivoire -------- */
+const CAT_STYLES: Record<
+  string,
+  { bg: string; iconBg: string; text: string; Icon: (p: { className?: string }) => React.JSX.Element }
+> = {
+  campaign: { bg: "bg-[#EAF2EA]", iconBg: "bg-[#D3E6D5]", text: "text-[#3F6B48]", Icon: CalendarIcon },
+  education: { bg: "bg-[#EDEAF6]", iconBg: "bg-[#DAD3EF]", text: "text-[#5B4E96]", Icon: LightbulbIcon },
+  association: { bg: "bg-[#F8EAEE]", iconBg: "bg-[#F1D3DB]", text: "text-[#A84360]", Icon: PeopleIcon },
+};
 
 export default async function ActualitesPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const t = getDictionary(lang as Locale);
   const n = t.news;
 
+  const titleNode = (
+    <>
+      {n.titleLead}
+      <Flourish className="ml-2 inline-block h-[0.55em] w-[0.55em] align-super" />
+      {n.titleMid}
+      <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+        {n.titleAccent}
+      </span>
+      .
+    </>
+  );
+  const introNode = (
+    <>
+      {n.introPre}
+      <span className="underline decoration-red decoration-[3px] underline-offset-[3px]">{n.introAccent}</span>.
+    </>
+  );
+
   return (
     <>
       <PageHeader
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[2].label }, { label: n.crumb }]}
         eyebrow={n.eyebrow}
-        title={n.title}
-        intro={n.intro}
+        title={`${n.titleLead}${n.titleMid}${n.titleAccent}.`}
+        titleNode={titleNode}
+        intro={`${n.introPre}${n.introAccent}.`}
+        introNode={introNode}
+        decor={<DotCluster />}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
-          <ul className="border-t border-rule">
-            {n.posts.map((post) => (
-              <li key={post.t} className="border-b border-rule py-[clamp(1.25rem,3vw,2rem)]">
-                <article className="grid gap-2 md:grid-cols-[8rem_1fr] md:gap-8">
-                  <Eyebrow>{post.cat}</Eyebrow>
-                  <div>
-                    <h2 className="text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em]">{post.t}</h2>
-                    <p className="mt-2 max-w-[60ch] text-[0.95rem] text-ink-soft">{post.d}</p>
-                    <span className="mt-3 inline-block text-[0.85rem] font-semibold text-grey">{n.postSoon}</span>
-                  </div>
-                </article>
-              </li>
-            ))}
+          <ul className="grid gap-4">
+            {n.posts.map((post) => {
+              const cat = CAT_STYLES[post.id] ?? CAT_STYLES.education;
+              const Icon = cat.Icon;
+              return (
+                <li key={post.id}>
+                  <article
+                    className={`grid gap-4 rounded-[14px] p-[clamp(1.2rem,3vw,1.8rem)] sm:grid-cols-[3rem_1fr] sm:gap-6 ${cat.bg}`}
+                  >
+                    <div
+                      className={`flex h-11 w-11 flex-none items-center justify-center rounded-full ${cat.iconBg} ${cat.text}`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className={`text-[0.72rem] font-semibold uppercase tracking-[0.14em] ${cat.text}`}>
+                        {post.cat}
+                      </span>
+                      <h2 className="mt-1 text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em]">{post.t}</h2>
+                      <p className="mt-2 max-w-[60ch] text-[0.95rem] text-ink-soft">{post.d}</p>
+                      <span className="mt-3 inline-block text-[0.85rem] font-semibold text-grey">{n.postSoon}</span>
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
           </ul>
           <p className="mt-8 text-[0.85rem] text-grey">{n.note}</p>
         </Container>
