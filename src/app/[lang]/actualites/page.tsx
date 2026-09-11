@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Megaphone, Activity, HeartHandshake } from "lucide-react";
 import { Container, PageHeader } from "@/components/ui";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
@@ -12,42 +13,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: d.news.crumb,
     description: `${d.news.introPre}${d.news.introAccent}.`,
   });
-}
-
-/* -------- Icônes de catégorie (même esprit que PdfIcon sur Documents clés) -------- */
-function CalendarIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
-      <rect x="3.5" y="5" width="17" height="15" rx="2" stroke="currentColor" strokeWidth="1.7" />
-      <path d="M3.5 9.5h17M8 3v4M16 3v4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
-function LightbulbIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
-      <path
-        d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.45 1 1.15 1 1.9V16h5.2v-.3c0-.75.4-1.45 1-1.9A6 6 0 0 0 12 3Z"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-function PeopleIcon({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
-      <circle cx="9" cy="8" r="2.6" stroke="currentColor" strokeWidth="1.7" />
-      <circle cx="17" cy="9.5" r="2.1" stroke="currentColor" strokeWidth="1.7" />
-      <path
-        d="M3.5 19c.5-3 2.7-4.6 5.5-4.6s5 1.6 5.5 4.6M14.8 19c.4-2.3 1.9-3.6 4-3.9"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
 }
 
 /* -------- Fioriture bleue à côté du titre : trois tirets, notre patte -------- */
@@ -86,11 +51,14 @@ function DotCluster() {
 /* -------- Catégories : une teinte douce par sujet, dans l'esprit du papier ivoire -------- */
 const CAT_STYLES: Record<
   string,
-  { bg: string; iconBg: string; text: string; Icon: (p: { className?: string }) => React.JSX.Element }
+  { bg: string; iconBg: string; text: string; Icon: typeof Megaphone }
 > = {
-  campaign: { bg: "bg-[#EAF2EA]", iconBg: "bg-[#D3E6D5]", text: "text-[#3F6B48]", Icon: CalendarIcon },
-  education: { bg: "bg-[#EDEAF6]", iconBg: "bg-[#DAD3EF]", text: "text-[#5B4E96]", Icon: LightbulbIcon },
-  association: { bg: "bg-[#F8EAEE]", iconBg: "bg-[#F1D3DB]", text: "text-[#A84360]", Icon: PeopleIcon },
+  // Megaphone : sensibilisation/mobilisation, plus parlant qu'un calendrier générique
+  campaign: { bg: "bg-[#EAF2EA]", iconBg: "bg-[#D3E6D5]", text: "text-[#3F6B48]", Icon: Megaphone },
+  // Activity (courbe de pouls) : ancrage santé/cardiovasculaire, plus spécifique qu'une ampoule "idée"
+  education: { bg: "bg-[#EDEAF6]", iconBg: "bg-[#DAD3EF]", text: "text-[#5B4E96]", Icon: Activity },
+  // HeartHandshake : solidarité/bénévolat, plus chaleureux que deux silhouettes génériques
+  association: { bg: "bg-[#F8EAEE]", iconBg: "bg-[#F1D3DB]", text: "text-[#A84360]", Icon: HeartHandshake },
 };
 
 export default async function ActualitesPage({ params }: { params: Promise<{ lang: string }> }) {
@@ -141,7 +109,7 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
                     <div
                       className={`flex h-11 w-11 flex-none items-center justify-center rounded-full ${cat.iconBg} ${cat.text}`}
                     >
-                      <Icon className="h-5 w-5" />
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
                     </div>
                     <div>
                       <span className={`text-[0.72rem] font-semibold uppercase tracking-[0.14em] ${cat.text}`}>

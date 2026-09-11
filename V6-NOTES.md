@@ -72,18 +72,27 @@ selon l'espace disponible sur la nouvelle page.
 
 ---
 
-## 🟡 6. Icônes de catégorie (au lieu d'émojis)
+## 🟢 6. Icônes de catégorie (au lieu d'émojis)
 
-**Où** : `actualites/page.tsx`, `CalendarIcon` / `LightbulbIcon` / `PeopleIcon`
-+ table `CAT_STYLES`
-**Quoi** : Ryan voulait des émojis devant les titres d'articles (effet
-« vivant »). Remplacés par des icônes SVG maison dans le même esprit que
-`PdfIcon` (documents-cles) et `BrainMark` — même effet, rendu identique sur
-tous les appareils (contrairement aux émojis système).
-**⚠️ En attente de confirmation de Ryan** : garder les icônes SVG, ou revenir
-aux vrais émojis ?
-**Comment réutiliser** : ajouter une entrée dans une table `CAT_STYLES`
-(icône + couleur de fond + couleur de texte) par nouveau type de contenu.
+**Où** : `actualites/page.tsx`, table `CAT_STYLES` — bibliothèque **`lucide-react`**
+(ajoutée en dépendance, `npm install lucide-react`).
+**Historique** : Ryan voulait des émojis devant les titres d'articles (effet
+« vivant »). 1er essai = icônes SVG maison — jugées « trop génériques »
+(calendrier plein, ampoule, silhouettes). Remplacées par des icônes Lucide
+plus précises et parlantes :
+- Campagne → `Megaphone` (mobilisation, plus parlant qu'un calendrier)
+- Éducation → `Activity` (courbe de pouls — ancrage santé/cardiovasculaire,
+  plus spécifique qu'une ampoule « idée » générique)
+- Association → `HeartHandshake` (solidarité/bénévolat, plus chaleureux que
+  deux silhouettes)
+
+**Comment réutiliser** : `import { XxxIcon } from "lucide-react"` puis
+`<XxxIcon className="h-5 w-5" strokeWidth={1.75} />` (1.75 pour matcher le
+poids de trait des icônes maison déjà sur le site, ex. `PdfIcon`). Parcourir
+https://lucide.dev/icons pour trouver une icône précise plutôt qu'une icône
+générique — c'est le point que Ryan a corrigé ici.
+**Ajouter une nouvelle catégorie** : une entrée dans `CAT_STYLES` (icône
+Lucide + couleur de fond + couleur de texte).
 
 ---
 
