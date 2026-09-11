@@ -182,6 +182,23 @@
   animation: sa-heroimg 1100ms var(--ease-out) forwards;
 }
 
+/* ---- dérive lente de fond, motif "V6" (cf. V6-NOTES.md) : formes qui
+   flottent très doucement derrière un hero calme, jamais derrière du
+   contenu à lire vite (FAST, urgences, chiffres). ---- */
+@keyframes sa-drift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(var(--dx, 20px), var(--dy, -16px));
+  }
+}
+.sa-float {
+  animation: sa-drift var(--dur, 24s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-stg,
   .hero-mark-path,
@@ -192,5 +209,9 @@
     opacity: 1 !important;
     transform: none !important;
     stroke-dashoffset: 0 !important;
+  }
+  .sa-float {
+    animation: none !important;
+    transform: none !important;
   }
 }

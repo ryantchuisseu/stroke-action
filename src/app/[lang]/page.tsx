@@ -4,6 +4,46 @@ import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { getDictionary, type Locale } from "@/dictionaries";
 
+/* -------- Formes qui dérivent très lentement en fond de hero --------
+ * Motif "V6" (cf. V6-NOTES.md) : profondeur discrète, jamais de la
+ * décoration gratuite -- ce sont des points rouges, écho du point du logo
+ * et du "neurone" évoqué par les chiffres (2M neurones/minute). Opacité
+ * très faible (4-7%), flou, mouvement lent en va-et-vient : ça se sent
+ * plus que ça ne se voit. -z-10 pour rester derrière le texte et la photo. */
+type Drift = { top: string; left: string; size: number; dx: number; dy: number; dur: number; delay: number; opacity: number };
+const HERO_DRIFTS: Drift[] = [
+  { top: "8%", left: "2%", size: 150, dx: 26, dy: -18, dur: 24, delay: 0, opacity: 0.07 },
+  { top: "58%", left: "8%", size: 90, dx: -20, dy: 22, dur: 19, delay: 3, opacity: 0.06 },
+  { top: "14%", left: "82%", size: 170, dx: -26, dy: 20, dur: 27, delay: 1.5, opacity: 0.06 },
+  { top: "70%", left: "74%", size: 110, dx: 18, dy: -24, dur: 21, delay: 5, opacity: 0.07 },
+  { top: "40%", left: "44%", size: 200, dx: 22, dy: 22, dur: 30, delay: 2, opacity: 0.045 },
+];
+function HeroDrift() {
+  return (
+    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+      {HERO_DRIFTS.map((d, i) => (
+        <span
+          key={i}
+          className="sa-float absolute rounded-full bg-red blur-2xl"
+          style={
+            {
+              top: d.top,
+              left: d.left,
+              width: d.size,
+              height: d.size,
+              opacity: d.opacity,
+              "--dx": `${d.dx}px`,
+              "--dy": `${d.dy}px`,
+              "--dur": `${d.dur}s`,
+              "--delay": `${d.delay}s`,
+            } as React.CSSProperties
+          }
+        />
+      ))}
+    </div>
+  );
+}
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const t = getDictionary(lang as Locale);
@@ -13,7 +53,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   return (
     <>
       {/* HERO */}
-      <section className="py-[clamp(2rem,5vw,4rem)] pb-[clamp(3.25rem,7vw,6rem)]">
+      <section className="relative overflow-hidden py-[clamp(2rem,5vw,4rem)] pb-[clamp(3.25rem,7vw,6rem)]">
+        <HeroDrift />
         <Container className="grid items-center gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[1.05fr_0.95fr]">
           <div>
             <span className="hero-stg hero-d1 inline-block text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue-ink">

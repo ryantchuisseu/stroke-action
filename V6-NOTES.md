@@ -120,6 +120,36 @@ de `actualites/page.tsx` et `globals.css`. Ne pas reproduire ailleurs.
 
 ---
 
+## 🟡 9. Formes qui dérivent lentement en fond (hero de l'accueil)
+
+**Où** :
+- `src/app/globals.css` → `@keyframes sa-drift` + classe `.sa-float`
+  (va-et-vient via `--dx`/`--dy`/`--dur`/`--delay`, coupé si
+  `prefers-reduced-motion: reduce`)
+- `src/app/[lang]/page.tsx` → composant `HeroDrift` (5 points), placé dans
+  la section HERO (passée en `relative overflow-hidden`)
+
+**Quoi** : Ryan a demandé si des formes animées en arrière-plan pouvaient
+apporter de la beauté sur un site d'asso. Réponse retenue : oui, mais très
+discret — 5 points rouges flous, opacité 4,5-7 %, qui dérivent lentement en
+boucle (va-et-vient sur 19 à 30 s selon le point, décalés). Ce sont les
+mêmes points rouges que le nuage de Blog/News et le point du logo — pas une
+forme abstraite gratuite, un écho du motif "neurone" déjà présent dans le
+discours du site (2M neurones perdus/minute).
+
+**Règle à respecter absolument** : ce motif reste réservé aux **zones
+calmes** (hero, bandes de fond, séparateurs). **Jamais** derrière la grille
+FAST, les numéros d'urgence ou toute zone qu'il faut lire vite en situation
+réelle — la lisibilité de l'urgence prime toujours sur l'esthétique.
+
+**Comment réutiliser** : copier `HeroDrift`/`HERO_DRIFTS` (`.sa-float` déjà
+partagé dans globals.css) ; ajuster position/taille/opacité selon la
+section cible ; toujours envelopper la section dans `relative overflow-hidden`
+et placer le composant de dérive en 1ᵉʳ enfant avec `-z-10` pour qu'il reste
+derrière le texte.
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à
