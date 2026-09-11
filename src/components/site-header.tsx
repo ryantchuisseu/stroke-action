@@ -66,7 +66,7 @@ export function SiteHeader({ lang, nav }: { lang: string; nav: NavDict }) {
         {/* Lockup */}
         <Link href={`/${lang}`} className="mr-auto flex flex-none items-center" aria-label="Stroke Action · Action AVC">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Stroke Action · Action AVC" className="h-[46px] w-auto" />
+          <img src="/logo.png" alt="Stroke Action · Action AVC" className="h-[56px] w-auto" />
         </Link>
 
         {/* Nav desktop */}
