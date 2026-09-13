@@ -385,6 +385,45 @@ fondation, et un léger zoom au survol sur la photo (`group-hover:scale-
 
 ---
 
+## 🟡 18. Grossissement au survol — suite (Blog/News, Nous soutenir)
+
+Motif 16 étendu à deux grilles repérées par Ryan comme encore sans effet :
+- **Blog/News** (`actualites/page.tsx`) : icône de catégorie + titre de
+  l'article grossissent au survol de la carte.
+- **Nous soutenir** (`nous-soutenir/page.tsx`) : numéro + titre grossissent,
+  fond légèrement teinté (`color-mix()` de la couleur locale) au survol.
+
+---
+
+## 🟡 19. Nouvelle librairie d'icônes : Phosphor (`@phosphor-icons/react`)
+
+**Où** : `src/app/[lang]/education-avc/page.tsx`, section "Le saviez-vous".
+
+**Pourquoi** : Ryan a jugé lucide-react "pas ouf" pour ces icônes-là et a
+demandé une meilleure librairie. Installé `@phosphor-icons/react` —
+import impérativement depuis **`@phosphor-icons/react/ssr`** dans un
+composant serveur (pas `@phosphor-icons/react` tout court, qui suppose un
+Provider côté client). Icônes utilisées : `Heartbeat` (hypertension),
+`WarningCircle` (AIT), `Timer` (fenêtre de traitement), `Wheelchair`
+(handicap), `UsersFour` (tous âges) — `weight="bold"`.
+
+**"Le saviez-vous" séparée en cartes espacées** : la grille était en
+`gap-px` + bordures partagées (cellules collées, simple filet entre elles).
+Passé en `gap-4` avec bordure individuelle par carte (même forme de
+carte, juste de l'air entre elles) — demande explicite de Ryan.
+
+**⚠️ Lucide reste en place ailleurs** (Blog/News, Nos actions, Nos
+valeurs) — ces choix avaient déjà été validés (motif 6, 🟢). Si Ryan veut
+que Phosphor remplace lucide partout pour une cohérence totale, il faudra
+re-décliner les icônes déjà choisies dans la nouvelle librairie.
+
+**Comment réutiliser** : `import { XxxIcon } from "@phosphor-icons/react/ssr"`
+(composant serveur) ; parcourir https://phosphoricons.com pour choisir une
+icône précise ; prop `weight` (`"regular" | "bold" | "duotone" | "fill" | ...`)
+pour ajuster l'épaisseur du trait selon le contexte.
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

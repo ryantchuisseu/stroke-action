@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { Heartbeat, WarningCircle, Timer, Wheelchair, UsersFour } from "@phosphor-icons/react/ssr";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
 import { HandNote, InkUnderline } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
+
+/* -------- "Le saviez-vous" : une icône par fait --------
+ * Librairie Phosphor (import SSR, sans Provider) — plus expressive que
+ * lucide pour ces icônes-là (retour Ryan). Voir V6-NOTES.md. */
+const KNOW_ICONS = [Heartbeat, WarningCircle, Timer, Wheelchair, UsersFour];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -163,24 +169,37 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
         <Container>
           <Eyebrow>{e.knowEyebrow}</Eyebrow>
           <h2 className="mt-[0.9rem] max-w-[30ch] text-[clamp(1.6rem,3.4vw,2.4rem)]">{e.knowTitle}</h2>
-          <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2">
-            {e.know.map((k, i) => (
-              <div
-                key={i}
-                className={`group relative bg-paper p-[clamp(1.3rem,2.8vw,1.8rem)] transition-colors duration-200 ease-[var(--ease-out)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] hover:bg-paper-deep ${
-                  i % 2 === 0 ? "before:bg-blue" : "before:bg-red"
-                } ${i === e.know.length - 1 ? "sm:col-span-2" : ""}`}
-              >
-                <span
-                  className={`inline-block origin-left text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.3] motion-reduce:group-hover:scale-100 ${
-                    i % 2 === 0 ? "text-blue-ink" : "text-red-ink"
-                  }`}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {e.know.map((k, i) => {
+              const Icon = KNOW_ICONS[i % KNOW_ICONS.length];
+              const isBlue = i % 2 === 0;
+              return (
+                <div
+                  key={i}
+                  className={`group relative border border-rule bg-paper p-[clamp(1.3rem,2.8vw,1.8rem)] transition-colors duration-200 ease-[var(--ease-out)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] hover:bg-paper-deep ${
+                    isBlue ? "before:bg-blue" : "before:bg-red"
+                  } ${i === e.know.length - 1 ? "sm:col-span-2" : ""}`}
                 >
-                  {`0${i + 1}`}
-                </span>
-                <p className="mt-2 text-[0.95rem] leading-[1.6] text-ink-soft">{k}</p>
-              </div>
-            ))}
+                  <span
+                    className={`grid h-10 w-10 place-items-center rounded-full transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.15] motion-reduce:group-hover:scale-100 ${
+                      isBlue
+                        ? "bg-[color-mix(in_srgb,var(--color-blue)_14%,transparent)] text-blue-ink"
+                        : "bg-[color-mix(in_srgb,var(--color-red)_14%,transparent)] text-red-ink"
+                    }`}
+                  >
+                    <Icon size={20} weight="bold" aria-hidden="true" />
+                  </span>
+                  <span
+                    className={`mt-3 inline-block origin-left text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.3] motion-reduce:group-hover:scale-100 ${
+                      isBlue ? "text-blue-ink" : "text-red-ink"
+                    }`}
+                  >
+                    {`0${i + 1}`}
+                  </span>
+                  <p className="mt-2 text-[0.95rem] leading-[1.6] text-ink-soft">{k}</p>
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>

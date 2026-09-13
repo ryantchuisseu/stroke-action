@@ -88,10 +88,10 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
               return (
                 <li key={post.id}>
                   <article
-                    className={`grid gap-4 rounded-[14px] p-[clamp(1.2rem,3vw,1.8rem)] sm:grid-cols-[3rem_1fr] sm:gap-6 ${cat.bg}`}
+                    className={`group grid gap-4 rounded-[14px] p-[clamp(1.2rem,3vw,1.8rem)] transition-shadow duration-200 ease-[var(--ease-out)] sm:grid-cols-[3rem_1fr] sm:gap-6 ${cat.bg}`}
                   >
                     <div
-                      className={`flex h-11 w-11 flex-none items-center justify-center rounded-full ${cat.iconBg} ${cat.text}`}
+                      className={`flex h-11 w-11 flex-none items-center justify-center rounded-full transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.15] motion-reduce:group-hover:scale-100 ${cat.iconBg} ${cat.text}`}
                     >
                       <Icon className="h-5 w-5" strokeWidth={1.75} />
                     </div>
@@ -99,7 +99,9 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
                       <span className={`text-[0.72rem] font-semibold uppercase tracking-[0.14em] ${cat.text}`}>
                         {post.cat}
                       </span>
-                      <h2 className="mt-1 text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em]">{post.t}</h2>
+                      <h2 className="mt-1 origin-left text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100">
+                        {post.t}
+                      </h2>
                       <p className="mt-2 max-w-[60ch] text-[0.95rem] text-ink-soft">{post.d}</p>
                       <span className="mt-3 inline-block text-[0.85rem] font-semibold text-grey">{n.postSoon}</span>
                     </div>

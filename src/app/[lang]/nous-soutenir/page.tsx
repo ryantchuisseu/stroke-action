@@ -31,14 +31,18 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
               <div
                 key={way.id}
                 id={way.id}
-                className={`relative flex flex-col p-[clamp(1.5rem,3.5vw,2.5rem)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
+                className={`group relative flex flex-col p-[clamp(1.5rem,3.5vw,2.5rem)] transition-colors duration-200 ease-[var(--ease-out)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
                   "strong" in way && way.strong
-                    ? "bg-[color-mix(in_srgb,var(--color-red)_6%,var(--color-paper))] before:bg-red"
-                    : "bg-paper before:bg-blue"
+                    ? "bg-[color-mix(in_srgb,var(--color-red)_6%,var(--color-paper))] before:bg-red hover:bg-[color-mix(in_srgb,var(--color-red)_11%,var(--color-paper))]"
+                    : "bg-paper before:bg-blue hover:bg-[color-mix(in_srgb,var(--color-blue)_6%,var(--color-paper))]"
                 }`}
               >
-                <Eyebrow alert={"strong" in way && way.strong}>{`0${i + 1}`}</Eyebrow>
-                <h2 className="mt-2 text-[clamp(1.3rem,2.6vw,1.8rem)] tracking-[-0.02em]">{way.t}</h2>
+                <span className="inline-block origin-left transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.2] motion-reduce:group-hover:scale-100">
+                  <Eyebrow alert={"strong" in way && way.strong}>{`0${i + 1}`}</Eyebrow>
+                </span>
+                <h2 className="mt-2 origin-left text-[clamp(1.3rem,2.6vw,1.8rem)] tracking-[-0.02em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100">
+                  {way.t}
+                </h2>
                 <p className="mt-3 flex-1 text-[0.95rem] text-ink-soft">{way.d}</p>
                 {"drawer" in way && way.drawer ? (
                   <button
