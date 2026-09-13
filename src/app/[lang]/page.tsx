@@ -4,18 +4,20 @@ import { CountUp } from "@/components/count-up";
 import { getDictionary, type Locale } from "@/dictionaries";
 
 /* -------- Formes qui dérivent en fond de hero --------
- * Motif "V6" (cf. V6-NOTES.md) : ce sont des points rouges, écho du point
- * du logo et du "neurone" évoqué par les chiffres (2M neurones/minute).
- * Ryan : le 1er réglage (opacité 4-7%) était "trop discret" -> remonté à
- * 16-26%, tailles et amplitude de mouvement augmentées, plus rapide.
+ * Motif "V6" (cf. V6-NOTES.md). Revu après retour critique (trop de points,
+ * trop gros, trop rouges, passaient derrière le texte/les boutons) :
+ * - 3 points au lieu de 5, tailles plafonnées via clamp() (raisonnable sur
+ *   mobile), opacité baissée à 8-10%.
+ * - gris-bleu très pâle (bg-blue-ink) au lieu de rouge : le rouge reste
+ *   réservé à la ligne d'alerte "neurones perdus" et au point final du titre.
+ * - repoussés dans les coins vides (bords + zone photo), aucun ne recouvre
+ *   le bloc de texte ni les boutons.
  * -z-10 pour rester derrière le texte et la photo. */
-type Drift = { top: string; left: string; size: number; dx: number; dy: number; dur: number; delay: number; opacity: number };
+type Drift = { top: string; left: string; size: string; dx: number; dy: number; dur: number; delay: number; opacity: number };
 const HERO_DRIFTS: Drift[] = [
-  { top: "6%", left: "0%", size: 220, dx: 68, dy: -52, dur: 15, delay: 0, opacity: 0.14 },
-  { top: "56%", left: "4%", size: 140, dx: -58, dy: 60, dur: 12, delay: 1.5, opacity: 0.11 },
-  { top: "10%", left: "80%", size: 250, dx: -72, dy: 54, dur: 17, delay: 0.8, opacity: 0.13 },
-  { top: "68%", left: "72%", size: 170, dx: 52, dy: -64, dur: 13, delay: 3, opacity: 0.14 },
-  { top: "36%", left: "42%", size: 300, dx: 60, dy: 58, dur: 19, delay: 1, opacity: 0.11 },
+  { top: "2%", left: "-4%", size: "clamp(60px,18vw,130px)", dx: 30, dy: -22, dur: 16, delay: 0, opacity: 0.09 },
+  { top: "90%", left: "0%", size: "clamp(50px,15vw,110px)", dx: -26, dy: 20, dur: 14, delay: 2, opacity: 0.08 },
+  { top: "6%", left: "84%", size: "clamp(70px,20vw,150px)", dx: -32, dy: 26, dur: 18, delay: 1, opacity: 0.1 },
 ];
 function HeroDrift() {
   return (
@@ -23,7 +25,7 @@ function HeroDrift() {
       {HERO_DRIFTS.map((d, i) => (
         <span
           key={i}
-          className="sa-float absolute rounded-full bg-red blur-md"
+          className="sa-float absolute rounded-full bg-blue-ink blur-md"
           style={
             {
               top: d.top,

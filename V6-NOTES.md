@@ -126,27 +126,36 @@ de `actualites/page.tsx` et `globals.css`. Ne pas reproduire ailleurs.
 - `src/app/globals.css` → `@keyframes sa-drift` + classe `.sa-float`
   (va-et-vient via `--dx`/`--dy`/`--dur`/`--delay`, coupé si
   `prefers-reduced-motion: reduce`)
-- `src/app/[lang]/page.tsx` → composant `HeroDrift` (5 points), placé dans
+- `src/app/[lang]/page.tsx` → composant `HeroDrift` (3 points), placé dans
   la section HERO (passée en `relative overflow-hidden`)
 
 **Quoi** : Ryan a demandé si des formes animées en arrière-plan pouvaient
-apporter de la beauté sur un site d'asso. Réponse retenue : oui, mais très
-discret — 5 points rouges flous, opacité 4,5-7 %, qui dérivent lentement en
-boucle (va-et-vient sur 19 à 30 s selon le point, décalés). Ce sont les
-mêmes points rouges que le nuage de Blog/News et le point du logo — pas une
-forme abstraite gratuite, un écho du motif "neurone" déjà présent dans le
-discours du site (2M neurones perdus/minute).
+apporter de la beauté sur un site d'asso. 1re version (5 points rouges,
+jusqu'à 300px, opacité 11-14%) jugée trop envahissante après revue critique
+(`/web-design-engineer`, 2026-09-13) : les points passaient derrière le
+bloc de texte et les boutons CTA, et cumulés avec la ligne d'alerte rouge
+"neurones perdus" + le point rouge final du titre, ça diluait la règle
+« rouge = alerte rare ». **Version corrigée** :
+- 3 points seulement, taille plafonnée via `clamp(min, vw, max)` (donc
+  raisonnable sur mobile, contrairement à des px fixes), opacité 8-10%.
+- **gris-bleu très pâle** (`bg-blue-ink`) au lieu de rouge — le rouge reste
+  100% dédié à l'alerte et au point final du titre, qui gagnent en force.
+- repoussés dans les coins vides : haut-gauche et bas-gauche hors du bloc
+  de texte (`left` négatif ou proche de 0%), un dans la zone photo (`left`
+  ~84%, en grande partie masqué par la photo elle-même).
 
 **Règle à respecter absolument** : ce motif reste réservé aux **zones
-calmes** (hero, bandes de fond, séparateurs). **Jamais** derrière la grille
-FAST, les numéros d'urgence ou toute zone qu'il faut lire vite en situation
-réelle — la lisibilité de l'urgence prime toujours sur l'esthétique.
+calmes** (hero, bandes de fond, séparateurs), **jamais derrière du texte
+ou un bouton**, et **jamais** derrière la grille FAST, les numéros
+d'urgence ou toute zone qu'il faut lire vite en situation réelle — la
+lisibilité de l'urgence prime toujours sur l'esthétique.
 
 **Comment réutiliser** : copier `HeroDrift`/`HERO_DRIFTS` (`.sa-float` déjà
-partagé dans globals.css) ; ajuster position/taille/opacité selon la
-section cible ; toujours envelopper la section dans `relative overflow-hidden`
-et placer le composant de dérive en 1ᵉʳ enfant avec `-z-10` pour qu'il reste
-derrière le texte.
+partagé dans globals.css) ; toujours dimensionner en `clamp()` (jamais en
+px fixes) ; positionner uniquement dans les coins/marges vides de la
+section cible, jamais sur une zone de lecture ; toujours envelopper la
+section dans `relative overflow-hidden` et placer le composant de dérive
+en 1ᵉʳ enfant avec `-z-10` pour qu'il reste derrière le texte.
 
 ---
 
