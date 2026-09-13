@@ -548,7 +548,14 @@ export const fr = {
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
-      { role: "Contrôleur de gestion", name: "À communiquer", bio: "Profil à publier prochainement." },
+      {
+        role: "Contrôleur de gestion",
+        name: "Dr Ezangono Ndo épse Bayolo",
+        bio: "Cardiologue, experte en hypertension et en risque cardiovasculaire et rénal.",
+        fullBio:
+          "Dr Ezangono Ndo épse Bayolo est médecin cardiologue diplômée de la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé I. Elle dispose d'une décennie de pratique clinique au Cameroun avec une expertise particulière dans la prise en charge de l'hypertension, et du risque cardiovasculaire et rénal.",
+        photo: "/ezangono.jpg",
+      },
       {
         role: "Conseiller",
         name: "Dr. NOUBIAP Jean Jacques",

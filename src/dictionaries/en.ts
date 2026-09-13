@@ -549,7 +549,14 @@ export const en = {
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
-      { role: "Auditor", name: "To be provided", bio: "Profile to be published soon." },
+      {
+        role: "Auditor",
+        name: "Dr. Ezangono Ndo, married Bayolo",
+        bio: "Cardiologist with expertise in hypertension and cardiovascular and renal risk.",
+        fullBio:
+          "Dr Ezangono Ndo, married Bayolo, is a cardiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. She has a decade-long clinical experience in Cameroon, with special expertise in the management of hypertension and cardiovascular and renal risk.",
+        photo: "/ezangono.jpg",
+      },
       {
         role: "Advisor",
         name: "Dr. NOUBIAP Jean Jacques",

@@ -12,6 +12,14 @@ type Member = {
   photo?: string;
 };
 
+// certains portraits ont beaucoup de fond au-dessus de la tête : on resserre
+// le cadrage pour rester cohérent avec les autres membres du bureau.
+const PHOTO_POSITION: Record<string, string> = {
+  "/dr-kamtchum.jpg": "object-[50%_20%]",
+  "/ezangono.jpg": "object-[50%_15%]",
+};
+const photoPosition = (photo?: string) => (photo && PHOTO_POSITION[photo]) || "object-center";
+
 /** Grille du bureau exécutif + tiroir latéral (glisse depuis la gauche,
  *  même style que SideDrawer) pour la bio complète des membres qui en ont une. */
 export function BoardGrid({
@@ -55,7 +63,7 @@ export function BoardGrid({
                 <img
                   src={m.photo}
                   alt={m.name}
-                  className={`h-full w-full object-cover ${m.photo === "/dr-kamtchum.jpg" ? "object-[50%_20%]" : "object-center"}`}
+                  className={`h-full w-full object-cover ${photoPosition(m.photo)}`}
                 />
               </div>
             ) : (
@@ -125,7 +133,7 @@ export function BoardGrid({
                 <img
                   src={active.photo}
                   alt={active.name}
-                  className={`h-full w-full object-cover ${active.photo === "/dr-kamtchum.jpg" ? "object-[50%_20%]" : "object-center"}`}
+                  className={`h-full w-full object-cover ${photoPosition(active.photo)}`}
                 />
               </div>
             )}
