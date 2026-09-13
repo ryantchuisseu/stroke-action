@@ -138,6 +138,7 @@ export const fr = {
         { id: "training", t: "Formation", d: "Former en continu les professionnels de santé." },
         { id: "support", t: "Soutien", d: "Apporter un soutien technique, financier et humain aux personnes touchées et à leurs familles." },
       ],
+      cta: "En savoir plus", // design
     },
     seconds: {
       title: "Chaque seconde compte.",

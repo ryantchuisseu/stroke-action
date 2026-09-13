@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/components/ui";
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
@@ -47,14 +48,17 @@ function HeroDrift() {
   );
 }
 
-/* -------- 4 piliers : cartes teintées + icônes fournies par Ryan --------
- * Palette partagée avec Blog/News (violet éducation, rose soutien) +
- * bleu de charte pour Recherche + un pêche pour Formation. Voir V6-NOTES.md. */
-const PILLAR_STYLES: Record<string, { bg: string; icon: string }> = {
-  education: { bg: "bg-[#EDEAF6]", icon: "/icons/pillar-education.png" },
-  research: { bg: "bg-[#E6F1FB]", icon: "/icons/pillar-research.png" },
-  training: { bg: "bg-[#FBEEE0]", icon: "/icons/pillar-training.png" },
-  support: { bg: "bg-[#F8EAEE]", icon: "/icons/pillar-support.png" },
+/* -------- 4 piliers : cartes blanches + badge numéro plein --------
+ * Test d'une référence apportée par Ryan (fond blanc, badge en pilule
+ * coloré, lien "En savoir plus" dans la couleur du badge). Couleurs =
+ * les teintes profondes déjà utilisées ailleurs sur le site (Nos
+ * valeurs/Nos actions), en plein cette fois au lieu de translucide.
+ * Voir V6-NOTES.md. */
+const PILLAR_STYLES: Record<string, { badge: string }> = {
+  education: { badge: "#5B4E96" },
+  research: { badge: "var(--color-blue-ink)" },
+  training: { badge: "#B4763C" },
+  support: { badge: "#A84360" },
 };
 
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
@@ -150,11 +154,29 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {h.pillars.items.map((it, i) => {
               const cat = PILLAR_STYLES[it.id] ?? PILLAR_STYLES.education;
               return (
-                <Reveal key={it.id} delay={i * 90} className={`flex flex-col gap-3 rounded-[14px] p-[clamp(1.3rem,3vw,1.7rem)] ${cat.bg}`}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={cat.icon} alt="" className="h-11 w-11" />
+                <Reveal
+                  key={it.id}
+                  delay={i * 90}
+                  className="flex h-full flex-col gap-3 rounded-[14px] border border-rule bg-paper p-[clamp(1.3rem,3vw,1.7rem)]"
+                >
+                  <span
+                    className="flex h-9 w-7 flex-none items-center justify-center rounded-full text-[0.8rem] font-bold text-white"
+                    style={{ background: cat.badge }}
+                  >
+                    {`0${i + 1}`}
+                  </span>
                   <h3 className="mt-1 text-[1.05rem] font-bold tracking-[-0.01em]">{it.t}</h3>
-                  <p className="text-[0.92rem] leading-[1.5] text-ink-soft">{it.d}</p>
+                  <p className="flex-1 text-[0.92rem] leading-[1.5] text-ink-soft">{it.d}</p>
+                  <Link
+                    href={p("/nos-actions")}
+                    className="group/link inline-flex w-fit items-center gap-1 text-[0.88rem] font-semibold"
+                    style={{ color: cat.badge }}
+                  >
+                    {h.pillars.cta}
+                    <span aria-hidden="true" className="transition-transform duration-200 ease-[var(--ease-out)] group-hover/link:translate-x-0.5">
+                      →
+                    </span>
+                  </Link>
                 </Reveal>
               );
             })}

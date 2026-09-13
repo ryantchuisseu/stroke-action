@@ -138,6 +138,7 @@ export const en = {
         { id: "training", t: "Training", d: "Continuous professional training for healthcare providers." },
         { id: "support", t: "Support", d: "Technical, financial, and emotional support for stroke patients and their families." },
       ],
+      cta: "Learn more", // design
     },
     seconds: {
       // design section — built around the validated CTA banner text

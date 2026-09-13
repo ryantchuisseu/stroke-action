@@ -424,6 +424,43 @@ pour ajuster l'épaisseur du trait selon le contexte.
 
 ---
 
+## 🟡 20. Icônes Vision / Mission (À propos)
+
+**Où** : `src/app/[lang]/a-propos/page.tsx`, section Vision/Mission.
+
+**Quoi** : le `BrainMark` générique (répété deux fois, aucune distinction
+visuelle) remplacé par une icône Phosphor par concept — `Eye` (Vision) et
+`Target` (Mission). Retour Ryan : "important pour l'utilisateur du site"
+de distinguer visuellement les deux blocs.
+
+---
+
+## 🟡 21. Test : cartes blanches + badge pilule plein (Nos piliers)
+
+**Où** : `src/app/[lang]/page.tsx`, `PILLAR_STYLES` + section "Nos piliers".
+
+**Quoi** : référence apportée par Ryan ("j'aime bien, teste un peu") —
+carte fond **blanc/papier** (pas teintée), badge numéro en **pilule
+pleine** (`h-9 w-7 rounded-full`, texte blanc) au lieu d'un cercle
+icône, lien **"Learn more →"** coloré dans la teinte du badge en bas de
+carte. Remplace le style précédent (fond teinté translucide + icône
+PNG fournie par Ryan — icônes PNG retirées de cette section, toujours
+disponibles dans `public/icons/pillar-*.png` si besoin de revenir en
+arrière). Lien de chaque carte → `/nos-actions` (le programme détaillé
+correspondant n'ayant pas d'ancre dédiée pour l'instant).
+
+**Couleurs** : reprend les 4 teintes profondes déjà utilisées comme
+`text` dans `VALUE_STYLES`/`PROGRAM_STYLES` (violet, bleu charte, pêche,
+rose), cette fois en **plein** pour le badge au lieu de translucide pour
+le fond. Toujours aucune couleur nouvelle.
+
+**⚠️ C'est un test** ("teste un peu ce design") — pas encore étendu
+ailleurs. Si Ryan valide, envisager de l'appliquer à Nos actions/Nos
+valeurs pour une cohérence de style (actuellement ces deux sections
+utilisent encore le fond teinté translucide + icône).
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

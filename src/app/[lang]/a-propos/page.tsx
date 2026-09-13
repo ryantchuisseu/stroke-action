@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Heart, Flame, ShieldCheck, Award, type LucideIcon } from "lucide-react";
+import { Eye, Target } from "@phosphor-icons/react/ssr";
 import { Container, Eyebrow, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { Reveal } from "@/components/reveal";
@@ -108,17 +109,20 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
       <section className="bg-paper-deep py-[clamp(3.5rem,8vw,6.5rem)]">
         <Container>
           <div className="grid gap-px border border-rule bg-rule md:grid-cols-2">
-            {[a.vision, a.mission].map((c) => (
+            {[a.vision, a.mission].map((c, i) => {
+              const Icon = i === 0 ? Eye : Target;
+              return (
               <div key={c.k} className="bg-paper-deep p-[clamp(1.75rem,4vw,3rem)]">
                 <div className="flex items-center gap-[0.6rem]">
-                  <BrainMark className="h-[22px] w-[22px] text-ink" />
+                  <Icon size={20} weight="bold" className="text-blue-ink" aria-hidden="true" />
                   <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue-ink">{c.k}</span>
                 </div>
                 <blockquote className="mt-[1.1rem] text-[clamp(1.15rem,2.1vw,1.55rem)] font-medium leading-[1.4] tracking-[-0.015em]">
                   {c.q}
                 </blockquote>
               </div>
-            ))}
+              );
+            })}
           </div>
         </Container>
       </section>
