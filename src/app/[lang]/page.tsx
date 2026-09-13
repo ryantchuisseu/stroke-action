@@ -173,12 +173,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {h.fast.items.map((f: { l: string; t: string; d: string; em?: boolean }) => (
               <div
                 key={f.l}
-                className={`p-[clamp(1.1rem,2.5vw,1.7rem)] ${
-                  f.em ? "bg-[color-mix(in_srgb,var(--color-red)_7%,var(--color-paper))]" : "bg-paper"
+                className={`group p-[clamp(1.1rem,2.5vw,1.7rem)] transition-colors duration-200 ease-[var(--ease-out)] ${
+                  f.em
+                    ? "bg-[color-mix(in_srgb,var(--color-red)_7%,var(--color-paper))] hover:bg-[color-mix(in_srgb,var(--color-red)_13%,var(--color-paper))]"
+                    : "bg-paper hover:bg-[color-mix(in_srgb,var(--color-blue)_7%,var(--color-paper))]"
                 }`}
               >
                 <div
-                  className={`text-[clamp(2rem,4.5vw,3rem)] font-bold leading-[0.9] tracking-[-0.04em] ${
+                  className={`origin-left text-[clamp(2rem,4.5vw,3rem)] font-bold leading-[0.9] tracking-[-0.04em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.12] motion-reduce:group-hover:scale-100 ${
                     f.em ? "text-red" : "text-blue"
                   }`}
                 >
@@ -261,9 +263,9 @@ function U({ children }: { children: React.ReactNode }) {
 
 function Stat({ n, k, accent = false }: { n: React.ReactNode; k: string; accent?: boolean }) {
   return (
-    <div>
+    <div className="group">
       <div
-        className={`flex items-baseline gap-[0.05em] text-[clamp(2.7rem,8vw,5.2rem)] font-bold leading-[0.9] tabular-nums tracking-[-0.045em] ${
+        className={`flex origin-left items-baseline gap-[0.05em] text-[clamp(2.7rem,8vw,5.2rem)] font-bold leading-[0.9] tabular-nums tracking-[-0.045em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100 ${
           accent ? "text-red-ink" : ""
         }`}
       >

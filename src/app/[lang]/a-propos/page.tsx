@@ -3,6 +3,7 @@ import { Heart, Flame, ShieldCheck, Award, type LucideIcon } from "lucide-react"
 import { Container, Eyebrow, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { Reveal } from "@/components/reveal";
+import { HandNote, highlightWord, underlineWord } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -28,6 +29,8 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
   const t = getDictionary(lang as Locale);
   const a = t.about;
   const p = (href: string) => `/${lang}${href}`;
+  const storyUnderline = lang === "fr" ? "liberté d'association" : "freedom of association";
+  const storyHighlight = lang === "fr" ? "évitable" : "preventable";
 
   return (
     <>
@@ -49,19 +52,24 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
         <Container className="grid items-start gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[1.15fr_0.85fr]">
           <div className="max-w-[62ch]">
             <p className="text-[clamp(1.15rem,1.9vw,1.5rem)] font-medium leading-[1.5] tracking-[-0.015em]">
-              {a.story.lead}
+              {underlineWord(a.story.lead, storyUnderline)}
             </p>
-            <p className="mt-[1.15rem]">{a.story.p2}</p>
+            <p className="mt-[1.15rem]">{highlightWord(a.story.p2, storyHighlight)}</p>
             <p className="mt-[1.15rem]">{a.story.p3}</p>
           </div>
           <aside className="md:sticky md:top-24">
-            <div className="aspect-[4/5] overflow-hidden">
+            <div className="group relative aspect-[4/5] overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/photos/infirmiere.jpg" alt="" className="h-full w-full object-cover" />
+              <img
+                src="/photos/infirmiere.jpg"
+                alt=""
+                className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
+              />
             </div>
-            <p className="mt-4 border-t-2 border-ink pt-4 text-[0.88rem] text-ink-soft">
+            <p className="relative mt-4 border-t-2 border-ink pt-4 text-[0.88rem] text-ink-soft">
               <b className="mb-[0.15rem] block text-2xl tracking-[-0.02em] text-ink">{a.story.factYear}</b>
               {a.story.fact}
+              <HandNote className="mt-3 hidden rotate-[-3deg] sm:inline-block">{a.story.originNote}</HandNote>
             </p>
           </aside>
         </Container>

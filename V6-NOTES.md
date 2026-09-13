@@ -331,6 +331,60 @@ que de redessiner la fioriture soi-même.**
 
 ---
 
+## 🐛 Bug corrigé — virgule qui saute à la ligne après un mot surligné
+
+`highlightWord()` posait le mot surligné dans un `<span class="inline-block">`.
+Un `inline-block` introduit une opportunité de saut de ligne juste après
+lui : sur "Four pillars, one conviction.", la virgule qui suit
+immédiatement le span se retrouvait seule au début de la ligne suivante
+(retour Ryan, capture à l'appui). **Fix : `inline` au lieu de
+`inline-block`** — un span inline avec fond + `border-radius` + padding
+fonctionne très bien visuellement (effet "surligneur") et ne casse plus
+la ponctuation qui suit. `position: relative` reste nécessaire (et
+fonctionne) pour ancrer la fioriture en `absolute`.
+
+---
+
+## 🟡 16. Grossissement au survol sur les listes/grilles "plates"
+
+**Où** : `src/app/[lang]/education-avc/page.tsx` (facteurs de risque,
+grille FAST, "Le saviez-vous"), `src/app/[lang]/page.tsx` (aperçu FAST,
+`Stat`), `src/app/[lang]/nos-actions/page.tsx` (Our Impact).
+
+**Quoi** : Ryan a repéré que plusieurs listes/grilles du site n'avaient
+aucun retour au survol ("on dirait juste qu'ils sont mis là comme ça") —
+alors que FAQ et Documents clés en ont déjà un. Recette FAQ reprise telle
+quelle : `group` sur la ligne/case, `hover:bg-paper-deep` (ou une teinte
+de la couleur locale via `color-mix()`), `group-hover:scale-[1.03-1.12]`
+sur le texte/chiffre/lettre à l'intérieur (`origin-left`,
+`motion-reduce:group-hover:scale-100`).
+**Note** : posé aussi sur la grille FAST malgré la règle "pas d'effet
+sur les zones d'urgence" (motifs 9/11) — c'est une interaction au survol
+volontaire de l'utilisateur, pas une animation ambiante qui gênerait la
+lecture rapide en situation réelle ; à surveiller si Ryan préfère
+finalement l'en exclure.
+
+**Comment réutiliser** : `group` sur le conteneur de la ligne/case,
+`hover:bg-...` + `transition-colors`, et sur l'élément à mettre en avant
+`origin-left group-hover:scale-[x] motion-reduce:group-hover:scale-100`.
+
+---
+
+## 🟡 17. "Our Story" (À propos) : mêmes effets que Éducation AVC
+
+**Où** : `src/app/[lang]/a-propos/page.tsx`, section "Notre histoire".
+
+**Quoi** : section repérée par Ryan comme totalement plate (texte brut,
+aucun effet) — comparée à la richesse de la section FAST d'Éducation AVC.
+Ajouté : soulignement rouge sur "freedom of association"/"liberté
+d'association" (texte réel, phrase légale citée), surlignage translucide
+sur "preventable"/"évitable" dans le 2e paragraphe, note manuscrite
+`HandNote` ("our origin"/"notre origine") à côté de l'encart année de
+fondation, et un léger zoom au survol sur la photo (`group-hover:scale-
+[1.06]` sur l'`<img>`, conteneur `overflow-hidden`).
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

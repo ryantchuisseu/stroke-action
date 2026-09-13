@@ -202,6 +202,7 @@ export const fr = {
       p3: "Nous sommes une organisation à but non lucratif, laïque et apolitique, d'intérêt général.",
       factYear: "2026",
       fact: "Année de fondation de Stroke Action. L'association est régie par la loi n° 90-53 du 19 décembre 1990 sur la liberté d'association.",
+      originNote: "notre origine", // design — annotation manuscrite
     },
     quote: {
       text: "Chaque AVC qui survient dans la vie d'un être humain est un AVC de trop, quelle qu'en soit la gravité.",

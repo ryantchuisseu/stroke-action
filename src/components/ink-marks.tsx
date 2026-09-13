@@ -26,7 +26,11 @@ export function highlightWord(text: string, word: string, opts?: { flourish?: bo
   return (
     <>
       {text.slice(0, idx)}
-      <span className="relative inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+      {/* "inline" et non "inline-block" : un inline-block introduit une
+          opportunité de saut de ligne juste après lui, ce qui envoyait la
+          ponctuation suivante ("pillars," -> virgule seule sur la ligne
+          d'après) sur la ligne suivante (retour Ryan). */}
+      <span className="relative inline rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
         {opts?.flourish && (
           <Flourish className="pointer-events-none absolute -top-2 -right-3 h-[0.65em] w-[0.65em] rotate-[15deg]" />
         )}

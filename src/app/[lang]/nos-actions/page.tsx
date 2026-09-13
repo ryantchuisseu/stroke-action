@@ -118,8 +118,13 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
           <p className="mt-2 text-ink-soft">{w.metricsNote}</p>
           <dl className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
             {w.metrics.map((m) => (
-              <div key={m} className="bg-paper-deep p-6">
-                <dd className="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-grey">—</dd>
+              <div
+                key={m}
+                className="group bg-paper-deep p-6 transition-colors duration-200 ease-[var(--ease-out)] hover:bg-[color-mix(in_srgb,var(--color-blue)_8%,var(--color-paper-deep))]"
+              >
+                <dd className="origin-left text-[clamp(2rem,5vw,3.5rem)] font-bold leading-none tracking-[-0.04em] text-grey transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.08] motion-reduce:group-hover:scale-100">
+                  —
+                </dd>
                 <dt className="mt-2 text-[0.9rem] text-ink-soft">{m}</dt>
               </div>
             ))}

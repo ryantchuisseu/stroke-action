@@ -203,6 +203,7 @@ export const en = {
       p3: "We are a secular, apolitical, non-profit organization serving the public interest.",
       factYear: "2026",
       fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, relating to freedom of association.",
+      originNote: "our origin", // design — annotation manuscrite
     },
     quote: {
       text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",

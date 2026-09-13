@@ -73,9 +73,11 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             {e.fast.map((f: { l: string; t: string; d: string; em?: boolean }) => (
               <div
                 key={f.l}
-                className={`p-[clamp(1.1rem,2.5vw,1.7rem)] ${f.em ? "bg-[color-mix(in_srgb,var(--color-red)_8%,var(--color-paper-deep))]" : "bg-paper-deep"}`}
+                className={`group p-[clamp(1.1rem,2.5vw,1.7rem)] transition-colors duration-200 ease-[var(--ease-out)] ${f.em ? "bg-[color-mix(in_srgb,var(--color-red)_8%,var(--color-paper-deep))] hover:bg-[color-mix(in_srgb,var(--color-red)_14%,var(--color-paper-deep))]" : "bg-paper-deep hover:bg-[color-mix(in_srgb,var(--color-blue)_8%,var(--color-paper-deep))]"}`}
               >
-                <div className={`text-[clamp(2rem,4.5vw,3rem)] font-bold leading-[0.9] tracking-[-0.04em] ${f.em ? "text-red" : "text-blue"}`}>
+                <div
+                  className={`origin-left text-[clamp(2rem,4.5vw,3rem)] font-bold leading-[0.9] tracking-[-0.04em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.12] motion-reduce:group-hover:scale-100 ${f.em ? "text-red" : "text-blue"}`}
+                >
                   {f.l}
                 </div>
                 <h3 className="mt-[0.65rem] text-[0.98rem] font-semibold">{f.t}</h3>
@@ -94,7 +96,11 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             <p className="mt-1 text-[0.9rem] text-ink-soft">{e.modifSub}</p>
             <ul className="mt-5 border-t border-rule">
               {e.modif.map((m) => (
-                <li key={m} className="border-b border-rule py-[0.7rem] text-[0.96rem]">{m}</li>
+                <li key={m} className="group border-b border-rule transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
+                  <span className="inline-block origin-left py-[0.7rem] text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
+                    {m}
+                  </span>
+                </li>
               ))}
             </ul>
           </div>
@@ -103,7 +109,11 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             <p className="mt-1 text-[0.9rem] text-ink-soft">{e.nonModifSub}</p>
             <ul className="mt-5 border-t border-rule">
               {e.nonModif.map((m) => (
-                <li key={m} className="border-b border-rule py-[0.7rem] text-[0.96rem]">{m}</li>
+                <li key={m} className="group border-b border-rule transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
+                  <span className="inline-block origin-left py-[0.7rem] text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
+                    {m}
+                  </span>
+                </li>
               ))}
             </ul>
           </div>
@@ -157,12 +167,12 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             {e.know.map((k, i) => (
               <div
                 key={i}
-                className={`relative bg-paper p-[clamp(1.3rem,2.8vw,1.8rem)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] ${
+                className={`group relative bg-paper p-[clamp(1.3rem,2.8vw,1.8rem)] transition-colors duration-200 ease-[var(--ease-out)] before:absolute before:inset-x-0 before:top-0 before:h-[3px] hover:bg-paper-deep ${
                   i % 2 === 0 ? "before:bg-blue" : "before:bg-red"
                 } ${i === e.know.length - 1 ? "sm:col-span-2" : ""}`}
               >
                 <span
-                  className={`text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] ${
+                  className={`inline-block origin-left text-[0.72rem] font-semibold tabular-nums tracking-[0.12em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.3] motion-reduce:group-hover:scale-100 ${
                     i % 2 === 0 ? "text-blue-ink" : "text-red-ink"
                   }`}
                 >
