@@ -40,7 +40,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                 <img
                   src="/dr-kamtchum.jpg"
                   alt={`${founderName} — ${g.founderCaptionRole}`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
               </div>
               <figcaption className="mt-4 text-center text-[0.74rem] uppercase tracking-[0.14em] text-grey">
@@ -69,7 +69,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                     <img
                       src={m.photo}
                       alt={m.name}
-                      className="h-full w-full object-cover"
+                      className={`h-full w-full object-cover ${m.photo === "/dr-kamtchum.jpg" ? "object-top" : "object-center"}`}
                     />
                   </div>
                 ) : (
