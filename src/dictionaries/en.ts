@@ -529,11 +529,15 @@ export const en = {
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
     boardTitle: "Executive Board",
     founderCaptionRole: "Founder",
+    readMore: "Read more",
+    closeBio: "Close",
     board: [
       {
         role: "President",
         name: "Dr. KAMTCHUM TATUENE Joseph",
         bio: "Neurologist and researcher, founder of Stroke Action.",
+        fullBio:
+          "Dr. Kamtchum is a Cameroonian physician, Neurologist and Neuroepidemiologist, with expertise in stroke medicine and atherosclerosis. He has a long international clinical and research experience in Cameroon, Switzerland, the United Kingdom, Malawi, and Canada. His scientific achievements have been rewarded by numerous prizes and distinctions. He currently works as a Clinician-Scientist conjointly at the University of Oxford in the UK and the Higher Institute for Scientific and Medical Research in Cameroon.",
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
@@ -550,6 +554,8 @@ export const en = {
         role: "Advisor",
         name: "Dr. NOUBIAP Jean Jacques",
         bio: "Specialist physician and scientist in global health and cardiovascular diseases; co-author of 300+ scientific publications.",
+        fullBio:
+          "Dr. Jean Jacques Noubiap is a specialist physician and scientist with expertise in global health and cardiovascular diseases. His research generates evidence to address clinically important questions with direct implications for patient care, public health, and health policy. He has co-authored more than 300 scientific publications and received numerous awards and recognitions from leading organizations, including the American Heart Association, World Heart Federation, and Heart Rhythm Society. Dr. Noubiap brings extensive international experience, having worked across diverse clinical, academic, and research environments in Cameroon, South Africa, Australia, and the United States, with a strong commitment to improving cardiovascular health worldwide.",
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },

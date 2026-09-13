@@ -528,11 +528,15 @@ export const fr = {
     introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
     boardTitle: "Bureau exécutif",
     founderCaptionRole: "Fondateur",
+    readMore: "Voir plus",
+    closeBio: "Fermer",
     board: [
       {
         role: "Président",
         name: "Dr KAMTCHUM TATUENE Joseph",
         bio: "Neurologue et chercheur, fondateur de Stroke Action.",
+        fullBio:
+          "Le Dr Kamtchum est médecin camerounais, neurologue et épidémiologiste, expert des accidents vasculaires cérébraux et de l'athérosclérose. Il possède une longue expérience internationale de pratique clinique et de recherche obtenue au Cameroun, en Suisse, en Angleterre, au Malawi et au Canada. Ses travaux scientifiques ont été récompensés par de nombreux prix et distinctions. À présent, il exerce ses activités de clinicien-chercheur conjointement à l'Université d'Oxford en Angleterre et à l'Institut Supérieur de Recherche Scientifique et Médicale au Cameroun.",
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
@@ -549,6 +553,8 @@ export const fr = {
         role: "Conseiller",
         name: "Dr. NOUBIAP Jean Jacques",
         bio: "Médecin spécialiste et chercheur en santé mondiale et maladies cardiovasculaires ; co-auteur de plus de 300 publications scientifiques.",
+        fullBio:
+          "Le Dr Jean Jacques Noubiap est médecin spécialiste et chercheur, expert en santé mondiale et maladies cardiovasculaires. Ses recherches produisent des données probantes pour répondre à des questions cliniquement importantes, avec des implications directes pour les soins aux patients, la santé publique et les politiques de santé. Il est co-auteur de plus de 300 publications scientifiques et a reçu de nombreuses distinctions de la part d'organisations de premier plan, notamment l'American Heart Association, la World Heart Federation et la Heart Rhythm Society. Le Dr Noubiap possède une vaste expérience internationale, ayant travaillé dans des environnements cliniques, universitaires et de recherche variés au Cameroun, en Afrique du Sud, en Australie et aux États-Unis, avec un engagement fort pour l'amélioration de la santé cardiovasculaire dans le monde.",
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },
