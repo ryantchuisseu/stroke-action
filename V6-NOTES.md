@@ -191,6 +191,64 @@ choisies pour toute nouvelle section de ce type plutôt que d'en inventer.
 
 ---
 
+## 🟡 11. Annotations manuscrites (HandNote / InkUnderline)
+
+**Où** : `src/components/ink-marks.tsx` (nouveau) ; police `Caveat` chargée
+dans `src/app/[lang]/layout.tsx` (`--font-caveat`, jamais utilisée pour du
+texte fonctionnel, uniquement décoratif) ; utilisé dans
+`src/app/[lang]/education-avc/page.tsx`.
+
+**Quoi** : référence apportée par Ryan (ancienne V3.7, captures d'écran) —
+des petites notes en écriture manuscrite, parfois cerclées ("every minute
+counts", "preventable"), et des mots mis en évidence en rouge avec un
+soulignement "à la main" (tracé SVG légèrement irrégulier, pas une ligne
+droite ni le `decoration-red` déjà existant ailleurs sur le site).
+- `HandNote` : texte en police Caveat + un tracé SVG cerclé (`variant="circle"`)
+  ou en soulignement ondulé (`variant="underline"`) derrière.
+- `InkUnderline` : garde la police normale, ajoute juste le trait ondulé
+  rouge sous le texte (utilisé pour le mot "FAST" dans le titre de la
+  section FAST d'Éducation AVC).
+- Appliqué : note "every second counts"/"chaque seconde compte" à côté du
+  titre FAST (reprend la phrase déjà utilisée sur l'accueil, rien
+  d'inventé) ; note "preventable"/"évitable" sur la carte "80%" des
+  chiffres clés (fond bleu foncé → utiliser `var(--color-red)`, pas
+  `--color-red-ink`, pour le contraste).
+
+**Comment réutiliser** : importer `HandNote`/`InkUnderline` ; toujours
+`hidden sm:inline-block` (annotation en trop sur mobile étroit) ; jamais
+sur une zone d'urgence/FAST à lire vite (même règle que le motif 9) ;
+varier circle/underline pour ne pas répéter deux fois le même tracé sur
+une page.
+
+---
+
+## 🟡 12. Cartes de programmes teintées et translucides (Nos actions)
+
+**Où** : `src/app/[lang]/nos-actions/page.tsx`, table `PROGRAM_STYLES`.
+
+**Quoi** : référence apportée par Ryan (ancienne V3.7) — chaque programme
+avait une couleur + une icône, encadré. Remis au goût du jour : **fonds
+translucides** (`color-mix(in srgb, <teinte> ~30-38%, transparent)`,
+contrairement aux cartes "Nos piliers" du point 10 qui sont en teinte
+pleine/opaque) pour que le papier du site reste visible en transparence,
+plus un badge icône rond + le numéro du programme dans la teinte du
+programme, plus le petit repère de puce (`bg-red` générique) recoloré
+dans la teinte du programme au lieu du rouge (le rouge reste réservé à
+l'alerte, cf. motif 9).
+
+**Palette** : les 5 teintes déjà utilisées ailleurs sur le site — violet
+et rose (Blog/News), bleu de charte (Nos piliers), pêche (Nos piliers),
+vert (Blog/News) pour le 5e programme. Aucune couleur nouvelle inventée.
+Icônes lucide-react : Megaphone (Éducation publique), Microscope
+(Recherche scientifique), GraduationCap (Formation professionnelle),
+HeartHandshake (Soutien aux patients), Users (Engagement).
+
+**Comment réutiliser** : ajouter une entrée à `PROGRAM_STYLES` (`bg`
+en `color-mix()`, `iconBg` en teinte pleine claire, `text` en teinte
+profonde, `Icon` lucide) ; garder l'ordre synchronisé avec `w.programs`.
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

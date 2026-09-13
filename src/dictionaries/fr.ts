@@ -331,6 +331,8 @@ export const fr = {
       emergencyNote: "Au moindre signe d'AVC, appelez immédiatement — n'attendez pas.",
     },
     fastTitle: "Reconnaître un AVC — La méthode FAST",
+    fastNote: "chaque seconde compte", // design — annotation manuscrite
+    preventableNote: "évitable", // design — annotation manuscrite
     fast: [
       { l: "F", t: "Face — le visage", d: "Affaissement ou engourdissement soudain d'un côté du visage." },
       { l: "A", t: "Arms — les bras", d: "Faiblesse ou engourdissement d'un bras — demandez de lever les deux bras." },

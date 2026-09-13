@@ -332,6 +332,8 @@ export const en = {
       emergencyNote: "At any sign of stroke, call immediately — do not wait.",
     },
     fastTitle: "Recognize a Stroke — The FAST Method",
+    fastNote: "every second counts", // design — annotation manuscrite
+    preventableNote: "preventable", // design — annotation manuscrite
     fast: [
       { l: "F", t: "Face", d: "Sudden facial drooping or numbness on one side." },
       { l: "A", t: "Arms", d: "Weakness or numbness in one arm — ask the person to raise both arms." },

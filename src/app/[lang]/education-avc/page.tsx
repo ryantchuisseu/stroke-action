@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
+import { HandNote, InkUnderline } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -55,7 +56,18 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
       {/* FAST */}
       <section className="bg-paper-deep py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
-          <h2 className="text-[clamp(1.6rem,3.4vw,2.4rem)]">{e.fastTitle}</h2>
+          <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+            <h2 className="text-[clamp(1.6rem,3.4vw,2.4rem)]">
+              {e.fastTitle.split(/(FAST)/).map((part, i) =>
+                part === "FAST" ? (
+                  <InkUnderline key={i}>{part}</InkUnderline>
+                ) : (
+                  <span key={i}>{part}</span>
+                )
+              )}
+            </h2>
+            <HandNote className="hidden -mt-3 rotate-[-3deg] sm:inline-block">{e.fastNote}</HandNote>
+          </div>
           <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
             {e.fast.map((f: { l: string; t: string; d: string; em?: boolean }) => (
               <div
@@ -120,6 +132,15 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
                   {s.n}
                 </div>
                 <p className="mt-2 text-[0.92rem] leading-[1.5] text-[rgba(252,250,246,0.8)]">{s.t}</p>
+                {s.n === "80%" && (
+                  <HandNote
+                    variant="underline"
+                    color="var(--color-red)"
+                    className="mt-1 hidden rotate-[-3deg] sm:inline-block"
+                  >
+                    {e.preventableNote}
+                  </HandNote>
+                )}
               </li>
             ))}
           </ul>
