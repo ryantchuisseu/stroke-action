@@ -55,7 +55,7 @@ export function BoardGrid({
                 <img
                   src={m.photo}
                   alt={m.name}
-                  className={`h-full w-full object-cover ${m.photo === "/dr-kamtchum.jpg" ? "object-top" : "object-center"}`}
+                  className={`h-full w-full object-cover ${m.photo === "/dr-kamtchum.jpg" ? "object-[50%_20%]" : "object-center"}`}
                 />
               </div>
             ) : (
@@ -63,7 +63,7 @@ export function BoardGrid({
                 <BrainMark className="h-9 w-9 text-blue-ink/25" dot="color-mix(in srgb, var(--color-red) 35%, transparent)" />
               </div>
             )}
-            <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{m.role}</p>
+            <p className="mt-4 text-[0.9rem] font-semibold uppercase tracking-[0.14em] text-red-ink">{m.role}</p>
             <h2 className="mt-1 text-[1.1rem] font-semibold tracking-[-0.01em]">{m.name}</h2>
             <p className="mt-2 text-[0.9rem] text-ink-soft">{m.bio}</p>
             {m.email && (
@@ -125,11 +125,11 @@ export function BoardGrid({
                 <img
                   src={active.photo}
                   alt={active.name}
-                  className={`h-full w-full object-cover ${active.photo === "/dr-kamtchum.jpg" ? "object-top" : "object-center"}`}
+                  className={`h-full w-full object-cover ${active.photo === "/dr-kamtchum.jpg" ? "object-[50%_20%]" : "object-center"}`}
                 />
               </div>
             )}
-            <p className="mt-5 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{active?.role}</p>
+            <p className="mt-5 text-[0.9rem] font-semibold uppercase tracking-[0.14em] text-red-ink">{active?.role}</p>
             <p className="mt-4 text-[0.92rem] leading-[1.6] text-ink-soft">{active?.fullBio}</p>
             {active?.email && (
               <a href={`mailto:${active.email}`} className="mt-5 inline-block text-[0.88rem] font-semibold text-blue-ink hover:text-red-ink">

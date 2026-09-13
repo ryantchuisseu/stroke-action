@@ -41,7 +41,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                 <img
                   src="/dr-kamtchum.jpg"
                   alt={`${founderName} — ${g.founderCaptionRole}`}
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-[50%_20%]"
                 />
               </div>
               <figcaption className="mt-4 text-center text-[0.74rem] uppercase tracking-[0.14em] text-grey">
