@@ -23,6 +23,8 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
         eyebrow={g.eyebrow}
         title={g.title}
         intro={g.intro}
+        highlight={lang === "fr" ? "bureau exécutif" : "Executive Board"}
+        underline={lang === "fr" ? "intégrité" : "integrity"}
       />
 
       {/* Déclaration — texte / portrait du fondateur / texte */}

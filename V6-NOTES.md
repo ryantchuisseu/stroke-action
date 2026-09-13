@@ -249,6 +249,55 @@ profonde, `Icon` lucide) ; garder l'ordre synchronisé avec `w.programs`.
 
 ---
 
+## 🟡 13. Apparition "grossissement + scintillement" sur les grilles de cartes
+
+**Où** : `src/components/reveal.tsx` (composant `Reveal`, IntersectionObserver,
+même famille que `CountUp`/`SecondsBand`) + `.sa-reveal`/`.sa-reveal-in`
+dans `globals.css`. Appliqué sur les cartes "Nos piliers" (accueil) et
+les cartes de programmes (Nos actions).
+
+**Quoi** : Ryan s'attendait à un effet à l'arrivée sur les cartes teintées
+("il n'y a pas d'effet grossissement et scintillance, je m'attends à
+plus"). Chaque carte, quand elle entre dans le viewport, grossit (scale
+0.86 → 1 + fondu) puis un reflet balaie la carte une fois (le
+"scintillement"). Décalage en cascade via `delay={i * 90}` (piliers) /
+`delay={i * 80}` (programmes).
+
+**Comment réutiliser** : envelopper chaque carte d'une grille dans
+`<Reveal delay={i * 90}>...</Reveal>` (garder les classes visuelles de la
+carte sur `Reveal` via `className`, ou sur l'élément enfant si la carte a
+déjà un style inline comme les cartes de programmes). Coupé si
+`prefers-reduced-motion`.
+
+---
+
+## 🟡 14. Surlignage + soulignement + fioriture étendus à tout le site
+
+**Où** : `src/components/ink-marks.tsx` (`highlightWord`, `underlineWord`,
+`Flourish`, partagés) ; `PageHeader` et `SectionHead` (`src/components/ui.tsx`)
+acceptent maintenant des props `highlight`/`underline` qui appliquent la
+recette automatiquement (mot surligné translucide + fioriture bleue sur
+le titre, mot souligné en rouge sur l'intro) sans avoir à reconstruire un
+`titleNode`/`introNode` à la main.
+
+**Quoi** : posé pour la 1re fois sur Blog/News (points 2-4), Ryan a
+demandé de l'étendre partout ("applique-le partout stp sur tout le
+site"). Fait sur : accueil (hero, Qui sommes-nous, Nos piliers, aperçu
+FAST, Chiffres, Ils en parlent), et l'en-tête de chaque page intérieure
+(À propos, Éducation AVC, FAQ, Contact, Nous soutenir, Documents clés,
+Galerie, Gouvernance, Espace membres, Nos actions). Un mot réel déjà
+présent dans le texte est choisi à chaque fois — jamais de texte ajouté.
+
+**Comment réutiliser** : passer `highlight="mot du titre"` et/ou
+`underline="mot de l'intro"` à `PageHeader`/`SectionHead`. Si le mot n'est
+pas trouvé dans le texte, la fonction renvoie le texte tel quel (pas
+d'erreur). Pour un cas plus complexe (fioriture positionnée différemment,
+plusieurs surlignages...), reconstruire `titleNode`/`introNode` à la main
+comme sur Blog/News et Nos actions (le fallback `highlight`/`underline`
+est ignoré dès que `titleNode`/`introNode` est fourni).
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

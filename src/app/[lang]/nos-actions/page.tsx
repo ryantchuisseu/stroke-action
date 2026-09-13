@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Megaphone, Microscope, GraduationCap, HeartHandshake, Users, type LucideIcon } from "lucide-react";
 import { Container, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { Carousel } from "@/components/carousel";
+import { Reveal } from "@/components/reveal";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -50,6 +51,7 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
         title={w.title}
         intro={w.intro}
         introNode={introNode}
+        highlight={lang === "fr" ? "engagement" : "commitment"}
       />
 
       {/* Carrousel — images de terrain */}
@@ -69,8 +71,8 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
               const style = PROGRAM_STYLES[i % PROGRAM_STYLES.length];
               const Icon = style.Icon;
               return (
+                <Reveal key={prog.n} delay={i * 80}>
                 <article
-                  key={prog.n}
                   className="grid gap-x-[clamp(1.5rem,5vw,3.5rem)] gap-y-4 border border-rule p-[clamp(1.5rem,4vw,2.5rem)] md:grid-cols-[4rem_1fr]"
                   style={{ background: style.bg }}
                 >
@@ -103,6 +105,7 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
                     </ul>
                   </div>
                 </article>
+                </Reveal>
               );
             })}
           </div>

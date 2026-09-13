@@ -199,6 +199,45 @@
   animation-delay: var(--delay, 0s);
 }
 
+/* ---- apparition "grossissement + scintillement" au scroll (motif V6) :
+   pour des cartes (piliers, programmes...), jamais pour du contenu à lire
+   vite. Le grossissement = scale-in ; le scintillement = un reflet qui
+   balaie la carte une fois, à la manière d'un flash de lumière. ---- */
+.sa-reveal {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.86) translateY(10px);
+  transition: opacity 620ms var(--ease-out), transform 620ms var(--ease-out);
+}
+.sa-reveal-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.sa-reveal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-130%) skewX(-12deg);
+  background: linear-gradient(
+    100deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.65) 49%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0.65) 51%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+.sa-reveal-in::after {
+  animation: sa-shine 850ms ease-out 140ms 1 forwards;
+}
+@keyframes sa-shine {
+  to {
+    transform: translateX(130%) skewX(-12deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-stg,
   .hero-mark-path,
@@ -213,5 +252,16 @@
   .sa-float {
     animation: none !important;
     transform: none !important;
+  }
+  .sa-reveal,
+  .sa-reveal-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .sa-reveal::after,
+  .sa-reveal-in::after {
+    content: none !important;
+    animation: none !important;
   }
 }

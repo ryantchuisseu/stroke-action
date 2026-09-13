@@ -1,5 +1,49 @@
 import type { ReactNode } from "react";
 
+/* -------- Fioriture bleue (3 tirets), notre patte à côté des titres --------
+ * D'abord posée sur Blog/News (V6-NOTES point 2-3), désormais partagée pour
+ * être réutilisée sur tous les titres du site (voir highlightWord). */
+export function Flourish({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" className={className} fill="none" aria-hidden="true">
+      <path d="M15 3 9 9" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" />
+      <path d="M18 8 12 14" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.6" />
+      <path d="M11 1 5 7" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.35" />
+    </svg>
+  );
+}
+
+/** Surligne la 1re occurrence de `word` dans `text` (fond translucide bleu,
+ * coins arrondis — recette Blog/News). Rend `text` tel quel si `word` est
+ * introuvable (jamais d'erreur silencieuse qui casserait l'affichage). */
+export function highlightWord(text: string, word: string): ReactNode {
+  const idx = text.indexOf(word);
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+        {word}
+      </span>
+      {text.slice(idx + word.length)}
+    </>
+  );
+}
+
+/** Souligne la 1re occurrence de `word` dans `text` (trait rouge droit,
+ * recette Blog/News — pas le tracé manuscrit de InkUnderline). */
+export function underlineWord(text: string, word: string): ReactNode {
+  const idx = text.indexOf(word);
+  if (idx === -1) return text;
+  return (
+    <>
+      {text.slice(0, idx)}
+      <span className="underline decoration-red decoration-[3px] underline-offset-[3px]">{word}</span>
+      {text.slice(idx + word.length)}
+    </>
+  );
+}
+
 /* -------- Petites annotations "à la main" (motif V6, cf. V6-NOTES.md) --------
  * Référence apportée par Ryan (ancienne V3.7) : de petites notes en écriture
  * manuscrite, parfois cerclées, qui ponctuent la page ("every minute counts",

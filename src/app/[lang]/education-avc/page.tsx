@@ -22,6 +22,7 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[1].label }, { label: e.crumb }]}
         eyebrow={e.eyebrow}
         title={e.title}
+        highlight={lang === "fr" ? "vies" : "Lives"}
       />
 
       {/* Qu'est-ce qu'un AVC */}

@@ -21,6 +21,7 @@ export default async function FaqPage({ params }: { params: Promise<{ lang: stri
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[1].label }, { label: f.crumb }]}
         eyebrow={f.eyebrow}
         title={f.title}
+        highlight="Questions"
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>

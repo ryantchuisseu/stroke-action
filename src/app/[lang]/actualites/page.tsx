@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Megaphone, Activity, HeartHandshake } from "lucide-react";
 import { Container, PageHeader } from "@/components/ui";
+import { Flourish } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -13,17 +14,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     title: d.news.crumb,
     description: `${d.news.introPre}${d.news.introAccent}.`,
   });
-}
-
-/* -------- Fioriture bleue à côté du titre : trois tirets, notre patte -------- */
-function Flourish({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 20 20" className={className} fill="none" aria-hidden="true">
-      <path d="M15 3 9 9" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" />
-      <path d="M18 8 12 14" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.6" />
-      <path d="M11 1 5 7" stroke="var(--color-blue)" strokeWidth="2.6" strokeLinecap="round" opacity="0.35" />
-    </svg>
-  );
 }
 
 /* -------- Nuage de points rouges : même motif que le point du logo, en écho -------- */

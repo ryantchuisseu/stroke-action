@@ -27,6 +27,8 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
         eyebrow={a.eyebrow}
         title={a.title}
         intro={a.intro}
+        highlight={lang === "fr" ? "histoire" : "Story"}
+        underline={lang === "fr" ? "objectif" : "goal"}
       />
 
       {/* Notre histoire */}

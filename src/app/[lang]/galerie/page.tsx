@@ -20,6 +20,7 @@ export default async function GaleriePage({ params }: { params: Promise<{ lang: 
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[2].label }, { label: g.crumb }]}
         eyebrow={g.eyebrow}
         title={g.title}
+        highlight={lang === "fr" ? "images" : "pictures"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>

@@ -24,6 +24,8 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         eyebrow={c.eyebrow}
         title={c.title}
         intro={c.intro}
+        highlight={lang === "fr" ? "Écrivez-nous" : "message"}
+        underline={lang === "fr" ? "ravis" : "love"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container className="grid gap-[clamp(2rem,6vw,4rem)] md:grid-cols-[0.8fr_1.2fr]">

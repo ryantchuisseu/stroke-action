@@ -21,6 +21,8 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
         eyebrow={s.eyebrow}
         title={s.title}
         intro={s.intro}
+        highlight={lang === "fr" ? "vous" : "you"}
+        underline={lang === "fr" ? "ensemble" : "together"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>

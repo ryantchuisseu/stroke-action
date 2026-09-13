@@ -22,6 +22,8 @@ export default async function EspaceMembresPage({ params }: { params: Promise<{ 
         eyebrow={m.eyebrow}
         title={m.title}
         intro={m.intro}
+        highlight={lang === "fr" ? "disponible" : "soon"}
+        underline={lang === "fr" ? "préparation" : "preparation"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>

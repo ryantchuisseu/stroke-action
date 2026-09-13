@@ -1,6 +1,8 @@
 import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/components/ui";
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
+import { Reveal } from "@/components/reveal";
+import { Flourish, highlightWord, underlineWord } from "@/components/ink-marks";
 import { getDictionary, type Locale } from "@/dictionaries";
 
 /* -------- Formes qui dérivent en fond de hero --------
@@ -61,6 +63,14 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const h = t.home;
   const p = (href: string) => `/${lang}${href}`;
 
+  const heroHighlight = lang === "fr" ? "l'AVC" : "Stroke";
+  const heroUnderline = lang === "fr" ? "non lucratif" : "non-profit";
+  const whoHighlight = lang === "fr" ? "communauté" : "community";
+  const whoUnderline = lang === "fr" ? "rassemble" : "together";
+  const heroHighlightIdx = h.hero.headline.indexOf(heroHighlight);
+  const heroBefore = h.hero.headline.slice(0, heroHighlightIdx);
+  const heroAfter = h.hero.headline.slice(heroHighlightIdx + heroHighlight.length);
+
   return (
     <>
       {/* HERO */}
@@ -72,7 +82,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {h.hero.eyebrow}
             </span>
             <h1 className="hero-stg hero-d2 mt-4 text-[clamp(2.5rem,6.6vw,5rem)] leading-[1.02] tracking-[-0.035em]">
-              {h.hero.headline}
+              {heroBefore}
+              <Flourish className="mx-1 inline-block h-[0.5em] w-[0.5em] align-super" />
+              <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+                {heroHighlight}
+              </span>
+              {heroAfter}
               <span className="hero-end-dot" aria-hidden="true" />
             </h1>
             <p className="hero-stg hero-d4 mt-6 flex max-w-[34ch] items-start gap-[0.7rem] text-[clamp(0.95rem,1.4vw,1.12rem)] font-semibold text-red-ink">
@@ -90,7 +105,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <span>{h.hero.brainline}</span>
             </p>
             <p className="hero-stg hero-d5 mt-[1.1rem] max-w-[48ch] text-[clamp(1rem,1.4vw,1.15rem)] text-ink-soft">
-              {h.hero.sub}
+              {underlineWord(h.hero.sub, heroUnderline)}
             </p>
             <div className="hero-stg hero-d6 mt-8 flex flex-wrap gap-3">
               <Btn href={p("/a-propos")}>{h.hero.ctaPrimary}</Btn>
@@ -119,9 +134,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </figure>
           <div>
             <Eyebrow>{h.who.eyebrow}</Eyebrow>
-            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">{h.who.title}</h2>
+            <h2 className="mt-[0.9rem] flex flex-wrap items-start gap-2 text-[clamp(1.6rem,3.6vw,2.6rem)]">
+              <span>{highlightWord(h.who.title, whoHighlight)}</span>
+              <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />
+            </h2>
             <div className="mt-[1.1rem] max-w-[52ch] space-y-4 text-ink-soft">
-              <p>{h.who.p1}</p>
+              <p>{underlineWord(h.who.p1, whoUnderline)}</p>
               <p>{h.who.p2}</p>
             </div>
             <ArrowLink href={p("/a-propos")}>{h.who.link}</ArrowLink>
@@ -132,17 +150,21 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* 4 PILIERS */}
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow={h.pillars.eyebrow} title={h.pillars.title} />
+          <SectionHead
+            eyebrow={h.pillars.eyebrow}
+            title={h.pillars.title}
+            highlight={lang === "fr" ? "piliers" : "pillars"}
+          />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {h.pillars.items.map((it) => {
+            {h.pillars.items.map((it, i) => {
               const cat = PILLAR_STYLES[it.id] ?? PILLAR_STYLES.education;
               return (
-                <div key={it.id} className={`flex flex-col gap-3 rounded-[14px] p-[clamp(1.3rem,3vw,1.7rem)] ${cat.bg}`}>
+                <Reveal key={it.id} delay={i * 90} className={`flex flex-col gap-3 rounded-[14px] p-[clamp(1.3rem,3vw,1.7rem)] ${cat.bg}`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={cat.icon} alt="" className="h-11 w-11" />
                   <h3 className="mt-1 text-[1.05rem] font-bold tracking-[-0.01em]">{it.t}</h3>
                   <p className="text-[0.92rem] leading-[1.5] text-ink-soft">{it.d}</p>
-                </div>
+                </Reveal>
               );
             })}
           </div>
@@ -155,7 +177,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* APERÇU FAST */}
       <section id="fast" className="py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow={h.fast.eyebrow} alert title={h.fast.title} intro={h.fast.intro} />
+          <SectionHead eyebrow={h.fast.eyebrow} alert title={h.fast.title} intro={h.fast.intro} highlight="FAST" />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-4">
             {h.fast.items.map((f: { l: string; t: string; d: string; em?: boolean }) => (
               <div
@@ -189,7 +211,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* CHIFFRES */}
       <section className="bg-paper-deep py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} />
+          <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} highlight={lang === "fr" ? "temps" : "time"} />
           <div className="mt-[clamp(2rem,5vw,3rem)] grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-16 gap-y-10">
             <Stat n={<><CountUp to={12} /><U>{h.stats.items[0].unit}</U></>} k={h.stats.items[0].k} />
             <Stat n={<>1<U>{lang === "fr" ? " sur " : " in "}</U><CountUp to={4} /></>} k={h.stats.items[1].k} />
@@ -209,7 +231,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <Container>
           <div className="mt-[clamp(2rem,5vw,3rem)] max-w-[46ch]">
             <Eyebrow>{h.voices.eyebrow}</Eyebrow>
-            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">{h.voices.title}</h2>
+            <h2 className="mt-[0.9rem] flex flex-wrap items-start gap-2 text-[clamp(1.6rem,3.6vw,2.6rem)]">
+              <span>{highlightWord(h.voices.title, lang === "fr" ? "histoire" : "story")}</span>
+              <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />
+            </h2>
             <p className="mt-[0.9rem] text-ink-soft">{h.voices.text}</p>
             <ArrowLink href={p("/galerie")}>{h.voices.link}</ArrowLink>
           </div>

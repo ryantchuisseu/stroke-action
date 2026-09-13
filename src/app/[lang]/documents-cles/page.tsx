@@ -46,6 +46,8 @@ export default async function DocumentsPage({ params }: { params: Promise<{ lang
         eyebrow={d.eyebrow}
         title={d.title}
         intro={d.intro}
+        highlight={lang === "fr" ? "Transparence" : "transparency"}
+        underline="public"
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
