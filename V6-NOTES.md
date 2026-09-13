@@ -298,6 +298,39 @@ est ignoré dès que `titleNode`/`introNode` est fourni).
 
 ---
 
+## 🟡 15. Nos valeurs (À propos) : cartes teintées translucides + icônes
+
+**Où** : `src/app/[lang]/a-propos/page.tsx`, table `VALUE_STYLES`.
+
+**Quoi** : référence apportée par Ryan (cartes colorées type pâtisserie —
+icône, titre, texte, sur fond coloré). Remplace la liste à puces (BrainMark
++ lignes séparées par des filets, avec effet de grossissement au survol)
+par une **grille de 4 cartes** — même recette que Nos actions (fonds
+translucides `color-mix()`, cadre hairline, coins nets, icône ronde),
+palette entièrement réutilisée (violet/bleu charte/pêche/rose). Icônes
+lucide-react : Heart (Compassion), Flame (Dedication), ShieldCheck
+(Integrity), Award (Professionalism). Garde l'effet de grossissement au
+survol (icône + titre) et ajoute l'apparition Reveal en cascade (motif 13).
+
+**Comment réutiliser** : même schéma que `PROGRAM_STYLES` (Nos actions) —
+ajouter une entrée `{ bg, iconBg, text, Icon }` par carte.
+
+---
+
+## 🐛 Bug corrigé — fioriture inline (motif 14) sur Blog/News
+
+Le titre de Blog/News (`n.titleLead`/`titleMid`/`titleAccent`) construisait
+encore sa fioriture à la main (`Flourish` inline juste avant "at Stroke
+Action"), donc il n'a pas profité du correctif du motif 14 (fioriture
+ancrée au coin du mot surligné) lors du passage précédent — elle
+chevauchait "happening". Remplacé par un appel à `highlightWord(...,
+{flourish:true})`, comme partout ailleurs. **Si un futur titre est
+reconstruit à la main (`titleNode` personnalisé) plutôt que via la prop
+`highlight`, penser à repasser par `highlightWord`/`underlineWord` plutôt
+que de redessiner la fioriture soi-même.**
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

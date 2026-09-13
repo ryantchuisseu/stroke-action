@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Heart, Flame, ShieldCheck, Award, type LucideIcon } from "lucide-react";
 import { Container, Eyebrow, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
+import { Reveal } from "@/components/reveal";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
+
+/* -------- Nos valeurs : cartes teintées translucides + icônes --------
+ * Référence apportée par Ryan (cartes colorées avec icône, style
+ * "pâtisserie"). Palette réutilisée telle quelle depuis Nos piliers/Nos
+ * actions (violet/bleu de charte/pêche/rose) — voir V6-NOTES.md. */
+const VALUE_STYLES: { bg: string; iconBg: string; text: string; Icon: LucideIcon }[] = [
+  { bg: "color-mix(in srgb, #C9BEEA 35%, transparent)", iconBg: "#DAD3EF", text: "#5B4E96", Icon: Heart },
+  { bg: "color-mix(in srgb, var(--color-blue) 15%, transparent)", iconBg: "#CFE6FA", text: "var(--color-blue-ink)", Icon: Flame },
+  { bg: "color-mix(in srgb, #E9B98A 32%, transparent)", iconBg: "#F3DCC2", text: "#B4763C", Icon: ShieldCheck },
+  { bg: "color-mix(in srgb, #DD9AAE 28%, transparent)", iconBg: "#F1D3DB", text: "#A84360", Icon: Award },
+];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -107,19 +120,34 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
         <Container>
           <Eyebrow>{a.values.eyebrow}</Eyebrow>
           <h2 className="mt-[0.9rem] max-w-[40ch] text-[clamp(1.55rem,3.4vw,2.4rem)]">{a.values.title}</h2>
-          <div className="mt-[clamp(2rem,5vw,3rem)] border-t border-rule">
-            {a.values.items.map((v) => (
-              <div
-                key={v.t}
-                className="group grid grid-cols-[24px_1fr] items-baseline gap-x-7 gap-y-2 border-b border-rule py-[clamp(1.15rem,2.8vw,1.7rem)] transition-[padding] duration-200 ease-[var(--ease-out)] hover:ps-2 sm:grid-cols-[24px_12rem_1fr]"
-              >
-                <BrainMark className="mt-1 h-5 w-5 origin-center self-start text-ink transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.4] motion-reduce:group-hover:scale-100" />
-                <h3 className="origin-left text-[clamp(1.1rem,2vw,1.4rem)] tracking-[-0.015em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100">
-                  {v.t}
-                </h3>
-                <p className="col-start-2 max-w-[50ch] text-[0.96rem] text-ink-soft sm:col-start-3">{v.d}</p>
-              </div>
-            ))}
+          <div className="mt-[clamp(2rem,5vw,3rem)] grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {a.values.items.map((v, i) => {
+              const style = VALUE_STYLES[i % VALUE_STYLES.length];
+              const Icon = style.Icon;
+              return (
+                <Reveal key={v.t} delay={i * 90}>
+                  <div
+                    className="group flex h-full flex-col gap-3 border border-rule p-[clamp(1.3rem,3vw,1.7rem)]"
+                    style={{ background: style.bg }}
+                  >
+                    <span
+                      className="grid h-11 w-11 flex-none place-items-center rounded-full"
+                      style={{ background: style.iconBg, color: style.text }}
+                    >
+                      <Icon
+                        className="h-5 w-5 transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.3] motion-reduce:group-hover:scale-100"
+                        strokeWidth={1.75}
+                        aria-hidden="true"
+                      />
+                    </span>
+                    <h3 className="origin-left text-[1.05rem] font-bold tracking-[-0.01em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100">
+                      {v.t}
+                    </h3>
+                    <p className="text-[0.92rem] leading-[1.5] text-ink-soft">{v.d}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </Container>
       </section>

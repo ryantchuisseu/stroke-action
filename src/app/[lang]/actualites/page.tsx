@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Megaphone, Activity, HeartHandshake } from "lucide-react";
 import { Container, PageHeader } from "@/components/ui";
-import { Flourish } from "@/components/ink-marks";
+import { highlightWord } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -58,13 +58,7 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
 
   const titleNode = (
     <>
-      {n.titleLead}
-      <Flourish className="ml-2 inline-block h-[0.55em] w-[0.55em] align-super" />
-      {n.titleMid}
-      <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
-        {n.titleAccent}
-      </span>
-      .
+      {highlightWord(`${n.titleLead}${n.titleMid}${n.titleAccent}`, n.titleAccent, { flourish: true })}.
     </>
   );
   const introNode = (
