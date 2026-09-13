@@ -551,10 +551,10 @@ export const en = {
       },
       {
         role: "Auditor",
-        name: "Dr. Ezangono Ndo, married Bayolo",
+        name: "Dr. Ezangono Ndo Bayolo",
         bio: "Cardiologist with expertise in hypertension and cardiovascular and renal risk.",
         fullBio:
-          "Dr Ezangono Ndo, married Bayolo, is a cardiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. She has a decade-long clinical experience in Cameroon, with special expertise in the management of hypertension and cardiovascular and renal risk.",
+          "Dr Ezangono Ndo Bayolo, is a cardiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. She has a decade-long clinical experience, with special expertise in the management of hypertension and cardiovascular and renal risk.",
         photo: "/ezangono.jpg",
       },
       {

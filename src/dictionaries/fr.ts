@@ -550,10 +550,10 @@ export const fr = {
       },
       {
         role: "Contrôleur de gestion",
-        name: "Dr Ezangono Ndo épse Bayolo",
+        name: "Dr Ezangono Ndo Bayolo",
         bio: "Cardiologue, experte en hypertension et en risque cardiovasculaire et rénal.",
         fullBio:
-          "Dr Ezangono Ndo épse Bayolo est médecin cardiologue diplômée de la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé I. Elle dispose d'une décennie de pratique clinique au Cameroun avec une expertise particulière dans la prise en charge de l'hypertension, et du risque cardiovasculaire et rénal.",
+          "Le Dr Ezangono Ndo Bayolo est médecin cardiologue diplômée de la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé I. Elle dispose d'une décennie de pratique clinique avec une expertise particulière dans la prise en charge de l'hypertension, et du risque cardiovasculaire et rénal.",
         photo: "/ezangono.jpg",
       },
       {
