@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Megaphone, Activity, HeartHandshake } from "lucide-react";
 import { Container, PageHeader } from "@/components/ui";
-import { highlightWord } from "@/components/ink-marks";
+import { HandNote, highlightWord } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -124,6 +124,9 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
               </span>
               <h2 className="mt-3 text-[clamp(1.6rem,3.6vw,2.6rem)] tracking-[-0.025em]">{n.newsletter.title}</h2>
               <p className="mt-3 max-w-[42ch] text-[rgba(252,250,246,0.7)]">{n.newsletter.text}</p>
+              <HandNote color="var(--color-red)" className="mt-2 hidden rotate-[-3deg] sm:inline-block">
+                {n.newsletter.handNote}
+              </HandNote>
             </div>
             <form className="w-full" aria-label={n.newsletter.title}>
               <div className="flex flex-col gap-3 sm:flex-row">

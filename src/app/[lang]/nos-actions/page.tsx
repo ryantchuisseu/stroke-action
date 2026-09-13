@@ -3,6 +3,7 @@ import { Megaphone, Microscope, GraduationCap, HeartHandshake, Users, type Lucid
 import { Container, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { Carousel } from "@/components/carousel";
 import { Reveal } from "@/components/reveal";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -57,6 +58,9 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
       {/* Carrousel — images de terrain */}
       <section className="py-[clamp(2.5rem,6vw,4.5rem)]">
         <Container>
+          <div className="mb-4 flex justify-end">
+            <HandNote className="hidden rotate-[-3deg] sm:inline-block">{w.handNote}</HandNote>
+          </div>
           <Carousel
             slides={w.alts.map((alt, i) => ({ src: `/carousel/${i + 1}.jpg`, alt }))}
             labels={w.carousel}

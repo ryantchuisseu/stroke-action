@@ -94,12 +94,15 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
             <p className="max-w-[24ch] text-[clamp(1.5rem,3.6vw,2.65rem)] font-semibold leading-[1.28] tracking-[-0.02em] text-balance">
               {a.quote.text}
             </p>
-            <footer className="mt-9 flex items-center gap-4 text-[0.95rem]">
+            <footer className="mt-9 flex flex-wrap items-center gap-4 text-[0.95rem]">
               <span aria-hidden="true" className="h-px w-9 flex-none bg-[rgba(252,250,246,0.4)]" />
               <span>
                 <span className="block font-semibold text-paper">{a.quote.author}</span>
                 <span className="block text-[rgba(252,250,246,0.6)]">{a.quote.role}</span>
               </span>
+              <HandNote color="var(--color-red)" className="hidden rotate-[-3deg] sm:inline-block">
+                {a.quote.handNote}
+              </HandNote>
             </footer>
           </blockquote>
         </Container>

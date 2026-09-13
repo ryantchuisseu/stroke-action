@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -61,7 +62,10 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
       {/* Bureau exécutif */}
       <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
-          <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.boardTitle}</h2>
+          <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+            <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.boardTitle}</h2>
+            <HandNote className="hidden rotate-[3deg] sm:inline-block">{g.handNote}</HandNote>
+          </div>
           <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
             {g.board.map((m) => (
               <article key={m.role} className="bg-paper p-6">

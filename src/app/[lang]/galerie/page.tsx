@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -29,7 +30,10 @@ export default async function GaleriePage({ params }: { params: Promise<{ lang: 
               <div key={i} className="aspect-[4/3] bg-paper-deep" aria-hidden="true" />
             ))}
           </div>
-          <p className="mt-8 max-w-[46ch] text-ink-soft">{g.placeholder}</p>
+          <p className="mt-8 max-w-[46ch] text-ink-soft">
+            {g.placeholder}
+            <HandNote className="ms-3 hidden rotate-[3deg] sm:inline-block">{g.handNote}</HandNote>
+          </p>
         </Container>
       </section>
     </>

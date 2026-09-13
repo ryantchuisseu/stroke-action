@@ -3,7 +3,7 @@ import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/comp
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
-import { highlightWord, underlineWord } from "@/components/ink-marks";
+import { HandNote, highlightWord, underlineWord } from "@/components/ink-marks";
 import { getDictionary, type Locale } from "@/dictionaries";
 
 /* -------- Formes qui dérivent en fond de hero --------
@@ -103,11 +103,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <p className="hero-stg hero-d5 mt-[1.1rem] max-w-[48ch] text-[clamp(1rem,1.4vw,1.15rem)] text-ink-soft">
               {underlineWord(h.hero.sub, heroUnderline)}
             </p>
-            <div className="hero-stg hero-d6 mt-8 flex flex-wrap gap-3">
+            <div className="hero-stg hero-d6 mt-8 flex flex-wrap items-center gap-3">
               <Btn href={p("/a-propos")}>{h.hero.ctaPrimary}</Btn>
               <Btn href={p("/nous-soutenir#devenir-membre")} variant="ghost">
                 {h.hero.ctaSecondary}
               </Btn>
+              <HandNote className="hidden rotate-[-4deg] sm:inline-block">{h.hero.handNote}</HandNote>
             </div>
           </div>
           <div className="hero-stg hero-d3 aspect-[3/4] overflow-hidden">
@@ -226,7 +227,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* CHIFFRES */}
       <section className="bg-paper-deep py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container>
-          <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} highlight={lang === "fr" ? "temps" : "time"} />
+          <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+            <SectionHead eyebrow={h.stats.eyebrow} title={h.stats.title} highlight={lang === "fr" ? "temps" : "time"} />
+            <HandNote className="hidden rotate-[3deg] sm:inline-block">{h.stats.handNote}</HandNote>
+          </div>
           <div className="mt-[clamp(2rem,5vw,3rem)] grid grid-cols-[repeat(auto-fit,minmax(190px,1fr))] gap-x-16 gap-y-10">
             <Stat n={<><CountUp to={12} /><U>{h.stats.items[0].unit}</U></>} k={h.stats.items[0].k} />
             <Stat n={<>1<U>{lang === "fr" ? " sur " : " in "}</U><CountUp to={4} /></>} k={h.stats.items[1].k} />

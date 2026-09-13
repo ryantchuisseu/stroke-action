@@ -461,6 +461,39 @@ utilisent encore le fond teinté translucide + icône).
 
 ---
 
+## 🟡 22. Annotations manuscrites (HandNote) étendues à tout le site
+
+**Où** : `handNote` ajouté au dictionnaire (en.ts/fr.ts) section par
+section ; posé dans chaque page via `<HandNote>` (import
+`@/components/ink-marks`).
+
+**Quoi** : Ryan a demandé d'étendre le motif 11 (petites notes cerclées
+à la main, cf. capture de référence) à tout le site, en me laissant le
+choix des mots. Posé sur :
+- **Accueil** : "act now" à côté des CTA du hero ; "time is brain" à
+  côté du titre "Why time matters" (reprend l'expression déjà utilisée
+  mot pour mot dans la frise "Chaque seconde compte").
+- **À propos** : "in his words" à côté de la citation du fondateur (fond
+  bleu foncé → `color="var(--color-red)"` pour le contraste).
+- **Nos actions** : "on the ground" au-dessus du carrousel terrain.
+- **Gouvernance** : "united in action" à côté du titre du bureau.
+- **Documents clés** : "open by default" au-dessus de la liste.
+- **FAQ** : "ask away" au-dessus de l'accordéon.
+- **Nous soutenir** : "every gift counts" au-dessus des 4 cartes.
+- **Contact** : "we're listening" à côté de "Contact Details".
+- **Galerie** : "in the making" à côté du texte placeholder.
+- **Blog/News** : "be the first to know" sous le texte newsletter (fond
+  bleu foncé → rouge vif aussi).
+- **Espace membres** : "almost there" à côté des boutons CTA.
+
+**Règle** : toujours un mot/expression qui fait écho à du contenu réel
+de la page (jamais un chiffre ou un fait inventé) ; `hidden sm:inline-block`
+partout (annotation en trop sur mobile étroit) ; rotation alternée
+(`rotate-[-3deg]`/`rotate-[3deg]`) pour ne pas les faire paraître
+alignées au pixel près, ce qui casserait l'effet "à la main".
+
+---
+
 ## À trancher avec Ryan / Dr Kamtchum avant d'aller plus loin
 1. Icônes SVG (point 6) vs émojis réels — confirmer.
 2. Palette de catégories (point 7) — à valider par le Dr Kamtchum ou à

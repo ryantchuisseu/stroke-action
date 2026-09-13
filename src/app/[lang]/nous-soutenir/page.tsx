@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, Eyebrow } from "@/components/ui";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -26,6 +27,9 @@ export default async function SoutenirPage({ params }: { params: Promise<{ lang:
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
+          <div className="mb-2 flex justify-end">
+            <HandNote className="hidden rotate-[-3deg] sm:inline-block">{s.handNote}</HandNote>
+          </div>
           <div className="grid gap-px border border-rule bg-rule md:grid-cols-2">
             {s.ways.map((way, i) => (
               <div
