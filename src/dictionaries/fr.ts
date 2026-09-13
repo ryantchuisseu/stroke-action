@@ -206,7 +206,7 @@ export const fr = {
     quote: {
       text: "Chaque AVC qui survient dans la vie d'un être humain est un AVC de trop, quelle qu'en soit la gravité.",
       author: "Dr Kamtchum Tatuene Joseph",
-      role: "Président et fondateur",
+      role: "Fondateur",
     },
     vision: { k: "Notre vision", q: "Être un soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour vaincre l'AVC." },
     mission: { k: "Notre mission", q: "Réduire significativement le fardeau de l'AVC dans le monde par l'éducation, la recherche, le plaidoyer et le soutien aux patients et à leurs familles." },
@@ -361,7 +361,7 @@ export const fr = {
       { n: "2ᵉ", t: "cause de mortalité dans le monde", em: true },
       { n: "1 sur 4", t: "adultes fera un AVC au cours de sa vie" },
       { n: "12M", t: "de personnes touchées par un AVC chaque année dans le monde" },
-      { n: "7,5M", t: "décès chaque année, et 5 millions de personnes avec un handicap permanent", em: true },
+      { n: "7,5M", t: "décès chaque année, et 4,5 millions de personnes avec un handicap permanent", em: true },
       { n: "80 %", t: "des AVC sont évitables" },
       { n: "Afrique", t: "l'un des taux d'incidence et de mortalité de l'AVC les plus élevés au monde" },
     ] as { n: string; t: string; em?: boolean }[],
@@ -526,8 +526,8 @@ export const fr = {
       "Stroke Action est dirigée par un bureau exécutif dédié, engagé pour la transparence, l'intégrité et l'impact. Le bureau est composé de cinq membres élus, chacun apportant son expertise pour faire avancer la mission de l'association.",
     introLeft: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC.",
     introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
-    boardTitle: "Bureau exécutif — 5 postes",
-    founderCaptionRole: "Président & fondateur",
+    boardTitle: "Bureau exécutif",
+    founderCaptionRole: "Fondateur",
     board: [
       {
         role: "Président",

@@ -207,7 +207,7 @@ export const en = {
     quote: {
       text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
       author: "Dr Kamtchum Tatuene Joseph",
-      role: "President and Founder",
+      role: "Founder",
     },
     vision: { k: "Our Vision", q: "To be an indispensable support for patients, families, health professionals and researchers who strive every day to defeat stroke." },
     mission: { k: "Our Mission", q: "To significantly reduce the burden of stroke worldwide through education, research, advocacy, and support for patients and their families." },
@@ -362,7 +362,7 @@ export const en = {
       { n: "2nd", t: "leading cause of death worldwide", em: true },
       { n: "1 in 4", t: "adults will have a stroke in their lifetime" },
       { n: "12M", t: "people worldwide suffer a stroke every year" },
-      { n: "7.5M", t: "die each year, and 5 million are left permanently disabled", em: true },
+      { n: "7.5M", t: "die each year, and 4.5 millions are left permanently disabled", em: true },
       { n: "80%", t: "of strokes are preventable" },
       { n: "Africa", t: "has among the highest stroke incidence and mortality rates in the world" },
     ] as { n: string; t: string; em?: boolean }[],
@@ -527,8 +527,8 @@ export const en = {
       "Stroke Action is governed by a dedicated Executive Board committed to transparency, integrity, and impact. The Board is composed of five elected members, each contributing their expertise to advance the association's mission.",
     introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeating stroke.",
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
-    boardTitle: "Executive Board — 5 Positions",
-    founderCaptionRole: "President & Founder",
+    boardTitle: "Executive Board",
+    founderCaptionRole: "Founder",
     board: [
       {
         role: "President",
