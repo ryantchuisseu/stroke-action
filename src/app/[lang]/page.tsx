@@ -2,7 +2,7 @@ import { Container, Btn, Eyebrow, SectionHead, ArrowLink, CtaBand } from "@/comp
 import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
-import { Flourish, highlightWord, underlineWord } from "@/components/ink-marks";
+import { highlightWord, underlineWord } from "@/components/ink-marks";
 import { getDictionary, type Locale } from "@/dictionaries";
 
 /* -------- Formes qui dérivent en fond de hero --------
@@ -67,9 +67,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
   const heroUnderline = lang === "fr" ? "non lucratif" : "non-profit";
   const whoHighlight = lang === "fr" ? "communauté" : "community";
   const whoUnderline = lang === "fr" ? "rassemble" : "together";
-  const heroHighlightIdx = h.hero.headline.indexOf(heroHighlight);
-  const heroBefore = h.hero.headline.slice(0, heroHighlightIdx);
-  const heroAfter = h.hero.headline.slice(heroHighlightIdx + heroHighlight.length);
 
   return (
     <>
@@ -82,12 +79,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               {h.hero.eyebrow}
             </span>
             <h1 className="hero-stg hero-d2 mt-4 text-[clamp(2.5rem,6.6vw,5rem)] leading-[1.02] tracking-[-0.035em]">
-              {heroBefore}
-              <Flourish className="mx-1 inline-block h-[0.5em] w-[0.5em] align-super" />
-              <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
-                {heroHighlight}
-              </span>
-              {heroAfter}
+              {highlightWord(h.hero.headline, heroHighlight, { flourish: true })}
               <span className="hero-end-dot" aria-hidden="true" />
             </h1>
             <p className="hero-stg hero-d4 mt-6 flex max-w-[34ch] items-start gap-[0.7rem] text-[clamp(0.95rem,1.4vw,1.12rem)] font-semibold text-red-ink">
@@ -134,9 +126,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           </figure>
           <div>
             <Eyebrow>{h.who.eyebrow}</Eyebrow>
-            <h2 className="mt-[0.9rem] flex flex-wrap items-start gap-2 text-[clamp(1.6rem,3.6vw,2.6rem)]">
-              <span>{highlightWord(h.who.title, whoHighlight)}</span>
-              <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />
+            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">
+              {highlightWord(h.who.title, whoHighlight, { flourish: true })}
             </h2>
             <div className="mt-[1.1rem] max-w-[52ch] space-y-4 text-ink-soft">
               <p>{underlineWord(h.who.p1, whoUnderline)}</p>
@@ -231,9 +222,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <Container>
           <div className="mt-[clamp(2rem,5vw,3rem)] max-w-[46ch]">
             <Eyebrow>{h.voices.eyebrow}</Eyebrow>
-            <h2 className="mt-[0.9rem] flex flex-wrap items-start gap-2 text-[clamp(1.6rem,3.6vw,2.6rem)]">
-              <span>{highlightWord(h.voices.title, lang === "fr" ? "histoire" : "story")}</span>
-              <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />
+            <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">
+              {highlightWord(h.voices.title, lang === "fr" ? "histoire" : "story", { flourish: true })}
             </h2>
             <p className="mt-[0.9rem] text-ink-soft">{h.voices.text}</p>
             <ArrowLink href={p("/galerie")}>{h.voices.link}</ArrowLink>

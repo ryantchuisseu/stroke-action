@@ -15,14 +15,21 @@ export function Flourish({ className = "" }: { className?: string }) {
 
 /** Surligne la 1re occurrence de `word` dans `text` (fond translucide bleu,
  * coins arrondis — recette Blog/News). Rend `text` tel quel si `word` est
- * introuvable (jamais d'erreur silencieuse qui casserait l'affichage). */
-export function highlightWord(text: string, word: string): ReactNode {
+ * introuvable (jamais d'erreur silencieuse qui casserait l'affichage).
+ * `flourish: true` pose la fioriture directement au-dessus du mot, décalée
+ * (pas collée en ligne dans le texte — retour Ryan : ça faisait trop
+ * cramé/à l'étroit quand la fioriture était insérée en plein milieu du
+ * titre). */
+export function highlightWord(text: string, word: string, opts?: { flourish?: boolean }): ReactNode {
   const idx = text.indexOf(word);
   if (idx === -1) return text;
   return (
     <>
       {text.slice(0, idx)}
-      <span className="inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+      <span className="relative inline-block rounded-[10px] bg-[color-mix(in_srgb,var(--color-blue)_18%,transparent)] px-2 py-0.5">
+        {opts?.flourish && (
+          <Flourish className="pointer-events-none absolute -top-2 -right-3 h-[0.65em] w-[0.65em] rotate-[15deg]" />
+        )}
         {word}
       </span>
       {text.slice(idx + word.length)}

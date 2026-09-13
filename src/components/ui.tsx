@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Flourish, highlightWord, underlineWord } from "./ink-marks";
+import { highlightWord, underlineWord } from "./ink-marks";
 
 /* -------- Container -------- */
 export function Container({
@@ -91,14 +91,7 @@ export function PageHeader({
   /** Mot de l'intro à souligner en rouge (motif V6) — ignoré si introNode est fourni. */
   underline?: string;
 }) {
-  const resolvedTitleNode =
-    titleNode ??
-    (highlight ? (
-      <span className="inline-flex flex-wrap items-start gap-2">
-        <span>{highlightWord(title, highlight)}</span>
-        <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />
-      </span>
-    ) : undefined);
+  const resolvedTitleNode = titleNode ?? (highlight ? highlightWord(title, highlight, { flourish: true }) : undefined);
   const resolvedIntroNode = introNode ?? (underline && intro ? underlineWord(intro, underline) : undefined);
 
   return (
@@ -160,9 +153,8 @@ export function SectionHead({
   return (
     <div className={`max-w-[44ch] ${className}`}>
       <Eyebrow alert={alert}>{eyebrow}</Eyebrow>
-      <h2 className="mt-[0.9rem] flex flex-wrap items-start gap-2 text-[clamp(1.6rem,3.6vw,2.6rem)]">
-        <span>{highlight ? highlightWord(title, highlight) : title}</span>
-        {highlight && <Flourish className="mt-2 h-[0.5em] w-[0.5em] flex-none" />}
+      <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">
+        {highlight ? highlightWord(title, highlight, { flourish: true }) : title}
       </h2>
       {intro && <p className="mt-[0.85rem] text-ink-soft">{underline ? underlineWord(intro, underline) : intro}</p>}
     </div>
