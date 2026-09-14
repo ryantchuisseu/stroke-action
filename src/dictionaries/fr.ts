@@ -210,7 +210,7 @@ export const fr = {
     quote: {
       text: "Chaque AVC qui survient dans la vie d'un être humain est un AVC de trop, quelle qu'en soit la gravité.",
       author: "Dr Kamtchum Tatuene Joseph",
-      role: "Président et fondateur",
+      role: "Fondateur",
       handNote: "ses mots", // design — annotation manuscrite
     },
     vision: { k: "Notre vision", q: "Être un soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour vaincre l'AVC." },
@@ -369,7 +369,7 @@ export const fr = {
       { n: "2ᵉ", t: "cause de mortalité dans le monde", em: true },
       { n: "1 sur 4", t: "adultes fera un AVC au cours de sa vie" },
       { n: "12M", t: "de personnes touchées par un AVC chaque année dans le monde" },
-      { n: "7,5M", t: "décès chaque année, et 5 millions de personnes avec un handicap permanent", em: true },
+      { n: "7,5M", t: "décès chaque année, et 4,5 millions de personnes avec un handicap permanent", em: true },
       { n: "80 %", t: "des AVC sont évitables" },
       { n: "Afrique", t: "l'un des taux d'incidence et de mortalité de l'AVC les plus élevés au monde" },
     ] as { n: string; t: string; em?: boolean }[],
@@ -539,14 +539,18 @@ export const fr = {
       "Stroke Action est dirigée par un bureau exécutif dédié, engagé pour la transparence, l'intégrité et l'impact. Le bureau est composé de cinq membres élus, chacun apportant son expertise pour faire avancer la mission de l'association.",
     introLeft: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC.",
     introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
-    boardTitle: "Bureau exécutif — 5 postes",
+    boardTitle: "Bureau exécutif",
     handNote: "unis dans l'action", // design — annotation manuscrite
-    founderCaptionRole: "Président & fondateur",
+    founderCaptionRole: "Fondateur",
+    readMore: "Voir plus",
+    closeBio: "Fermer",
     board: [
       {
         role: "Président",
         name: "Dr KAMTCHUM TATUENE Joseph",
         bio: "Neurologue et chercheur, fondateur de Stroke Action.",
+        fullBio:
+          "Le Dr Kamtchum est médecin camerounais, neurologue et épidémiologiste, expert des accidents vasculaires cérébraux et de l'athérosclérose. Il possède une longue expérience internationale de pratique clinique et de recherche obtenue au Cameroun, en Suisse, en Angleterre, au Malawi et au Canada. Ses travaux scientifiques ont été récompensés par de nombreux prix et distinctions. À présent, il exerce ses activités de clinicien-chercheur conjointement à l'Université d'Oxford en Angleterre et à l'Institut Supérieur de Recherche Scientifique et Médicale au Cameroun.",
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
@@ -558,11 +562,20 @@ export const fr = {
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
-      { role: "Contrôleur de gestion", name: "À communiquer", bio: "Profil à publier prochainement." },
+      {
+        role: "Contrôleur de gestion",
+        name: "Dr Ezangono Ndo Bayolo",
+        bio: "Cardiologue, experte en hypertension et en risque cardiovasculaire et rénal.",
+        fullBio:
+          "Le Dr Ezangono Ndo Bayolo est médecin cardiologue diplômée de la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé I. Elle dispose d'une décennie de pratique clinique avec une expertise particulière dans la prise en charge de l'hypertension, et du risque cardiovasculaire et rénal.",
+        photo: "/ezangono.jpg",
+      },
       {
         role: "Conseiller",
         name: "Dr. NOUBIAP Jean Jacques",
         bio: "Médecin spécialiste et chercheur en santé mondiale et maladies cardiovasculaires ; co-auteur de plus de 300 publications scientifiques.",
+        fullBio:
+          "Le Dr Jean Jacques Noubiap est médecin spécialiste et chercheur, expert en santé mondiale et maladies cardiovasculaires. Ses recherches produisent des données probantes pour répondre à des questions cliniquement importantes, avec des implications directes pour les soins aux patients, la santé publique et les politiques de santé. Il est co-auteur de plus de 300 publications scientifiques et a reçu de nombreuses distinctions de la part d'organisations de premier plan, notamment l'American Heart Association, la World Heart Federation et la Heart Rhythm Society. Le Dr Noubiap possède une vaste expérience internationale, ayant travaillé dans des environnements cliniques, universitaires et de recherche variés au Cameroun, en Afrique du Sud, en Australie et aux États-Unis, avec un engagement fort pour l'amélioration de la santé cardiovasculaire dans le monde.",
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },

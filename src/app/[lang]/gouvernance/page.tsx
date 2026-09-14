@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { HandNote } from "@/components/ink-marks";
+import { BoardGrid } from "@/components/board-grid";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -43,7 +44,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                 <img
                   src="/dr-kamtchum.jpg"
                   alt={`${founderName} — ${g.founderCaptionRole}`}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-[50%_20%]"
                 />
               </div>
               <figcaption className="mt-4 text-center text-[0.74rem] uppercase tracking-[0.14em] text-grey">
@@ -66,34 +67,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
             <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.boardTitle}</h2>
             <HandNote className="hidden rotate-[3deg] sm:inline-block">{g.handNote}</HandNote>
           </div>
-          <div className="mt-8 grid gap-px border border-rule bg-rule sm:grid-cols-2 lg:grid-cols-3">
-            {g.board.map((m) => (
-              <article key={m.role} className="bg-paper p-6">
-                {"photo" in m && m.photo ? (
-                  <div className="aspect-square overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex aspect-square items-center justify-center bg-paper-deep" aria-hidden="true">
-                    <BrainMark className="h-9 w-9 text-blue-ink/25" dot="color-mix(in srgb, var(--color-red) 35%, transparent)" />
-                  </div>
-                )}
-                <p className="mt-4 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">{m.role}</p>
-                <h2 className="mt-1 text-[1.1rem] font-semibold tracking-[-0.01em]">{m.name}</h2>
-                <p className="mt-2 text-[0.9rem] text-ink-soft">{m.bio}</p>
-                {"email" in m && m.email && (
-                  <a href={`mailto:${m.email}`} className="mt-2 inline-block text-[0.85rem] text-blue-ink hover:text-red-ink">
-                    {m.email}
-                  </a>
-                )}
-              </article>
-            ))}
-          </div>
+          <BoardGrid board={g.board} readMore={g.readMore} closeLabel={g.closeBio} />
           <p className="mt-6 text-[0.85rem] text-grey">{g.note}</p>
         </Container>
       </section>

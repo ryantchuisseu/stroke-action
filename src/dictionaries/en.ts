@@ -211,7 +211,7 @@ export const en = {
     quote: {
       text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
       author: "Dr Kamtchum Tatuene Joseph",
-      role: "President and Founder",
+      role: "Founder",
       handNote: "in his words", // design — annotation manuscrite
     },
     vision: { k: "Our Vision", q: "To be an indispensable support for patients, families, health professionals and researchers who strive every day to defeat stroke." },
@@ -370,7 +370,7 @@ export const en = {
       { n: "2nd", t: "leading cause of death worldwide", em: true },
       { n: "1 in 4", t: "adults will have a stroke in their lifetime" },
       { n: "12M", t: "people worldwide suffer a stroke every year" },
-      { n: "7.5M", t: "die each year, and 5 million are left permanently disabled", em: true },
+      { n: "7.5M", t: "die each year, and 4.5 millions are left permanently disabled", em: true },
       { n: "80%", t: "of strokes are preventable" },
       { n: "Africa", t: "has among the highest stroke incidence and mortality rates in the world" },
     ] as { n: string; t: string; em?: boolean }[],
@@ -538,16 +538,20 @@ export const en = {
     title: "A dedicated Executive Board.",
     intro:
       "Stroke Action is governed by a dedicated Executive Board committed to transparency, integrity, and impact. The Board is composed of five elected members, each contributing their expertise to advance the association's mission.",
-    introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeating stroke.",
+    introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeat stroke.",
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
-    boardTitle: "Executive Board — 5 Positions",
+    boardTitle: "Executive Board",
     handNote: "united in action", // design — annotation manuscrite
-    founderCaptionRole: "President & Founder",
+    founderCaptionRole: "Founder",
+    readMore: "Read more",
+    closeBio: "Close",
     board: [
       {
         role: "President",
         name: "Dr. KAMTCHUM TATUENE Joseph",
         bio: "Neurologist and researcher, founder of Stroke Action.",
+        fullBio:
+          "Dr. Kamtchum is a Cameroonian physician, Neurologist and Neuroepidemiologist, with expertise in stroke medicine and atherosclerosis. He has a long international clinical and research experience in Cameroon, Switzerland, the United Kingdom, Malawi, and Canada. His scientific achievements have been rewarded by numerous prizes and distinctions. He currently works as a Clinician-Scientist conjointly at the University of Oxford in the UK and the Higher Institute for Scientific and Medical Research in Cameroon.",
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
@@ -559,11 +563,20 @@ export const en = {
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
-      { role: "Auditor", name: "To be provided", bio: "Profile to be published soon." },
+      {
+        role: "Auditor",
+        name: "Dr. Ezangono Ndo Bayolo",
+        bio: "Cardiologist with expertise in hypertension and cardiovascular and renal risk.",
+        fullBio:
+          "Dr Ezangono Ndo Bayolo, is a cardiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. She has a decade-long clinical experience, with special expertise in the management of hypertension and cardiovascular and renal risk.",
+        photo: "/ezangono.jpg",
+      },
       {
         role: "Advisor",
         name: "Dr. NOUBIAP Jean Jacques",
         bio: "Specialist physician and scientist in global health and cardiovascular diseases; co-author of 300+ scientific publications.",
+        fullBio:
+          "Dr. Jean Jacques Noubiap is a specialist physician and scientist with expertise in global health and cardiovascular diseases. His research generates evidence to address clinically important questions with direct implications for patient care, public health, and health policy. He has co-authored more than 300 scientific publications and received numerous awards and recognitions from leading organizations, including the American Heart Association, World Heart Federation, and Heart Rhythm Society. Dr. Noubiap brings extensive international experience, having worked across diverse clinical, academic, and research environments in Cameroon, South Africa, Australia, and the United States, with a strong commitment to improving cardiovascular health worldwide.",
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },
