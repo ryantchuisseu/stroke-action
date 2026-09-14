@@ -1,42 +1,114 @@
 import type { Metadata } from "next";
-import { Container, PageHeader, Eyebrow } from "@/components/ui";
+import { Megaphone, Activity, HeartHandshake } from "lucide-react";
+import { Container, PageHeader } from "@/components/ui";
+import { HandNote, highlightWord } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const d = getDictionary(isLocale(lang) ? lang : "en");
-  return pageMeta({ lang, route: "/actualites", title: d.news.crumb, description: d.news.intro });
+  return pageMeta({
+    lang,
+    route: "/actualites",
+    title: d.news.crumb,
+    description: `${d.news.introPre}${d.news.introAccent}.`,
+  });
 }
+
+/* -------- Nuage de points rouges : même motif que le point du logo, en écho -------- */
+function DotCluster() {
+  const dots: [number, number, number][] = [
+    [10, 12, 7],
+    [27, 6, 6],
+    [42, 15, 8],
+    [16, 29, 5],
+    [35, 31, 6.5],
+    [52, 23, 5],
+    [45, 43, 7],
+  ];
+  return (
+    <div className="pointer-events-none absolute right-5 top-7 hidden sm:block lg:right-16" aria-hidden="true">
+      <svg width="64" height="56" viewBox="0 0 64 56" fill="none">
+        {dots.map(([cx, cy, r], i) => (
+          <circle key={i} cx={cx} cy={cy} r={r} fill="var(--color-red)" opacity={0.5 + (i % 3) * 0.18} />
+        ))}
+      </svg>
+    </div>
+  );
+}
+
+/* -------- Catégories : une teinte douce par sujet, dans l'esprit du papier ivoire -------- */
+const CAT_STYLES: Record<
+  string,
+  { bg: string; iconBg: string; text: string; Icon: typeof Megaphone }
+> = {
+  // Megaphone : sensibilisation/mobilisation, plus parlant qu'un calendrier générique
+  campaign: { bg: "bg-[#EAF2EA]", iconBg: "bg-[#D3E6D5]", text: "text-[#3F6B48]", Icon: Megaphone },
+  // Activity (courbe de pouls) : ancrage santé/cardiovasculaire, plus spécifique qu'une ampoule "idée"
+  education: { bg: "bg-[#EDEAF6]", iconBg: "bg-[#DAD3EF]", text: "text-[#5B4E96]", Icon: Activity },
+  // HeartHandshake : solidarité/bénévolat, plus chaleureux que deux silhouettes génériques
+  association: { bg: "bg-[#F8EAEE]", iconBg: "bg-[#F1D3DB]", text: "text-[#A84360]", Icon: HeartHandshake },
+};
 
 export default async function ActualitesPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
   const t = getDictionary(lang as Locale);
   const n = t.news;
 
+  const titleNode = (
+    <>
+      {highlightWord(`${n.titleLead}${n.titleMid}${n.titleAccent}`, n.titleAccent, { flourish: true })}.
+    </>
+  );
+  const introNode = (
+    <>
+      {n.introPre}
+      <span className="underline decoration-red decoration-[3px] underline-offset-[3px]">{n.introAccent}</span>.
+    </>
+  );
+
   return (
     <>
       <PageHeader
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[2].label }, { label: n.crumb }]}
         eyebrow={n.eyebrow}
-        title={n.title}
-        intro={n.intro}
+        title={`${n.titleLead}${n.titleMid}${n.titleAccent}.`}
+        titleNode={titleNode}
+        intro={`${n.introPre}${n.introAccent}.`}
+        introNode={introNode}
+        decor={<DotCluster />}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
-          <ul className="border-t border-rule">
-            {n.posts.map((post) => (
-              <li key={post.t} className="border-b border-rule py-[clamp(1.25rem,3vw,2rem)]">
-                <article className="grid gap-2 md:grid-cols-[8rem_1fr] md:gap-8">
-                  <Eyebrow>{post.cat}</Eyebrow>
-                  <div>
-                    <h2 className="text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em]">{post.t}</h2>
-                    <p className="mt-2 max-w-[60ch] text-[0.95rem] text-ink-soft">{post.d}</p>
-                    <span className="mt-3 inline-block text-[0.85rem] font-semibold text-grey">{n.postSoon}</span>
-                  </div>
-                </article>
-              </li>
-            ))}
+          <ul className="grid gap-4">
+            {n.posts.map((post) => {
+              const cat = CAT_STYLES[post.id] ?? CAT_STYLES.education;
+              const Icon = cat.Icon;
+              return (
+                <li key={post.id}>
+                  <article
+                    className={`group grid gap-4 rounded-[14px] p-[clamp(1.2rem,3vw,1.8rem)] transition-shadow duration-200 ease-[var(--ease-out)] sm:grid-cols-[3rem_1fr] sm:gap-6 ${cat.bg}`}
+                  >
+                    <div
+                      className={`flex h-11 w-11 flex-none items-center justify-center rounded-full transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.15] motion-reduce:group-hover:scale-100 ${cat.iconBg} ${cat.text}`}
+                    >
+                      <Icon className="h-5 w-5" strokeWidth={1.75} />
+                    </div>
+                    <div>
+                      <span className={`text-[0.72rem] font-semibold uppercase tracking-[0.14em] ${cat.text}`}>
+                        {post.cat}
+                      </span>
+                      <h2 className="mt-1 origin-left text-[clamp(1.15rem,2.2vw,1.5rem)] tracking-[-0.015em] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.03] motion-reduce:group-hover:scale-100">
+                        {post.t}
+                      </h2>
+                      <p className="mt-2 max-w-[60ch] text-[0.95rem] text-ink-soft">{post.d}</p>
+                      <span className="mt-3 inline-block text-[0.85rem] font-semibold text-grey">{n.postSoon}</span>
+                    </div>
+                  </article>
+                </li>
+              );
+            })}
           </ul>
           <p className="mt-8 text-[0.85rem] text-grey">{n.note}</p>
         </Container>
@@ -52,6 +124,9 @@ export default async function ActualitesPage({ params }: { params: Promise<{ lan
               </span>
               <h2 className="mt-3 text-[clamp(1.6rem,3.6vw,2.6rem)] tracking-[-0.025em]">{n.newsletter.title}</h2>
               <p className="mt-3 max-w-[42ch] text-[rgba(252,250,246,0.7)]">{n.newsletter.text}</p>
+              <HandNote color="var(--color-red)" className="mt-2 hidden rotate-[-3deg] sm:inline-block">
+                {n.newsletter.handNote}
+              </HandNote>
             </div>
             <form className="w-full" aria-label={n.newsletter.title}>
               <div className="flex flex-col gap-3 sm:flex-row">

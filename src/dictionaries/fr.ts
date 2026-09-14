@@ -119,6 +119,7 @@ export const fr = {
       sub: "Stroke Action est une organisation à but non lucratif qui agit pour réduire le fardeau de l'AVC par l'éducation, la recherche, la formation professionnelle et le soutien aux patients et à leurs familles.",
       ctaPrimary: "En savoir plus",
       ctaSecondary: "Nous rejoindre",
+      handNote: "agissez maintenant", // design — annotation manuscrite
       caption:
         "Photographie documentaire, traitement N&B — à remplacer par des images de terrain de Stroke Action (Yaoundé).", // design
     },
@@ -133,11 +134,12 @@ export const fr = {
       eyebrow: "Nos piliers",
       title: "Quatre piliers, une conviction.",
       items: [
-        { t: "Éducation", d: "Sensibiliser le public aux facteurs de risque de l'AVC, aux signes d'alerte et aux premiers gestes." },
-        { t: "Recherche", d: "Mener et soutenir des travaux scientifiques de qualité pour éclairer les politiques de santé." },
-        { t: "Formation", d: "Former en continu les professionnels de santé." },
-        { t: "Soutien", d: "Apporter un soutien technique, financier et humain aux personnes touchées et à leurs familles." },
+        { id: "education", t: "Éducation", d: "Sensibiliser le public aux facteurs de risque de l'AVC, aux signes d'alerte et aux premiers gestes." },
+        { id: "research", t: "Recherche", d: "Mener et soutenir des travaux scientifiques de qualité pour éclairer les politiques de santé." },
+        { id: "training", t: "Formation", d: "Former en continu les professionnels de santé." },
+        { id: "support", t: "Soutien", d: "Apporter un soutien technique, financier et humain aux personnes touchées et à leurs familles." },
       ],
+      cta: "En savoir plus", // design
     },
     seconds: {
       title: "Chaque seconde compte.",
@@ -167,6 +169,7 @@ export const fr = {
     stats: {
       eyebrow: "L'AVC en chiffres",
       title: "Pourquoi le temps compte.",
+      handNote: "time is brain", // design — annotation manuscrite (expression clinique, non traduite)
       source: "Sources : Organisation mondiale de la Santé, World Stroke Organization.",
       items: [
         { unit: " M / an", k: "de personnes victimes d'un AVC dans le monde." },
@@ -202,11 +205,13 @@ export const fr = {
       p3: "Nous sommes une organisation à but non lucratif, laïque et apolitique, d'intérêt général.",
       factYear: "2026",
       fact: "Année de fondation de Stroke Action. L'association est régie par la loi n° 90-53 du 19 décembre 1990 sur la liberté d'association.",
+      originNote: "notre origine", // design — annotation manuscrite
     },
     quote: {
       text: "Chaque AVC qui survient dans la vie d'un être humain est un AVC de trop, quelle qu'en soit la gravité.",
       author: "Dr Kamtchum Tatuene Joseph",
       role: "Fondateur",
+      handNote: "ses mots", // design — annotation manuscrite
     },
     vision: { k: "Notre vision", q: "Être un soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour vaincre l'AVC." },
     mission: { k: "Notre mission", q: "Réduire significativement le fardeau de l'AVC dans le monde par l'éducation, la recherche, le plaidoyer et le soutien aux patients et à leurs familles." },
@@ -236,6 +241,7 @@ export const fr = {
     title: "Transformer l'engagement en action.",
     intro:
       "À Stroke Action, nous transformons l'engagement en action concrète. Notre travail s'articule autour de quatre domaines d'action, complétés par un cinquième objectif axé sur l'engagement du public, guidés par nos statuts et notre Plan stratégique 2026-2030.",
+    handNote: "sur le terrain", // design — annotation manuscrite
     carousel: {
       region: "Images de terrain",
       prev: "Image précédente",
@@ -331,6 +337,8 @@ export const fr = {
       emergencyNote: "Au moindre signe d'AVC, appelez immédiatement — n'attendez pas.",
     },
     fastTitle: "Reconnaître un AVC — La méthode FAST",
+    fastNote: "chaque seconde compte", // design — annotation manuscrite
+    preventableNote: "évitable", // design — annotation manuscrite
     fast: [
       { l: "F", t: "Face — le visage", d: "Affaissement ou engourdissement soudain d'un côté du visage." },
       { l: "A", t: "Arms — les bras", d: "Faiblesse ou engourdissement d'un bras — demandez de lever les deux bras." },
@@ -386,6 +394,7 @@ export const fr = {
     crumb: "FAQ",
     eyebrow: "FAQ",
     title: "Questions fréquentes.",
+    handNote: "à vous", // design — annotation manuscrite
     metaDesc:
       "Réponses aux questions fréquentes sur Stroke Action, la prévention et les signes de l'AVC, nos programmes, l'adhésion et comment s'engager.",
     items: [
@@ -438,6 +447,7 @@ export const fr = {
     title: "Écrivez-nous.",
     intro: "Une question, une suggestion, l'envie de vous engager ? Nous serons ravis de vous lire. Remplissez le formulaire ci-dessous ou contactez-nous directement.",
     detailsTitle: "Coordonnées",
+    handNote: "on vous écoute", // design — annotation manuscrite
     labelEmail: "E-mail",
     labelPhone: "Téléphone / WhatsApp",
     labelAddress: "Adresse",
@@ -459,6 +469,7 @@ export const fr = {
     eyebrow: "Nous soutenir",
     title: "Stroke Action existe grâce à des personnes comme vous.",
     intro: "Des personnes qui croient qu'ensemble, nous pouvons vaincre l'AVC. Voici comment agir.",
+    handNote: "chaque don compte", // design — annotation manuscrite
     ways: [
       {
         id: "don",
@@ -498,6 +509,7 @@ export const fr = {
     eyebrow: "Documents clés",
     title: "Transparence totale.",
     intro: "Tous les documents officiels de Stroke Action sont consultables et téléchargeables ici. Nous nous engageons à une transparence totale envers nos membres et le public.",
+    handNote: "ouverts à tous", // design — annotation manuscrite
     statusAvailable: "Disponible au téléchargement",
     statusSoon: "Bientôt",
     items: [
@@ -516,6 +528,7 @@ export const fr = {
     metaDesc:
       "Photos des activités de Stroke Action sur le terrain au Cameroun — campagnes de sensibilisation, formations et événements communautaires.",
     placeholder: "Nous débutons — revenez bientôt pour les photos de nos prochains événements et activités !",
+    handNote: "en préparation", // design — annotation manuscrite
   },
 
   governance: {
@@ -527,6 +540,7 @@ export const fr = {
     introLeft: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC.",
     introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
     boardTitle: "Bureau exécutif",
+    handNote: "unis dans l'action", // design — annotation manuscrite
     founderCaptionRole: "Fondateur",
     readMore: "Voir plus",
     closeBio: "Fermer",
@@ -572,12 +586,15 @@ export const fr = {
   news: {
     crumb: "Blog / Actualités",
     eyebrow: "Blog / Actualités",
-    title: "Ce qui se passe à Stroke Action.",
-    intro: "Articles éducatifs, campagnes de sensibilisation et événements. Publication mensuelle.",
+    titleLead: "Ce qui se passe",
+    titleMid: " à ",
+    titleAccent: "Stroke Action",
+    introPre: "Articles éducatifs, campagnes de sensibilisation et événements. Publication ",
+    introAccent: "mensuelle",
     posts: [
-      { cat: "Campagne", t: "Journée mondiale de l'AVC — 29 octobre", d: "Le programme des actions de sensibilisation prévues à Yaoundé et en ligne." },
-      { cat: "Éducation", t: "Le saviez-vous ? — L'hypertension, ennemie silencieuse", d: "Pourquoi plus d'un AVC sur deux commence par une tension mal contrôlée." },
-      { cat: "Association", t: "Stroke Action recrute ses premiers bénévoles", d: "Rejoindre l'action, quel que soit votre parcours." },
+      { id: "campaign", cat: "Campagne", t: "Journée mondiale de l'AVC — 29 octobre", d: "Le programme des actions de sensibilisation prévues à Yaoundé et en ligne." },
+      { id: "education", cat: "Éducation", t: "Le saviez-vous ? — L'hypertension, ennemie silencieuse", d: "Pourquoi plus d'un AVC sur deux commence par une tension mal contrôlée." },
+      { id: "association", cat: "Association", t: "Stroke Action recrute ses premiers bénévoles", d: "Rejoindre l'action, quel que soit votre parcours." },
     ],
     postSoon: "Article à venir",
     note: "Les articles complets seront publiés au lancement du site. Contenus indicatifs.",
@@ -585,6 +602,7 @@ export const fr = {
       eyebrow: "Newsletter",
       title: "Restez informé.",
       text: "Recevez nos actualités, nos campagnes et nos événements dans votre boîte mail. Pas de spam.",
+      handNote: "soyez les premiers informés", // design — annotation manuscrite
       placeholder: "vous@exemple.com",
       cta: "S'abonner",
       note: "Désabonnement à tout moment.",
@@ -596,6 +614,7 @@ export const fr = {
     eyebrow: "Espace membres",
     title: "Bientôt disponible.",
     intro: "L'espace réservé aux membres — documents internes, convocations aux assemblées, suivi de cotisation — est en préparation.",
+    handNote: "presque prêt", // design — annotation manuscrite
     body: "En attendant, vous pouvez soumettre votre demande d'adhésion et nous contacter pour toute question.",
     member: "Devenir membre",
     contact: "Nous contacter",
