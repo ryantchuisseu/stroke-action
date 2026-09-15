@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
-import { Heartbeat, WarningCircle, Timer, Wheelchair, UsersFour } from "@phosphor-icons/react/ssr";
+import {
+  Heartbeat,
+  WarningCircle,
+  Timer,
+  Wheelchair,
+  UsersFour,
+  Drop,
+  Cookie,
+  Cigarette,
+  Couch,
+  Wine,
+  HeartStraightBreak,
+  ForkKnife,
+  CalendarBlank,
+  UsersThree,
+  ClockCounterClockwise,
+} from "@phosphor-icons/react/ssr";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
 import { HandNote, InkUnderline } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
@@ -9,6 +25,10 @@ import { pageMeta } from "@/lib/site";
  * Librairie Phosphor (import SSR, sans Provider) — plus expressive que
  * lucide pour ces icônes-là (retour Ryan). Voir V6-NOTES.md. */
 const KNOW_ICONS = [Heartbeat, WarningCircle, Timer, Wheelchair, UsersFour];
+
+/* -------- Facteurs de risque : une icône par facteur (même esprit) -------- */
+const MODIF_ICONS = [Heartbeat, Drop, Cookie, Cigarette, Couch, Wine, HeartStraightBreak, ForkKnife];
+const NON_MODIF_ICONS = [CalendarBlank, UsersThree, ClockCounterClockwise];
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -101,26 +121,38 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{e.modifTitle}</h2>
             <p className="mt-1 text-[0.9rem] text-ink-soft">{e.modifSub}</p>
             <ul className="mt-5 border-t border-rule">
-              {e.modif.map((m) => (
-                <li key={m} className="group border-b border-rule transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
-                  <span className="inline-block origin-left py-[0.7rem] text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
-                    {m}
-                  </span>
-                </li>
-              ))}
+              {e.modif.map((m, i) => {
+                const Icon = MODIF_ICONS[i % MODIF_ICONS.length];
+                return (
+                  <li key={m} className="group flex items-center gap-3 border-b border-rule py-[0.7rem] transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
+                    <span className="grid h-8 w-8 flex-none place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-blue)_14%,transparent)] text-blue-ink transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.15] motion-reduce:group-hover:scale-100">
+                      <Icon size={16} weight="bold" aria-hidden="true" />
+                    </span>
+                    <span className="inline-block origin-left text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
+                      {m}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div>
             <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{e.nonModifTitle}</h2>
             <p className="mt-1 text-[0.9rem] text-ink-soft">{e.nonModifSub}</p>
             <ul className="mt-5 border-t border-rule">
-              {e.nonModif.map((m) => (
-                <li key={m} className="group border-b border-rule transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
-                  <span className="inline-block origin-left py-[0.7rem] text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
-                    {m}
-                  </span>
-                </li>
-              ))}
+              {e.nonModif.map((m, i) => {
+                const Icon = NON_MODIF_ICONS[i % NON_MODIF_ICONS.length];
+                return (
+                  <li key={m} className="group flex items-center gap-3 border-b border-rule py-[0.7rem] transition-[background-color,padding] duration-200 ease-[var(--ease-out)] hover:bg-paper-deep hover:px-3">
+                    <span className="grid h-8 w-8 flex-none place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-red)_14%,transparent)] text-red-ink transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.15] motion-reduce:group-hover:scale-100">
+                      <Icon size={16} weight="bold" aria-hidden="true" />
+                    </span>
+                    <span className="inline-block origin-left text-[0.96rem] transition-transform duration-200 ease-[var(--ease-out)] group-hover:scale-[1.04] motion-reduce:group-hover:scale-100">
+                      {m}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </Container>

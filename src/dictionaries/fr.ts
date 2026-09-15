@@ -568,6 +568,7 @@ export const fr = {
         bio: "Cardiologue, experte en hypertension et en risque cardiovasculaire et rénal.",
         fullBio:
           "Le Dr Ezangono Ndo Bayolo est médecin cardiologue diplômée de la Faculté de Médecine et des Sciences Biomédicales de l'Université de Yaoundé I. Elle dispose d'une décennie de pratique clinique avec une expertise particulière dans la prise en charge de l'hypertension, et du risque cardiovasculaire et rénal.",
+        email: "mezangono@strokeaction.org",
         photo: "/ezangono.jpg",
       },
       {
