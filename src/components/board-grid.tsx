@@ -17,7 +17,6 @@ type Member = {
 const PHOTO_POSITION: Record<string, string> = {
   "/dr-kamtchum.jpg": "object-[50%_20%]",
   "/ezangono.jpg": "object-[50%_15%]",
-  "/fogue.jpg": "object-[50%_35%]", // photo en pied, pas un buste : cadrage remonté sur la tête
 };
 const photoPosition = (photo?: string) => (photo && PHOTO_POSITION[photo]) || "object-center";
 
