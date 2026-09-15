@@ -554,7 +554,13 @@ export const fr = {
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
-      { role: "Secrétaire général", name: "À communiquer", bio: "Profil à publier prochainement." },
+      {
+        role: "Secrétaire général",
+        name: "M. FOGUE TEFFE Emmanuel",
+        bio: "Technicien d'assurance spécialisé en assurance dommages ; enseignant à l'INUCASTY.",
+        fullBio:
+          "M. FOGUE TEFFE Emmanuel est Technicien d'assurance spécialisé dans le conseil et la gestion des contrats d'Assurance Dommages. Il possède en outre une longue expérience dans le domaine du courtage. Il offre également des prestations en entreprise pour des formations et séminaires en sciences managériales. Actuellement, il dispense des cours d'assurance à l'Institut Universitaire Catholique Sainte Thérèse de Yaoundé (INUCASTY).",
+      },
       {
         role: "Trésorier",
         name: "Dr ADJALAOUL Aristide Autry",

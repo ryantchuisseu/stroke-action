@@ -555,7 +555,13 @@ export const en = {
         email: "jkamtchum@strokeaction.org",
         photo: "/dr-kamtchum.jpg",
       },
-      { role: "Secretary General", name: "To be provided", bio: "Profile to be published soon." },
+      {
+        role: "Secretary General",
+        name: "Mr. Emmanuel FOGUE TEFFE",
+        bio: "Insurance Technician specializing in Property and Casualty; insurance lecturer at INUCASTY.",
+        fullBio:
+          "Mr. Emmanuel FOGUE TEFFE is an Insurance Technician with special expertise in the field of Property and Casualty. He also has extensive experience in the field of insurance brokerage. He organizes workshops and seminars on corporate management. He currently works as an Insurance Lecturer at the Sainte Thérèse Catholic University Institute in Yaoundé (INUCASTY).",
+      },
       {
         role: "Treasurer",
         name: "Dr ADJALAOUL Aristide Autry",
