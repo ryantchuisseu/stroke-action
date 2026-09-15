@@ -560,6 +560,8 @@ export const fr = {
         bio: "Technicien d'assurance spécialisé en assurance dommages ; enseignant à l'INUCASTY.",
         fullBio:
           "M. FOGUE TEFFE Emmanuel est Technicien d'assurance spécialisé dans le conseil et la gestion des contrats d'Assurance Dommages. Il possède en outre une longue expérience dans le domaine du courtage. Il offre également des prestations en entreprise pour des formations et séminaires en sciences managériales. Actuellement, il dispense des cours d'assurance à l'Institut Universitaire Catholique Sainte Thérèse de Yaoundé (INUCASTY).",
+        email: "efogue@strokeaction.org",
+        photo: "/fogue.jpg",
       },
       {
         role: "Trésorier",
