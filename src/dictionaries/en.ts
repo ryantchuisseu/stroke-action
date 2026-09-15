@@ -294,7 +294,7 @@ export const en = {
       },
       {
         n: "05",
-        t: "Patient and public engagement and involvement",
+        t: "Patient and Public Involvement and Engagement (PPIE)",
         s: "Growing, Fighting, Winning, Serving, and Celebrating Together.",
         b: [
           "Engaging with the community online and in real life",
@@ -547,6 +547,8 @@ export const en = {
         bio: "Insurance Technician specializing in Property and Casualty; insurance lecturer at INUCASTY.",
         fullBio:
           "Mr. Emmanuel FOGUE TEFFE is an Insurance Technician with special expertise in the field of Property and Casualty. He also has extensive experience in the field of insurance brokerage. He organizes workshops and seminars on corporate management. He currently works as an Insurance Lecturer at the Sainte Thérèse Catholic University Institute in Yaoundé (INUCASTY).",
+        email: "efogue@strokeaction.org",
+        photo: "/fogue.jpg",
       },
       {
         role: "Treasurer",
