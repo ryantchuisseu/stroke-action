@@ -205,7 +205,7 @@ export const en = {
       fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, relating to freedom of association.",
     },
     quote: {
-      text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
+      text: "Every stroke that occurs in a person’s life is one too many, regardless of its severity.",
       author: "Dr Kamtchum Tatuene Joseph",
       role: "Founder",
     },
