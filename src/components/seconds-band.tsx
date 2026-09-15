@@ -13,7 +13,7 @@ type SecondsDict = {
   cta: string;
 };
 
-const MAX_NEURONS = 8_000_000;
+const MAX_NEURONS = 700_000_000;
 
 /** « Chaque seconde compte » — le point rouge parcourt la chronologie d'un AVC.
  *  Jalons en grille (jamais de chevauchement). Rendu par défaut = état complet
