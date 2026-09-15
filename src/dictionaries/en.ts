@@ -209,7 +209,7 @@ export const en = {
       originNote: "our origin", // design — annotation manuscrite
     },
     quote: {
-      text: "Every stroke that occurs in a human life is one stroke too many, whatever its severity.",
+      text: "Every stroke that occurs in a person’s life is one too many, regardless of its severity.",
       author: "Dr Kamtchum Tatuene Joseph",
       role: "Founder",
       handNote: "in his words", // design — annotation manuscrite
