@@ -461,6 +461,10 @@ export const fr = {
     channels: ["E-mail", "Téléphone", "WhatsApp"],
     formAttachment: "Pièce jointe (facultatif)",
     submit: "Envoyer le message",
+    sending: "Envoi en cours…",
+    successTitle: "Message envoyé !",
+    successText: "Merci de nous avoir écrit. Nous vous répondrons dans les plus brefs délais.",
+    errorText: "Une erreur est survenue lors de l'envoi. Merci de réessayer ou de nous écrire directement à l'adresse e-mail ci-dessus.",
     note: "Les demandes d'adhésion se font via le formulaire dédié « Devenir membre » de la page Nous soutenir.",
   },
 

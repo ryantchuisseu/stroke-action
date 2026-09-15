@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { HandNote } from "@/components/ink-marks";
+import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/lib/nav";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
@@ -10,8 +11,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const d = getDictionary(isLocale(lang) ? lang : "en");
   return pageMeta({ lang, route: "/contact", title: d.contact.crumb, description: d.contact.intro });
 }
-
-const field = "w-full border border-rule bg-paper px-3 py-2.5 text-[0.95rem] outline-none focus:border-blue";
 
 export default async function ContactPage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params;
@@ -55,51 +54,7 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
             </dl>
           </div>
 
-          <form className="grid gap-4" aria-label={c.title}>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="grid gap-1.5 text-[0.85rem] font-medium">
-                {c.formName}
-                <input className={field} type="text" name="name" required />
-              </label>
-              <label className="grid gap-1.5 text-[0.85rem] font-medium">
-                {c.formPhone}
-                <input className={field} type="tel" name="phone" />
-              </label>
-            </div>
-            <label className="grid gap-1.5 text-[0.85rem] font-medium">
-              {c.formEmail}
-              <input className={field} type="email" name="email" required />
-            </label>
-            <label className="grid gap-1.5 text-[0.85rem] font-medium">
-              {c.formSubject}
-              <input className={field} type="text" name="subject" required />
-            </label>
-            <label className="grid gap-1.5 text-[0.85rem] font-medium">
-              {c.formMessage}
-              <textarea className={field} name="message" rows={5} required />
-            </label>
-            <fieldset className="grid gap-2 text-[0.85rem] font-medium">
-              <legend className="mb-1">{c.formChannel}</legend>
-              <div className="flex flex-wrap gap-4 font-normal text-ink-soft">
-                {c.channels.map((o) => (
-                  <label key={o} className="flex items-center gap-2">
-                    <input type="radio" name="channel" value={o} /> {o}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
-            <label className="grid gap-1.5 text-[0.85rem] font-medium">
-              {c.formAttachment}
-              <input className={field} type="file" name="attachment" />
-            </label>
-            <button
-              type="submit"
-              className="mt-2 justify-self-start bg-blue-ink px-[1.1rem] py-[0.7rem] text-[0.88rem] font-semibold text-paper transition-colors hover:bg-red hover:text-white active:scale-[0.97]"
-            >
-              {c.submit}
-            </button>
-            <p className="text-[0.8rem] text-grey">{c.note}</p>
-          </form>
+          <ContactForm c={c} />
         </Container>
       </section>
     </>

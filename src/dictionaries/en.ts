@@ -462,6 +462,10 @@ export const en = {
     channels: ["Email", "Phone", "WhatsApp"],
     formAttachment: "Attachment (optional)",
     submit: "Send Message",
+    sending: "Sending…",
+    successTitle: "Message sent!",
+    successText: "Thank you for reaching out. We'll get back to you as soon as possible.",
+    errorText: "Something went wrong while sending your message. Please try again or email us directly at the address above.",
     note: "Membership requests must be submitted via the dedicated 'Join Us' form on the Support Us page.",
   },
 
