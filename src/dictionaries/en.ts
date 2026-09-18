@@ -119,6 +119,7 @@ export const en = {
       sub: "Stroke Action is a non-profit organization aiming to reduce the burden of stroke through education, research, professional training, and support for patients and their families.",
       ctaPrimary: "Learn More",
       ctaSecondary: "Join Us",
+      handNote: "act now", // design — annotation manuscrite
       caption:
         "Documentary photograph, black & white treatment — to be replaced with field images from Stroke Action (Yaoundé).", // design
     },
@@ -133,11 +134,12 @@ export const en = {
       eyebrow: "Our Pillars",
       title: "Four pillars, one conviction.",
       items: [
-        { t: "Education", d: "Raising public awareness about stroke risk factors, warning signs, and first-aid response." },
-        { t: "Research", d: "Conducting and supporting quality scientific research to inform healthcare policies." },
-        { t: "Training", d: "Continuous professional training for healthcare providers." },
-        { t: "Support", d: "Technical, financial, and emotional support for stroke patients and their families." },
+        { id: "education", t: "Education", d: "Raising public awareness about stroke risk factors, warning signs, and first-aid response." },
+        { id: "research", t: "Research", d: "Conducting and supporting quality scientific research to inform healthcare policies." },
+        { id: "training", t: "Training", d: "Continuous professional training for healthcare providers." },
+        { id: "support", t: "Support", d: "Technical, financial, and emotional support for stroke patients and their families." },
       ],
+      cta: "Learn more", // design
     },
     seconds: {
       // design section — built around the validated CTA banner text
@@ -168,6 +170,7 @@ export const en = {
     stats: {
       eyebrow: "Stroke in Figures",
       title: "Why time matters.",
+      handNote: "time is brain", // design — annotation manuscrite
       source: "Sources: World Health Organization, World Stroke Organization.",
       items: [
         { unit: " M / year", k: "people worldwide suffer a stroke." },
@@ -203,11 +206,13 @@ export const en = {
       p3: "We are a secular, apolitical, non-profit organization serving the public interest.",
       factYear: "2026",
       fact: "The year Stroke Action was founded. The association is governed by Law No. 90-53 of December 19, 1990, relating to freedom of association.",
+      originNote: "our origin", // design — annotation manuscrite
     },
     quote: {
       text: "Every stroke that occurs in a person’s life is one too many, regardless of its severity.",
       author: "Dr Kamtchum Tatuene Joseph",
       role: "Founder",
+      handNote: "in his words", // design — annotation manuscrite
     },
     vision: { k: "Our Vision", q: "To be an indispensable support for patients, families, health professionals and researchers who strive every day to defeat stroke." },
     mission: { k: "Our Mission", q: "To significantly reduce the burden of stroke worldwide through education, research, advocacy, and support for patients and their families." },
@@ -237,6 +242,7 @@ export const en = {
     title: "Turning commitment into action.",
     intro:
       "At Stroke Action, we turn commitment into concrete action. Our work is structured around four core areas of action, supported by a fifth objective focused on public engagement, guided by our bylaws and our 2026–2030 Strategic Plan.",
+    handNote: "on the ground", // design — annotation manuscrite
     carousel: {
       region: "Field images",
       prev: "Previous image",
@@ -332,6 +338,8 @@ export const en = {
       emergencyNote: "At any sign of stroke, call immediately — do not wait.",
     },
     fastTitle: "Recognize a Stroke — The FAST Method",
+    fastNote: "every second counts", // design — annotation manuscrite
+    preventableNote: "preventable", // design — annotation manuscrite
     fast: [
       { l: "F", t: "Face", d: "Sudden facial drooping or numbness on one side." },
       { l: "A", t: "Arms", d: "Weakness or numbness in one arm — ask the person to raise both arms." },
@@ -387,6 +395,7 @@ export const en = {
     crumb: "FAQ",
     eyebrow: "FAQ",
     title: "Frequently Asked Questions.",
+    handNote: "ask away", // design — annotation manuscrite
     metaDesc:
       "Answers to common questions about Stroke Action, stroke prevention and warning signs, our programs, membership, and how to get involved.",
     items: [
@@ -439,6 +448,7 @@ export const en = {
     title: "Send us a message.",
     intro: "Have a question, a suggestion, or want to get involved? We'd love to hear from you. Fill in the form below or reach us directly.",
     detailsTitle: "Contact Details",
+    handNote: "we're listening", // design — annotation manuscrite
     labelEmail: "Email",
     labelPhone: "Phone / WhatsApp",
     labelAddress: "Address",
@@ -464,6 +474,7 @@ export const en = {
     eyebrow: "Support Us",
     title: "Stroke Action exists because of people like you.",
     intro: "People who believe that together, we can defeat stroke. Here is how you can make a difference.",
+    handNote: "every gift counts", // design — annotation manuscrite
     ways: [
       {
         id: "don",
@@ -503,6 +514,7 @@ export const en = {
     eyebrow: "Key Documents",
     title: "Full transparency.",
     intro: "All official documents of Stroke Action are available here for consultation and download. We are committed to full transparency with our members and the public.",
+    handNote: "open by default", // design — annotation manuscrite
     statusAvailable: "Available for download",
     statusSoon: "Coming soon",
     items: [
@@ -521,6 +533,7 @@ export const en = {
     metaDesc:
       "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
     placeholder: "We are just getting started — check back soon for photos from our upcoming events and activities!",
+    handNote: "in the making", // design — annotation manuscrite
   },
 
   governance: {
@@ -532,6 +545,7 @@ export const en = {
     introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeat stroke.",
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
     boardTitle: "Executive Board",
+    handNote: "united in action", // design — annotation manuscrite
     founderCaptionRole: "Founder",
     readMore: "Read more",
     closeBio: "Close",
@@ -567,6 +581,7 @@ export const en = {
         bio: "Cardiologist with expertise in hypertension and cardiovascular and renal risk.",
         fullBio:
           "Dr Ezangono Ndo Bayolo, is a cardiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. She has a decade-long clinical experience, with special expertise in the management of hypertension and cardiovascular and renal risk.",
+        email: "mezangono@strokeaction.org",
         photo: "/ezangono.jpg",
       },
       {
@@ -585,12 +600,15 @@ export const en = {
   news: {
     crumb: "Blog / News",
     eyebrow: "Blog / News",
-    title: "What's happening at Stroke Action.",
-    intro: "Educational articles, awareness campaigns, and events. Published monthly.",
+    titleLead: "What's happening",
+    titleMid: " at ",
+    titleAccent: "Stroke Action",
+    introPre: "Educational articles, awareness campaigns, and events. Published ",
+    introAccent: "monthly",
     posts: [
-      { cat: "Campaign", t: "World Stroke Day — October 29", d: "The program of awareness activities planned in Yaoundé and online." },
-      { cat: "Education", t: "Did You Know? — Hypertension, the silent enemy", d: "Why more than one stroke in two begins with poorly controlled blood pressure." },
-      { cat: "Association", t: "Stroke Action recruits its first volunteers", d: "Join the action, whatever your background." },
+      { id: "campaign", cat: "Campaign", t: "World Stroke Day — October 29", d: "The program of awareness activities planned in Yaoundé and online." },
+      { id: "education", cat: "Education", t: "Did You Know? — Hypertension, the silent enemy", d: "Why more than one stroke in two begins with poorly controlled blood pressure." },
+      { id: "association", cat: "Association", t: "Stroke Action recruits its first volunteers", d: "Join the action, whatever your background." },
     ],
     postSoon: "Article coming soon",
     note: "Full articles will be published at the site launch. Indicative content.",
@@ -598,6 +616,7 @@ export const en = {
       eyebrow: "Newsletter",
       title: "Stay informed.",
       text: "Get our news, campaigns, and events straight to your inbox. No spam.",
+      handNote: "be the first to know", // design — annotation manuscrite
       placeholder: "you@example.com",
       cta: "Subscribe",
       note: "Unsubscribe at any time.",
@@ -609,8 +628,197 @@ export const en = {
     eyebrow: "Members",
     title: "Coming soon.",
     intro: "The members-only area — internal documents, assembly notices, contribution tracking — is under preparation.",
+    handNote: "almost there", // design — annotation manuscrite
     body: "In the meantime, you can submit your membership request and contact us with any question.",
     member: "Become a Member",
     contact: "Contact Us",
+  },
+
+  legal: {
+    privacy: {
+      crumb: "Privacy Policy",
+      eyebrow: "Privacy",
+      title: "Privacy Policy",
+      intro: "How Stroke Action collects, uses, and protects your personal data on this site.",
+      updated: "Stroke Action association · Tradex Nkoabang, Yaoundé, Cameroon · Receipt of declaration N° 000130/RDA/J05/SP dated August 20, 2026.",
+      metaDesc: "Stroke Action's privacy policy: data collected, purposes, sharing, retention, and your rights.",
+      note: "This document was drafted for Stroke Action by AD Design.",
+      sections: [
+        {
+          heading: "1 · Who we are",
+          body: [
+            "This site is published by Stroke Action (« Action AVC » in French), a Cameroonian non-profit, secular, and apolitical association whose purpose is to help reduce the burden of stroke in Cameroon, in Africa, and worldwide.",
+            "Registered office: Tradex Nkoabang, Yaoundé, Cameroon · Contact: contact@strokeaction.org · President: Dr. Kamtchum Tatuene Joseph.",
+            "Receipt of declaration number: N° 000130/RDA/J05/SP dated August 20, 2026.",
+          ],
+        },
+        {
+          heading: "2 · What data we collect",
+          body: [
+            "Contact form: name, email address, message, and attachment where applicable.",
+            "Online membership application: name, date of birth, contact details, copy of a valid ID document (Article 8 of the Internal Regulations, required for any membership application, as an active member or as a volunteer).",
+            "Online donations (disabled at website launch, to be activated later): once active, Mobile Money or bank card payments will be processed directly by our third-party payment provider. Stroke Action does not collect or store any bank card details on its own servers.",
+            "Site browsing: standard technical data (IP address, browser type, pages visited) via audience measurement tools, if activated.",
+            "Cookies: see section 7.",
+            "We do not knowingly collect data concerning minors. Active member status is reserved for persons aged 18 years or older (Article 7 of the Bylaws).",
+          ],
+        },
+        {
+          heading: "3 · Why we use the data",
+          body: [
+            "We use your data to:",
+            [
+              "Respond to requests sent via the contact form;",
+              "Process membership applications in accordance with the Bylaws and Internal Regulations (review by the Executive Board, validation by the General Assembly);",
+              "Manage the register of members and volunteers — this register is only made public on the site for individuals who have explicitly given their consent, and anyone may request not to be listed;",
+              "Process donations once the module is activated;",
+              "Improve the site and its content;",
+              "Keep you informed of the association's activities, subject to your consent.",
+            ],
+          ],
+        },
+        {
+          heading: "4 · Data sharing",
+          body: [
+            "Your data is never sold or rented to third parties for commercial purposes.",
+            "It may only be shared with: members of the Executive Board authorized to process your request; our strictly necessary technical providers, in particular our web host Hostinger International Ltd. (hostinger.com), whose data center used for this site is located in France, and our payment provider once donations are activated; competent authorities where required by Cameroonian law.",
+            "In accordance with the Internal Regulations (Article 5.4), anyone with access to personal information in the course of their duties within Stroke Action is bound by a confidentiality obligation.",
+          ],
+        },
+        {
+          heading: "5 · Data retention",
+          body: [
+            "Data is retained only for as long as strictly necessary for the purpose for which it was collected:",
+            "Contact form: retained for the time needed to process your request, then deleted or archived within 12 months.",
+            "Membership data and ID documents: retained for the entire duration of your active membership. If an application is not accepted or in the event of resignation, this data is deleted within 12 months.",
+            "Accounting data (donations, membership fees): retained in accordance with legal and accounting obligations in force in Cameroon.",
+          ],
+        },
+        {
+          heading: "6 · Security",
+          body: [
+            "The site is secured with an SSL certificate (encrypted HTTPS connection). Access to member data is restricted to Executive Board members authorized to process it.",
+          ],
+        },
+        {
+          heading: "7 · Cookies",
+          body: [
+            "The site may use technical cookies (necessary for it to function properly) and, where applicable, audience measurement cookies. A consent banner allows you to accept or decline non-essential cookies on your first visit.",
+          ],
+        },
+        {
+          heading: "8 · Your rights",
+          body: [
+            "At any time, you may request access to, correction or deletion of your personal data, or withdraw your consent to appear in the public register of members, by writing to contact@strokeaction.org. We endeavor to process your request within a maximum of 30 days of receipt.",
+          ],
+        },
+        {
+          heading: "9 · Changes to this policy",
+          body: ["This policy may be updated to reflect changes to the site or to applicable regulations."],
+        },
+        {
+          heading: "10 · Governing law",
+          body: ["This policy is governed by Cameroonian law. For any question: contact@strokeaction.org."],
+        },
+      ],
+    },
+    terms: {
+      crumb: "Terms of Use",
+      eyebrow: "Legal",
+      title: "Terms of Use",
+      intro: "The rules that govern the use of the website strokeaction.org.",
+      updated: "Stroke Action association · Tradex Nkoabang, Yaoundé, Cameroon · Receipt of declaration N° 000130/RDA/J05/SP dated August 20, 2026.",
+      metaDesc: "Stroke Action's terms of use: intellectual property, personal data, online donations, and liability.",
+      note: "This document was drafted for Stroke Action by AD Design.",
+      sections: [
+        {
+          heading: "1 · Purpose",
+          body: [
+            "These terms govern the use of the website strokeaction.org, published by the association Stroke Action (« Action AVC »), a Cameroonian non-profit, secular, and apolitical association whose purpose is to help reduce the burden of stroke in Cameroon, in Africa, and worldwide.",
+            "By browsing this site, you accept these terms. If you disagree with any of them, please do not use the site.",
+          ],
+        },
+        {
+          heading: "2 · Important medical disclaimer",
+          body: [
+            "The content of this site — including the « Stroke Education » pages and the « Did You Know? » campaign — is provided for informational and educational purposes only. It does not constitute medical advice, a diagnosis, or a treatment recommendation, and does not replace consultation with a healthcare professional.",
+            "If you suspect a stroke or face any medical emergency, contact emergency services immediately or go to the nearest healthcare facility. Stroke Action cannot be held liable for any decision made solely on the basis of information published on this site.",
+          ],
+        },
+        {
+          heading: "3 · Intellectual property",
+          body: [
+            "The logo, visual identity, texts, and documents published on this site are the property of Stroke Action, unless otherwise stated. Some images used on the site come from third-party image libraries and remain subject to their respective authors' rights; they are not the property of Stroke Action. Any reproduction of the site's content for commercial purposes is prohibited without prior written authorization. Documents in the « Key Documents » section (bylaws, internal regulations, reports, etc.) may be freely downloaded and shared for informational purposes, provided the source is credited.",
+          ],
+        },
+        {
+          heading: "4 · Personal data and cookies",
+          body: [
+            "Personal information collected through this site's forms (contact, membership, donation) are used by Stroke Action to process your requests. They are never sold, rented, or transferred to third parties for commercial purposes.",
+            "You have the right to access, correct, and delete your data by writing to contact@strokeaction.org.",
+            "The site may use technical cookies and, where applicable, audience measurement cookies; you may decline them via the consent banner shown on your first visit.",
+            "For full details on how your data is processed (purposes, retention period, sharing), please consult our Privacy Policy, which prevails in the event of any discrepancy with this summary.",
+          ],
+        },
+        {
+          heading: "5 · Membership and member area",
+          body: [
+            "Any membership application submitted via the site is processed in accordance with the Bylaws and Internal Regulations: review by the Executive Board, followed by validation by the General Assembly. Submitting an application does not guarantee acceptance.",
+            "You agree to provide accurate and up-to-date information when registering. Active member status is reserved for persons aged 18 years or older.",
+          ],
+        },
+        {
+          heading: "6 · Online donations",
+          body: [
+            "Once activated, the donation module will allow contributions to the association's activities via Mobile Money or bank card, through a secure third-party payment provider. Except in the case of a proven technical error, donations are non-refundable. The association's resources are used exclusively to fulfill its purpose, in accordance with its Bylaws.",
+          ],
+        },
+        {
+          heading: "7 · User behaviour",
+          body: [
+            "Any use of the site for illegal or fraudulent purposes, or in a manner that damages the image of Stroke Action or third parties, is prohibited. The same standards of courtesy and integrity that apply to members of the association (Internal Regulations, Article 5) apply to anyone interacting with the site.",
+          ],
+        },
+        {
+          heading: "8 · Links to third-party sites",
+          body: [
+            "The site may contain links to third-party sites (social media, partners, scientific sources). Stroke Action is not responsible for the content or privacy practices of these external sites.",
+          ],
+        },
+        {
+          heading: "9 · Limitation of liability",
+          body: [
+            "Stroke Action makes every effort to ensure the accuracy of the information published, but does not guarantee that the site is error-free or uninterrupted. Use of the site is at your own risk. Stroke Action cannot be held liable for direct or indirect, material or immaterial damages resulting from access to the site or the inability to access it (outages, network attacks, viruses, hacking).",
+          ],
+        },
+        {
+          heading: "10 · Changes to these terms",
+          body: ["These terms may be updated at any time."],
+        },
+        {
+          heading: "11 · Governing law and disputes",
+          body: [
+            "These terms are governed by Cameroonian law. In the event of a dispute, the parties will endeavor to reach an amicable solution before pursuing any legal action before the competent courts.",
+          ],
+        },
+        {
+          heading: "12 · Legal notice",
+          body: [
+            [
+              "Website publisher: Stroke Action association (« Action AVC »), a Cameroonian non-profit, secular, and apolitical association.",
+              "Headquarters: Tradex Nkoabang, Yaoundé, Cameroon.",
+              "Editor: Dr. Kamtchum Tatuene Joseph, President.",
+              "Contact: contact@strokeaction.org.",
+              "Receipt of declaration number: N° 000130/RDA/J05/SP dated August 20, 2026.",
+              "Web host: Hostinger International Ltd. (hostinger.com).",
+            ],
+          ],
+        },
+        {
+          heading: "13 · Contact",
+          body: ["For any question regarding these terms: contact@strokeaction.org."],
+        },
+      ],
+    },
   },
 } as const;

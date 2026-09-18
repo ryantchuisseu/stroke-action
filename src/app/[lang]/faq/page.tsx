@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
 import { Accordion } from "@/components/accordion";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -21,10 +22,14 @@ export default async function FaqPage({ params }: { params: Promise<{ lang: stri
         crumbs={[{ label: t.nav.home, href: `/${lang}` }, { label: t.nav.groups[1].label }, { label: f.crumb }]}
         eyebrow={f.eyebrow}
         title={f.title}
+        highlight="Questions"
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
           <div className="max-w-[860px]">
+            <div className="mb-2 flex justify-end">
+              <HandNote className="hidden rotate-[3deg] sm:inline-block">{f.handNote}</HandNote>
+            </div>
             <Accordion items={f.items.map((it) => ({ q: it.q, a: it.a }))} />
           </div>
         </Container>

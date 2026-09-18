@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -46,9 +47,14 @@ export default async function DocumentsPage({ params }: { params: Promise<{ lang
         eyebrow={d.eyebrow}
         title={d.title}
         intro={d.intro}
+        highlight={lang === "fr" ? "Transparence" : "transparency"}
+        underline="public"
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
+          <div className="mb-2 flex justify-end">
+            <HandNote className="hidden rotate-[-3deg] sm:inline-block">{d.handNote}</HandNote>
+          </div>
           <ul className="border-t border-rule">
             {d.items.map((doc) => {
               const rowInner = (

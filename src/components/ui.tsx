@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { highlightWord, underlineWord } from "./ink-marks";
 
 /* -------- Container -------- */
 export function Container({
@@ -63,21 +64,40 @@ export function Eyebrow({
   );
 }
 
-/* -------- En-tête de page (fil d'ariane + titre) -------- */
+/* -------- En-tête de page (fil d'ariane + titre) --------
+ * titleNode / introNode : remplacent title / intro quand une page a besoin
+ * d'une mise en forme particulière (accent, mot surligné...). decor : élément
+ * décoratif positionné librement dans l'en-tête (ex. motif de points). */
 export function PageHeader({
   crumbs,
   eyebrow,
   title,
   intro,
+  titleNode,
+  introNode,
+  decor,
+  highlight,
+  underline,
 }: {
   crumbs: { label: string; href?: string }[];
   eyebrow: string;
   title: string;
   intro?: string;
+  titleNode?: ReactNode;
+  introNode?: ReactNode;
+  decor?: ReactNode;
+  /** Mot du titre à surligner (motif V6) — ignoré si titleNode est fourni. */
+  highlight?: string;
+  /** Mot de l'intro à souligner en rouge (motif V6) — ignoré si introNode est fourni. */
+  underline?: string;
 }) {
+  const resolvedTitleNode = titleNode ?? (highlight ? highlightWord(title, highlight, { flourish: true }) : undefined);
+  const resolvedIntroNode = introNode ?? (underline && intro ? underlineWord(intro, underline) : undefined);
+
   return (
     <header className="border-b border-rule">
-      <Container>
+      <Container className="relative">
+        {decor}
         <nav aria-label="Fil d'ariane" className="pt-4 text-[0.82rem] text-grey">
           {crumbs.map((c, i) => (
             <span key={i}>
@@ -94,14 +114,14 @@ export function PageHeader({
             </span>
           ))}
         </nav>
-        <div className="pb-12 pt-5 md:pb-20 md:pt-8">
+        <div className="relative pb-12 pt-5 md:pb-20 md:pt-8">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-4 max-w-[16ch] text-[clamp(2.2rem,5.5vw,4rem)] tracking-[-0.03em]">
-            {title}
+          <h1 className="mt-4 max-w-[20ch] text-[clamp(2.2rem,5.5vw,4rem)] tracking-[-0.03em]">
+            {resolvedTitleNode ?? title}
           </h1>
-          {intro && (
+          {(resolvedIntroNode ?? intro) && (
             <p className="mt-[1.1rem] max-w-[42ch] text-[clamp(1.05rem,1.6vw,1.3rem)] text-ink-soft">
-              {intro}
+              {resolvedIntroNode ?? intro}
             </p>
           )}
         </div>
@@ -117,18 +137,26 @@ export function SectionHead({
   intro,
   alert = false,
   className = "",
+  highlight,
+  underline,
 }: {
   eyebrow: string;
   title: string;
   intro?: string;
   alert?: boolean;
   className?: string;
+  /** Mot du titre à surligner (motif V6). */
+  highlight?: string;
+  /** Mot de l'intro à souligner en rouge (motif V6). */
+  underline?: string;
 }) {
   return (
     <div className={`max-w-[44ch] ${className}`}>
       <Eyebrow alert={alert}>{eyebrow}</Eyebrow>
-      <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">{title}</h2>
-      {intro && <p className="mt-[0.85rem] text-ink-soft">{intro}</p>}
+      <h2 className="mt-[0.9rem] text-[clamp(1.6rem,3.6vw,2.6rem)]">
+        {highlight ? highlightWord(title, highlight, { flourish: true }) : title}
+      </h2>
+      {intro && <p className="mt-[0.85rem] text-ink-soft">{underline ? underlineWord(intro, underline) : intro}</p>}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader } from "@/components/ui";
+import { HandNote } from "@/components/ink-marks";
 import { ContactForm } from "@/components/contact-form";
 import { CONTACT } from "@/lib/nav";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
@@ -23,11 +24,16 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
         eyebrow={c.eyebrow}
         title={c.title}
         intro={c.intro}
+        highlight={lang === "fr" ? "Écrivez-nous" : "message"}
+        underline={lang === "fr" ? "ravis" : "love"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container className="grid gap-[clamp(2rem,6vw,4rem)] md:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <h2 className="text-[1.2rem] font-semibold">{c.detailsTitle}</h2>
+            <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+              <h2 className="text-[1.2rem] font-semibold">{c.detailsTitle}</h2>
+              <HandNote className="hidden rotate-[-3deg] sm:inline-block">{c.handNote}</HandNote>
+            </div>
             <dl className="mt-4 grid gap-4 text-[0.95rem]">
               <div>
                 <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-grey">{c.labelEmail}</dt>

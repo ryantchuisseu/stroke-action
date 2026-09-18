@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Caveat } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
@@ -12,6 +12,15 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-poppins",
+  display: "swap",
+});
+
+// Police "manuscrite" pour les petites annotations décoratives (motif V6,
+// cf. V6-NOTES.md) — jamais pour du texte fonctionnel, uniquement des notes.
+const caveat = Caveat({
+  weight: ["600", "700"],
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -94,7 +103,7 @@ export default async function LangLayout({
   const d = getDictionary(lang as Locale);
 
   return (
-    <html lang={lang} className={poppins.variable}>
+    <html lang={lang} className={`${poppins.variable} ${caveat.variable}`}>
       <body className="flex min-h-screen flex-col">
         <OrgJsonLd />
         <SiteHeader lang={lang} nav={d.nav} />

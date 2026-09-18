@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Container, PageHeader, Btn } from "@/components/ui";
+import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -22,13 +23,16 @@ export default async function EspaceMembresPage({ params }: { params: Promise<{ 
         eyebrow={m.eyebrow}
         title={m.title}
         intro={m.intro}
+        highlight={lang === "fr" ? "disponible" : "soon"}
+        underline={lang === "fr" ? "préparation" : "preparation"}
       />
       <section className="py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
           <p className="max-w-[52ch] text-ink-soft">{m.body}</p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <Btn href={p("/nous-soutenir#devenir-membre")}>{m.member}</Btn>
             <Btn href={p("/contact")} variant="ghost">{m.contact}</Btn>
+            <HandNote className="hidden rotate-[3deg] sm:inline-block">{m.handNote}</HandNote>
           </div>
         </Container>
       </section>
