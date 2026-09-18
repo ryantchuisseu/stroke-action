@@ -148,6 +148,12 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
             <span>{footer.city}</span>
             <span>{CONTACT.email}</span>
             <span>{footer.credit}</span>
+            <Link href={p("/politique-confidentialite")} className="transition-colors hover:text-white">
+              {lang === "fr" ? "Politique de confidentialité" : "Privacy Policy"}
+            </Link>
+            <Link href={p("/conditions-utilisation")} className="transition-colors hover:text-white">
+              {lang === "fr" ? "Conditions d'utilisation" : "Terms of Use"}
+            </Link>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-[0.72rem] text-[rgba(252,250,246,0.4)]">{footer.social}</span>

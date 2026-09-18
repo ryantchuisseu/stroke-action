@@ -632,4 +632,192 @@ export const fr = {
     member: "Devenir membre",
     contact: "Nous contacter",
   },
+
+  legal: {
+    privacy: {
+      crumb: "Politique de confidentialité",
+      eyebrow: "Vie privée",
+      title: "Politique de confidentialité",
+      intro: "Comment Stroke Action collecte, utilise et protège vos données personnelles sur ce site.",
+      updated: "Association Stroke Action · Tradex Nkoabang, Yaoundé, Cameroun · Récépissé de déclaration N° 000130/RDA/J05/SP du 20 août 2026.",
+      metaDesc: "Politique de confidentialité de Stroke Action : données collectées, finalités, partage, conservation et vos droits.",
+      note: "Document rédigé pour Stroke Action par AD Design.",
+      sections: [
+        {
+          heading: "1 · Qui sommes-nous ?",
+          body: [
+            "Ce site est édité par Stroke Action (« Action AVC » en français), association camerounaise à but non lucratif, laïque et apolitique, dont le but est de contribuer à la diminution du fardeau des accidents vasculaires cérébraux (AVC) au Cameroun, en Afrique et dans le monde.",
+            "Siège : Tradex Nkoabang, Yaoundé, Cameroun · Contact : contact@strokeaction.org · Président : Dr. Kamtchum Tatuene Joseph.",
+            "Numéro de récépissé de déclaration : N° 000130/RDA/J05/SP du 20 août 2026.",
+          ],
+        },
+        {
+          heading: "2 · Quelles données nous collectons",
+          body: [
+            "Formulaire de contact : nom, adresse e-mail, message, et pièce jointe le cas échéant.",
+            "Demande d'adhésion en ligne : nom, date de naissance, coordonnées, copie d'une pièce d'identité valide (Article 8 du Règlement intérieur, exigé pour toute demande d'adhésion, en tant que membre actif ou en tant que volontaire/bénévole).",
+            "Dons en ligne (livré désactivé au lancement, activable ultérieurement) : une fois actifs, les paiements par Mobile Money ou carte bancaire seront traités directement par notre prestataire de paiement tiers. Stroke Action ne collecte ni ne stocke aucune donnée de carte bancaire sur ses propres serveurs.",
+            "Navigation sur le site : données techniques standard (adresse IP, type de navigateur, pages consultées) via des outils de mesure d'audience, si activés.",
+            "Cookies : voir section 7.",
+            "Nous ne collectons pas sciemment de données concernant des personnes mineures. L'adhésion en tant que membre actif est réservée aux personnes de 18 ans révolus (Article 7 des Statuts).",
+          ],
+        },
+        {
+          heading: "3 · Pourquoi nous utilisons ces données ?",
+          body: [
+            "Nous utilisons vos données pour :",
+            [
+              "Répondre aux demandes envoyées via le formulaire de contact ;",
+              "Traiter les demandes d'adhésion conformément aux Statuts et au Règlement intérieur (examen par le Bureau Exécutif, validation par l'Assemblée Générale) ;",
+              "Gérer le registre des membres et volontaires — ce registre n'est rendu public sur le site que pour les personnes ayant explicitement donné leur accord, toute personne peut demander à ne pas y figurer ;",
+              "Traiter les dons une fois le module activé ;",
+              "Améliorer le site et son contenu ;",
+              "Tenir informé des activités de l'association, sous réserve de consentement.",
+            ],
+          ],
+        },
+        {
+          heading: "4 · Partage des données",
+          body: [
+            "Vos données ne sont jamais vendues ni louées à des tiers à des fins commerciales.",
+            "Elles peuvent être partagées uniquement avec : les membres du Bureau Exécutif habilités à traiter votre demande ; nos prestataires techniques strictement nécessaires, notamment notre hébergeur web Hostinger International Ltd. (hostinger.com), dont le centre de données utilisé pour ce site est situé en France, et notre prestataire de paiement une fois les dons activés ; les autorités compétentes si la loi camerounaise l'exige.",
+            "Conformément au Règlement intérieur (Article 5.4), toute personne ayant accès à des informations personnelles au titre de ses fonctions au sein de Stroke Action est tenue à une obligation de confidentialité.",
+          ],
+        },
+        {
+          heading: "5 · Conservation des données",
+          body: [
+            "Les données sont conservées le temps strictement nécessaire à la finalité pour laquelle elles ont été collectées :",
+            "Formulaire de contact : conservé le temps de traiter votre demande, puis supprimé ou archivé sous 12 mois.",
+            "Données d'adhésion et pièces d'identité : conservées pour toute la durée de votre adhésion active. En cas de non-validation de la candidature ou de démission, ces données sont supprimées dans un délai de 12 mois.",
+            "Données comptables (dons, cotisations) : conservées conformément aux obligations légales et comptables en vigueur au Cameroun.",
+          ],
+        },
+        {
+          heading: "6 · Sécurité",
+          body: [
+            "Le site est sécurisé par un certificat SSL (connexion chiffrée HTTPS). L'accès aux données des membres est restreint aux personnes du Bureau Exécutif habilitées à les traiter.",
+          ],
+        },
+        {
+          heading: "7 · Cookies",
+          body: [
+            "Le site peut utiliser des cookies techniques (nécessaires à son bon fonctionnement) et, le cas échéant, des cookies de mesure d'audience. Un bandeau de consentement permet d'accepter ou de refuser les cookies non essentiels lors de la première visite.",
+          ],
+        },
+        {
+          heading: "8 · Vos droits",
+          body: [
+            "Vous pouvez à tout moment demander l'accès, la rectification ou la suppression de vos données personnelles, ou retirer votre consentement à figurer dans le registre public des membres, en écrivant à contact@strokeaction.org. Nous nous efforçons de traiter votre demande dans un délai maximum de 30 jours à compter de sa réception.",
+          ],
+        },
+        {
+          heading: "9 · Modifications de cette politique",
+          body: ["Cette politique peut être mise à jour pour refléter l'évolution du site ou de la réglementation."],
+        },
+        {
+          heading: "10 · Droit applicable",
+          body: ["Cette politique est soumise au droit camerounais. Pour toute question : contact@strokeaction.org."],
+        },
+      ],
+    },
+    terms: {
+      crumb: "Conditions d'utilisation",
+      eyebrow: "Mentions légales",
+      title: "Conditions d'utilisation",
+      intro: "Les règles qui encadrent l'utilisation du site strokeaction.org.",
+      updated: "Association Stroke Action · Tradex Nkoabang, Yaoundé, Cameroun · Récépissé de déclaration N° 000130/RDA/J05/SP du 20 août 2026.",
+      metaDesc: "Conditions d'utilisation du site Stroke Action : propriété intellectuelle, données personnelles, dons en ligne, responsabilité.",
+      note: "Document rédigé pour Stroke Action par AD Design.",
+      sections: [
+        {
+          heading: "1 · Objet",
+          body: [
+            "Les présentes conditions régissent l'utilisation du site strokeaction.org, édité par l'association Stroke Action (« Action AVC »), association camerounaise à but non lucratif, laïque et apolitique, dont le but est de contribuer à la diminution du fardeau des accidents vasculaires cérébraux (AVC) au Cameroun, en Afrique et dans le monde.",
+            "En consultant ce site, vous acceptez les présentes conditions. Si vous n'êtes pas d'accord avec l'une d'elles, nous vous invitons à ne pas utiliser le site.",
+          ],
+        },
+        {
+          heading: "2 · Avertissement médical important",
+          body: [
+            "Le contenu de ce site — y compris les pages « Stroke Education » et la campagne « Le Saviez-Vous ? / Did You Know? » — a une vocation purement informative et éducative. Il ne constitue en aucun cas un avis médical, un diagnostic ou une recommandation de traitement, et ne remplace pas une consultation avec un professionnel de santé.",
+            "En cas de suspicion d'AVC ou de toute urgence médicale, contactez immédiatement les services d'urgence ou rendez-vous dans l'établissement de santé le plus proche. Stroke Action ne saurait être tenue responsable d'une décision prise sur la seule base des informations publiées sur ce site.",
+          ],
+        },
+        {
+          heading: "3 · Propriété intellectuelle",
+          body: [
+            "Le logo, l'identité visuelle, les textes et documents publiés sur ce site sont la propriété de Stroke Action, sauf mention contraire. Certaines images utilisées sur le site proviennent de banques d'images tierces et restent soumises aux droits de leurs auteurs respectifs ; elles ne sont pas la propriété de Stroke Action. Toute reproduction à des fins commerciales du contenu du site est interdite sans autorisation écrite préalable. Les documents de la rubrique « Documents clés » (statuts, règlement intérieur, rapports, etc.) peuvent être librement téléchargés et partagés à des fins d'information, à condition d'en citer la source.",
+          ],
+        },
+        {
+          heading: "4 · Données personnelles et cookies",
+          body: [
+            "Les informations personnelles recueillies via les formulaires de ce site (contact, adhésion, don) sont nécessaires au traitement de vos demandes par Stroke Action. Elles ne sont ni vendues, ni louées, ni cédées à des tiers à des fins commerciales.",
+            "Vous disposez d'un droit d'accès, de rectification et de suppression des données vous concernant, en écrivant à contact@strokeaction.org.",
+            "Le site peut utiliser des cookies techniques et, le cas échéant, des cookies de mesure d'audience ; vous pouvez les refuser via le bandeau de consentement affiché lors de votre première visite.",
+            "Pour le détail complet du traitement de vos données (finalités, durée de conservation, partage), consultez notre Politique de confidentialité, qui prévaut en cas de différence avec le présent résumé.",
+          ],
+        },
+        {
+          heading: "5 · Adhésion et espace membres",
+          body: [
+            "Toute demande d'adhésion soumise via le site est traitée conformément aux Statuts et au Règlement intérieur : examen par le Bureau Exécutif, puis validation de l'Assemblée Générale. Soumettre une demande ne garantit pas son acceptation.",
+            "Vous vous engagez à fournir des informations exactes et à jour lors de votre inscription. Le statut de membre actif est réservé aux personnes de 18 ans révolus.",
+          ],
+        },
+        {
+          heading: "6 · Dons en ligne",
+          body: [
+            "Une fois activé, le module de don permettra de contribuer aux activités de l'association par Mobile Money ou carte bancaire, via un prestataire de paiement tiers sécurisé. Sauf erreur technique avérée, les dons effectués ne sont pas remboursables. Les ressources de l'association sont exclusivement affectées à l'accomplissement de son objet, conformément à ses Statuts.",
+          ],
+        },
+        {
+          heading: "7 · Comportement des utilisateurs",
+          body: [
+            "Toute utilisation du site à des fins illégales, frauduleuses, ou portant atteinte à l'image de Stroke Action ou de tiers est interdite. Les mêmes exigences de courtoisie et d'intégrité que celles applicables aux membres de l'association (Règlement intérieur, Article 5) s'appliquent à toute personne interagissant avec le site.",
+          ],
+        },
+        {
+          heading: "8 · Liens vers des sites tiers",
+          body: [
+            "Le site peut contenir des liens vers des sites tiers (réseaux sociaux, partenaires, sources scientifiques). Stroke Action n'est pas responsable du contenu ni des pratiques de confidentialité de ces sites externes.",
+          ],
+        },
+        {
+          heading: "9 · Limitation de responsabilité",
+          body: [
+            "Stroke Action met tout en œuvre pour assurer l'exactitude des informations publiées, mais ne garantit pas l'absence d'erreur ou d'interruption du service. L'utilisation du site se fait sous votre propre responsabilité. Stroke Action ne saurait être tenue responsable des dommages directs ou indirects, matériels ou immatériels, résultant de l'accès au site ou de l'impossibilité d'y accéder (pannes, attaques réseau, virus, piratage).",
+          ],
+        },
+        {
+          heading: "10 · Modification des présentes conditions",
+          body: ["Ces conditions peuvent être mises à jour à tout moment."],
+        },
+        {
+          heading: "11 · Droit applicable et litiges",
+          body: [
+            "Les présentes conditions sont soumises au droit camerounais. En cas de différend, les parties s'efforceront de trouver une solution amiable avant tout recours devant les juridictions compétentes.",
+          ],
+        },
+        {
+          heading: "12 · Mentions légales",
+          body: [
+            [
+              "Éditeur du site : Association Stroke Action (« Action AVC »), association camerounaise à but non lucratif, laïque et apolitique.",
+              "Siège social : Tradex Nkoabang, Yaoundé, Cameroun.",
+              "Directeur de la publication : Dr. Kamtchum Tatuene Joseph, Président.",
+              "Contact : contact@strokeaction.org.",
+              "Numéro de récépissé de déclaration : N° 000130/RDA/J05/SP du 20 août 2026.",
+              "Hébergement : Hostinger International Ltd. (hostinger.com).",
+            ],
+          ],
+        },
+        {
+          heading: "13 · Contact",
+          body: ["Pour toute question relative aux présentes conditions : contact@strokeaction.org."],
+        },
+      ],
+    },
+  },
 } as const;
