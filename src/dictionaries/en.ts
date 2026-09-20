@@ -126,7 +126,7 @@ export const en = {
     who: {
       eyebrow: "Who We Are",
       title: "A community united against stroke.",
-      p1: "Founded in Cameroon, Stroke Action brings together patients, families, healthcare professionals, and researchers united by one common goal: defeating stroke.",
+      p1: "Founded in Cameroon, Stroke Action brings together patients, families, healthcare professionals, researchers, and volunteers united by one common goal: defeating stroke.",
       p2: "We believe that through education, science, and solidarity, we can save lives and transform the reality of stroke in Africa and beyond.",
       link: "About Stroke Action →",
     },

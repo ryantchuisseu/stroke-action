@@ -126,7 +126,7 @@ export const fr = {
     who: {
       eyebrow: "Qui sommes-nous",
       title: "Une communauté unie contre l'AVC.",
-      p1: "Née au Cameroun, Stroke Action rassemble patients, familles, professionnels de santé et chercheurs autour d'un même objectif : vaincre l'AVC.",
+      p1: "Fondée au Cameroun, Stroke Action rassemble patients, familles, professionnels de santé, chercheurs et volontaires autour d'un même objectif : vaincre l'AVC.",
       p2: "Nous croyons que par l'éducation, la science et la solidarité, nous pouvons sauver des vies et transformer la réalité de l'AVC en Afrique et au-delà.",
       link: "À propos de Stroke Action →",
     },
