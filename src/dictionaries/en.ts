@@ -519,9 +519,7 @@ export const en = {
     statusSoon: "Coming soon",
     items: [
       { title: "Bylaws / Statuts", lang: "EN", ready: true, href: "/documents/statuts-bylaws-en.pdf" },
-      { title: "Bylaws / Statuts", lang: "FR", ready: true, href: "/documents/statuts-bylaws-fr.pdf" },
       { title: "Internal Regulations / Règlement Intérieur", lang: "EN", ready: true, href: "/documents/reglement-interieur-en.pdf" },
-      { title: "Internal Regulations / Règlement Intérieur", lang: "FR", ready: true, href: "/documents/reglement-interieur-fr.pdf" },
       { title: "Strategic Plan 2026–2030", lang: "—", ready: false, href: "" },
       { title: "Annual Report", lang: "—", ready: false, href: "" },
       { title: "Presentation Brochure", lang: "—", ready: false, href: "" },
