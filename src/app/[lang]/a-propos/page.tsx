@@ -5,6 +5,7 @@ import { Container, Eyebrow, PageHeader, CtaBand, Btn } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { Reveal } from "@/components/reveal";
 import { HandNote, highlightWord, underlineWord } from "@/components/ink-marks";
+import { CreditedPhoto } from "@/components/photo-credit";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -59,14 +60,13 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
             <p className="mt-[1.15rem]">{a.story.p3}</p>
           </div>
           <aside className="md:sticky md:top-24">
-            <div className="group relative aspect-[4/5] overflow-hidden">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/photos/infirmiere.jpg"
-                alt=""
-                className="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
-              />
-            </div>
+            <CreditedPhoto
+              src="/photos/infirmiere.jpg"
+              alt=""
+              href="https://www.jorishermans.com/blog/portrait-photography-ideas-and-examples"
+              className="group relative aspect-[4/5]"
+              imgClassName="h-full w-full object-cover transition-transform duration-500 ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
+            />
             <p className="relative mt-4 border-t-2 border-ink pt-4 text-[0.88rem] text-ink-soft">
               <b className="mb-[0.15rem] block text-2xl tracking-[-0.02em] text-ink">{a.story.factYear}</b>
               {a.story.fact}
