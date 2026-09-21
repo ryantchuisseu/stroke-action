@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "sa-cookie-consent";
@@ -44,9 +43,14 @@ export function CookieBanner({ lang, d }: { lang: string; d: CookieDict }) {
       <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center justify-between gap-4 px-5 py-4 sm:px-8 lg:px-16">
         <p className="max-w-[62ch] text-[0.88rem] text-ink-soft">
           {d.text}{" "}
-          <Link href={`/${lang}/politique-confidentialite`} className="font-semibold text-blue-ink hover:text-red-ink">
+          <a
+            href={lang === "fr" ? "/documents/politique-confidentialite-fr.pdf" : "/documents/privacy-policy-en.pdf"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-blue-ink hover:text-red-ink"
+          >
             {d.linkLabel}
-          </Link>
+          </a>
         </p>
         <div className="flex flex-none gap-3">
           <button

@@ -21,8 +21,6 @@ export const ROUTES = [
   "/nous-soutenir",
   "/contact",
   "/espace-membres",
-  "/politique-confidentialite",
-  "/conditions-utilisation",
 ] as const;
 
 /** Liens hreflang : chaque langue + x-default (langue par défaut). */
