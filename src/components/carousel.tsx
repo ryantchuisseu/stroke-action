@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type Slide = { src: string; alt: string };
+type Slide = { src: string; alt: string; href?: string };
 type Labels = { prev: string; next: string; region: string; goto: string };
 
 const INTERVAL = 5200;
@@ -62,9 +62,9 @@ export function Carousel({ slides, labels }: { slides: Slide[]; labels: Labels }
             transition: reduce ? "none" : `transform ${SLIDE_MS}ms cubic-bezier(0.77,0,0.175,1)`,
           }}
         >
-          {slides.map((s, i) => (
-            <div key={s.src} className="relative h-full w-full flex-none overflow-hidden" aria-hidden={i !== index}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+          {slides.map((s, i) => {
+            const img = (
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={s.src}
                 alt={i === index ? s.alt : ""}
@@ -75,8 +75,22 @@ export function Carousel({ slides, labels }: { slides: Slide[]; labels: Labels }
                   transition: !reduce && i === index ? "transform 6s linear" : "none",
                 }}
               />
-            </div>
-          ))}
+            );
+            return (
+              <div key={s.src} className="relative h-full w-full flex-none overflow-hidden" aria-hidden={i !== index}>
+                {s.href ? (
+                  <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="group block h-full w-full">
+                    {img}
+                    <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-ink/85 px-3 py-1.5 text-[0.7rem] text-paper opacity-0 transition-[transform,opacity] duration-200 ease-[var(--ease-out)] group-hover:translate-y-0 group-hover:opacity-100">
+                      <span className="block truncate pr-14">{s.href.replace(/^https?:\/\//, "")}</span>
+                    </span>
+                  </a>
+                ) : (
+                  img
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* dégradé + compteur */}
