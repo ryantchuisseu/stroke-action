@@ -257,9 +257,9 @@ export const en = {
       goto: "Go to image",
     },
     alts: [
-      "An older woman looks out through blue-shuttered windows.",
+      "Two family caregivers help an older woman stand up with her walker at home.",
       "A caregiver visits a couple at home; the man leans on crutches.",
-      "A home rehabilitation session with hand weights, guided by a caregiver.",
+      "An older man practices a reaching exercise with a caregiver during a rehabilitation session.",
       "A woman helps someone up a set of steps; a wheelchair stands in the foreground.",
       "A man in a wheelchair surrounded by his family in front of their home.",
     ],

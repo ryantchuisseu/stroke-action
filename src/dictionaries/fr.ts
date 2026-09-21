@@ -256,9 +256,9 @@ export const fr = {
       goto: "Aller à l'image",
     },
     alts: [
-      "Une femme âgée regarde par une fenêtre à volets bleus.",
+      "Deux aidantes familiales aident une femme âgée à se lever avec son déambulateur, à domicile.",
       "Une soignante rend visite à un couple à domicile ; l'homme s'appuie sur des béquilles.",
-      "Séance de rééducation à domicile avec des haltères, accompagnée par un soignant.",
+      "Un homme âgé s'exerce à un mouvement d'atteinte avec une soignante, en séance de rééducation.",
       "Une femme aide une personne à monter des marches ; un fauteuil roulant est au premier plan.",
       "Un homme en fauteuil roulant entouré de sa famille devant leur maison.",
     ],
