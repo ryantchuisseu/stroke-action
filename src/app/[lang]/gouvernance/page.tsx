@@ -47,7 +47,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
                   className="h-full w-full object-cover object-[50%_20%]"
                 />
               </div>
-              <figcaption className="mt-4 text-center text-[0.74rem] uppercase tracking-[0.14em] text-grey">
+              <figcaption className="mt-4 text-center text-[0.95rem] font-bold uppercase tracking-[0.14em] text-grey">
                 {founderName}
                 <span className="mt-1 block text-blue-ink">{g.founderCaptionRole}</span>
               </figcaption>
