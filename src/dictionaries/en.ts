@@ -390,6 +390,13 @@ export const en = {
       "Stroke is the leading cause of acquired disability in adults. With proper rehabilitation, many survivors can regain significant function.",
       "Stroke does not only affect older adults — it can strike at any age, including in young adults and even children.",
     ],
+    book: {
+      eyebrow: "To Go Further",
+      title: "All About Stroke",
+      author: "Dr. Kamtchum Tatuene Joseph",
+      text: "A book by Dr. Kamtchum Tatuene Joseph, founder of Stroke Action, to understand stroke in depth: signs, prevention, care, and recovery.",
+      dateNote: "Available in French and English starting October 1, 2026.",
+    },
     cta: {
       title: "Share these signs around you.",
       text: "Everyone who knows FAST can save a life. Join the awareness effort.",

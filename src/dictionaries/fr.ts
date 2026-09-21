@@ -389,6 +389,13 @@ export const fr = {
       "L'AVC est la première cause de handicap acquis chez l'adulte. Avec une bonne rééducation, de nombreux survivants récupèrent une fonction significative.",
       "L'AVC ne touche pas que les personnes âgées : il peut survenir à tout âge, y compris chez le jeune adulte et l'enfant.",
     ],
+    book: {
+      eyebrow: "Pour aller plus loin",
+      title: "Tout savoir sur l'AVC",
+      author: "Dr Kamtchum Tatuene Joseph",
+      text: "Un livre du Dr Kamtchum Tatuene Joseph, fondateur de Stroke Action, pour comprendre l'AVC en profondeur : signes, prévention, prise en charge et rétablissement.",
+      dateNote: "Disponible en français et en anglais à partir du 1er octobre 2026.",
+    },
     cta: {
       title: "Partagez ces signes autour de vous.",
       text: "Chaque personne qui connaît FAST peut sauver une vie. Rejoignez la sensibilisation.",
