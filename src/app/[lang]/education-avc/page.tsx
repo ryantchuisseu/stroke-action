@@ -15,6 +15,7 @@ import {
   CalendarBlank,
   UsersThree,
   ClockCounterClockwise,
+  BookOpen,
 } from "@phosphor-icons/react/ssr";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
 import { HandNote, InkUnderline } from "@/components/ink-marks";
@@ -232,6 +233,24 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
                 </div>
               );
             })}
+          </div>
+        </Container>
+      </section>
+
+      {/* Pour aller plus loin — livre du Dr Kamtchum */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
+        <Container>
+          <div className="flex flex-col items-start gap-[clamp(1.5rem,4vw,2.5rem)] border border-rule bg-paper-deep p-[clamp(1.75rem,4vw,3rem)] sm:flex-row sm:items-center">
+            <span className="grid h-14 w-14 flex-none place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-blue)_14%,transparent)] text-blue-ink">
+              <BookOpen size={26} weight="bold" aria-hidden="true" />
+            </span>
+            <div>
+              <Eyebrow>{e.book.eyebrow}</Eyebrow>
+              <h2 className="mt-2 text-[clamp(1.3rem,2.6vw,1.8rem)]">{e.book.title}</h2>
+              <p className="mt-1 text-[0.9rem] font-semibold text-ink-soft">{e.book.author}</p>
+              <p className="mt-3 max-w-[56ch] text-ink-soft">{e.book.text}</p>
+              <p className="mt-3 text-[0.9rem] font-semibold text-red-ink">{e.book.dateNote}</p>
+            </div>
           </div>
         </Container>
       </section>
