@@ -7,6 +7,13 @@ import { HandNote } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
+/** Sources des photos du carrousel (suivi des droits d'auteur) — clé = numéro de slide (1-5). */
+const CAROUSEL_CREDITS: Record<number, string> = {
+  2: "https://www.netflix.com/cm-en/title/81663120",
+  4: "https://kffhealthnews.org/aging/dying-broke-facing-financial-ruin-as-costs-soar-for-elder-care/",
+  5: "https://zambia.un.org/en/113091-wfp-delivers-critical-cash-assistance-urban-residents-face-challenges-posed-covid-19",
+};
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
   const d = getDictionary(isLocale(lang) ? lang : "en");
@@ -62,7 +69,7 @@ export default async function NosActionsPage({ params }: { params: Promise<{ lan
             <HandNote className="hidden rotate-[-3deg] sm:inline-block">{w.handNote}</HandNote>
           </div>
           <Carousel
-            slides={w.alts.map((alt, i) => ({ src: `/carousel/${i + 1}.jpg`, alt }))}
+            slides={w.alts.map((alt, i) => ({ src: `/carousel/${i + 1}.jpg`, alt, href: CAROUSEL_CREDITS[i + 1] }))}
             labels={w.carousel}
           />
         </Container>
