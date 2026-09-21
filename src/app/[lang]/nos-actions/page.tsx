@@ -9,7 +9,9 @@ import { pageMeta } from "@/lib/site";
 
 /** Sources des photos du carrousel (suivi des droits d'auteur) — clé = numéro de slide (1-5). */
 const CAROUSEL_CREDITS: Record<number, string> = {
+  1: "https://www.aarp.org/espanol/recursos-para-el-cuidado/prestar-cuidado/info-2022/relatos-veridicos-cuidadores-familiares.html",
   2: "https://www.netflix.com/cm-en/title/81663120",
+  3: "https://www.juneadaptive.com/blogs/our-community/clothing-tips-and-recommendations-for-living-with-parkinsons",
   4: "https://kffhealthnews.org/aging/dying-broke-facing-financial-ruin-as-costs-soar-for-elder-care/",
   5: "https://zambia.un.org/en/113091-wfp-delivers-critical-cash-assistance-urban-residents-face-challenges-posed-covid-19",
 };
