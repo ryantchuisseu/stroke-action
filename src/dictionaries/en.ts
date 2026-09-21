@@ -548,7 +548,7 @@ export const en = {
     eyebrow: "Governance",
     title: "A dedicated Executive Board.",
     intro:
-      "Stroke Action is governed by a dedicated Executive Board committed to transparency, integrity, and impact. The Board is composed of five elected members, each contributing their expertise to advance the association's mission.",
+      "Stroke Action is governed by a dedicated Executive Board committed to transparency, integrity, and impact. The Board is composed of five members, each contributing their expertise to advance the association's mission.",
     introLeft: "Our Executive Board brings together dedicated professionals united by a shared commitment to defeat stroke.",
     introRight: "Each member contributes their expertise to ensure Stroke Action fulfills its mission with integrity, transparency, and impact.",
     boardTitle: "Executive Board",
