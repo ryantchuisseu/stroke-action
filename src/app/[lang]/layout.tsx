@@ -5,6 +5,7 @@ import "../globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SideDrawer } from "@/components/side-drawer";
+import { CookieBanner } from "@/components/cookie-banner";
 import { getDictionary, isLocale, locales, type Locale } from "@/dictionaries";
 import { SITE_URL, SITE_NAME, languagesFor } from "@/lib/site";
 
@@ -110,6 +111,7 @@ export default async function LangLayout({
         <main className="flex-1">{children}</main>
         <SiteFooter lang={lang} footer={d.footer} />
         <SideDrawer lang={lang} d={d.drawer} />
+        <CookieBanner lang={lang} d={d.cookieBanner} />
       </body>
     </html>
   );

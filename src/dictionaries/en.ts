@@ -96,6 +96,13 @@ export const en = {
     ],
   },
 
+  cookieBanner: {
+    text: "This site uses technical cookies necessary for it to function and, where applicable, audience measurement cookies. You can accept or decline non-essential cookies.",
+    accept: "Accept",
+    decline: "Decline",
+    linkLabel: "Learn more",
+  },
+
   footer: {
     motto: "Together to Defeat Stroke",
     mottoSub: "Ensemble pour Vaincre l'AVC",
