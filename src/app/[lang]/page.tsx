@@ -113,11 +113,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             </div>
           </div>
           <div className="hero-stg hero-d3 aspect-[3/4] overflow-hidden">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <CreditedPhoto
               src="/photos/portrait-femme.jpg"
               alt=""
-              className="hero-img-in h-full w-full object-cover"
+              href="https://www.villagehealthworks.org/"
+              className="h-full w-full"
+              imgClassName="hero-img-in h-full w-full object-cover"
             />
           </div>
         </Container>
