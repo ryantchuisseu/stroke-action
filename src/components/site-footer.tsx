@@ -167,10 +167,28 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
           </div>
           <div className="flex items-center gap-4">
             <span className="text-[0.72rem] text-[rgba(252,250,246,0.4)]">{footer.social}</span>
-            <span className="flex items-center gap-3 text-[rgba(252,250,246,0.45)]" aria-hidden="true">
-              <FacebookIcon className="h-[18px] w-[18px]" />
-              <LinkedinIcon className="h-[18px] w-[18px]" />
-              <YoutubeIcon className="h-[18px] w-[18px]" />
+            <span className="flex items-center gap-4">
+              <a
+                href="https://web.facebook.com/people/Stroke-Action-AVC/61594723047008/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="text-[rgba(252,250,246,0.55)] transition-colors hover:text-white"
+              >
+                <FacebookIcon className="h-[24px] w-[24px]" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/stroke-action-avc"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="text-[rgba(252,250,246,0.55)] transition-colors hover:text-white"
+              >
+                <LinkedinIcon className="h-[24px] w-[24px]" />
+              </a>
+              <span aria-hidden="true" className="text-[rgba(252,250,246,0.3)]">
+                <YoutubeIcon className="h-[24px] w-[24px]" />
+              </span>
             </span>
           </div>
         </div>

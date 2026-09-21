@@ -115,7 +115,7 @@ export const fr = {
     rights: "© 2026 Stroke Action. Tous droits réservés.",
     city: "Yaoundé, Cameroun",
     credit: "Site conçu et développé par AD Design",
-    social: "Réseaux sociaux : bientôt",
+    social: "Suivez-nous",
   },
 
   home: {
