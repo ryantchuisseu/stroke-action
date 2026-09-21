@@ -547,7 +547,7 @@ export const fr = {
     eyebrow: "Gouvernance",
     title: "Un bureau exécutif engagé.",
     intro:
-      "Stroke Action est dirigée par un bureau exécutif dédié, engagé pour la transparence, l'intégrité et l'impact. Le bureau est composé de cinq membres élus, chacun apportant son expertise pour faire avancer la mission de l'association.",
+      "Stroke Action est dirigée par un bureau exécutif dédié, engagé pour la transparence, l'intégrité et l'impact. Le bureau est composé de cinq membres, chacun apportant son expertise pour faire avancer la mission de l'association.",
     introLeft: "Notre bureau exécutif rassemble des professionnels dévoués, unis par un même engagement pour vaincre l'AVC.",
     introRight: "Chaque membre apporte son expertise pour que Stroke Action remplisse sa mission avec intégrité, transparence et impact.",
     boardTitle: "Bureau exécutif",
