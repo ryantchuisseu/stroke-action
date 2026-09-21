@@ -82,7 +82,10 @@ function OrgJsonLd() {
       addressLocality: "Yaoundé",
       addressCountry: "CM",
     },
-    // sameAs: [ ... ] à compléter avec les URL Facebook / YouTube / LinkedIn
+    sameAs: [
+      "https://web.facebook.com/people/Stroke-Action-AVC/61594723047008/",
+      "https://www.linkedin.com/company/stroke-action-avc",
+    ],
   };
   return (
     <script
