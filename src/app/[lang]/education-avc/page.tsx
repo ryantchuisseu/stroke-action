@@ -244,12 +244,20 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
             <span className="grid h-14 w-14 flex-none place-items-center rounded-full bg-[color-mix(in_srgb,var(--color-blue)_14%,transparent)] text-blue-ink">
               <BookOpen size={26} weight="bold" aria-hidden="true" />
             </span>
-            <div>
+            <div className="flex-1">
               <Eyebrow>{e.book.eyebrow}</Eyebrow>
               <h2 className="mt-2 text-[clamp(1.3rem,2.6vw,1.8rem)]">{e.book.title}</h2>
               <p className="mt-1 text-[0.9rem] font-semibold text-ink-soft">{e.book.author}</p>
               <p className="mt-3 max-w-[56ch] text-ink-soft">{e.book.text}</p>
               <p className="mt-3 text-[0.9rem] font-semibold text-red-ink">{e.book.dateNote}</p>
+            </div>
+            <div className="group w-[110px] flex-none overflow-hidden sm:w-[130px]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={lang === "fr" ? "/book-fr.jpg" : "/book-en.jpg"}
+                alt={e.book.title}
+                className="w-full transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-[1.08] motion-reduce:group-hover:scale-100"
+              />
             </div>
           </div>
         </Container>
