@@ -4,6 +4,7 @@ import { SecondsBand } from "@/components/seconds-band";
 import { CountUp } from "@/components/count-up";
 import { Reveal } from "@/components/reveal";
 import { HandNote, highlightWord, underlineWord } from "@/components/ink-marks";
+import { CreditedPhoto } from "@/components/photo-credit";
 import { getDictionary, type Locale } from "@/dictionaries";
 
 /* -------- Formes qui dérivent en fond de hero --------
@@ -126,15 +127,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="bg-paper-deep py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container className="grid items-center gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[0.85fr_1.15fr]">
           <figure className="m-0 aspect-[16/10] overflow-hidden md:order-none">
-            <a
+            <CreditedPhoto
+              src="/photos/soignante.jpg"
+              alt=""
               href="https://www.merckgroup.com/en/news/praziquantel-tablet-donation-24-01-2022.html"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              className="block h-full w-full"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/photos/soignante.jpg" alt="" className="h-full w-full object-cover" />
-            </a>
+              className="h-full w-full"
+            />
           </figure>
           <div>
             <Eyebrow>{h.who.eyebrow}</Eyebrow>
@@ -250,10 +248,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
       {/* ILS EN PARLENT */}
       <section className="py-[clamp(3.75rem,9vw,7.5rem)]">
-        <div className="relative aspect-[21/9] w-full overflow-hidden max-sm:aspect-[4/3]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/photos/homme-espoir.jpg" alt="" className="h-full w-full object-cover" />
-        </div>
+        <CreditedPhoto
+          src="/photos/homme-espoir.jpg"
+          alt=""
+          href="https://www.zeit.de/gesundheit/2024-11/krankenhaeuser-sudan-buergerkrieg-nubaberge-humanitaere-hilfe"
+          className="relative aspect-[21/9] w-full max-sm:aspect-[4/3]"
+        />
         <Container>
           <div className="mt-[clamp(2rem,5vw,3rem)] max-w-[46ch]">
             <Eyebrow>{h.voices.eyebrow}</Eyebrow>
