@@ -126,8 +126,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       <section className="bg-paper-deep py-[clamp(3.75rem,9vw,7.5rem)]">
         <Container className="grid items-center gap-[clamp(2rem,6vw,5rem)] md:grid-cols-[0.85fr_1.15fr]">
           <figure className="m-0 aspect-[16/10] overflow-hidden md:order-none">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/photos/soignante.jpg" alt="" className="h-full w-full object-cover" />
+            <a
+              href="https://www.merckgroup.com/en/news/praziquantel-tablet-donation-24-01-2022.html"
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              className="block h-full w-full"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/photos/soignante.jpg" alt="" className="h-full w-full object-cover" />
+            </a>
           </figure>
           <div>
             <Eyebrow>{h.who.eyebrow}</Eyebrow>
