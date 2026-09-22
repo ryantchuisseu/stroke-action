@@ -121,7 +121,21 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
                   <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue-ink">{c.k}</span>
                 </div>
                 <blockquote className="mt-[1.1rem] text-[clamp(1.15rem,2.1vw,1.55rem)] font-medium leading-[1.4] tracking-[-0.015em]">
-                  {c.q}
+                  {i === 0 && lang === "en"
+                    ? (() => {
+                        const phrase = "a world without stroke";
+                        const idx = c.q.indexOf(phrase);
+                        return idx === -1 ? (
+                          c.q
+                        ) : (
+                          <>
+                            {c.q.slice(0, idx)}
+                            <span className="text-red-ink">{phrase}</span>
+                            {c.q.slice(idx + phrase.length)}
+                          </>
+                        );
+                      })()
+                    : c.q}
                 </blockquote>
               </div>
               );
