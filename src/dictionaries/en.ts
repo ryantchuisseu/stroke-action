@@ -585,7 +585,9 @@ export const en = {
       {
         role: "Treasurer",
         name: "Dr ADJALAOUL Aristide Autry",
-        bio: "Profile to be published soon.",
+        bio: "Radiologist, expert in neuroimaging and musculoskeletal imaging.",
+        fullBio:
+          "Dr. ADJALAOUL Aristide Autry is a Cameroonian radiologist trained at the Faculty of Medicine and Biomedical Sciences, University of Yaoundé I. He has a decade-long practice and training experience in Cameroon and France, with a special expertise in neuroimaging and musculoskeletal imaging. He is currently the Chair of Radiology at Biyem-Assi District Hospital in Yaoundé.",
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
