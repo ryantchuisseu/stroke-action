@@ -121,9 +121,9 @@ export default async function AProposPage({ params }: { params: Promise<{ lang: 
                   <span className="text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-blue-ink">{c.k}</span>
                 </div>
                 <blockquote className="mt-[1.1rem] text-[clamp(1.15rem,2.1vw,1.55rem)] font-medium leading-[1.4] tracking-[-0.015em]">
-                  {i === 0 && lang === "en"
+                  {i === 0
                     ? (() => {
-                        const phrase = "a world without stroke";
+                        const phrase = lang === "fr" ? "un monde sans AVC" : "a world without stroke";
                         const idx = c.q.indexOf(phrase);
                         return idx === -1 ? (
                           c.q
