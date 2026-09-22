@@ -584,7 +584,9 @@ export const fr = {
       {
         role: "Trésorier",
         name: "Dr ADJALAOUL Aristide Autry",
-        bio: "Profil à publier prochainement.",
+        bio: "Radiologue, expert en neuroimagerie et imagerie ostéo-articulaire.",
+        fullBio:
+          "Dr ADJALAOUL Aristide Autry est un médecin radiologue diplômé de la Faculté de Médecine et de Sciences Biomédicales de l'Université de Yaoundé I. Il possède une décennie d'expérience en pratique clinique et formation au Cameroun et en France, avec une expertise particulière en neuroimagerie et imagerie ostéo-articulaire. Il occupe actuellement le poste de Chef de Service de radiologie à l'Hôpital de District de Biyem-Assi à Yaoundé.",
         email: "aadjalaoul@strokeaction.org",
         photo: "/adjalaoul.jpg",
       },
