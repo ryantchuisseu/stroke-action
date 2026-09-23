@@ -220,7 +220,7 @@ export const fr = {
       role: "Fondateur",
       handNote: "ses mots", // design — annotation manuscrite
     },
-    vision: { k: "Notre vision", q: "Un soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour un monde sans AVC." },
+    vision: { k: "Notre vision", q: "Le soutien indispensable pour les patients, les familles, les professionnels de santé et les chercheurs qui œuvrent chaque jour pour un monde sans AVC." },
     mission: { k: "Notre mission", q: "Réduire significativement le fardeau de l'AVC dans le monde par l'éducation, la recherche, le plaidoyer et le soutien aux patients et à leurs familles." },
     values: {
       eyebrow: "Nos valeurs",
