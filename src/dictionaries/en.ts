@@ -221,7 +221,7 @@ export const en = {
       role: "Founder",
       handNote: "in his words", // design — annotation manuscrite
     },
-    vision: { k: "Our Vision", q: "To be an indispensable support for patients, families, health professionals and researchers who strive every day for a world without stroke." },
+    vision: { k: "Our Vision", q: "An indispensable support for patients, families, health professionals and researchers who strive every day for a world without stroke." },
     mission: { k: "Our Mission", q: "To significantly reduce the burden of stroke worldwide through education, research, advocacy, and support for patients and their families." },
     values: {
       eyebrow: "Our Values",
