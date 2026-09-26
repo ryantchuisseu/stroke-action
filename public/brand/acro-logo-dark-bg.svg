@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 220" width="1040" height="440">
+  <style>
+    g{fill:#F5F1EA} .stroke{stroke:#F5F1EA} .accent{fill:#FF4D00}
+    text{fill:#F5F1EA;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700}
+  </style>
+  <rect width="520" height="220" fill="#0B0B0B"/>
+  <g transform="translate(56,40)">
+  <g id="acro">
+    <!-- A : sans barre, accent triangle -->
+    <polygon points="0,100 34,0 60,0 94,100 70,100 47,32 24,100"/>
+    <polygon class="accent" points="37,100 47,70 57,100"/>
+    <!-- C -->
+    <path d="M189.9,24.9 A39,39 0 1 0 189.9,75.1" fill="none" class="stroke" stroke-width="22"/>
+    <!-- R -->
+    <rect x="206" y="0" width="22" height="100"/>
+    <path d="M217,11 H250 A28,28 0 0 1 250,67 H217" fill="none" class="stroke" stroke-width="22"/>
+    <polygon points="238,64 263,64 294,100 268,100"/>
+    <!-- O -->
+    <circle cx="358" cy="50" r="39" fill="none" class="stroke" stroke-width="22"/>
+  </g>
+  </g>
+  <rect x="56" y="163" width="408" height="3" fill="#FF4D00"/>
+  <text x="260" y="192" font-size="15" letter-spacing="9.5" text-anchor="middle">CLOTHING · EST. 2026</text>
+</svg>
