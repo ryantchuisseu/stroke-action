@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>User Guide — strokeaction.org</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; font-style: normal; src: url("fonts/poppins-400.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; font-style: normal; src: url("fonts/poppins-500.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; font-style: normal; src: url("fonts/poppins-600.woff2") format("woff2"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; font-style: normal; src: url("fonts/poppins-700.woff2") format("woff2"); }
+  :root {
+    --blue: #2A9DF4; --blue-ink: #1868AA; --red: #F42A2A; --red-ink: #C62020;
+    --ink: #171512; --soft: #4d4a45; --grey: #85817a; --rule: #e4ded3;
+    --paper: #FBF9F5; --deep: #F2EEE6; --blue-bg: #E8F3FD; --red-bg: #FDECEC;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: "Poppins", Arial, sans-serif; color: var(--ink); background: #fff; font-size: 9.6pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { width: 210mm; height: 297mm; padding: 17mm 17mm 20mm; position: relative; page-break-after: always; overflow: hidden; background: var(--paper); }
+  .page:last-child { page-break-after: auto; }
+  .foot { position: absolute; left: 17mm; right: 17mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 7.5pt; color: var(--grey); border-top: 1px solid var(--rule); padding-top: 2.5mm; }
+  .foot b { color: var(--blue-ink); font-weight: 600; }
+
+  h1, h2, h3 { margin: 0; letter-spacing: -0.02em; line-height: 1.15; }
+  h2 { font-size: 21pt; font-weight: 700; margin-bottom: 1.5mm; }
+  h3 { font-size: 12pt; font-weight: 600; margin: 5mm 0 2mm; }
+  p { margin: 0 0 2.5mm; color: var(--soft); }
+  .eyebrow { font-size: 7.5pt; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue-ink); margin-bottom: 2mm; }
+  .eyebrow .n { color: var(--red); }
+  .lead { font-size: 10pt; color: var(--soft); margin-bottom: 5mm; max-width: 150mm; }
+  .dot { color: var(--red); }
+  .hl { background: var(--blue-bg); border-radius: 6px; padding: 0 5px; }
+  b, strong { color: var(--ink); font-weight: 600; }
+
+  ul { margin: 0 0 2.5mm; padding-left: 5mm; color: var(--soft); }
+  li { margin-bottom: 1.2mm; }
+  li::marker { color: var(--blue); }
+
+  .shot { border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+  .shot img { display: block; width: 100%; }
+  figure { margin: 0 0 4mm; }
+  figcaption { font-size: 7.8pt; color: var(--grey); margin-top: 1.5mm; }
+
+  .box { border-radius: 6px; padding: 3.5mm 4.5mm; margin: 3mm 0; font-size: 9.2pt; }
+  .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+  .box .t { font-weight: 600; font-size: 9.5pt; margin-bottom: 1mm; display: block; }
+  .tip { background: var(--blue-bg); border-left: 3px solid var(--blue); }
+  .tip .t { color: var(--blue-ink); }
+  .warn { background: var(--red-bg); border-left: 3px solid var(--red); }
+  .warn .t { color: var(--red-ink); }
+  .neutral { background: var(--deep); border-left: 3px solid var(--grey); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 8.8pt; margin: 2mm 0 3mm; }
+  th { text-align: left; font-size: 7.3pt; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-ink); font-weight: 600; padding: 2mm 2.5mm; border-bottom: 2px solid var(--blue); background: #fff; }
+  td { padding: 2mm 2.5mm; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--soft); background: #fff; }
+  td:first-child, td.k { color: var(--ink); font-weight: 600; }
+  table.plan td { font-weight: 400; color: var(--soft); }
+  table.plan td.k { color: var(--ink); font-weight: 600; white-space: nowrap; }
+  table.plan td.pg { color: var(--ink); font-weight: 500; white-space: nowrap; }
+  code, .url { font-family: "Poppins", monospace; font-size: 8.3pt; background: var(--deep); padding: 0.3mm 1.5mm; border-radius: 3px; color: var(--blue-ink); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 2mm 0 3mm; }
+  .steps li { counter-increment: s; position: relative; padding-left: 10mm; margin-bottom: 2.6mm; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: -0.3mm; width: 6.5mm; height: 6.5mm; border-radius: 50%; background: var(--blue-ink); color: #fff; font-weight: 600; font-size: 8.5pt; display: flex; align-items: center; justify-content: center; }
+
+  .card { background: #fff; border: 1px solid var(--rule); border-top: 3px solid var(--blue); border-radius: 4px; padding: 3.5mm 4mm; font-size: 8.8pt; }
+  .card.red { border-top-color: var(--red); }
+  .card h4 { margin: 0 0 1.5mm; font-size: 10pt; font-weight: 600; }
+  .card p { margin: 0; font-size: 8.6pt; }
+
+  /* Couverture */
+  .cover { background: var(--blue-ink); color: #fff; padding: 22mm 20mm; }
+  .cover .logo { background: #fff; border-radius: 10px; padding: 5mm 6mm; display: inline-block; }
+  .cover .logo img { height: 24mm; display: block; }
+  .cover .kicker { margin-top: 38mm; font-size: 9pt; letter-spacing: .28em; text-transform: uppercase; color: #bfe0fb; font-weight: 600; }
+  .cover h1 { font-size: 44pt; font-weight: 700; margin-top: 4mm; line-height: 1.02; letter-spacing: -0.03em; }
+  .cover .sub { font-size: 13pt; color: #dcecfb; margin-top: 7mm; max-width: 140mm; line-height: 1.5; }
+  .cover .site { display: inline-block; margin-top: 10mm; background: #fff; color: var(--blue-ink); font-weight: 600; padding: 2.5mm 5mm; border-radius: 4px; font-size: 12pt; }
+  .cover .meta { position: absolute; left: 20mm; right: 20mm; bottom: 20mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: #bfe0fb; border-top: 1px solid rgba(255,255,255,.25); padding-top: 4mm; }
+  .cover .motto { position: absolute; right: 20mm; top: 26mm; text-align: right; font-size: 9pt; color: #bfe0fb; }
+  .cover .motto b { color: #fff; display: block; font-size: 11pt; }
+  .cover .bar { position: absolute; left: 0; bottom: 0; right: 0; height: 5mm; background: linear-gradient(90deg, var(--blue) 0 70%, var(--red) 70% 100%); }
+
+  /* Sommaire */
+  .toc { list-style: none; padding: 0; margin: 4mm 0 0; }
+  .toc li { display: flex; align-items: baseline; gap: 3mm; padding: 1.9mm 0; border-bottom: 1px solid var(--rule); font-size: 10.5pt; color: var(--ink); margin: 0; }
+  .toc .num { color: var(--red); font-weight: 600; width: 8mm; }
+  .toc .lbl { flex: 1; font-weight: 500; }
+  .toc .lbl small { display: block; color: var(--grey); font-weight: 400; font-size: 8.3pt; }
+  .toc .pg { color: var(--blue-ink); font-weight: 600; }
+
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 5mm 0; }
+  .kpi { background: #fff; border: 1px solid var(--rule); border-radius: 4px; padding: 3mm; text-align: center; }
+  .kpi .v { font-size: 18pt; font-weight: 700; color: var(--blue-ink); line-height: 1.1; }
+  .kpi .k { font-size: 7.8pt; color: var(--grey); }
+
+  .check { list-style: none; padding: 0; }
+  .check li { padding-left: 7mm; position: relative; }
+  .check li::before { content: "✓"; position: absolute; left: 0; color: var(--blue-ink); font-weight: 700; }
+  .badge { white-space: nowrap; display: inline-block; font-size: 7pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: .4mm 2mm; border-radius: 3px; }
+  .b-ok { background: #E3F4E8; color: #23713B; }
+  .b-soon { background: var(--deep); color: var(--grey); }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. COVER ============ -->
+<section class="page cover">
+  <div class="logo"><img src="images/logo.png" alt="Stroke Action · Action AVC"></div>
+  <div class="motto"><b>Together to Defeat Stroke</b>Ensemble pour vaincre l'AVC</div>
+  <div class="kicker">User Guide · Association Members</div>
+  <h1>Getting the most<br>out of the Stroke<br>Action website<span style="color:var(--red)">.</span></h1>
+  <p class="sub">Finding your way around, locating the right documents, guiding visitors and keeping the site alive day to day — everything a member needs to know, in a few pages.</p>
+  <div class="site">www.strokeaction.org</div>
+  <div class="meta"><span>Stroke Action Association ("Action AVC") · Yaoundé, Cameroon</span><span>Version 1 · September 2026</span></div>
+  <div class="bar"></div>
+</section>
+
+<!-- ============ 2. CONTENTS + OVERVIEW ============ -->
+<section class="page">
+  <div class="eyebrow">Contents</div>
+  <h2>What's in this guide<span class="dot">.</span></h2>
+  <ul class="toc">
+    <li><span class="num">01</span><span class="lbl">The website at a glance<small>What it is for, who it is for, key figures</small></span><span class="pg">p. 2</span></li>
+    <li><span class="num">02</span><span class="lbl">Finding your way around<small>Menu, EN / FR language, mobile, footer, cookies</small></span><span class="pg">p. 3</span></li>
+    <li><span class="num">03</span><span class="lbl">Site map: the 12 pages<small>What each page contains and when to use it</small></span><span class="pg">p. 4</span></li>
+    <li><span class="num">04</span><span class="lbl">Pages to know by heart<small>Stroke Education, Governance, Key Documents, FAQ</small></span><span class="pg">p. 5</span></li>
+    <li><span class="num">05</span><span class="lbl">Get involved: membership, volunteering, donations<small>Step-by-step procedures</small></span><span class="pg">p. 6</span></li>
+    <li><span class="num">06</span><span class="lbl">The contact form<small>How to write to the association and what happens next</small></span><span class="pg">p. 7</span></li>
+    <li><span class="num">07</span><span class="lbl">The role of members<small>Guiding visitors, sharing, sending in content</small></span><span class="pg">p. 8</span></li>
+    <li><span class="num">08</span><span class="lbl">Coming soon, troubleshooting and contacts<small>Upcoming features, common issues, who to contact</small></span><span class="pg">p. 9</span></li>
+  </ul>
+
+  <div style="margin-top:7mm" class="eyebrow"><span class="n">01</span> · The website at a glance</div>
+  <h2>Our online showcase<span class="dot">.</span></h2>
+  <p class="lead">The <b>strokeaction.org</b> website presents the association, <b>educates the public</b> about stroke and lets everyone <b>get involved</b> (membership, volunteering, donations, contact). It is often the very first contact someone has with Stroke Action.</p>
+
+  <div class="kpis">
+    <div class="kpi"><div class="v">12</div><div class="k">pages</div></div>
+    <div class="kpi"><div class="v">2</div><div class="k">languages (EN / FR)</div></div>
+    <div class="kpi"><div class="v">4</div><div class="k">menu sections</div></div>
+    <div class="kpi"><div class="v">24/7</div><div class="k">available on computer & mobile</div></div>
+  </div>
+
+  <div class="grid3">
+    <div class="card"><h4>Inform</h4><p>Who we are, our mission, our 5 programs and our Executive Board.</p></div>
+    <div class="card red"><h4>Educate</h4><p>Recognizing a stroke with the FAST method, risk factors, key figures.</p></div>
+    <div class="card"><h4>Mobilize</h4><p>Become a member or volunteer, donate, contact us.</p></div>
+  </div>
+
+  <div class="box warn" style="margin-top:5mm"><span class="t">⚠ Remind anyone who visits the website</span>
+  Stroke Action <b>does not provide medical care</b>. At any sign of stroke, call emergency services immediately — in Cameroon: <b>SAMU 119</b> · <b>Fire 118</b> · <b>Police 117</b>.</div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>2</span></div>
+</section>
+
+<!-- ============ 3. NAVIGATION ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">02</span> · Finding your way around</div>
+  <h2>Get your bearings in 30 seconds<span class="dot">.</span></h2>
+  <p class="lead">Every page can be reached from the <b>menu at the top of the screen</b>, organized into 4 sections. Click a section to open its pages.</p>
+
+  <figure>
+    <div class="shot"><img src="images/en/menu.jpg" alt="Get Involved dropdown menu"></div>
+    <figcaption>The main menu with the "Get Involved" section open. The section of the current page is underlined in red.</figcaption>
+  </figure>
+
+  <div class="grid2">
+    <div>
+      <h3>The header</h3>
+      <ul>
+        <li><b>Logo</b> (left): always takes you back to the home page.</li>
+        <li><b>4 sections</b>: The Association · Understand Stroke · News · Get Involved.</li>
+        <li><b>EN / FR</b>: switches the language of the current page.</li>
+        <li><b>Donate</b> (blue button): opens the donation panel.</li>
+        <li><b>Breadcrumb</b> below the header (e.g. <i>Home › The Association › Governance</i>): shows where you are.</li>
+      </ul>
+      <h3>Choosing the language</h3>
+      <p>The website opens <b>in English by default</b>. To switch to French, click <b>FR</b> at the top right (the button shows <b>EN</b> when you are already in French). The web address changes accordingly:</p>
+      <p><span class="url">strokeaction.org/en/…</span> English<br><span class="url">strokeaction.org/fr/…</span> French</p>
+    </div>
+    <div>
+      <h3>On a phone</h3>
+      <p>The menu is grouped behind the <b>☰</b> icon at the top right. Tap a section to expand it.</p>
+      <div class="grid2" style="gap:3mm">
+        <div class="shot"><img src="images/en/mobile.jpg" alt="Mobile home page"></div>
+        <div class="shot"><img src="images/en/mobile-menu.jpg" alt="Mobile menu"></div>
+      </div>
+      <figcaption>Home page and menu on a smartphone.</figcaption>
+    </div>
+  </div>
+
+  <div class="box tip"><span class="t">💡 Tip — send the right language straight away</span>
+  When sharing a link with a French speaker, send the <span class="url">/fr/</span> version (e.g. <span class="url">strokeaction.org/fr/contact</span>): they land directly on the French page.</div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>3</span></div>
+</section>
+
+<!-- ============ 4. FOOTER + COOKIES + SITE MAP ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">02</span> · Finding your way around (cont.)</div>
+  <div class="grid2" style="grid-template-columns: 1.15fr 1fr; gap:5mm; align-items:start">
+    <figure style="margin:0"><div class="shot"><img src="images/en/footer.jpg" alt="Footer"></div></figure>
+    <div>
+      <h3 style="margin-top:0">The footer: a shortcut to everything</h3>
+      <p>At the bottom of every page, the blue footer lists <b>all the links on the site</b>, our contact details, the legal documents (privacy policy, terms of use) and our social networks (<b>Facebook, LinkedIn, YouTube</b>).</p>
+      <h3>The cookie banner</h3>
+      <p>On the first visit, a banner appears at the bottom of the screen. Click <b>Accept</b> or <b>Decline</b>: the site works either way.</p>
+    </div>
+  </div>
+  <figure style="margin-top:3mm"><div class="shot"><img src="images/en/cookies.jpg" alt="Cookie banner"></div></figure>
+
+  <div class="eyebrow" style="margin-top:6mm"><span class="n">03</span> · Site map</div>
+  <h2>The 12 pages of the website<span class="dot">.</span></h2>
+  <table class="plan" style="font-size:8.3pt">
+    <tr><th>Section</th><th>Page</th><th>What you'll find there</th></tr>
+    <tr><td class="k">—</td><td class="pg">Home</td><td>Introduction, 4 pillars, FAST method, key figures, call to join us.</td></tr>
+    <tr><td class="k" rowspan="4">The Association</td><td class="pg">About Us</td><td>History, vision, mission, values, words from the founder.</td></tr>
+    <tr><td class="pg">What We Do</td><td>The 5 programs (education, research, training, patient support, public involvement).</td></tr>
+    <tr><td class="pg">Governance</td><td>The 5 Executive Board members, biographies and emails.</td></tr>
+    <tr><td class="pg">Key Documents</td><td>Bylaws, internal regulations (PDFs to download).</td></tr>
+    <tr><td class="k" rowspan="2">Understand Stroke</td><td class="pg">Stroke Education</td><td>What a stroke is, FAST, risk factors, "Did You Know?", Dr Kamtchum's book.</td></tr>
+    <tr><td class="pg">FAQ</td><td>10 frequently asked questions, with expandable answers.</td></tr>
+    <tr><td class="k" rowspan="2">News</td><td class="pg">Blog / News</td><td>Articles, campaigns, events; newsletter sign-up.</td></tr>
+    <tr><td class="pg">Gallery</td><td>Photos of our activities (in preparation).</td></tr>
+    <tr><td class="k" rowspan="3">Get Involved</td><td class="pg">Support Us</td><td>Donate, membership, shop, volunteering.</td></tr>
+    <tr><td class="pg">Contact Us</td><td>Contact details and contact form.</td></tr>
+    <tr><td class="pg">Members</td><td>Members-only area — <span class="badge b-soon">coming soon</span></td></tr>
+  </table>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>4</span></div>
+</section>
+
+<!-- ============ 5. KEY PAGES ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">04</span> · Pages to know</div>
+  <h2>The 4 pages every member should master<span class="dot">.</span></h2>
+  <p class="lead">These are the pages you will most often point people to when they ask you questions.</p>
+
+  <div class="grid2">
+    <div>
+      <h3 style="margin-top:0">① Stroke Education</h3>
+      <p><b>Menu › Understand Stroke › Stroke Education.</b> The heart of our awareness mission: the <b>FAST method</b>, risk factors (modifiable or not), key figures and the <b>"Did You Know?"</b> section.</p>
+      <figure><div class="shot"><img src="images/en/edu-fast.jpg" alt="FAST method"></div>
+      <figcaption>FAST: Face · Arms · Speech · Time (call emergency services).</figcaption></figure>
+    </div>
+    <div>
+      <h3 style="margin-top:0">② Governance</h3>
+      <p><b>Menu › The Association › Governance.</b> Presents the <b>5 Executive Board members</b>: role, short bio and email address. Click <b>"Read more"</b> to see the full biography.</p>
+      <figure><div class="shot"><img src="images/en/gov-board.jpg" alt="Executive Board"></div></figure>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h3>③ Key Documents</h3>
+      <p><b>Menu › The Association › Key Documents.</b> Click a document's row to <b>open / download the PDF</b>. Greyed-out documents are marked "Coming soon".</p>
+      <figure><div class="shot"><img src="images/en/docs-list.jpg" alt="Key Documents"></div></figure>
+    </div>
+    <div>
+      <h3>④ FAQ</h3>
+      <p><b>Menu › Understand Stroke › FAQ.</b> Click a question to display its answer. Covers: membership, <b>paying membership fees</b>, general assemblies, partnerships with health professionals…</p>
+      <div class="box neutral"><span class="t">Standard answer to know — membership fees</span>
+      Bank transfer preferred (traceability). Mobile Money accepted (MTN MoMo, Orange Money): generate a <b>PDF proof of payment</b> and send it by email, WhatsApp or through the contact form.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:6mm">The other pages at a glance</h3>
+  <div class="grid3">
+    <div class="card"><h4>About Us</h4><p>Our story (founded under Law No. 90-53), vision, mission and our 4 values: compassion, dedication, integrity, professionalism.</p></div>
+    <div class="card"><h4>What We Do</h4><p>The 5 programs: public education, research, professional training, patient support, patient & public involvement.</p></div>
+    <div class="card red"><h4>News & Gallery</h4><p>Monthly articles, campaigns (29 October), events and photos. <b>Newsletter</b> sign-up at the bottom of the News page.</p></div>
+  </div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>5</span></div>
+</section>
+
+<!-- ============ 6. GET INVOLVED ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">05</span> · Get involved</div>
+  <h2>Join, volunteer, donate: step by step<span class="dot">.</span></h2>
+  <p class="lead">Everything happens on the <b>Support Us</b> page (Menu › Get Involved). Each button opens a <b>side panel</b> explaining the procedure.</p>
+
+  <figure style="width:120mm; margin-left:auto; margin-right:auto"><div class="shot"><img src="images/en/support-ways.jpg" alt="Support Us page"></div>
+  <figcaption>The 4 ways to support the association.</figcaption></figure>
+
+  <div class="grid2">
+    <div>
+      <h3 style="margin-top:0">Becoming a member / volunteer</h3>
+      <ol class="steps">
+        <li>Click <b>"Apply for Membership"</b> (or <b>"Get Involved"</b> to volunteer).</li>
+        <li><b>Download the Word form</b> (.docx), in English or French.</li>
+        <li>Fill it in: full name, date of birth, email, phone, profession, city / country, motivation + <b>copy of a photo ID</b>.</li>
+        <li>Send it back to <b>contact@strokeaction.org</b> or via <b>WhatsApp at +237 652 14 81 47</b>.</li>
+        <li>The <b>Executive Board</b> reviews the application and sends a confirmation letter.</li>
+      </ol>
+    </div>
+    <div>
+      <figure><div class="shot"><img src="images/en/drawer.jpg" alt="Membership panel"></div>
+      <figcaption>The "Apply for membership" panel with the forms to download.</figcaption></figure>
+      <div class="box tip"><span class="t">Good to know</span>
+      <ul><li>Active membership: <b>18 years or older</b> (Bylaws, Art. 7).</li><li>Volunteering is open to <b>all skills</b>, whatever your background.</li></ul></div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Action</th><th>Current status</th><th>What to tell interested people</th></tr>
+    <tr><td>Donate</td><td><span class="badge b-soon">online soon</span></td><td>Online payment (Mobile Money + card) is coming. Meanwhile: contact us and we will guide them.</td></tr>
+    <tr><td>Membership / volunteering</td><td><span class="badge b-ok">available</span></td><td>Download the form, then send it back (steps above).</td></tr>
+    <tr><td>Shop</td><td><span class="badge b-soon">coming soon</span></td><td>Stickers, books, brochures available soon.</td></tr>
+  </table>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>6</span></div>
+</section>
+
+<!-- ============ 7. CONTACT ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">06</span> · The contact form</div>
+  <h2>Writing to the association<span class="dot">.</span></h2>
+  <p class="lead">The <b>Contact Us</b> page (Menu › Get Involved › Contact Us) brings together our contact details and a form. Every message sent goes <b>straight to the contact@strokeaction.org inbox</b>.</p>
+
+  <figure><div class="shot"><img src="images/en/contact-full.jpg" alt="Contact form"></div></figure>
+
+  <div class="grid2">
+    <div>
+      <h3 style="margin-top:0">Filling in the form</h3>
+      <ol class="steps">
+        <li>Complete the required fields <b>*</b>: full name, email, subject, message.</li>
+        <li>Optional: phone number and <b>preferred reply channel</b> (email, phone, WhatsApp).</li>
+        <li>Optional: attach <b>one file</b> (e.g. proof of payment) — <b>5 MB maximum</b>.</li>
+        <li>Click <b>"Send Message"</b>. The <b>"Message sent!"</b> notice confirms it went through.</li>
+      </ol>
+      <p>Messages can be written <b>in English or in French</b>.</p>
+    </div>
+    <div>
+      <h3 style="margin-top:0">What happens next</h3>
+      <ul class="check">
+        <li>The message arrives by email with the subject <b>[Contact] + subject</b>.</li>
+        <li>Simply click <b>"Reply"</b>: the answer goes straight to the sender.</li>
+        <li>Name, phone and preferred channel appear at the top of the message.</li>
+      </ul>
+      <div class="box warn"><span class="t">If an error message appears</span>
+      Check the required fields and the attachment size (≤ 5 MB), then try again. Otherwise, write directly to <b>contact@strokeaction.org</b>.</div>
+    </div>
+  </div>
+
+  <div class="box neutral"><span class="t">For members in charge of the contact@ inbox</span>
+  Check the inbox regularly and reply within 2 working days where possible. Requests about personal data (access, correction, deletion) must be handled within <b>30 days maximum</b> (Privacy Policy, §8).</div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>7</span></div>
+</section>
+
+<!-- ============ 8. ROLE OF MEMBERS ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">07</span> · The role of members</div>
+  <h2>Keeping the website alive<span class="dot">.</span></h2>
+  <p class="lead">Every member is an <b>ambassador</b> for the website. Here is how to quickly point people in the right direction.</p>
+
+  <table>
+    <tr><th>Someone tells you…</th><th>Send them this link</th></tr>
+    <tr><td>"I want to become a member."</td><td><span class="url">strokeaction.org/en/nous-soutenir#devenir-membre</span></td></tr>
+    <tr><td>"I want to help / volunteer."</td><td><span class="url">strokeaction.org/en/nous-soutenir#benevolat</span></td></tr>
+    <tr><td>"How do I recognize a stroke?"</td><td><span class="url">strokeaction.org/en/education-avc</span></td></tr>
+    <tr><td>"Who runs the association?"</td><td><span class="url">strokeaction.org/en/gouvernance</span></td></tr>
+    <tr><td>"I'd like to read your bylaws."</td><td><span class="url">strokeaction.org/en/documents-cles</span></td></tr>
+    <tr><td>"How do I pay my membership fee?"</td><td><span class="url">strokeaction.org/en/faq</span></td></tr>
+    <tr><td>"I'm a doctor and want to collaborate."</td><td><span class="url">strokeaction.org/en/contact</span></td></tr>
+    <tr><td>"I'd like to make a donation."</td><td><span class="url">strokeaction.org/en/contact</span> (until online payment is live)</td></tr>
+  </table>
+  <p style="font-size:8.5pt">For a French speaker, simply replace <span class="url">/en/</span> with <span class="url">/fr/</span>. The page addresses keep their French names in both languages.</p>
+
+  <div class="grid2">
+    <div>
+      <h3>Share on social media</h3>
+      <ul>
+        <li>Follow and share our <b>Facebook</b>, <b>LinkedIn</b> and <b>YouTube</b> pages (links at the bottom of every page).</li>
+        <li>Spread the <b>FAST method</b>: everyone who knows it can save a life.</li>
+        <li>Rally people around <b>World Stroke Day — 29 October</b>.</li>
+        <li>Invite friends and family to sign up for the <b>newsletter</b> (News page).</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Suggest content</h3>
+      <p>The website grows thanks to you. Send the website team:</p>
+      <ul>
+        <li><b>Photos</b> of activities (for the Gallery) — with the consent of the people pictured.</li>
+        <li><b>Article ideas</b> or event reports (News).</li>
+        <li><b>Testimonials</b> from patients or families (with their written consent).</li>
+        <li><b>New official documents</b> (strategic plan, annual report…).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="box warn"><span class="t">Golden rules</span>
+  Never publish personal or medical data without consent · Always remind people that the website is <b>informational</b> and does not replace medical advice · Respect the brand guidelines (blue <b>#2A9DF4</b> / red <b>#F42A2A</b>).</div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>8</span></div>
+</section>
+
+<!-- ============ 9. COMING SOON / TROUBLESHOOTING / CONTACTS ============ -->
+<section class="page">
+  <div class="eyebrow"><span class="n">08</span> · Coming soon, troubleshooting, contacts</div>
+  <h2>What's coming next<span class="dot">.</span></h2>
+  <table>
+    <tr><th>Feature</th><th>What it will bring</th></tr>
+    <tr><td>Members area</td><td>Internal documents, general assembly notices, membership fee tracking.</td></tr>
+    <tr><td>Online donations</td><td>Secure payment by Mobile Money and bank card.</td></tr>
+    <tr><td>Online membership</td><td>A form to fill in directly on the website (no more .docx).</td></tr>
+    <tr><td>Shop</td><td>Stickers, books, brochures.</td></tr>
+    <tr><td>Documents</td><td>Strategic Plan 2026–2030, annual report, presentation brochure.</td></tr>
+    <tr><td>Gallery & articles</td><td>Photos of activities and monthly articles.</td></tr>
+    <tr><td>Dr Kamtchum's book</td><td>"All About Stroke", EN & FR, from 1 October 2026.</td></tr>
+  </table>
+
+  <h3>Troubleshooting: common issues</h3>
+  <table>
+    <tr><th>Issue</th><th>Solution</th></tr>
+    <tr><td>The site shows in the wrong language</td><td>Click <b>FR</b> / <b>EN</b> at the top right, or use a link with <span class="url">/en/</span> or <span class="url">/fr/</span>.</td></tr>
+    <tr><td>I can't find the menu (mobile)</td><td>Tap the <b>☰</b> icon at the top right of the screen.</td></tr>
+    <tr><td>The form shows an error</td><td>Check the <b>*</b> fields and the attachment (≤ 5 MB); otherwise write to contact@strokeaction.org.</td></tr>
+    <tr><td>A document won't open</td><td>Install / update a PDF reader; the membership forms are Word files (.docx).</td></tr>
+    <tr><td>Information is wrong or out of date</td><td>Report it to the website team (see below) with the page concerned and a screenshot.</td></tr>
+    <tr><td>The cookie banner keeps coming back</td><td>Normal in private browsing or after clearing the browser's data.</td></tr>
+  </table>
+
+  <div class="grid2" style="margin-top:4mm">
+    <div class="card">
+      <h4>Contact the association</h4>
+      <p>✉ contact@strokeaction.org<br>☎ / WhatsApp: +237 652 14 81 47<br>📍 Tradex Nkoabang, Yaoundé, Cameroon</p>
+    </div>
+    <div class="card red">
+      <h4>Report a problem with the website</h4>
+      <p>Write to contact@strokeaction.org with the subject <b>"Website — correction"</b>, stating the page, the language (EN/FR) and what needs to change. The request is forwarded to AD Design, who manage the website.</p>
+    </div>
+  </div>
+
+  <div class="box tip" style="margin-top:5mm; text-align:center"><b style="font-size:11pt">Together to Defeat Stroke<span class="dot">.</span></b><br>Thank you for spreading the word about the website — every visit can save a life.</div>
+
+  <div class="foot"><span><b>Stroke Action</b> · Website User Guide</span><span>9</span></div>
+</section>
+
+</body>
+</html>
