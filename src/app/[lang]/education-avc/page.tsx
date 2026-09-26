@@ -22,6 +22,8 @@ import { HandNote, InkUnderline } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
+const BOOK_LINK = "https://www.librinova.com/librairie/joseph-kamtchum-tatuene/all-about-stroke";
+
 /* -------- "Le saviez-vous" : une icône par fait --------
  * Librairie Phosphor (import SSR, sans Provider) — plus expressive que
  * lucide pour ces icônes-là (retour Ryan). Voir V6-NOTES.md. */
@@ -251,14 +253,19 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
               <p className="mt-3 max-w-[56ch] text-ink-soft">{e.book.text}</p>
               <p className="mt-3 text-[0.9rem] font-semibold text-red-ink">{e.book.dateNote}</p>
             </div>
-            <div className="group w-[110px] flex-none overflow-hidden sm:w-[130px]">
+            <a
+              href={BOOK_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group w-[110px] flex-none overflow-hidden sm:w-[130px]"
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={lang === "fr" ? "/book-fr.jpg" : "/book-en.jpg"}
                 alt={e.book.title}
                 className="w-full transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-[1.08] motion-reduce:group-hover:scale-100"
               />
-            </div>
+            </a>
           </div>
         </Container>
       </section>
