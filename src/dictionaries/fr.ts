@@ -545,8 +545,19 @@ export const fr = {
     title: "Nos activités en images.",
     metaDesc:
       "Photos des activités de Stroke Action sur le terrain au Cameroun — campagnes de sensibilisation, formations et événements communautaires.",
-    placeholder: "Nous débutons — revenez bientôt pour les photos de nos prochains événements et activités !",
-    handNote: "en préparation", // design — annotation manuscrite
+    story: {
+      date: "28 septembre 2026",
+      kicker: "Dans les médias",
+      title: "Stroke Action sur Radio Maria Cameroun 107,5 FM",
+      topic: "AVC chez les jeunes : pourquoi ne sont-ils pas épargnés ?",
+      text: "Stroke Action a été invitée sur Radio Maria Cameroun (107,5 FM) pour aborder une question trop souvent méconnue : l’AVC chez les jeunes.",
+      topicLabel: "Sujet de l’émission",
+      alts: [
+        "Deux invités souriants devant les micros du studio de Radio Maria Cameroun",
+        "Selfie dans le studio de Radio Maria Cameroun, deux invités pouce levé",
+        "Deux invités assis à la table du studio de Radio Maria Cameroun",
+      ],
+    },
   },
 
   governance: {
