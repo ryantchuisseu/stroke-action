@@ -551,6 +551,10 @@ export const fr = {
       title: "Stroke Action sur Radio Maria Cameroun 107,5 FM",
       topic: "AVC chez les jeunes : pourquoi ne sont-ils pas épargnés ?",
       text: "Stroke Action a été invitée sur Radio Maria Cameroun (107,5 FM) pour aborder une question trop souvent méconnue : l’AVC chez les jeunes.",
+      guests: "Émission présentée par Cyprien Bidouga, avec le Dr Joseph Kamtchum, fondateur de Stroke Action, et le Dr Pascal Owona Otu.",
+      listen: "Écouter l’émission",
+      listenNote: "Enregistrement audio de plus d’une heure, sur SoundCloud.",
+      listenUrl: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria",
       topicLabel: "Sujet de l’émission",
       alts: [
         "Deux invités souriants devant les micros du studio de Radio Maria Cameroun",
