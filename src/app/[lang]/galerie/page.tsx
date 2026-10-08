@@ -39,12 +39,22 @@ export default async function GaleriePage({ params }: { params: Promise<{ lang: 
               </Eyebrow>
               <h2 className="mt-3 text-[clamp(1.6rem,3.2vw,2.3rem)] font-bold leading-tight text-ink">{s.title}</h2>
               <p className="mt-5 max-w-[46ch] text-ink-soft">{s.text}</p>
+              <p className="mt-3 max-w-[46ch] text-ink-soft">{s.guests}</p>
               <p className="mt-6 border-s-2 border-red ps-4">
                 <span className="block text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-red-ink">
                   {s.topicLabel}
                 </span>
                 <span className="mt-1 block text-[1.15rem] font-semibold leading-snug text-ink">« {s.topic} »</span>
               </p>
+              <a
+                href={s.listenUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-2 bg-blue-ink px-[1.1rem] py-[0.62rem] text-[0.88rem] font-semibold tracking-[0.01em] text-paper transition-[transform,background-color] duration-150 ease-[var(--ease-out)] hover:bg-red active:scale-[0.97]"
+              >
+                {s.listen} ↗
+              </a>
+              <p className="mt-2 text-[0.82rem] text-ink-soft">{s.listenNote}</p>
             </div>
             <div className="grid grid-cols-2 gap-3">
               {photos.map((ph, i) => (

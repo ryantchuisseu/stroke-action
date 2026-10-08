@@ -552,6 +552,10 @@ export const en = {
       title: "Stroke Action on Radio Maria Cameroon 107.5 FM",
       topic: "Stroke in young people: why are they not spared?",
       text: "Stroke Action was invited on Radio Maria Cameroon (107.5 FM) to discuss a question too often overlooked: stroke in young people.",
+      guests: "Hosted by Cyprien Bidouga, with Dr. Joseph Kamtchum, founder of Stroke Action, and Dr. Pascal Owona Otu.",
+      listen: "Listen to the broadcast",
+      listenNote: "Audio recording of over an hour, on SoundCloud.",
+      listenUrl: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria",
       topicLabel: "Topic of the broadcast",
       alts: [
         "Two guests smiling at the Radio Maria Cameroon studio microphones",
