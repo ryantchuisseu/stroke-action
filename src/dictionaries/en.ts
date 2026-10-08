@@ -546,8 +546,19 @@ export const en = {
     title: "Our activities in pictures.",
     metaDesc:
       "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
-    placeholder: "We are just getting started — check back soon for photos from our upcoming events and activities!",
-    handNote: "in the making", // design — annotation manuscrite
+    story: {
+      date: "September 28, 2026",
+      kicker: "In the media",
+      title: "Stroke Action on Radio Maria Cameroon 107.5 FM",
+      topic: "Stroke in young people: why are they not spared?",
+      text: "Stroke Action was invited on Radio Maria Cameroon (107.5 FM) to discuss a question too often overlooked: stroke in young people.",
+      topicLabel: "Topic of the broadcast",
+      alts: [
+        "Two guests smiling at the Radio Maria Cameroon studio microphones",
+        "Selfie in the Radio Maria Cameroon studio, with two guests giving a thumbs up",
+        "Two guests seated at the Radio Maria Cameroon studio table",
+      ],
+    },
   },
 
   governance: {
