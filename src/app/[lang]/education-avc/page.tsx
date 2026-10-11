@@ -16,6 +16,7 @@ import {
   UsersThree,
   ClockCounterClockwise,
   BookOpen,
+  ArrowRight,
 } from "@phosphor-icons/react/ssr";
 import { Container, PageHeader, Eyebrow, CtaBand, Btn } from "@/components/ui";
 import { HandNote, InkUnderline } from "@/components/ink-marks";
@@ -252,6 +253,16 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
               <p className="mt-1 text-[0.9rem] font-semibold text-ink-soft">{e.book.author}</p>
               <p className="mt-3 max-w-[56ch] text-ink-soft">{e.book.text}</p>
               <p className="mt-3 text-[0.9rem] font-semibold text-red-ink">{e.book.dateNote}</p>
+              <a
+                href={BOOK_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 bg-red px-[1.4rem] py-[0.85rem] text-[0.95rem] font-semibold text-white transition-[transform,background-color] duration-150 ease-[var(--ease-out)] hover:bg-blue-ink active:scale-[0.97]"
+              >
+                <BookOpen size={20} weight="bold" aria-hidden="true" />
+                {e.book.cta}
+                <ArrowRight size={18} weight="bold" aria-hidden="true" />
+              </a>
             </div>
             <a
               href={BOOK_LINK}

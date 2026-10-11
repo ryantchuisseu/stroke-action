@@ -3,6 +3,7 @@ import { Container, PageHeader } from "@/components/ui";
 import { BrainMark } from "@/components/brain-mark";
 import { HandNote } from "@/components/ink-marks";
 import { BoardGrid } from "@/components/board-grid";
+import { MembersGrid } from "@/components/members-grid";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -69,6 +70,15 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
           </div>
           <BoardGrid board={g.board} readMore={g.readMore} closeLabel={g.closeBio} />
           <p className="mt-6 text-[0.85rem] text-grey">{g.note}</p>
+        </Container>
+      </section>
+
+      {/* Membres */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
+        <Container>
+          <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.membersTitle}</h2>
+          <p className="mt-2 max-w-[60ch] text-ink-soft">{g.membersIntro}</p>
+          <MembersGrid members={g.members} />
         </Container>
       </section>
     </>

@@ -33,6 +33,23 @@ function YoutubeIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function InstagramIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+    </svg>
+  );
+}
+
+const SOCIALS = [
+  { label: "Facebook", href: "https://web.facebook.com/people/Stroke-Action-AVC/61594723047008/", Icon: FacebookIcon },
+  { label: "Instagram", href: "https://www.instagram.com/strokeactionavc", Icon: InstagramIcon },
+  { label: "YouTube", href: "https://www.youtube.com/@StrokeactionAVC", Icon: YoutubeIcon },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/stroke-action-avc", Icon: LinkedinIcon },
+];
+
 type FooterDict = {
   motto: string;
   mottoSub: string;
@@ -95,15 +112,40 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
   return (
     <footer className="mt-auto border-t border-[rgba(252,250,246,0.14)] bg-blue-ink py-[clamp(3rem,7vw,5rem)] text-paper">
       <Container>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/logo-white.png" alt="Stroke Action · Action AVC" className="mb-8 h-14 w-auto" />
-        <p className="max-w-[24ch] text-[clamp(1.2rem,2.8vw,1.8rem)] font-bold tracking-[-0.02em] text-balance">
-          {footer.motto}
-          <span className="ml-[0.15em] inline-block h-[0.22em] w-[0.22em] rounded-full bg-red align-middle" aria-hidden="true" />
-          <span className="mt-[0.3rem] block text-[0.8em] font-medium text-[rgba(252,250,246,0.55)]">
-            {footer.mottoSub}
-          </span>
-        </p>
+        <div className="flex flex-wrap items-start justify-between gap-x-10 gap-y-8">
+          <div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo-white.png" alt="Stroke Action · Action AVC" className="mb-8 h-14 w-auto" />
+            <p className="max-w-[24ch] text-[clamp(1.2rem,2.8vw,1.8rem)] font-bold tracking-[-0.02em] text-balance">
+              {footer.motto}
+              <span className="ml-[0.15em] inline-block h-[0.22em] w-[0.22em] rounded-full bg-red align-middle" aria-hidden="true" />
+              <span className="mt-[0.3rem] block text-[0.8em] font-medium text-[rgba(252,250,246,0.55)]">
+                {footer.mottoSub}
+              </span>
+            </p>
+          </div>
+
+          <div>
+            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-[rgba(252,250,246,0.5)] sm:text-right">
+              {footer.social}
+            </p>
+            <ul className="flex items-center gap-3 sm:gap-4">
+              {SOCIALS.map(({ label, href, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-[rgba(252,250,246,0.35)] text-paper transition-colors hover:border-white hover:bg-white hover:text-blue-ink sm:h-[60px] sm:w-[60px]"
+                  >
+                    <Icon className="h-[28px] w-[28px] sm:h-[32px] sm:w-[32px]" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
 
         <div className="mt-[clamp(2.25rem,5vw,3.5rem)] grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-8">
           {cols.map((col) => (
@@ -164,32 +206,6 @@ export function SiteFooter({ lang, footer }: { lang: string; footer: FooterDict 
             >
               {lang === "fr" ? "Conditions d'utilisation" : "Terms of Use"}
             </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-[0.72rem] text-[rgba(252,250,246,0.4)]">{footer.social}</span>
-            <span className="flex items-center gap-4">
-              <a
-                href="https://web.facebook.com/people/Stroke-Action-AVC/61594723047008/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-                className="text-[rgba(252,250,246,0.55)] transition-colors hover:text-white"
-              >
-                <FacebookIcon className="h-[24px] w-[24px]" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/stroke-action-avc"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-[rgba(252,250,246,0.55)] transition-colors hover:text-white"
-              >
-                <LinkedinIcon className="h-[24px] w-[24px]" />
-              </a>
-              <span aria-hidden="true" className="text-[rgba(252,250,246,0.3)]">
-                <YoutubeIcon className="h-[24px] w-[24px]" />
-              </span>
-            </span>
           </div>
         </div>
       </Container>

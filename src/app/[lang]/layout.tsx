@@ -85,6 +85,8 @@ function OrgJsonLd() {
     sameAs: [
       "https://web.facebook.com/people/Stroke-Action-AVC/61594723047008/",
       "https://www.linkedin.com/company/stroke-action-avc",
+      "https://www.instagram.com/strokeactionavc",
+      "https://www.youtube.com/@StrokeactionAVC",
     ],
   };
   return (
