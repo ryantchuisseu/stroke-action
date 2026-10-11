@@ -227,7 +227,7 @@ export const fr = {
       title: "Quatre principes, tenus au quotidien.",
       items: [
         { t: "Compassion", d: "Nous plaçons l'humain d'abord — patients, familles, communautés — avec empathie et humanité." },
-        { t: "Dévouement", d: "Nous servons notre cause avec travail, persévérance et sacrifice." },
+        { t: "Abnégation", d: "Nous servons notre cause avec travail, persévérance et sacrifice." },
         { t: "Intégrité", d: "Nous agissons avec transparence, honnêteté et responsabilité éthique en toute chose." },
         { t: "Professionnalisme", d: "Nous tenons les plus hauts standards dans nos activités, nos communications et nos partenariats." },
       ],
@@ -395,6 +395,7 @@ export const fr = {
       author: "Dr Kamtchum Tatuene Joseph",
       text: "Un livre du Dr Kamtchum Tatuene Joseph, fondateur de Stroke Action, pour comprendre l'AVC en profondeur : signes, prévention, prise en charge et rétablissement.",
       dateNote: "Disponible en français et en anglais à partir du 1er octobre 2026.",
+      cta: "Cliquez ici pour obtenir votre exemplaire",
     },
     cta: {
       title: "Partagez ces signes autour de vous.",
@@ -533,7 +534,7 @@ export const fr = {
     items: [
       { title: "Statuts / Bylaws", lang: "FR", ready: true, href: "/documents/statuts-bylaws-fr.pdf" },
       { title: "Règlement intérieur / Internal Regulations", lang: "FR", ready: true, href: "/documents/reglement-interieur-fr.pdf" },
-      { title: "Plan stratégique 2026–2030", lang: "—", ready: false, href: "" },
+      { title: "Plan stratégique 2026–2030 (version publique)", lang: "FR", ready: true, href: "/documents/plan-strategique-2026-2030-fr.pdf" },
       { title: "Rapport annuel", lang: "—", ready: false, href: "" },
       { title: "Brochure de présentation", lang: "—", ready: false, href: "" },
     ],
@@ -623,6 +624,16 @@ export const fr = {
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },
+    ],
+    membersTitle: "Les autres membres",
+    membersIntro: "Ceux qui font vivre Stroke Action au quotidien.",
+    members: [
+      { name: "Dr. BIGNA RIM Jean Joel", job: "Médecin épidémiologiste" },
+      { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Médecin épidémiologiste" },
+      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Médecin généticien" },
+      { name: "Dr. TANKEU TIAKOUANG Aurel", job: "Médecin interniste" },
+      { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
+      { name: "Dr. ZENGUE Luc Yannick", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
     ],
     note: "Les noms et photographies des membres seront fournis par le client avant publication.",
   },

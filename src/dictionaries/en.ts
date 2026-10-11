@@ -396,6 +396,7 @@ export const en = {
       author: "Dr. Kamtchum Tatuene Joseph",
       text: "A book by Dr. Kamtchum Tatuene Joseph, founder of Stroke Action, to understand stroke in depth: signs, prevention, care, and recovery.",
       dateNote: "Available in French and English starting October 1, 2026.",
+      cta: "Get your own copy here",
     },
     cta: {
       title: "Share these signs around you.",
@@ -534,7 +535,7 @@ export const en = {
     items: [
       { title: "Bylaws / Statuts", lang: "EN", ready: true, href: "/documents/statuts-bylaws-en.pdf" },
       { title: "Internal Regulations / Règlement Intérieur", lang: "EN", ready: true, href: "/documents/reglement-interieur-en.pdf" },
-      { title: "Strategic Plan 2026–2030", lang: "—", ready: false, href: "" },
+      { title: "Strategic Plan 2026–2030 (public version)", lang: "EN", ready: true, href: "/documents/strategic-plan-2026-2030-en.pdf" },
       { title: "Annual Report", lang: "—", ready: false, href: "" },
       { title: "Presentation Brochure", lang: "—", ready: false, href: "" },
     ],
@@ -624,6 +625,16 @@ export const en = {
         email: "jjnoubiap@strokeaction.org",
         photo: "/noubiap.jpg",
       },
+    ],
+    membersTitle: "Other members",
+    membersIntro: "The people who bring Stroke Action to life every day.",
+    members: [
+      { name: "Dr. BIGNA RIM Jean Joel", job: "Epidemiologist physician" },
+      { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Epidemiologist physician" },
+      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Geneticist physician" },
+      { name: "Dr. TANKEU TIAKOUANG Aurel", job: "Internist physician" },
+      { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Epidemiologist physician" },
+      { name: "Dr. ZENGUE Luc Yannick", job: "Magistrate and Deputy Public Prosecutor (Ngaoundéré)" },
     ],
     note: "Member names and photos to be provided by the client before publication.",
   },
