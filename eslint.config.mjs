@@ -14,6 +14,7 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Projet vidéo Remotion indépendant
     "santa-motion/**",
+    "lotissement-3d/**",
   ]),
 ]);
 
