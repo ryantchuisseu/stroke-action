@@ -26,7 +26,7 @@ export const Lotissement: React.FC = () => {
       <ThreeCanvas
         width={width}
         height={height}
-        shadows={{ type: THREE.PCFSoftShadowMap }}
+        shadows={{ type: THREE.PCFShadowMap }}
         gl={{ antialias: true, preserveDrawingBuffer: true }}
         camera={{ fov: 38, near: 0.3, far: 900, position: [0, 80, 120] }}
       >

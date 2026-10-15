@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "remotion studio",
-    "render:16x9": "remotion render Lotissement-16x9 out/lotissement.mp4",
-    "render:9x16": "remotion render Lotissement-9x16 out/lotissement-9x16.mp4",
+    "render:16x9": "remotion render Lotissement-16x9 out/lotissement.mp4 --crf=22",
+    "render:9x16": "remotion render Lotissement-9x16 out/lotissement-9x16.mp4 --crf=22",
     "render": "npm run render:16x9 && npm run render:9x16"
   },
   "dependencies": {
