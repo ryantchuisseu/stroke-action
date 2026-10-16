@@ -15,6 +15,7 @@ const eslintConfig = defineConfig([
     // Projet vidéo Remotion indépendant
     "santa-motion/**",
     "lotissement-3d/**",
+    "yuka-motion/**",
   ]),
 ]);
 

@@ -1,0 +1,20 @@
+{
+  "name": "yuka-motion",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "remotion studio",
+    "render:9x16": "remotion render Yuka-9x16 out/yuka-9x16.mp4 --crf=20",
+    "render:16x9": "remotion render Yuka-16x9 out/yuka-16x9.mp4 --crf=20",
+    "render": "npm run render:9x16 && npm run render:16x9"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.535",
+    "@remotion/fonts": "^4.0.535",
+    "@types/react": "^19.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "remotion": "^4.0.535",
+    "typescript": "^5.9.3"
+  }
+}

@@ -30,5 +30,5 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "santa-motion", "lotissement-3d"]
+  "exclude": ["node_modules", "santa-motion", "lotissement-3d", "yuka-motion"]
 }
