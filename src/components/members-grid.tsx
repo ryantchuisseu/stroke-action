@@ -1,4 +1,4 @@
-type Member = { name: string; job: string; photo?: string };
+type Member = { name: string; job: string; photo?: string; role?: string };
 
 const initials = (name: string) =>
   name
@@ -10,7 +10,14 @@ const initials = (name: string) =>
     .join("");
 
 /** Liste de tous les membres : photo (ou initiales en attendant), nom, profession. */
-export function MembersGrid({ members }: { members: readonly Member[] }) {
+export function MembersGrid({
+  members,
+  roleLabels,
+}: {
+  members: readonly Member[];
+  /** Libellés des rôles de commission (ex. { chair: "Chef", member: "Membre" }). */
+  roleLabels?: Record<string, string>;
+}) {
   return (
     <ul className="mt-8 grid grid-cols-2 gap-x-5 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
       {members.map((m) => (
@@ -25,7 +32,14 @@ export function MembersGrid({ members }: { members: readonly Member[] }) {
               </div>
             )}
           </div>
-          <h3 className="mt-4 text-[0.95rem] font-semibold leading-snug tracking-[-0.01em] text-balance">{m.name}</h3>
+          {m.role && roleLabels?.[m.role] && (
+            <p
+              className={`mt-4 text-[0.72rem] font-bold uppercase tracking-[0.14em] ${m.role === "chair" ? "text-blue-ink" : "text-grey"}`}
+            >
+              {roleLabels[m.role]}
+            </p>
+          )}
+          <h3 className={`${m.role ? "mt-1" : "mt-4"} text-[0.95rem] font-semibold leading-snug tracking-[-0.01em] text-balance`}>{m.name}</h3>
           <p className="mt-1 text-[0.85rem] leading-snug text-ink-soft text-balance">{m.job}</p>
         </li>
       ))}

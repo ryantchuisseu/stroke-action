@@ -73,12 +73,50 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
         </Container>
       </section>
 
-      {/* Membres */}
+      {/* Commissions */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
+        <Container>
+          <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.commissionsTitle}</h2>
+          <p className="mt-2 max-w-[60ch] text-ink-soft">{g.commissionsIntro}</p>
+          {g.commissions.map((c) => (
+            <div key={c.name} className="mt-12">
+              <h3 className="text-[clamp(1.1rem,2vw,1.35rem)] text-blue-ink">{c.name}</h3>
+              <MembersGrid members={c.members} roleLabels={{ chair: g.chairLabel, member: g.memberLabel }} />
+            </div>
+          ))}
+        </Container>
+      </section>
+
+      {/* Membres d'honneur */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
+        <Container>
+          <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.honoraryTitle}</h2>
+          {g.honorary.length > 0 ? (
+            <MembersGrid members={g.honorary} />
+          ) : (
+            <p className="mt-2 text-ink-soft">{g.emptySection}</p>
+          )}
+        </Container>
+      </section>
+
+      {/* Autres membres actifs */}
       <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
         <Container>
           <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.membersTitle}</h2>
           <p className="mt-2 max-w-[60ch] text-ink-soft">{g.membersIntro}</p>
           <MembersGrid members={g.members} />
+        </Container>
+      </section>
+
+      {/* Volontaires */}
+      <section className="border-t border-rule py-[clamp(3rem,7vw,5.5rem)]">
+        <Container>
+          <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.volunteersTitle}</h2>
+          {g.volunteers.length > 0 ? (
+            <MembersGrid members={g.volunteers} />
+          ) : (
+            <p className="mt-2 text-ink-soft">{g.emptySection}</p>
+          )}
         </Container>
       </section>
     </>
