@@ -630,7 +630,7 @@ export const fr = {
     members: [
       { name: "Dr. BIGNA RIM Jean Joel", job: "Médecin épidémiologiste" },
       { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Médecin épidémiologiste" },
-      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Médecin généticien" },
+      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Médecin généticien", photo: "/ngongang.jpg" },
       { name: "Dr. TANKEU TIAKOUANG Aurel", job: "Médecin interniste" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
       { name: "Dr. ZENGUE Luc Yannick", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
