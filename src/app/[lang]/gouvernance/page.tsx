@@ -4,6 +4,7 @@ import { BrainMark } from "@/components/brain-mark";
 import { HandNote } from "@/components/ink-marks";
 import { BoardGrid } from "@/components/board-grid";
 import { MembersGrid } from "@/components/members-grid";
+import { CommissionsGrid } from "@/components/commissions-grid";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
@@ -78,12 +79,7 @@ export default async function GouvernancePage({ params }: { params: Promise<{ la
         <Container>
           <h2 className="text-[clamp(1.4rem,2.8vw,2rem)]">{g.commissionsTitle}</h2>
           <p className="mt-2 max-w-[60ch] text-ink-soft">{g.commissionsIntro}</p>
-          {g.commissions.map((c) => (
-            <div key={c.name} className="mt-12">
-              <h3 className="text-[clamp(1.1rem,2vw,1.35rem)] text-blue-ink">{c.name}</h3>
-              <MembersGrid members={c.members} roleLabels={{ chair: g.chairLabel, member: g.memberLabel }} />
-            </div>
-          ))}
+          <CommissionsGrid commissions={g.commissions} roleLabels={{ chair: g.chairLabel, member: g.memberLabel }} />
         </Container>
       </section>
 

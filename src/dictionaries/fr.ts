@@ -641,7 +641,7 @@ export const fr = {
       {
         name: "Formation à la recherche",
         members: [
-          { name: "Dr. BIGNA RIM Jean Joel", job: "Médecin épidémiologiste", role: "chair" },
+          { name: "Dr. BIGNA RIM Jean Joel", job: "Médecin épidémiologiste", role: "chair", photo: "/bigna.jpg" },
           { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Médecin épidémiologiste", role: "member" },
           { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste", role: "member" },
         ],
