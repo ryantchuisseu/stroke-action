@@ -626,13 +626,33 @@ export const en = {
         photo: "/noubiap.jpg",
       },
     ],
+    commissionsTitle: "Commissions",
+    commissionsIntro: "Dedicated working groups driving the key pillars of our mission.",
+    commissions: [
+      {
+        name: "Continuing medical education",
+        members: [
+          { name: "Dr. TANKEU TIAKOUANG Aurel", role: "Chair", photo: "/tankeu.jpg" },
+          { name: "Dr. NOUBIAP Jean Jacques", role: "Member", photo: "/noubiap.jpg" },
+          { name: "M. FOGUE TEFFE Emmanuel", role: "Member", photo: "/fogue.jpg" },
+        ],
+      },
+      {
+        name: "Research training",
+        members: [
+          { name: "Dr. BIGNA RIM Jean Joel", role: "Chair", photo: "/bigna.jpg" },
+          { name: "Dr. FOKOUA DONGMO Christophe Maxime", role: "Member" },
+          { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", role: "Member" },
+        ],
+      },
+    ],
     membersTitle: "Other members",
     membersIntro: "The people who bring Stroke Action to life every day.",
     members: [
-      { name: "Dr. BIGNA RIM Jean Joel", job: "Epidemiologist physician" },
+      { name: "Dr. BIGNA RIM Jean Joel", photo: "/bigna.jpg", job: "Epidemiologist physician" },
       { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Epidemiologist physician" },
-      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Geneticist physician" },
-      { name: "Dr. TANKEU TIAKOUANG Aurel", job: "Internist physician" },
+      { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Geneticist physician" },
+      { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Internist physician" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Epidemiologist physician" },
       { name: "Dr. ZENGUE Luc Yannick", job: "Magistrate and Deputy Public Prosecutor (Ngaoundéré)" },
     ],

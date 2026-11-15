@@ -625,13 +625,33 @@ export const fr = {
         photo: "/noubiap.jpg",
       },
     ],
+    commissionsTitle: "Commissions",
+    commissionsIntro: "Des groupes de travail dédiés qui portent les axes clés de notre mission.",
+    commissions: [
+      {
+        name: "Formation médicale continue",
+        members: [
+          { name: "Dr. TANKEU TIAKOUANG Aurel", role: "Chef", photo: "/tankeu.jpg" },
+          { name: "Dr. NOUBIAP Jean Jacques", role: "Membre", photo: "/noubiap.jpg" },
+          { name: "M. FOGUE TEFFE Emmanuel", role: "Membre", photo: "/fogue.jpg" },
+        ],
+      },
+      {
+        name: "Formation à la recherche",
+        members: [
+          { name: "Dr. BIGNA RIM Jean Joel", role: "Chef", photo: "/bigna.jpg" },
+          { name: "Dr. FOKOUA DONGMO Christophe Maxime", role: "Membre" },
+          { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", role: "Membre" },
+        ],
+      },
+    ],
     membersTitle: "Les autres membres",
     membersIntro: "Ceux qui font vivre Stroke Action au quotidien.",
     members: [
-      { name: "Dr. BIGNA RIM Jean Joel", job: "Médecin épidémiologiste" },
+      { name: "Dr. BIGNA RIM Jean Joel", photo: "/bigna.jpg", job: "Médecin épidémiologiste" },
       { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Médecin épidémiologiste" },
-      { name: "Dr. NGONGANG TEKENDO Cedrik", job: "Médecin généticien" },
-      { name: "Dr. TANKEU TIAKOUANG Aurel", job: "Médecin interniste" },
+      { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Médecin généticien" },
+      { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Médecin interniste" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
       { name: "Dr. ZENGUE Luc Yannick", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
     ],
