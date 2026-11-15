@@ -653,7 +653,7 @@ export const fr = {
       { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Médecin généticien" },
       { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Médecin interniste" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
-      { name: "Dr. ZENGUE Luc Yannick", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
+      { name: "Dr. ZENGUE Luc Yannick", photo: "/zengue.jpg", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
     ],
     note: "Les noms et photographies des membres seront fournis par le client avant publication.",
   },
