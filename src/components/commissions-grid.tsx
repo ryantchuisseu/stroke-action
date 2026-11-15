@@ -13,10 +13,10 @@ const initials = (name: string) =>
 /** Commissions : une colonne par commission, le chef en premier (mis en avant). */
 export function CommissionsGrid({ commissions }: { commissions: readonly Commission[] }) {
   return (
-    <div className="mt-8 grid gap-px border border-rule bg-rule md:grid-cols-2">
+    <div className="mt-8 grid gap-6 md:grid-cols-2 lg:gap-10">
       {commissions.map((c) => (
-        <article key={c.name} className="bg-paper p-6 sm:p-8">
-          <h3 className="text-[1.15rem] font-semibold tracking-[-0.01em]">
+        <article key={c.name} className="border border-rule border-t-[3px] border-t-blue bg-paper p-6 shadow-[0_1px_0_rgba(20,19,18,0.04),0_8px_24px_-12px_rgba(20,19,18,0.12)] sm:p-8">
+          <h3 className="border-b border-rule pb-4 text-[1.15rem] font-semibold tracking-[-0.01em]">
             <span className="mr-2 inline-block h-[0.6em] w-[0.6em] rounded-full bg-red align-middle" aria-hidden="true" />
             {c.name}
           </h3>
