@@ -547,23 +547,45 @@ export const en = {
     title: "Our activities in pictures.",
     metaDesc:
       "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
-    story: {
-      date: "September 28, 2026",
-      kicker: "In the media",
-      title: "Stroke Action on Radio Maria Cameroon 107.5 FM",
-      topic: "Stroke in young people: why are they not spared?",
-      text: "Stroke Action was invited on Radio Maria Cameroon (107.5 FM) to discuss a question too often overlooked: stroke in young people.",
-      guests: "Hosted by Cyprien Bidouga, with Dr. Joseph Kamtchum, founder of Stroke Action, and Dr. Pascal Owona Otu.",
-      listen: "Listen to the broadcast",
-      listenNote: "Audio recording of over an hour, on SoundCloud.",
-      listenUrl: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria",
-      topicLabel: "Topic of the broadcast",
-      alts: [
-        "Two guests smiling at the Radio Maria Cameroon studio microphones",
-        "Selfie in the Radio Maria Cameroon studio, with two guests giving a thumbs up",
-        "Two guests seated at the Radio Maria Cameroon studio table",
-      ],
-    },
+    stories: [
+      {
+        date: "October 29, 2026",
+        kicker: "In the media",
+        title: "World Stroke Day 2026: Stroke Action on CRTV National Station",
+        topic: "World Stroke Day: recognize, prevent and act fast",
+        text: "For World Stroke Day, on October 29, 2026, Stroke Action was the guest of the 1 p.m. news on CRTV National Station.",
+        guests: "With Dr. Joseph Kamtchum, founder of Stroke Action.",
+        topicLabel: "Topic of the broadcast",
+        listens: [
+          { label: "Listen to the interview (part 1)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-2026" },
+          { label: "Listen to the interview (part 2)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-1" },
+        ],
+        listenNote: "Audio recordings on SoundCloud.",
+        photos: [],
+        alts: [],
+      },
+      {
+        date: "September 28, 2026",
+        kicker: "In the media",
+        title: "Stroke Action on Radio Maria Cameroon 107.5 FM",
+        topic: "Stroke in young people: why are they not spared?",
+        text: "Stroke Action was invited on Radio Maria Cameroon (107.5 FM) to discuss a question too often overlooked: stroke in young people.",
+        guests: "Hosted by Cyprien Bidouga, with Dr. Joseph Kamtchum, founder of Stroke Action, and Dr. Pascal Owona Otu.",
+        listens: [{ label: "Listen to the broadcast", url: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria" }],
+        listenNote: "Audio recording of over an hour, on SoundCloud.",
+        topicLabel: "Topic of the broadcast",
+        photos: [
+          { src: "/gallery/radio-maria-1.jpg", w: 1600, h: 1205, cls: "col-span-2" },
+          { src: "/gallery/radio-maria-3.jpg", w: 1200, h: 1600, cls: "" },
+          { src: "/gallery/radio-maria-2.jpg", w: 1600, h: 1205, cls: "" },
+        ],
+        alts: [
+          "Two guests smiling at the Radio Maria Cameroon studio microphones",
+          "Selfie in the Radio Maria Cameroon studio, with two guests giving a thumbs up",
+          "Two guests seated at the Radio Maria Cameroon studio table",
+        ],
+      },
+    ],
   },
 
   governance: {

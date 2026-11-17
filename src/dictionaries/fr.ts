@@ -546,23 +546,45 @@ export const fr = {
     title: "Nos activités en images.",
     metaDesc:
       "Photos des activités de Stroke Action sur le terrain au Cameroun — campagnes de sensibilisation, formations et événements communautaires.",
-    story: {
-      date: "28 septembre 2026",
-      kicker: "Dans les médias",
-      title: "Stroke Action sur Radio Maria Cameroun 107,5 FM",
-      topic: "AVC chez les jeunes : pourquoi ne sont-ils pas épargnés ?",
-      text: "Stroke Action a été invitée sur Radio Maria Cameroun (107,5 FM) pour aborder une question trop souvent méconnue : l’AVC chez les jeunes.",
-      guests: "Émission présentée par Cyprien Bidouga, avec le Dr Joseph Kamtchum, fondateur de Stroke Action, et le Dr Pascal Owona Otu.",
-      listen: "Écouter l’émission",
-      listenNote: "Enregistrement audio de plus d’une heure, sur SoundCloud.",
-      listenUrl: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria",
-      topicLabel: "Sujet de l’émission",
-      alts: [
-        "Deux invités souriants devant les micros du studio de Radio Maria Cameroun",
-        "Selfie dans le studio de Radio Maria Cameroun, deux invités pouce levé",
-        "Deux invités assis à la table du studio de Radio Maria Cameroun",
-      ],
-    },
+    stories: [
+      {
+        date: "29 octobre 2026",
+        kicker: "Dans les médias",
+        title: "Journée mondiale de l’AVC 2026 : Stroke Action sur le Poste National de la CRTV",
+        topic: "Journée mondiale de l’AVC : reconnaître, prévenir et agir vite",
+        text: "À l’occasion de la Journée mondiale de l’AVC, le 29 octobre 2026, Stroke Action était l’invitée du journal de 13 h du Poste National de la CRTV.",
+        guests: "Avec le Dr Joseph Kamtchum, fondateur de Stroke Action.",
+        topicLabel: "Sujet de l’émission",
+        listens: [
+          { label: "Écouter l’interview (partie 1)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-2026" },
+          { label: "Écouter l’interview (partie 2)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-1" },
+        ],
+        listenNote: "Enregistrements audio sur SoundCloud.",
+        photos: [],
+        alts: [],
+      },
+      {
+        date: "28 septembre 2026",
+        kicker: "Dans les médias",
+        title: "Stroke Action sur Radio Maria Cameroun 107,5 FM",
+        topic: "AVC chez les jeunes : pourquoi ne sont-ils pas épargnés ?",
+        text: "Stroke Action a été invitée sur Radio Maria Cameroun (107,5 FM) pour aborder une question trop souvent méconnue : l’AVC chez les jeunes.",
+        guests: "Émission présentée par Cyprien Bidouga, avec le Dr Joseph Kamtchum, fondateur de Stroke Action, et le Dr Pascal Owona Otu.",
+        listens: [{ label: "Écouter l’émission", url: "https://soundcloud.com/ryan-tchuisseu/stroke-action-sur-radio-maria" }],
+        listenNote: "Enregistrement audio de plus d’une heure, sur SoundCloud.",
+        topicLabel: "Sujet de l’émission",
+        photos: [
+          { src: "/gallery/radio-maria-1.jpg", w: 1600, h: 1205, cls: "col-span-2" },
+          { src: "/gallery/radio-maria-3.jpg", w: 1200, h: 1600, cls: "" },
+          { src: "/gallery/radio-maria-2.jpg", w: 1600, h: 1205, cls: "" },
+        ],
+        alts: [
+          "Deux invités souriants devant les micros du studio de Radio Maria Cameroun",
+          "Selfie dans le studio de Radio Maria Cameroun, deux invités pouce levé",
+          "Deux invités assis à la table du studio de Radio Maria Cameroun",
+        ],
+      },
+    ],
   },
 
   governance: {
