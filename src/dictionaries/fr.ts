@@ -550,11 +550,11 @@ export const fr = {
       {
         date: "29 octobre 2026",
         kicker: "Dans les médias",
-        title: "Journée mondiale de l’AVC 2026 : Stroke Action sur le Poste National de la CRTV",
-        topic: "Journée mondiale de l’AVC : reconnaître, prévenir et agir vite",
-        text: "À l’occasion de la Journée mondiale de l’AVC, le 29 octobre 2026, Stroke Action était l’invitée du journal de 13 h du Poste National de la CRTV.",
-        guests: "Avec le Dr Joseph Kamtchum, fondateur de Stroke Action.",
-        topicLabel: "Sujet de l’émission",
+        title: "Stroke Action sur le Poste National de la CRTV",
+        topic: "Journée mondiale de l’AVC 2026 | World Stroke Day 2026 — Entretien avec le Dr Joseph Kamtchum",
+        text: "Interview téléphonique diffusée sur le Poste National de la CRTV le 29 octobre 2026, au journal de 13 h ou de 17 h selon les cas.",
+        guests: "Entretien avec le Dr Joseph Kamtchum, fondateur de Stroke Action, à l’occasion de la Journée mondiale de l’AVC.",
+        topicLabel: "Titre de l’entretien",
         listens: [
           { label: "Écouter l’interview (partie 1)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-2026" },
           { label: "Écouter l’interview (partie 2)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-1" },

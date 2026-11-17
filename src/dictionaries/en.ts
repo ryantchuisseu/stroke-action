@@ -551,11 +551,11 @@ export const en = {
       {
         date: "October 29, 2026",
         kicker: "In the media",
-        title: "World Stroke Day 2026: Stroke Action on CRTV National Station",
-        topic: "World Stroke Day: recognize, prevent and act fast",
-        text: "For World Stroke Day, on October 29, 2026, Stroke Action was the guest of the 1 p.m. news on CRTV National Station.",
-        guests: "With Dr. Joseph Kamtchum, founder of Stroke Action.",
-        topicLabel: "Topic of the broadcast",
+        title: "Stroke Action on CRTV National Station",
+        topic: "World Stroke Day 2026 | Journée mondiale de l’AVC 2026 — Interview with Dr. Joseph Kamtchum",
+        text: "Telephone interview broadcast on CRTV National Station on October 29, 2026, in the 1 p.m. or 5 p.m. news, depending on the edition.",
+        guests: "Interview with Dr. Joseph Kamtchum, founder of Stroke Action, for World Stroke Day.",
+        topicLabel: "Interview title",
         listens: [
           { label: "Listen to the interview (part 1)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-2026" },
           { label: "Listen to the interview (part 2)", url: "https://soundcloud.com/ryan-tchuisseu/journee-mondiale-de-lavc-1" },
