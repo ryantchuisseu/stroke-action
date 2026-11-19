@@ -2,7 +2,7 @@ type Member = { name: string; job: string; photo?: string };
 
 const initials = (name: string) =>
   name
-    .replace(/^(Dr\.?|Mr\.?|Mme\.?)\s+/i, "")
+    .replace(/^(Dr\.?|Mrs\.?|Mr\.?|Mme\.?|M\.)\s+/i, "")
     .split(/\s+/)
     .filter((w) => w[0] === w[0]?.toUpperCase() && /[A-ZÀ-Ý]/.test(w[0] ?? ""))
     .slice(0, 2)

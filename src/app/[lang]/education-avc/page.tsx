@@ -23,7 +23,11 @@ import { HandNote, InkUnderline } from "@/components/ink-marks";
 import { getDictionary, isLocale, type Locale } from "@/dictionaries";
 import { pageMeta } from "@/lib/site";
 
-const BOOK_LINK = "https://www.librinova.com/librairie/joseph-kamtchum-tatuene/all-about-stroke";
+/** Liens Amazon des 4 éditions du livre du Dr Kamtchum (ASIN propres, sans paramètres de suivi). */
+const BOOK_LINKS = {
+  fr: { ebook: "https://www.amazon.fr/dp/B0HKW282VW", paper: "https://www.amazon.fr/dp/B0HPF42P42" },
+  en: { ebook: "https://www.amazon.fr/dp/B0H58GL556", paper: "https://www.amazon.fr/dp/B0HPDKMBC1" },
+} as const;
 
 /* -------- "Le saviez-vous" : une icône par fait --------
  * Librairie Phosphor (import SSR, sans Provider) — plus expressive que
@@ -253,19 +257,39 @@ export default async function EducationPage({ params }: { params: Promise<{ lang
               <p className="mt-1 text-[0.9rem] font-semibold text-ink-soft">{e.book.author}</p>
               <p className="mt-3 max-w-[56ch] text-ink-soft">{e.book.text}</p>
               <p className="mt-3 text-[0.9rem] font-semibold text-red-ink">{e.book.dateNote}</p>
-              <a
-                href={BOOK_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 bg-red px-[1.4rem] py-[0.85rem] text-[0.95rem] font-semibold text-white transition-[transform,background-color] duration-150 ease-[var(--ease-out)] hover:bg-blue-ink active:scale-[0.97]"
-              >
-                <BookOpen size={20} weight="bold" aria-hidden="true" />
-                {e.book.cta}
-                <ArrowRight size={18} weight="bold" aria-hidden="true" />
-              </a>
+              <div className="mt-5 grid max-w-[34rem] gap-3 sm:grid-cols-2">
+                {(["fr", "en"] as const).map((ed) => (
+                  <div key={ed} className="border border-rule bg-paper p-3">
+                    <p className="text-[0.74rem] font-semibold uppercase tracking-[0.14em] text-blue-ink">
+                      {e.book.editions[ed]}
+                    </p>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      <a
+                        href={BOOK_LINKS[ed].paper}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 bg-red px-3 py-2 text-[0.85rem] font-semibold text-white transition-[transform,background-color] duration-150 ease-[var(--ease-out)] hover:bg-blue-ink active:scale-[0.97]"
+                      >
+                        <BookOpen size={16} weight="bold" aria-hidden="true" />
+                        {e.book.paper}
+                      </a>
+                      <a
+                        href={BOOK_LINKS[ed].ebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 border border-blue-ink px-3 py-2 text-[0.85rem] font-semibold text-blue-ink transition-[transform,background-color,color] duration-150 ease-[var(--ease-out)] hover:bg-blue-ink hover:text-paper active:scale-[0.97]"
+                      >
+                        {e.book.ebook}
+                        <ArrowRight size={14} weight="bold" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2 text-[0.8rem] text-ink-soft">{e.book.cta}</p>
             </div>
             <a
-              href={BOOK_LINK}
+              href={BOOK_LINKS[lang === "fr" ? "fr" : "en"].paper}
               target="_blank"
               rel="noopener noreferrer"
               className="group w-[110px] flex-none overflow-hidden sm:w-[130px]"
