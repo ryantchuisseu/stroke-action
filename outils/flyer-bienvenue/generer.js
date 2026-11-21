@@ -7,6 +7,7 @@
  *
  * Besoins : Node + Playwright (Chromium) et une connexion internet (polices Google Fonts).
  */
+/* eslint-disable @typescript-eslint/no-require-imports -- script Node autonome (CommonJS), hors du site */
 const fs = require("fs");
 const path = require("path");
 const { chromium } = require("playwright");
