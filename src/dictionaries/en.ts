@@ -552,6 +552,19 @@ export const en = {
       "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
     stories: [
       {
+        date: "Date to be confirmed",
+        kicker: "In the media",
+        title: "Stroke Action on Elite One radio",
+        topic: "Cœur santé (Heart Health) program",
+        text: "Stroke Action was the guest of the Cœur santé program on Elite One to talk about stroke.",
+        guests: "With Dr. Joseph Kamtchum, founder of Stroke Action.",
+        topicLabel: "Program",
+        listens: [] as { label: string; url: string }[],
+        listenNote: "Audio recording coming soon on SoundCloud.",
+        photos: [{ src: "/gallery/elite-one.jpg", w: 720, h: 900, cls: "col-span-2" }],
+        alts: ["Dr. Joseph Kamtchum at the microphone in the Elite One studio, in front of the radio logo"],
+      },
+      {
         date: "October 29, 2026",
         kicker: "In the media",
         title: "Stroke Action on CRTV National Station",
@@ -679,7 +692,7 @@ export const en = {
       { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Geneticist physician" },
       { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Internist physician" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Epidemiologist physician" },
-      { name: "Mrs. TEFFO Hornela Pelagie", job: "Neuroscientist" },
+      { name: "Mrs. TEFFO Hornela Pelagie", photo: "/teffo.jpg", job: "Neuroscientist" },
       { name: "Dr. ZENGUE Luc Yannick", photo: "/zengue.jpg", job: "Magistrate and Deputy Public Prosecutor (Ngaoundéré)" },
     ],
     note: "Member names and photos to be provided by the client before publication.",

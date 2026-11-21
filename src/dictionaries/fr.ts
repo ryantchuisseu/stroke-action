@@ -551,6 +551,19 @@ export const fr = {
       "Photos des activités de Stroke Action sur le terrain au Cameroun — campagnes de sensibilisation, formations et événements communautaires.",
     stories: [
       {
+        date: "Date à confirmer",
+        kicker: "Dans les médias",
+        title: "Stroke Action sur Elite One, « votre radio »",
+        topic: "Émission Cœur santé",
+        text: "Stroke Action était l’invitée de l’émission Cœur santé sur Elite One pour parler de l’AVC.",
+        guests: "Avec le Dr Joseph Kamtchum, fondateur de Stroke Action.",
+        topicLabel: "Émission",
+        listens: [] as { label: string; url: string }[],
+        listenNote: "Enregistrement audio bientôt disponible sur SoundCloud.",
+        photos: [{ src: "/gallery/elite-one.jpg", w: 720, h: 900, cls: "col-span-2" }],
+        alts: ["Le Dr Joseph Kamtchum au micro dans le studio d’Elite One, devant le logo de la radio"],
+      },
+      {
         date: "29 octobre 2026",
         kicker: "Dans les médias",
         title: "Stroke Action sur le Poste National de la CRTV",
@@ -678,7 +691,7 @@ export const fr = {
       { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Médecin généticien" },
       { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Médecin interniste" },
       { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
-      { name: "Mme TEFFO Hornela Pelagie", job: "Chercheure en neurosciences" },
+      { name: "Mme TEFFO Hornela Pelagie", photo: "/teffo.jpg", job: "Chercheure en neurosciences" },
       { name: "Dr. ZENGUE Luc Yannick", photo: "/zengue.jpg", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
     ],
     note: "Les noms et photographies des membres seront fournis par le client avant publication.",
