@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- Modèle du flyer de bienvenue Stroke Action (validé, version 7).
+     Ne pas modifier à la main pour un nouveau membre : remplir un fichier membres/<nom>.json
+     puis lancer `node outils/flyer-bienvenue/generer.js membres/<nom>.json`. -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;600;700;800;900&family=Caveat:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1350px;position:relative;overflow:hidden;font-family:Archivo,sans-serif;color:#0b1d36;
+ background:radial-gradient(ellipse at 50% 28%,#fff 0%,#f1f7fe 48%,#e2effc 100%)}
+.dots{position:absolute;width:190px;height:150px;background-image:radial-gradient(#2A9DF4 2.4px,transparent 2.6px);background-size:22px 22px;opacity:.35}
+.d1{left:34px;top:250px} .d2{right:34px;top:900px;background-image:radial-gradient(#F42A2A 2.4px,transparent 2.6px);opacity:.3}
+.redtop{position:absolute;top:0;left:0;right:0;height:12px;background:#F42A2A}
+.top{position:absolute;top:52px;left:64px;font-size:20px;font-weight:800;letter-spacing:.42em}
+.top span{color:#F42A2A}
+.badge{position:absolute;top:30px;right:56px;width:104px;height:104px;border-radius:50%;background:#fff;border:4px solid #F42A2A;display:grid;place-items:center;box-shadow:0 6px 18px rgba(11,29,54,.12)}
+.badge img{width:80px}
+.word{position:absolute;top:168px;left:0;right:0;text-align:center;font-family:Anton,sans-serif;line-height:.86;font-size:300px;color:#2A9DF4;white-space:nowrap}
+.pulse{position:absolute;left:0;top:300px;width:1080px;height:120px;z-index:2}
+.stack{position:absolute;top:388px;left:50%;width:410px;height:410px;margin-left:-205px;z-index:3}
+.stack .back{position:absolute;inset:0;background:#F42A2A;border-radius:26px;transform:rotate(6deg) translate(18px,6px)}
+.stack .back2{position:absolute;inset:0;background:#2A9DF4;border-radius:26px;transform:rotate(-7deg) translate(-16px,10px);opacity:.9}
+.stack .ph{position:absolute;inset:0;border-radius:24px;overflow:hidden;border:9px solid #fff;transform:rotate(-2deg);box-shadow:0 24px 50px rgba(5,25,55,.28)}
+.stack img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.note{position:absolute;left:760px;top:600px;font-family:Caveat,cursive;font-size:46px;line-height:1;color:#F42A2A;transform:rotate(-6deg);z-index:4}
+.arrow{position:absolute;left:668px;top:560px;width:110px;height:90px;z-index:4}
+.name{position:absolute;top:838px;width:100%;text-align:center;font-size:74px;font-weight:900;letter-spacing:-.04em;z-index:4;white-space:nowrap}
+.name span{display:inline-block;color:#fff;background:#F42A2A;padding:0 18px;transform:skewX(-8deg) rotate(-1.5deg);margin-left:8px}
+.name span i{display:inline-block;font-style:normal;transform:skewX(8deg)}
+.pills{position:absolute;top:958px;width:100%;display:flex;justify-content:center;gap:14px}
+.pill{font-size:19px;font-weight:800;letter-spacing:.06em;padding:9px 20px;border-radius:40px;text-transform:uppercase}
+.pill.b{background:#2A9DF4;color:#fff} .pill.o{border:2.5px solid #0b1d36;color:#0b1d36;text-transform:none;letter-spacing:.01em;font-weight:700}
+.bio{position:absolute;top:1050px;left:96px;right:96px;font-size:22.5px;line-height:1.58;font-weight:500;color:#1d2a3d;padding-left:34px;border-left:6px solid #F42A2A}
+.bio mark{background:none;font-weight:800;color:#0b1d36;padding:0 2px}
+.bio mark.r{background:linear-gradient(transparent 58%,rgba(244,42,42,.30) 58%,rgba(244,42,42,.30) 92%,transparent 92%)}
+.bio mark.b{background:linear-gradient(transparent 58%,rgba(42,157,244,.32) 58%,rgba(42,157,244,.32) 92%,transparent 92%)}
+.foot{position:absolute;bottom:0;left:0;right:0;height:64px;background:#0b1d36;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 64px;font-size:22px;font-weight:800}
+.foot::before{content:"";position:absolute;left:0;top:-8px;width:40%;height:8px;background:#F42A2A}
+.foot::after{content:"";position:absolute;right:0;top:-8px;width:60%;height:8px;background:#2A9DF4}
+.foot span{font-weight:600;color:#9fd2fb}
+</style></head><body>
+<div class="redtop"></div>
+<div class="dots d1"></div><div class="dots d2"></div>
+<div class="top">STROKE ACTION <span>AVC</span></div>
+<div class="badge"><img src="{{LOGO}}"></div>
+<div class="word">{{MOT}}</div>
+<svg class="pulse" viewBox="0 0 1080 120" preserveAspectRatio="none"><polyline points="0,70 300,70 330,70 352,14 380,112 404,40 424,70 1080,70" fill="none" stroke="#F42A2A" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+<div class="stack"><div class="back2"></div><div class="back"></div><div class="ph"><img src="{{PHOTO}}"></div></div>
+<svg class="arrow" viewBox="0 0 110 90"><path d="M104 62 C 80 20, 40 18, 10 40" fill="none" stroke="#F42A2A" stroke-width="5" stroke-linecap="round"/><path d="M8 40 L 26 26 M8 40 L 28 50" stroke="#F42A2A" stroke-width="5" stroke-linecap="round"/></svg>
+<div class="note">{{NOTE}}</div>
+<div class="name">{{PRENOM}}<span><i>{{NOM}}</i></span></div>
+<div class="pills"><div class="pill b">{{ETIQUETTE1}}</div><div class="pill o">{{ETIQUETTE2}}</div></div>
+<p class="bio">{{BIO}}</p>
+<div class="foot">{{DEVISE}}<span>strokeaction.org</span></div>
+<script>
+// Ajuste « BIENVENUE » / « WELCOME » à la largeur, puis réduit le nom si besoin.
+const w=document.querySelector('.word');
+document.fonts.ready.then(()=>{
+  const r=document.createElement('span');r.textContent=w.textContent;
+  r.style.cssText='font:inherit;font-size:300px;white-space:nowrap;visibility:hidden;position:absolute';w.appendChild(r);
+  const f=Math.floor(300*960/r.offsetWidth);r.remove();w.style.fontSize=f+'px';
+  const h=w.getBoundingClientRect().height;w.style.transform='scaleY('+(260/h).toFixed(3)+')';w.style.transformOrigin='top';
+  const n=document.querySelector('.name');let s=74;while(n.scrollWidth>1000&&s>40){s-=2;n.style.fontSize=s+'px';}
+  document.body.dataset.ready='1';
+});
+</script></body></html>

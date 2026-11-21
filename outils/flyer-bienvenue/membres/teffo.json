@@ -1,0 +1,18 @@
+{
+  "slug": "teffo",
+  "photo": "photos/teffo.jpg",
+  "prenom": "Hornela",
+  "nom": "TEFFO",
+  "fr": {
+    "note": "notre nouvelle<br>chercheure !",
+    "etiquette1": "Chercheure en neurosciences",
+    "etiquette2": "Doctorante · Université de Yaoundé I",
+    "bio": "Hornela étudie la [[r:physiopathologie de l’AVC]] et l’usage de [[b:médicaments à base de plantes]]. Elle explore comment des extraits de plantes médicinales locales peuvent protéger le cerveau et favoriser la récupération après un AVC ischémique, pour offrir aux patients des [[r:thérapies sûres et abordables]]."
+  },
+  "en": {
+    "note": "our new<br>researcher!",
+    "etiquette1": "Neuroscience researcher",
+    "etiquette2": "Ph.D. student · University of Yaoundé I",
+    "bio": "Hornela studies the [[r:pathophysiology of stroke]] and the use of [[b:plant-based drugs]]. She explores how extracts from local medicinal plants can protect brain tissue and support recovery after ischemic stroke, to offer patients [[r:safe and affordable therapies]]."
+  }
+}

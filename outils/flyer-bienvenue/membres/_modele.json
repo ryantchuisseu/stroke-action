@@ -1,0 +1,18 @@
+{
+  "slug": "nom-de-famille-en-minuscules",
+  "photo": "photos/nom-de-famille-en-minuscules.jpg",
+  "prenom": "Prénom",
+  "nom": "NOM",
+  "fr": {
+    "note": "notre nouveau<br>membre !",
+    "etiquette1": "Fonction principale",
+    "etiquette2": "Établissement · Ville",
+    "bio": "3 à 4 phrases. Entourez les mots clés : [[r:mot surligné en rouge]] et [[b:mot surligné en bleu]]."
+  },
+  "en": {
+    "note": "our new<br>member!",
+    "etiquette1": "Main role",
+    "etiquette2": "Institution · City",
+    "bio": "3 to 4 sentences. Wrap key words: [[r:red highlight]] and [[b:blue highlight]]."
+  }
+}
