@@ -554,7 +554,7 @@ export const en = {
       {
         date: "Date to be confirmed",
         kicker: "In the media",
-        title: "Stroke Action on Elite One radio",
+        title: "Stroke Action on Elite One 96.9 FM",
         topic: "Cœur santé",
         text: "Stroke Action was the guest of the Cœur santé program on Elite One to talk about stroke.",
         guests: "With Dr. Joseph Kamtchum, founder of Stroke Action.",

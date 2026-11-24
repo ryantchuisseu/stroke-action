@@ -553,7 +553,7 @@ export const fr = {
       {
         date: "Date à confirmer",
         kicker: "Dans les médias",
-        title: "Stroke Action sur Elite One, « votre radio »",
+        title: "Stroke Action sur Elite One 96.9 FM",
         topic: "Émission Cœur santé",
         text: "Stroke Action était l’invitée de l’émission Cœur santé sur Elite One pour parler de l’AVC.",
         guests: "Avec le Dr Joseph Kamtchum, fondateur de Stroke Action.",
