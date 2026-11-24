@@ -36,7 +36,7 @@ export default async function GaleriePage({ params }: { params: Promise<{ lang: 
               <div className="grid gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-14">
                 <div className="lg:sticky lg:top-28 lg:self-start">
                   <Eyebrow>
-                    {s.kicker} · {s.date}
+                    {s.date ? `${s.kicker} · ${s.date}` : s.kicker}
                   </Eyebrow>
                   <h2 className="mt-3 text-[clamp(1.6rem,3.2vw,2.3rem)] font-bold leading-tight text-ink">{s.title}</h2>
                   <p className="mt-5 max-w-[46ch] text-ink-soft">{s.text}</p>

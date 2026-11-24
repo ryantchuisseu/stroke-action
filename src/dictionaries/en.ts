@@ -552,15 +552,15 @@ export const en = {
       "Photos of Stroke Action's work on the ground in Cameroon — awareness campaigns, training sessions, and community events.",
     stories: [
       {
-        date: "Date to be confirmed",
+        date: "",
         kicker: "In the media",
         title: "Stroke Action on Elite One 96.9 FM",
         topic: "Cœur santé",
         text: "Stroke Action was the guest of the Cœur santé program on Elite One to talk about stroke.",
         guests: "With Dr. Joseph Kamtchum, founder of Stroke Action.",
         topicLabel: "Program",
-        listens: [] as { label: string; url: string }[],
-        listenNote: "Audio recording coming soon on SoundCloud.",
+        listens: [{ label: "Listen to the program", url: "https://soundcloud.com/donel-tchuisseu/emission-coeur-sante" }],
+        listenNote: "Audio recording on SoundCloud.",
         photos: [{ src: "/gallery/elite-one.jpg", w: 720, h: 900, cls: "col-span-2" }],
         alts: ["Dr. Joseph Kamtchum at the microphone in the Elite One studio, in front of the radio logo"],
       },
