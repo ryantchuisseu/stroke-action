@@ -679,7 +679,7 @@ export const fr = {
         members: [
           { name: "Dr. BIGNA RIM Jean Joel", role: "Chef", photo: "/bigna.jpg" },
           { name: "Dr. FOKOUA DONGMO Christophe Maxime", role: "Membre" },
-          { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", role: "Membre" },
+          { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", role: "Membre", photo: "/tchuisseu.jpg" },
         ],
       },
     ],
@@ -690,7 +690,7 @@ export const fr = {
       { name: "Dr. FOKOUA DONGMO Christophe Maxime", job: "Médecin épidémiologiste" },
       { name: "Dr. NGONGANG TEKENDO Cedrik", photo: "/ngongang.jpg", job: "Médecin généticien" },
       { name: "Dr. TANKEU TIAKOUANG Aurel", photo: "/tankeu.jpg", job: "Médecin interniste" },
-      { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", job: "Médecin épidémiologiste" },
+      { name: "Dr. TCHUISSEU KWANGOUA Larissa Ange", photo: "/tchuisseu.jpg", job: "Médecin épidémiologiste" },
       { name: "Mme TEFFO Hornela Pelagie", photo: "/teffo.jpg", job: "Chercheure en neurosciences, doctorante à l’Université de Yaoundé I" },
       { name: "Dr. ZENGUE Luc Yannick", photo: "/zengue.jpg", job: "Magistrat et substitut du procureur (Ngaoundéré)" },
     ],
